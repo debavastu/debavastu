@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = htmlspecialchars($_POST['phone']);
     $service = htmlspecialchars($_POST['service']);
     $date = htmlspecialchars($_POST['date']);
-    $time = htmlspecialchars($_POST['time']);
     $message = htmlspecialchars($_POST['message']);
 
     // Email configuration
