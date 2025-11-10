@@ -1,102 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book an Appointment</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f2f2f2;
-        }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 600px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-        input, select, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-        button {
-            margin-top: 20px;
-            background: #007bff;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-        }
+    button {
+      margin-top: 20px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+    }
 
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
+    button:hover {
+      background: #0056b3;
+    }
+
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <h2>Book an Appointment</h2>
 
-    <div class="container">
-        <h2>Book an Appointment</h2>
+    <form action="sendmail.php" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-        <form action="#" method="POST">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="Enter your full name" required>
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}" title="Enter a valid 10-digit number">
 
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="Enter your email" required>
+      <label for="service">Select Service</label>
+      <select id="service" name="service" required>
+        <option value="">-- Choose a Service --</option>
+        <option value="Vastu Consultation">Vastu Consultation</option>
+        <option value="Numerology">Numerology</option>
+        <option value="Astrology">Astrology</option>
+        <option value="Face Reading">Face Reading</option>
+        <option value="Healing Service">Healing Service</option>
+      </select>
 
-            <label>Mobile Number</label>
-            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+      <label for="date">Select Date</label>
+      <input type="date" id="date" name="date" required>
 
-            <label>Select Service</label>
-            <select name="service" required>
-                <option value="">-- Choose a Service --</option>
-                <option value="Vastu Consultation">Vastu Consultation</option>
-                <option value="Numerology">Numerology</option>
-                <option value="Astrology">Astrology</option>
-                <option value="Face Reading">Healing Service</option>
-            </select>
+      <label for="time">Select Time</label>
+      <input type="time" id="time" name="time" required>
 
-            <label>Select Date</label>
-            <input type="date" name="date" required>
+      <label for="message">Message (Optional)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
 
-            <label>Select Time</label>
-            <input type="time" name="time" required>
-
-            <label>Message (Optional)</label>
-            <textarea name="message" rows="4" placeholder="Write your message..."></textarea>
-
-            <button type="submit">Book Appointment</button>
-
-        </form>
-    </div>
-
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
 </body>
 </html>
-
