@@ -10,46 +10,56 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f2f2f2;
+      background: #f4f4f4;
     }
 
     .container {
       width: 90%;
       max-width: 600px;
       margin: 40px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
-      color: #333;
+      margin-bottom: 25px;
+      color: #222;
+      letter-spacing: 1px;
     }
 
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
+      color: #444;
     }
 
     input, select, textarea, button {
       width: 100%;
-      padding: 10px;
-      margin-top: 8px;
+      padding: 12px;
+      margin-top: 7px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     button {
       margin-top: 20px;
       background: #007bff;
-      color: white;
-      font-size: 16px;
+      color: #fff;
+      font-size: 17px;
       cursor: pointer;
       border: none;
+      transition: 0.3s;
+      border-radius: 6px;
     }
 
     button:hover {
@@ -75,6 +85,7 @@
     <h2>Book an Appointment</h2>
 
     <form action="sendmail.php" method="POST">
+      
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -82,7 +93,8 @@
       <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
       <label for="phone">Mobile Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}" title="Enter a valid 10-digit number">
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+             pattern="[0-9]{10}" title="Enter a valid 10-digit number" required>
 
       <label for="service">Select Service</label>
       <select id="service" name="service" required>
@@ -94,16 +106,14 @@
       </select>
 
       <label for="date">Select Date</label>
-      <input type="date" id="date" name="date" required>
+      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>">
 
-      
       <label for="message">Message (Optional)</label>
       <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
 
       <button type="submit">Book Appointment</button>
+
     </form>
   </div>
 </body>
 </html>
-
-
