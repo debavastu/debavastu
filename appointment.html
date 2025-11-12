@@ -143,4 +143,137 @@
 
         <div>
           <label for="date">Date</label>
-          <input type="date" id="d
+          <input type="date" id="date" required />
+        </div>
+
+        <div>
+          <label>Select Time Slot</label>
+          <div class="time-slots" id="timeSlots"></div>
+        </div>
+
+        <input type="hidden" id="selectedTime" />
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+
+    <div class="appointments">
+      <h2>Your Appointments</h2>
+      <div id="appointmentList"></div>
+    </div>
+  </div>
+
+  <script>
+    const EMAILJS_USER_ID   = '_Nz0uw3fjO1dggP2C';
+    const EMAILJS_SERVICE_ID = 'service_dea8439';
+    const EMAILJS_TEMPLATE_ID = 'template_xrogxm8';
+
+    emailjs.init(EMAILJS_USER_ID);
+
+    const timeSlots = [
+      "09:00","09:30","10:00","10:30","11:00","11:30",
+      "14:00","14:30","15:00","15:30","16:00","16:30"
+    ];
+
+    const form = document.getElementById('bookingForm');
+    const dateInput = document.getElementById('date');
+    const timeSlotsContainer = document.getElementById('timeSlots');
+    const selectedTimeInput = document.getElementById('selectedTime');
+    const appointmentList = document.getElementById('appointmentList');
+
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    dateInput.value = today;
+
+    let appointments = JSON.parse(localStorage.getItem('appointments')) || {};
+
+    function renderTimeSlots() {
+      const selectedDate = dateInput.value;
+      timeSlotsContainer.innerHTML = '';
+
+      timeSlots.forEach(time => {
+        const key = `${selectedDate}_${time}`;
+        const isBooked = appointments[key];
+
+        const slot = document.createElement('div');
+        slot.className = 'time-slot';
+        slot.textContent = time;
+
+        if (isBooked) {
+          slot.classList.add('booked');
+          slot.title = `Booked by ${isBooked.name}`;
+        } else {
+          slot.onclick = () => selectTimeSlot(time, slot);
+        }
+
+        timeSlotsContainer.appendChild(slot);
+      });
+    }
+
+    function selectTimeSlot(time, element) {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedTimeInput.value = time;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name  = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const date  = dateInput.value;
+      const time  = selectedTimeInput.value;
+
+      if (!time) return alert('Please select a time slot.');
+
+      const key = `${date}_${time}`;
+      if (appointments[key]) return alert('This slot is already booked!');
+
+      appointments[key] = { name, email, date, time };
+      localStorage.setItem('appointments', JSON.stringify(appointments));
+
+      const templateParams = { name, email, date, time };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+          alert(`Appointment booked for ${date} at ${time}!\nA confirmation e-mail has been sent to ${email}.`);
+        })
+        .catch(err => {
+          console.error('EmailJS error:', err);
+          alert(`Appointment saved locally, but e-mail not sent.\nError: ${err.text || err}`);
+        });
+
+      form.reset();
+      dateInput.value = today;
+      selectedTimeInput.value = '';
+      renderTimeSlots();
+      renderAppointments();
+    });
+
+    function renderAppointments() {
+      appointmentList.innerHTML = '';
+      const booked = Object.values(appointments);
+
+      if (!booked.length) {
+        appointmentList.innerHTML = '<p class="no-appointments">No appointments booked yet.</p>';
+        return;
+      }
+
+      booked.sort((a,b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
+
+      booked.forEach(app => {
+        const div = document.createElement('div');
+        div.className = 'appointment-item';
+        div.innerHTML = `
+          <strong>${app.name}</strong> (${app.email})<br>
+          <small>${app.date} at ${app.time}</small>
+        `;
+        appointmentList.appendChild(div);
+      });
+    }
+
+    dateInput.addEventListener('change', renderTimeSlots);
+    renderTimeSlots();
+    renderAppointments();
+  </script>
+</body>
+</html>
