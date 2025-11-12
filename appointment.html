@@ -1,52 +1,290 @@
 <!DOCTYPE html>
-if (!document.getElementById('fullName')) throw 'fullName missing';
-if (!document.getElementById('email')) throw 'email missing';
-if (!document.getElementById('service')) throw 'service missing';
-if (!document.getElementById('date')) throw 'date missing';
-if (!document.getElementById('time')) throw 'time missing';
-});
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointment Booker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-// Test 2: Action is FormSubmit to correct address
-t('form-action', () => {
-if (!form.action.includes('formsubmit.co/amulya.dhal@gmail.com')) throw 'action incorrect';
-});
+    body {
+      background: #f4f7fa;
+      color: #333;
+      padding: 20px;
+    }
 
-// Test 3: Unique IDs (no duplicates for submit/reset)
-t('unique-buttons', () => {
-const ids = ['submitBtn','resetBtn'];
-ids.forEach(id => {
-if (document.querySelectorAll(`#${id}`).length !== 1) throw `duplicate id ${id}`;
-});
-});
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
 
-// Test 4: Date min is today or later
-t('date-min', () => {
-const min = document.getElementById('date').min;
-if (!/\d{4}-\d{2}-\d{2}/.test(min)) throw 'date min not set';
-});
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-// Test 5: Reset clears values
-t('reset-clears', () => {
-const name = document.getElementById('fullName');
-name.value = 'Temp';
-form.reset();
-if (name.value !== '') throw 'reset failed';
-});
+    h1 { font-size: 1.8rem; }
+    h2 { margin: 20px 0 15px; font-size: 1.4rem; color: #2563eb; }
 
-const allPass = results.every(r => r.ok);
-if (allPass) {
-console.log('%cAll self-tests passed', 'color:green;font-weight:bold');
-const badge = document.getElementById('testBadge');
-if (badge) badge.style.display = 'inline-block';
-} else {
-console.group('Self-test results');
-results.forEach(r => {
-if (r.ok) console.log('✅', r.name);
-else console.error('❌', r.name, '-', r.err);
-});
-console.groupEnd();
-}
-})();
+    .form-section, .appointments {
+      padding: 25px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input, select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .time-slot {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .time-slot.booked {
+      background: #fee2e2;
+      color: #991b1b;
+      cursor: not-allowed;
+      border-color: #fecaca;
+    }
+
+    .time-slot.selected {
+      background: #dbeafe;
+      border-color: #2563eb;
+      color: #1e40af;
+    }
+
+    .appointment-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .appointment-item {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #2563eb;
+      font-size: 0.95rem;
+    }
+
+    .no-appointments {
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .time-slots {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Book an Appointment</h1>
+  </header>
+
+  <div class="form-section">
+    <h2>Schedule Your Visit</h2>
+    <form id="bookingForm">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div>
+        <label for="date">Date</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div>
+        <label>Select Time Slot</label>
+        <div class="time-slots" id="timeSlots"></div>
+      </div>
+
+      <input type="hidden" id="selectedTime" />
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+
+  <div class="appointments">
+    <h2>Your Appointments</h2>
+    <div id="appointmentList"></div>
+  </div>
+</div>
+
+<script>
+  const timeSlots = [
+    "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+    "14:00", "14:30", "15:00", "15:30", "16:00", "16:30"
+  ];
+
+  const form = document.getElementById('bookingForm');
+  const dateInput = document.getElementById('date');
+  const timeSlotsContainer = document.getElementById('timeSlots');
+  const selectedTimeInput = document.getElementById('selectedTime');
+  const appointmentList = document.getElementById('appointmentList');
+
+  // Set min date to today
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+  dateInput.value = today;
+
+  // Load appointments from localStorage
+  let appointments = JSON.parse(localStorage.getItem('appointments')) || {};
+
+  // Render time slots
+  function renderTimeSlots() {
+    const selectedDate = dateInput.value;
+    timeSlotsContainer.innerHTML = '';
+
+    timeSlots.forEach(time => {
+      const key = ${selectedDate}_${time};
+      const isBooked = appointments[key];
+
+      const slot = document.createElement('div');
+      slot.className = 'time-slot';
+      slot.textContent = time;
+
+      if (isBooked) {
+        slot.classList.add('booked');
+        slot.title = Booked by ${isBooked.name};
+      } else {
+        slot.onclick = () => selectTimeSlot(time, slot);
+      }
+
+      timeSlotsContainer.appendChild(slot);
+    });
+  }
+
+  // Select time slot
+  function selectTimeSlot(time, element) {
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+    element.classList.add('selected');
+    selectedTimeInput.value = time;
+  }
+
+  // Handle form submit
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const date = dateInput.value;
+    const time = selectedTimeInput.value;
+
+    if (!time) {
+      alert('Please select a time slot.');
+      return;
+    }
+
+    const key = ${date}_${time};
+    if (appointments[key]) {
+      alert('This time slot is already booked!');
+      return;
+    }
+
+    // Save appointment
+    appointments[key] = { name, email, date, time };
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+
+    alert(Appointment booked for ${date} at ${time}!);
+    form.reset();
+    dateInput.value = today;
+    selectedTimeInput.value = '';
+    renderTimeSlots();
+    renderAppointments();
+  });
+
+  // Render all appointments
+  function renderAppointments() {
+    appointmentList.innerHTML = '';
+    const booked = Object.values(appointments);
+
+    if (booked.length === 0) {
+      appointmentList.innerHTML = '<p class="no-appointments">No appointments booked yet.</p>';
+      return;
+    }
+
+    booked.sort((a, b) => ${a.date} ${a.time}.localeCompare(${b.date} ${b.time}));
+
+    booked.forEach(app => {
+      const div = document.createElement('div');
+      div.className = 'appointment-item';
+      div.innerHTML = `
+        <strong>${app.name}</strong> (${app.email})<br>
+        <small>${app.date} at ${app.time}</small>
+      `;
+      appointmentList.appendChild(div);
+    });
+  }
+
+  // Initial render
+  dateInput.addEventListener('change', renderTimeSlots);
+  renderTimeSlots();
+  renderAppointments();
 </script>
+
 </body>
 </html>
