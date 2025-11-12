@@ -1,119 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book an Appointment</title>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+    // Receiving Form Data
+    $name     = htmlspecialchars($_POST['name']);
+    $email    = htmlspecialchars($_POST['email']);
+    $phone    = htmlspecialchars($_POST['phone']);
+    $service  = htmlspecialchars($_POST['service']);
+    $date     = htmlspecialchars($_POST['date']);
+    $message  = htmlspecialchars($_POST['message']);
+
+    // Email where data will be received
+    $to = "contact@debavastu.com";
+
+    // Email Subject
+    $subject = "New Appointment Booking - DeBaVastu";
+
+    // Email Body
+    $body = "
+New Appointment Booking Received:
+
+Name: $name
+Email: $email
+Phone: $phone
+Service: $service
+Preferred Date: $date
+Message: $message
+    ";
+
+    // Email Headers
+    $headers = "From: $email \r\n";
+    $headers .= "Reply-To: $email \r\n";
+
+    // Sending Email
+    if (mail($to, $subject, $body, $headers)) {
+
+        // Optional: Send confirmation to the user
+        $confirm_subject = "Your Appointment Request Received";
+        $confirm_body = "
+Dear $name,
+
+Thank you for booking an appointment with DeBaVastu.
+We have received your request and will contact you shortly.
+
+Details Submitted:
+Service: $service
+Date: $date
+
+Regards,
+DeBaVastu Team
+        ";
+        mail($email, $confirm_subject, $confirm_body, "From: contact@debavastu.com");
+
+        // Redirect after success
+        echo "<h2 style='text-align:center;color:green;'>✅ Appointment Request Sent Successfully!</h2>";
+    } else {
+        echo "<h2 style='text-align:center;color:red;'>❌ Error sending appointment request. Please try again.</h2>";
     }
-
-    .container {
-      width: 90%;
-      max-width: 600px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #222;
-      letter-spacing: 1px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    input, select, textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 7px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-      font-size: 15px;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    button {
-      margin-top: 20px;
-      background: #007bff;
-      color: #fff;
-      font-size: 17px;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
-      border-radius: 6px;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    .success {
-      color: green;
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .error {
-      color: red;
-      text-align: center;
-      margin-top: 15px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <h2>Book an Appointment</h2>
-
-    <form action="sendmail.php" method="POST">
-      
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-      <label for="phone">Mobile Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
-             pattern="[0-9]{10}" title="Enter a valid 10-digit number" required>
-
-      <label for="service">Select Service</label>
-      <select id="service" name="service" required>
-        <option value="">-- Choose a Service --</option>
-        <option value="Vastu Consultation">Vastu Consultation</option>
-        <option value="Numerology">Numerology</option>
-        <option value="Astrology">Astrology</option>
-        <option value="Healing Service">Healing Service</option>
-      </select>
-
-      <label for="date">Select Date</label>
-      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>">
-
-      <label for="message">Message (Optional)</label>
-      <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
-
-      <button type="submit">Book Appointment</button>
-
-    </form>
-  </div>
-</body>
-</html>
+}
+?>
