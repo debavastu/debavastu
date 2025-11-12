@@ -1,40 +1,119 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
 
-    // Collect form data safely
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $service = htmlspecialchars($_POST['service']);
-    $date = htmlspecialchars($_POST['date']);
-    $message = htmlspecialchars($_POST['message']);
-
-    // Email configuration
-    $to = "contact@debavastu.com";
-    $subject = "New Appointment Booking from $name";
-    $headers = "From: noreply@debavastu.com\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-    // Email content
-    $body = "
-    <h2>New Appointment Request</h2>
-    <p><strong>Name:</strong> $name</p>
-    <p><strong>Email:</strong> $email</p>
-    <p><strong>Phone:</strong> $phone</p>
-    <p><strong>Service:</strong> $service</p>
-    <p><strong>Date:</strong> $date</p>
-    <p><strong>Time:</strong> $time</p>
-    <p><strong>Message:</strong><br>$message</p>
-    <hr>
-    <p>Sent from: <a href='http://debavastu.com/'>debavastu.com</a></p>
-    ";
-
-    // Send email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<div class='success'>Thank you, $name! Your appointment request has been sent successfully.</div>";
-    } else {
-        echo "<div class='error'>Sorry, there was an error sending your request. Please try again later.</div>";
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
     }
-}
-?>
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #222;
+      letter-spacing: 1px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #007bff;
+      color: #fff;
+      font-size: 17px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Book an Appointment</h2>
+
+    <form action="sendmail.php" method="POST">
+      
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+             pattern="[0-9]{10}" title="Enter a valid 10-digit number" required>
+
+      <label for="service">Select Service</label>
+      <select id="service" name="service" required>
+        <option value="">-- Choose a Service --</option>
+        <option value="Vastu Consultation">Vastu Consultation</option>
+        <option value="Numerology">Numerology</option>
+        <option value="Astrology">Astrology</option>
+        <option value="Healing Service">Healing Service</option>
+      </select>
+
+      <label for="date">Select Date</label>
+      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>">
+
+      <label for="message">Message (Optional)</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
+
+      <button type="submit">Book Appointment</button>
+
+    </form>
+  </div>
+</body>
+</html>
