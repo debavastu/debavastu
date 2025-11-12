@@ -112,8 +112,19 @@
       <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
 
       <button type="submit">Book Appointment</button>
+<button id="submit">Book Appointment</button>
 
+  <script>
+    document.getElementById("submit").addEventListener("click", function() {
+      const email = "contact@debavastu.com"; // recipient email
+      const subject = encodeURIComponent("New Appointment Request");
+      const body = encodeURIComponent("Hello, I would like to book an appointment.\n\nName:\nPreferred Date:\nPreferred Time:");
+      
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    });
+  </script>
     </form>
   </div>
 </body>
 </html>
+
