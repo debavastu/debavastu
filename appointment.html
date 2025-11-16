@@ -1,280 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Appointment Booker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form - DebaVastu</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: #f4f7fa;
-      color: #333;
-      padding: 20px;
-    }
-
+<style>
+    body { font-family: Arial; background: #f5f5f5; }
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
+        max-width: 450px; margin: 40px auto; background: #fff;
+        padding: 25px 30px; border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    header {
-      background: #2563eb;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    input, textarea, button {
+        width: 100%; padding: 12px; margin-bottom: 15px;
+        border-radius: 6px; border: 1px solid #ccc; font-size: 15px;
     }
-
-    h1 { font-size: 1.8rem; }
-    h2 { margin: 20px 0 15px; font-size: 1.4rem; color: #2563eb; }
-
-    .form-section, .appointments { padding: 25px; }
-    form { display: grid; gap: 15px; }
-
-    label {
-      font-weight: 600;
-      margin-bottom: 5px;
-      display: block;
-    }
-
-    input {
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 100%;
-    }
-
     button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.3s;
+        background: #007bff; color: #fff; border: none;
+        cursor: pointer; font-size: 17px;
     }
+    button:hover { background: #0056b3; }
+    #msg { display: none; color: green; font-weight: bold; text-align: center; }
+</style>
 
-    button:hover { background: #1d4ed8; }
+<script>
+async function submitForm(event) {
+    event.preventDefault();
 
-    .time-slots {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        mobile: document.getElementById("mobile").value,
+        message: document.getElementById("message").value
+    };
 
-    .time-slot {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .time-slot.booked {
-      background: #fee2e2;
-      color: #991b1b;
-      cursor: not-allowed;
-      border-color: #fecaca;
-    }
-
-    .time-slot.selected {
-      background: #dbeafe;
-      border-color: #2563eb;
-      color: #1e40af;
-    }
-
-    .appointment-list { margin-top: 20px; display: grid; gap: 12px; }
-    .appointment-item {
-      background: #f8fafc;
-      padding: 15px;
-      border-radius: 8px;
-      border-left: 4px solid #2563eb;
-      font-size: 0.95rem;
-    }
-
-    .no-appointments {
-      color: #888;
-      font-style: italic;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .time-slots { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <h1>Book an Appointment</h1>
-    </header>
-
-    <div class="form-section">
-      <h2>Schedule Your Visit</h2>
-      <form id="bookingForm">
-        <div>
-          <label for="name">Full Name</label>
-          <input type="text" id="name" required />
-        </div>
-
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
-        </div>
-
-        <div>
-          <label for="date">Date</label>
-          <input type="date" id="date" required />
-        </div>
-
-        <div>
-          <label>Select Time Slot</label>
-          <div class="time-slots" id="timeSlots"></div>
-        </div>
-
-        <input type="hidden" id="selectedTime" />
-        <button type="submit">Book Appointment</button>
-      </form>
-    </div>
-
-    <div class="appointments">
-      <h2>Your Appointments</h2>
-      <div id="appointmentList"></div>
-    </div>
-  </div>
-
-  <script>
-    const EMAILJS_USER_ID   = '_Nz0uw3fjO1dggP2C';
-    const EMAILJS_SERVICE_ID = 'service_dea8439';
-    const EMAILJS_TEMPLATE_ID = 'template_xrogxm8';
-
-    emailjs.init('_Nz0uw3fjO1dggP2C'); // your Public Key
-
-    const timeSlots = [
-      "09:00","09:30","10:00","10:30","11:00","11:30",
-      "14:00","14:30","15:00","15:30","16:00","16:30"
-    ];
-
-    const form = document.getElementById('bookingForm');
-    const dateInput = document.getElementById('date');
-    const timeSlotsContainer = document.getElementById('timeSlots');
-    const selectedTimeInput = document.getElementById('selectedTime');
-    const appointmentList = document.getElementById('appointmentList');
-
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.min = today;
-    dateInput.value = today;
-
-    let appointments = JSON.parse(localStorage.getItem('appointments')) || {};
-
-    function renderTimeSlots() {
-      const selectedDate = dateInput.value;
-      timeSlotsContainer.innerHTML = '';
-
-      timeSlots.forEach(time => {
-        const key = `${selectedDate}_${time}`;
-        const isBooked = appointments[key];
-
-        const slot = document.createElement('div');
-        slot.className = 'time-slot';
-        slot.textContent = time;
-
-        if (isBooked) {
-          slot.classList.add('booked');
-          slot.title = `Booked by ${isBooked.name}`;
-        } else {
-          slot.onclick = () => selectTimeSlot(time, slot);
-        }
-
-        timeSlotsContainer.appendChild(slot);
-      });
-    }
-
-    function selectTimeSlot(time, element) {
-      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-      element.classList.add('selected');
-      selectedTimeInput.value = time;
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const name  = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const date  = dateInput.value;
-      const time  = selectedTimeInput.value;
-
-      if (!time) return alert('Please select a time slot.');
-
-      const key = `${date}_${time}`;
-      if (appointments[key]) return alert('This slot is already booked!');
-
-      appointments[key] = { name, email, date, time };
-      localStorage.setItem('appointments', JSON.stringify(appointments));
-
-      const templateParams = { name, email, date, time };
-
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-        .then(() => {
-          alert(`Appointment booked for ${date} at ${time}!\nA confirmation e-mail has been sent to ${email}.`);
-        })
-        .catch(err => {
-          console.error('EmailJS error:', err);
-          alert(`Appointment saved locally, but e-mail not sent.\nError: ${err.text || err}`);
-        });
-
-      form.reset();
-      dateInput.value = today;
-      selectedTimeInput.value = '';
-      renderTimeSlots();
-      renderAppointments();
+    const response = await fetch("https://script.google.com/macros/s/AKfycbw3Wfsh7yGLeCOcROPiGk_06O9z0CG-ZHkk4y6aeW5O2gMd_3eQvyaORwEYUCoF4arM/exec", {
+        method: "POST",
+        mode: "no-cors",
+        contentType: "application/json",
+        body: JSON.stringify(formData)
     });
 
-    function renderAppointments() {
-      appointmentList.innerHTML = '';
-      const booked = Object.values(appointments);
+    document.getElementById("msg").style.display = "block";
+    document.getElementById("contactForm").reset();
+}
+</script>
 
-      if (!booked.length) {
-        appointmentList.innerHTML = '<p class="no-appointments">No appointments booked yet.</p>';
-        return;
-      }
+</head>
+<body>
 
-      booked.sort((a,b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
+<div class="container">
+    <h2>Contact / Appointment Form</h2>
 
-      booked.forEach(app => {
-        const div = document.createElement('div');
-        div.className = 'appointment-item';
-        div.innerHTML = `
-          <strong>${app.name}</strong> (${app.email})<br>
-          <small>${app.date} at ${app.time}</small>
-        `;
-        appointmentList.appendChild(div);
-      });
-    }
+    <form id="contactForm" onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="mobile" placeholder="Mobile (10 digits)" pattern="[0-9]{10}" required>
+        <textarea id="message" placeholder="Your Message..." rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
-    dateInput.addEventListener('change', renderTimeSlots);
-    renderTimeSlots();
-    renderAppointments();
-  </script>
+    <p id="msg">Your message has been sent successfully!</p>
+</div>
+
 </body>
 </html>
-
