@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DebaVastu — Yoga & Wellness</title>
+  <meta name="description" content="Therapeutic & customized Yoga programs, meditation, pranayama and wellness consultation by DebaVastu.">
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{--accent:#0b6e4f}
+    body{font-family:Poppins,Arial,Helvetica,sans-serif;color:#222;margin:0}
+    .site-header{background:var(--accent);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+    .site-header .brand{display:flex;gap:12px;align-items:center}
+    .hero{background:url('img/yoga-hero.jpg') center/cover no-repeat;padding:80px 0;color:#fff;text-align:center}
+    .container{max-width:1150px;margin:0 auto;padding:28px}
+    h1,h2{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(1,1fr)}}
+    .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 10px 30px rgba(2,2,2,0.06)}
+    .btn-primary{background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:none}
+    form input,form select,form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-top:8px}
+    footer{background:#0b0b0b;color:#fff;padding:20px;text-align:center;margin-top:30px}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <a href="/"><img src="img/logo.png" alt="DebaVastu" style="height:52px"></a>
+      <div>
+        <strong>DEBAVASTU</strong><div style="font-size:13px">Yoga & Wellness</div>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="/" style="color:#fff;margin-right:12px;text-decoration:none">Home</a>
+      <a href="/services.html" style="color:#fff;margin-right:12px;text-decoration:none">Services</a>
+      <a href="/contact.html" style="color:#fff;text-decoration:none">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="Yoga hero">
+    <div class="container">
+      <h1>Therapeutic Yoga • Mindful Living</h1>
+      <p style="max-width:820px;margin:12px auto;opacity:0.95">Personalized yoga programs, pranayama, guided meditation and therapeutic sequences for pain relief, stress management and rehabilitation.</p>
+      <a class="btn-primary" href="#book">Book a Session</a>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section aria-labelledby="why-title">
+      <h2 id="why-title">Why choose our Yoga & Wellness programs</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px">
+        <div class="card">
+          <h3>Qualified Instructors</h3>
+          <p>Certified therapists and experienced yoga teachers create safe, effective plans tailored to your needs (back pain, arthritis, anxiety, postural correction).</p>
+        </div>
+        <div class="card">
+          <h3>Evidence-informed Methods</h3>
+          <p>We combine classical yoga, pranayama and modern physiotherapy-informed practices for measurable results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:26px" aria-labelledby="programs">
+      <h2 id="programs">Programs & Packages</h2>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h4>Therapeutic Yoga — 4 sessions</h4>
+          <p class="small">Assessment + customized sequences. Ideal for chronic pain & rehabilitation.</p>
+          <p><strong>₹1499</strong></p>
+        </div>
+        <div class="card">
+          <h4>Stress & Sleep Program — 6 sessions</h4>
+          <p class="small">Breathwork, guided relaxation & sleep hygiene routines.</p>
+          <p><strong>₹1999</strong></p>
+        </div>
+        <div class="card">
+          <h4>Monthly Wellness — Unlimited classes</h4>
+          <p class="small">Group classes plus 1 private consult each month.</p>
+          <p><strong>₹3499 / month</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:26px" aria-labelledby="teachers">
+      <h2 id="teachers">Meet our Teachers</h2>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <img src="img/team1.jpg" alt="" style="width:100%;border-radius:8px 8px 0 0;margin-bottom:10px">
+          <h4>Dr. S. Mehta (Yoga Therapist)</h4>
+          <p class="small">M.Sc. Yoga Therapy — specializes in back care & stress management.</p>
+        </div>
+        <div class="card">
+          <img src="img/team2.jpg" alt="" style="width:100%;border-radius:8px 8px 0 0;margin-bottom:10px">
+          <h4>Priya Nair (Meditation Guide)</h4>
+          <p class="small">10+ years teaching mindfulness & breathwork for mental wellness.</p>
+        </div>
+        <div class="card">
+          <img src="img/team3.jpg" alt="" style="width:100%;border-radius:8px 8px 0 0;margin-bottom:10px">
+          <h4>Rahul Das (Therapeutic Yoga)</h4>
+          <p class="small">Focused on mobility, ergonomics & workplace wellness.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" style="margin-top:28px;display:grid;grid-template-columns:1fr 420px;gap:24px">
+      <div>
+        <h2>Class Schedule & FAQs</h2>
+        <div class="card" style="margin-top:12px">
+          <h4>Typical Weekly Schedule</h4>
+          <ul>
+            <li>Mon/Wed/Fri — 6:30am — Sunrise Flow (All levels)</li>
+            <li>Tue/Thu — 7:00pm — Restorative & Breathwork</li>
+            <li>Sat — 9:00am — Therapeutic Workshop (by booking)</li>
+          </ul>
+          <h4 style="margin-top:12px">FAQs</h4>
+          <p class="small"><strong>Do I need experience?</strong> No — we offer beginner-friendly classes and therapeutic private sessions.</p>
+          <p class="small"><strong>Can I book online?</strong> Yes — use the form to request a preferred date and package.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Book a Session</h3>
+          <form id="bookingForm">
+            <label for="b_name">Full name</label>
+            <input id="b_name" name="name" required>
+
+            <label for="b_phone">Phone (WhatsApp)</label>
+            <input id="b_phone" name="phone" placeholder="919XXXXXXXXX" required>
+
+            <label for="b_email">Email</label>
+            <input id="b_email" type="email" name="email">
+
+            <label for="b_service">Program</label>
+            <select id="b_service" name="service">
+              <option value="Therapeutic Yoga">Therapeutic Yoga — ₹1499</option>
+              <option value="Stress & Sleep">Stress & Sleep — ₹1999</option>
+              <option value="Monthly Wellness">Monthly Wellness — ₹3499</option>
+              <option value="Private Session">Private Session — ₹799</option>
+            </select>
+
+            <label for="b_date">Preferred date</label>
+            <input id="b_date" type="date" name="date">
+
+            <label for="b_msg">Message (optional)</label>
+            <textarea id="b_msg" name="message" placeholder="Tell us briefly what you'd like to work on..."></textarea>
+
+            <button id="bookBtn" type="submit" class="btn-primary" style="width:100%;margin-top:12px">Request & Pay (optional)</button>
+            <div style="font-size:13px;color:#666;margin-top:8px">You will receive WhatsApp & email confirmation. Payments via Razorpay.</div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container small">© 2025 DebaVastu • Yoga & Wellness — Balance your body, calm your mind</div>
+  </footer>
+
+  <!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+  (function(){
+    try{ emailjs.init('dkxgwOwsd0z7BMPyo'); }catch(e){}
+    const form = document.getElementById('bookingForm');
+    const btn = document.getElementById('bookBtn');
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(btn.disabled) return; btn.disabled=true; btn.innerText='Processing...';
+      const booking = {
+        name: document.getElementById('b_name').value.trim(),
+        phone: document.getElementById('b_phone').value.trim(),
+        email: document.getElementById('b_email').value.trim(),
+        service: document.getElementById('b_service').value,
+        date: document.getElementById('b_date').value,
+        message: document.getElementById('b_msg').value.trim()
+      };
+      // simple validation
+      if(!booking.name || !booking.phone){ alert('Please enter name & phone'); btn.disabled=false; btn.innerText='Request & Pay (optional)'; return; }
+      // email notify (non-blocking)
+      try{ await emailjs.send('service_dea8439','template_xrogxm8',{
+        from_name:booking.name, from_email:booking.email, phone:booking.phone, service:booking.service, preferred_date:booking.date, message:booking.message
+      }); }catch(e){console.warn('emailjs',e)}
+
+      // save fallback
+      try{ const arr=JSON.parse(localStorage.getItem('deba_bookings')||'[]'); arr.unshift(Object.assign({created:new Date().toISOString()},booking)); localStorage.setItem('deba_bookings',JSON.stringify(arr)); }catch(e){ }
+
+      // open whatsapp to owner
+      try{ const txt=encodeURIComponent(`Yoga booking: ${booking.name} | ${booking.service} | ${booking.date} | ${booking.phone}`); window.open('https://wa.me/916372710439?text='+txt,'_blank'); }catch(e){}
+
+      alert('Request received. We will contact you to confirm the session.');
+      form.reset(); btn.disabled=false; btn.innerText='Request & Pay (optional)';
+    });
+  })();
+  </script>
+</body>
+</html>
