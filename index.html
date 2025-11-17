@@ -18,357 +18,189 @@
   <meta property="og:url" content="https://debavastu.com/">
   <meta property="og:image" content="https://debavastu.com/img/og-image.jpg">
 
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DebaVastu – Vedic Solutions">
-  <meta name="twitter:description" content="Vastu, Astrology, Numerology, Tarot & Healing—book consultations online.">
-
-  <!-- Icons / PWA manifest -->
+  <!-- Icons -->
   <link rel="icon" href="img/favicon.png">
-  <link rel="manifest" href="/manifest.json">
 
-  <!-- Font Awesome (icons) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- Styles -->
   <style>
-    /* small adaptive stylesheet: keeps page compact and professional */
-    :root { --accent: #0b6e4f; --muted:#666; }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#222;line-height:1.5}
-    header{background:var(--accent);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
-    header .brand{display:flex;align-items:center;gap:12px}
-    header img{height:56px}
-    header .contact{font-weight:600}
-    .container{max-width:1150px;margin:0 auto;padding:30px 16px}
-    .hero{background:url('img/slider.jpg') center/cover no-repeat;color:#fff;padding:90px 0;text-align:center}
-    .hero h1{font-size:40px;margin:0 0 18px}
-    .hero p{max-width:820px;margin:0 auto 20px;color:#f6f6f6}
-    .btn{display:inline-block;padding:12px 20px;border-radius:8px;background:#ffd700;color:#000;text-decoration:none;font-weight:700}
-    /* services */
-    .services{padding:56px 0;background:#fbfbfc}
-    .services h2{text-align:center;margin:0 0 12px;font-size:30px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
-    .card{background:#fff;border-radius:12px;padding:20px;border:1px solid #e9e9e9;box-shadow:0 8px 20px rgba(0,0,0,0.04);text-align:center}
-    .card i{font-size:36px;color:var(--accent);margin-bottom:10px}
-    .card h3{margin:0 0 10px}
-    .two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    @media(max-width:980px){.two-col{grid-template-columns:1fr}}
-    /* appointment form */
-    form label{font-size:14px;color:var(--muted);display:block;margin-top:6px}
-    input,textarea,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid #dcdcdc;margin-top:6px}
-    textarea{min-height:120px;resize:vertical}
-    .small{font-size:13px;color:var(--muted)}
-    footer{background:#0b0b0b;color:#fff;padding:20px;text-align:center;margin-top:32px}
-    /* admin link */
-    .admin-link{position:fixed;right:12px;bottom:12px;background:#111;color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;z-index:999}
+    :root { --accent:#0b6e4f; --gold:#ffd700; --muted:#666; }
+    *{box-sizing:border-box} body{font-family:Inter,Arial,sans-serif;margin:0;color:#222;line-height:1.5}
+
+    /* HEADER */
+    header{background:#fff;box-shadow:0 4px 18px rgba(0,0,0,0.06);padding:10px 20px;position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between}
+    header img{height:58px}
+    nav a{margin:0 12px;color:#333;font-weight:600;text-decoration:none}
+    nav a:hover{color:var(--accent)}
+
+    /* HERO SLIDER */
+    .hero-slider{position:relative;overflow:hidden;height:440px}
+    .slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s}
+    .slide.active{opacity:1}
+    .hero-content{text-align:center;color:#fff;padding-top:140px;text-shadow:0 3px 8px rgba(0,0,0,0.6)}
+    .hero-content h1{font-size:44px;margin:0}
+    .btn{display:inline-block;padding:12px 20px;border-radius:8px;background:var(--gold);color:#000;text-decoration:none;font-weight:700;margin-top:16px}
+
+    /* SERVICES */
+    .services{padding:60px 0;background:#fbfbfb}
+    .services h2{text-align:center;margin-bottom:10px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+    .card{background:#fff;border-radius:12px;padding:20px;border:1px solid #eaeaea;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    .card i{font-size:36px;color:var(--accent)}
+
+    /* ABOUT */
+    .about{padding:60px 0}
+    .two-col{display:grid;grid-template-columns:1fr 400px;gap:30px}
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
+
+    /* APPOINTMENT */
+    form label{font-size:14px;color:var(--muted);margin-top:6px;display:block}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin-top:6px}
+    textarea{min-height:120px}
+
+    /* TESTIMONIALS */
+    .testimonials{padding:60px 0;background:#fff}
+
+    /* FAQ */
+    .faq{padding:60px 0}
+    details{background:#fff;padding:14px;border-radius:10px;border:1px solid #eee;margin-bottom:10px}
+
+    /* FOOTER */
+    footer{background:#0b0b0b;color:#fff;text-align:center;padding:28px;margin-top:40px}
+
+    /* ADMIN LINK */
+    .admin-link{position:fixed;right:14px;bottom:14px;background:#111;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none}
   </style>
 </head>
 <body>
 
-  <!-- header -->
-  <header>
-    <div class="brand">
-      <a href="/"><img src="img/logo.png" alt="DebaVastu logo"></a>
-      <div>
-        <div style="font-weight:700">DEBAVASTU</div>
-        <div style="font-size:13px;color:#fff">The Complete Vedic Solutions</div>
-      </div>
+<header>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="img/logo.png" alt="DebaVastu">
+    <div>
+      <strong style="font-size:20px">DEBAVASTU</strong><br>
+      <span style="font-size:13px;color:#666">Complete Vedic Solutions</span>
     </div>
-    <div class="contact">
-      <i class="fa fa-phone"></i> <a href="tel:+916372710439" style="color:#fff;text-decoration:none">+91 6372710439</a>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider" id="home">
+  <div class="slide active" style="background-image:url('img/slider.jpg')"></div>
+  <div class="slide" style="background-image:url('img/blog1.jpg')"></div>
+  <div class="slide" style="background-image:url('img/blog2.jpg')"></div>
+  <div class="hero-content">
+    <h1>Balance Your Space. Align Your Life.</h1>
+    <p>Vastu • Astrology • Numerology • Tarot • Healing • Yoga & Wellness</p>
+    <a href="#appointment" class="btn">Book Appointment</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="container grid">
+    <div class="card"><i class="fa fa-compass"></i><h3>Vastu Consultation</h3></div>
+    <div class="card"><i class="fa fa-star"></i><h3>Astrology</h3></div>
+    <div class="card"><i class="fa fa-calculator"></i><h3>Numerology</h3></div>
+    <div class="card"><i class="fa fa-suitcase"></i><h3>Tarot Reading</h3></div>
+    <div class="card"><i class="fa fa-hand-holding-heart"></i><h3>Healing Therapies</h3></div>
+    <div class="card"><i class="fa fa-person-walking"></i><h3>Yoga & Wellness</h3></div>
+  </div>
+</section>
+
+<!-- ABOUT + APPOINTMENT -->
+<section class="about" id="about">
+  <div class="container two-col">
+
+    <div>
+      <h2>About DebaVastu</h2>
+      <p>DebaVastu blends ancient Vedic knowledge with modern practical solutions for prosperity, harmony and wellness.</p>
+
+      <h3>Why Choose Us</h3>
+      <ul>
+        <li>Certified Vastu & Astro Consultants</li>
+        <li>Online Consultation — Worldwide</li>
+        <li>No Structural Changes Required</li>
+        <li>Secure Payments • SMS & Email Alerts</li>
+      </ul>
     </div>
-  </header>
 
-  <!-- hero -->
-  <section class="hero" aria-label="Hero">
-    <div class="container">
-      <h1>Balance your space. Align your life.</h1>
-      <p>Professional Vastu, Astrology, Numerology, Tarot readings, Healing therapies and tailored Yoga programs — online and on-site consultations.</p>
-      <a class="btn" href="#appointment">Book Appointment</a>
-    </div>
-  </section>
+    <aside id="appointment" style="background:#fff;padding:20px;border-radius:12px;border:1px solid #eee">
+      <h3>Book Appointment</h3>
+      <form id="bookingForm">
+        <label>Name</label><input name="name" required>
+        <label>Email</label><input type="email" name="email" required>
+        <label>Phone</label><input name="phone" required>
+        <label>Service</label>
+        <select name="service" required>
+          <option value="">Select</option>
+          <option>Vastu</option>
+          <option>Astrology</option>
+          <option>Numerology</option>
+          <option>Tarot</option>
+          <option>Healing</option>
+          <option>Yoga</option>
+        </select>
+        <label>Date</label><input type="date" name="date" required>
+        <label>Message</label><textarea name="msg"></textarea>
+        <button class="btn" style="width:100%;margin-top:10px">Submit</button>
+      </form>
+    </aside>
 
-  <!-- services -->
-  <section class="container services" id="services">
-    <h2>Our Services</h2>
-    <div class="grid" role="list">
-      <div class="card" role="listitem">
-        <i class="fa fa-compass"></i>
-        <h3>Vastu Consultation</h3>
-        <p class="small">Site visit & measurement • Plan design • Remedial Vastu • Industrial & residential solutions</p>
-      </div>
-      <div class="card" role="listitem">
-        <i class="fa fa-star"></i>
-        <h3>Astrology</h3>
-        <p class="small">Kundli & transit analysis • Career & finance • Marriage & compatibility • Muhurat selection</p>
-      </div>
-      <div class="card" role="listitem">
-        <i class="fa fa-calculator"></i>
-        <h3>Numerology</h3>
-        <p class="small">Name analysis • Business numbers • Lucky numbers • Graph-based remedies</p>
-      </div>
-      <div class="card" role="listitem">
-        <i class="fa fa-suitcase"></i>
-        <h3>Tarot Readings</h3>
-        <p class="small">Clarity readings • Relationship & career insights • Decision support</p>
-      </div>
-      <div class="card" role="listitem">
-        <i class="fa fa-hand-holding-heart"></i>
-        <h3>Healing Therapies</h3>
-        <p class="small">Reiki • Pranic healing • Acupressure • Naturopathy & Homeopathy referrals</p>
-      </div>
-      <div class="card" role="listitem">
-        <i class="fa fa-person-walking"></i>
-        <h3>Yoga & Wellness</h3>
-        <p class="small">Therapeutic & disease-specific yoga • Meditation • Customized plans</p>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- two column area: about + appointment form -->
-  <section class="container" aria-label="About & Appointment" style="padding-top:26px;padding-bottom:26px">
-    <div class="two-col">
-      <div>
-        <h2>About DebaVastu</h2>
-        <p class="small">DebaVastu blends ancient Vedic knowledge with practical, modern solutions focused on well-being, prosperity and harmony. Our certified consultants provide practical, easy-to-implement remedies and online guidance worldwide.</p>
-
-        <h3 style="margin-top:18px">Why choose us</h3>
-        <ul class="small" style="padding-left:18px">
-          <li>Certified Vastu & Astro practitioners</li>
-          <li>Online consultations — worldwide</li>
-          <li>Remedies without structural changes</li>
-          <li>Secure payments & SMS/email confirmations</li>
-        </ul>
-      </div>
-
-      <aside style="background:#fff;padding:18px;border-radius:12px;border:1px solid #eee;box-shadow:0 10px 30px rgba(0,0,0,0.04)">
-        <h3 style="margin-top:0">Book Appointment</h3>
-
-        <form id="bookingForm" aria-label="Booking form">
-          <label for="b_name">Full name</label>
-          <input id="b_name" name="name" required>
-
-          <label for="b_email">Email</label>
-          <input id="b_email" type="email" required>
-
-          <label for="b_phone">Phone (WhatsApp)</label>
-          <input id="b_phone" required placeholder="919XXXXXXXXX">
-
-          <label for="b_service">Service</label>
-          <select id="b_service" required>
-            <option value="">Select</option>
-            <option value="Vastu">Vastu</option>
-            <option value="Astrology">Astrology</option>
-            <option value="Numerology">Numerology</option>
-            <option value="Tarot">Tarot</option>
-            <option value="Healing">Healing Therapies</option>
-            <option value="Yoga">Yoga & Wellness</option>
-          </select>
-
-          <label for="b_date">Preferred date</label>
-          <input id="b_date" type="date" required>
-
-          <label for="b_msg">Message</label>
-          <textarea id="b_msg" placeholder="Describe your requirement"></textarea>
-
-          <label style="margin-top:8px">Payment option</label>
-          <select id="b_payment">
-            <option value="0">Request callback — Pay later</option>
-            <option value="999">Pay ₹999 — Priority Consultation</option>
-            <option value="1999">Pay ₹1999 — Premium Consultation</option>
-          </select>
-
-          <div style="margin-top:12px">
-            <button id="bookBtn" type="submit" class="btn" style="width:100%">Submit & Pay (optional)</button>
-            <div class="small" style="margin-top:8px;color:#666">You will receive email + WhatsApp confirmation. Payments are processed via Razorpay (secure).</div>
-          </div>
-        </form>
-      </aside>
-    </div>
-  </section>
-
-  <!-- testimonials -->
-  <section class="container" style="padding-bottom:24px">
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
     <h2 style="text-align:center">Testimonials</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px">
-      <div class="card"><strong>R. Mishra</strong><p class="small">Vastu advice changed our home energy — business improved.</p></div>
-      <div class="card"><strong>Priya S</strong><p class="small">Astrology guidance helped me choose the right career move.</p></div>
-      <div class="card"><strong>A. Sharma</strong><p class="small">Therapeutic yoga relieved my chronic back pain.</p></div>
+    <div class="grid" style="margin-top:20px">
+      <div class="card">“Vastu advice improved my business.” — R. Mishra</div>
+      <div class="card">“Astrology helped me find clarity.” — Priya</div>
+      <div class="card">“Yoga sessions relieved my back pain.” — Sharma</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- gallery -->
-  <section class="container" style="padding-bottom:40px">
-    <h2 style="text-align:center">Gallery</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:14px">
-      <img src="img/blog1.jpg" alt="" style="width:100%;border-radius:8px">
-      <img src="img/blog2.jpg" alt="" style="width:100%;border-radius:8px">
-      <img src="img/blog3.jpg" alt="" style="width:100%;border-radius:8px">
-      <img src="img/contact-img.png" alt="" style="width:100%;border-radius:8px">
-    </div>
-  </section>
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <details><summary>Do you provide online consultations?</summary><p>Yes, worldwide on WhatsApp / Zoom.</p></details>
+    <details><summary>Are remedies simple?</summary><p>Yes, non-destructive & easy.</p></details>
+    <details><summary>Do you provide house plan corrections?</summary><p>Yes, architectural Vastu correction is available.</p></details>
+  </div>
+</section>
 
-  <!-- contact -->
-  <section class="container" style="padding-bottom:40px">
-    <h2>Contact</h2>
-    <p class="small">Phone: <a href="tel:+916372710439">+91 6372710439</a> • Email: <a href="mailto:contact@debavastu.com">contact@debavastu.com</a></p>
-    <p class="small">Address: Add your office address here (optional)</p>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="container" style="padding:40px 0">
+  <h2>Contact</h2>
+  <p>Phone: <a href="tel:+916372710439">+91 6372710439</a></p>
+  <p>Email: <a href="mailto:contact@debavastu.com">contact@debavastu.com</a></p>
+</section>
 
-  <footer>
-    <div class="container small">© 2025 DebaVastu • Designed to bring balance & wellbeing</div>
-  </footer>
+<footer>
+  © 2025 DebaVastu — Complete Vedic Solutions
+</footer>
 
-  <!-- admin quick link -->
-  <a class="admin-link" href="/admin.html" title="Admin">Admin</a>
+<a href="/admin.html" class="admin-link">Admin</a>
 
-  <!-- Scripts: EmailJS, Razorpay + booking handler, PWA registration -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+// Slider rotation
+let slides=document.querySelectorAll('.slide');let idx=0;
+setInterval(()=>{slides[idx].classList.remove('active');idx=(idx+1)%slides.length;slides[idx].classList.add('active')},5000);
+</script>
 
-  <script>
-  (function(){
-    // EmailJS init (your public key)
-    try { emailjs.init('dkxgwOwsd0z7BMPyo'); } catch(e){console.warn('EmailJS init failed',e)}
-
-    // Owner settings
-    const OWNER_WHATSAPP = '916372710439'; // international no without plus for wa.me
-
-    // Booking form elements
-    const form = document.getElementById('bookingForm');
-    const btn = document.getElementById('bookBtn');
-
-    // Helper: save to local fallback
-    function saveLocal(booking) {
-      try {
-        const arr = JSON.parse(localStorage.getItem('deba_bookings')||'[]');
-        arr.unshift(booking);
-        localStorage.setItem('deba_bookings', JSON.stringify(arr));
-      } catch(e){}
-    }
-
-    // Create Order on server (Netlify function). Returns {orderId, key, amount} or null
-    async function createOrderOnServer(payload) {
-      try {
-        const resp = await fetch('/.netlify/functions/create-order', {
-          method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        if(!resp.ok) return null;
-        return await resp.json();
-      } catch(e) { return null; }
-    }
-
-    // Open Razorpay checkout (client) using server-order
-    async function openRazorpay(orderResp, booking) {
-      if(!orderResp || !orderResp.orderId) { alert('Payment not available'); return false; }
-      const options = {
-        key: orderResp.key,
-        amount: orderResp.amount,
-        currency: orderResp.currency || 'INR',
-        name: 'DebaVastu',
-        description: booking.service + ' booking',
-        order_id: orderResp.orderId,
-        prefill: { name: booking.name, email: booking.email, contact: booking.phone },
-        handler: function(response){
-          // Payment success — server webhook will notify and SMS will be sent via server
-          alert('Payment successful. Confirmation will be sent via SMS and Email.');
-        },
-        modal: { escape: true },
-      };
-      const rzp = new Razorpay(options);
-      rzp.open();
-      return true;
-    }
-
-    // Handle form submit
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      if(btn.disabled) return;
-      btn.disabled=true; btn.innerText='Processing...';
-
-      const booking = {
-        name: document.getElementById('b_name').value.trim(),
-        email: document.getElementById('b_email').value.trim(),
-        phone: document.getElementById('b_phone').value.trim(),
-        service: document.getElementById('b_service').value,
-        date: document.getElementById('b_date').value,
-        message: document.getElementById('b_msg').value.trim(),
-        amount: Number(document.getElementById('b_payment').value || 0),
-        created: new Date().toISOString()
-      };
-
-      // basic validation
-      if(!booking.name || !booking.email || !booking.phone || !booking.service || !booking.date) {
-        alert('Please fill required fields.');
-        btn.disabled=false; btn.innerText='Submit & Pay (optional)';
-        return;
-      }
-
-      // 1) Send email via EmailJS
-      const templateParams = {
-        from_name: booking.name,
-        from_email: booking.email,
-        phone: booking.phone,
-        service: booking.service,
-        preferred_date: booking.date,
-        message: booking.message,
-        site: window.location.hostname
-      };
-
-      let emailOk = false;
-      try {
-        await emailjs.send('service_dea8439','template_xrogxm8',templateParams);
-        emailOk = true;
-      } catch(err) {
-        console.warn('EmailJS error',err);
-      }
-
-      // 2) Save local fallback
-      saveLocal(booking);
-
-      // 3) Call server to create booking record (optional)
-      try {
-        await fetch('/.netlify/functions/verify-payment', {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ type:'booking', booking })
-        });
-      } catch(e){ /* non-blocking */ }
-
-      // 4) WhatsApp instant alert to owner
-      try {
-        const text = encodeURIComponent(`New booking: ${booking.name} | ${booking.service} | ${booking.date} | ${booking.phone}`);
-        window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${text}`, '_blank');
-      } catch(e){}
-
-      // 5) Payment (optional)
-      if(booking.amount && booking.amount > 0) {
-        // create order via server
-        const orderResp = await createOrderOnServer({
-          name: booking.name, email: booking.email, phone: booking.phone,
-          service: booking.service, date: booking.date, slot: 'N/A', amount: booking.amount
-        });
-
-        if(orderResp) {
-          await openRazorpay(orderResp, booking);
-        } else {
-          alert('Payment temporarily unavailable; booking saved. We will contact you.');
-        }
-      } else {
-        alert('Booking received. We will contact you to confirm.');
-      }
-
-      // reset form
-      form.reset();
-      btn.disabled=false; btn.innerText='Submit & Pay (optional)';
-    });
-
-    // PWA: register service worker
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(()=>{});
-    }
-  })();
-  </script>
 </body>
 </html>
