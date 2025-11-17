@@ -52,23 +52,62 @@
     color: #003060;
   }
 
-  label {
-    font-weight: 600;
-    font-size: 14px;
+  /* Floating Label System */
+  .floating-group {
+    position: relative;
+    margin-bottom: 22px;
   }
 
-  input, select, textarea {
+  .floating-group input,
+  .floating-group select,
+  .floating-group textarea {
     width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    margin-bottom: 18px;
+    padding: 14px 12px 10px 12px;
     border: 1.5px solid #aac7f3;
     border-radius: 8px;
     font-size: 15px;
+    background: white;
   }
 
-  textarea {
+  .floating-group textarea {
     height: 100px;
+  }
+
+  .floating-group label {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    color: #6b8bb5;
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.25s ease;
+    background: white;
+    padding: 0 4px;
+  }
+
+  .floating-group input:focus + label,
+  .floating-group input:not(:placeholder-shown) + label,
+  .floating-group textarea:focus + label,
+  .floating-group textarea:not(:placeholder-shown) + label,
+  .floating-group select:focus + label,
+  .floating-group select:not([value=""]) + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #003d8f;
+  }
+
+  /* Error message */
+  .error-text {
+    color: #e40000;
+    font-size: 13px;
+    margin-top: -12px;
+    margin-bottom: 8px;
+    display: none;
+  }
+
+  input.error, select.error, textarea.error {
+    border-color: #e40000 !important;
   }
 
   .btn {
@@ -99,25 +138,13 @@
     text-decoration: none;
   }
 
-  .error-text {
-    color: #e40000;
-    font-size: 13px;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    display: none;
-  }
-
-  input.error, select.error, textarea.error {
-    border-color: #e40000 !important;
-  }
-
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
 </head>
+
 <body>
 
 <div class="header">Book an Appointment</div>
@@ -129,39 +156,60 @@
 
   <form id="appointmentForm" action="https://formspree.io/f/mqawnlwo" method="POST" onsubmit="validateForm(event)">
 
-    <label>Full Name</label>
-    <input type="text" id="fullName" name="Full Name" />
+    <!-- Full Name -->
+    <div class="floating-group">
+      <input type="text" id="fullName" name="Full Name" placeholder=" " />
+      <label for="fullName">Full Name</label>
+    </div>
     <p class="error-text" id="fullNameError">Please enter your name</p>
 
-    <label>Email</label>
-    <input type="email" id="email" name="Email" />
+    <!-- Email -->
+    <div class="floating-group">
+      <input type="email" id="email" name="Email" placeholder=" " />
+      <label for="email">Email</label>
+    </div>
     <p class="error-text" id="emailError">Please enter a valid email</p>
 
-    <label>Phone</label>
-    <input type="text" id="phone" name="Phone" maxlength="10" />
+    <!-- Phone -->
+    <div class="floating-group">
+      <input type="text" id="phone" name="Phone" maxlength="10" placeholder=" " />
+      <label for="phone">Phone (10 digits)</label>
+    </div>
     <p class="error-text" id="phoneError">Enter 10 digit phone number</p>
 
-    <label>Select Service</label>
-    <select id="service" name="Service">
-      <option value="">-- Choose --</option>
-      <option value="Vastu Consultation">Vastu Consultation</option>
-      <option value="Astrological Solutions">Astrological Solutions</option>
-      <option value="Numerology Consultation">Numerology Consultation</option>
-      <option value="Tarot Reader">Tarot Reader</option>
-      <option value="Healing Therapy">Healing Therapy</option>
-    </select>
+    <!-- Service -->
+    <div class="floating-group">
+      <select id="service" name="Service">
+        <option value=""></option>
+        <option value="Vastu Consultation">Vastu Consultation</option>
+        <option value="Astrological Solutions">Astrological Solutions</option>
+        <option value="Numerology Consultation">Numerology Consultation</option>
+        <option value="Tarot Reader">Tarot Reader</option>
+        <option value="Healing Therapy">Healing Therapy</option>
+      </select>
+      <label for="service">Select Service</label>
+    </div>
     <p class="error-text" id="serviceError">Please select a service</p>
 
-    <label>Preferred Date</label>
-    <input type="date" id="date" name="Preferred Date" />
+    <!-- Date -->
+    <div class="floating-group">
+      <input type="date" id="date" name="Preferred Date" placeholder=" " />
+      <label for="date">Preferred Date</label>
+    </div>
     <p class="error-text" id="dateError">Please select a valid date</p>
 
-    <label>Preferred Time</label>
-    <input type="time" id="time" name="Preferred Time" />
+    <!-- Time -->
+    <div class="floating-group">
+      <input type="time" id="time" name="Preferred Time" placeholder=" " />
+      <label for="time">Preferred Time</label>
+    </div>
     <p class="error-text" id="timeError">Please select a valid time</p>
 
-    <label>Your Message</label>
-    <textarea id="message" name="Message" placeholder="Write your query..."></textarea>
+    <!-- Message -->
+    <div class="floating-group">
+      <textarea id="message" name="Message" placeholder=" "></textarea>
+      <label for="message">Your Message</label>
+    </div>
 
     <button type="submit" class="btn">Book Appointment</button>
   </form>
@@ -170,25 +218,18 @@
 
 </div>
 
-<!-- JAVASCRIPT START -->
+<!-- JAVASCRIPT -->
 <script>
-// -------------------------------
 // Block past dates
-// -------------------------------
 const dateInput = document.getElementById("date");
 const today = new Date().toISOString().split("T")[0];
 dateInput.setAttribute("min", today);
 
-// -------------------------------
-// Block past times for today
-// -------------------------------
+// Block past time for today
 const timeInput = document.getElementById("time");
-
 dateInput.addEventListener("change", () => {
-  const selected = dateInput.value;
   const now = new Date();
-
-  if (selected === today) {
+  if (dateInput.value === today) {
     let hh = now.getHours().toString().padStart(2, '0');
     let mm = now.getMinutes().toString().padStart(2, '0');
     timeInput.min = `${hh}:${mm}`;
@@ -197,9 +238,16 @@ dateInput.addEventListener("change", () => {
   }
 });
 
-// -------------------------------
-// Real-time field validation
-// -------------------------------
+// Real-time clear error
+document.addEventListener("input", (e) => {
+  const id = e.target.id;
+  if (document.getElementById(id + "Error")) {
+    document.getElementById(id).classList.remove("error");
+    document.getElementById(id + "Error").style.display = "none";
+  }
+});
+
+// Validation
 function showError(id, msg) {
   document.getElementById(id).classList.add("error");
   const err = document.getElementById(id + "Error");
@@ -207,61 +255,41 @@ function showError(id, msg) {
   err.style.display = "block";
 }
 
-function clearError(id) {
-  document.getElementById(id).classList.remove("error");
-  document.getElementById(id + "Error").style.display = "none";
-}
-
-document.addEventListener("input", (e) => {
-  const id = e.target.id;
-  if (id === "fullName") clearError("fullName");
-  if (id === "email") clearError("email");
-  if (id === "phone") clearError("phone");
-  if (id === "service") clearError("service");
-  if (id === "date") clearError("date");
-  if (id === "time") clearError("time");
-});
-
-// -------------------------------
-// Final validation before submit
-// -------------------------------
 function validateForm(event) {
   let valid = true;
 
-  const fullName = fullName.value.trim();
-  const email = email.value.trim();
-  const phone = phone.value.trim();
-  const service = service.value.trim();
-  const date = dateInput.value;
-  const time = timeInput.value;
+  const name = fullName.value.trim();
+  const emailVal = email.value.trim();
+  const phoneVal = phone.value.trim();
+  const srv = service.value.trim();
+  const dt = date.value;
+  const tm = time.value;
 
-  if (fullName === "") { showError("fullName", "Full name is required"); valid = false; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError("email", "Invalid email"); valid = false; }
-  if (!/^[0-9]{10}$/.test(phone)) { showError("phone", "Enter 10 digit phone"); valid = false; }
-  if (service === "") { showError("service", "Select a service"); valid = false; }
-  if (date === "") { showError("date", "Select date"); valid = false; }
-  if (time === "") { showError("time", "Select time"); valid = false; }
+  if (name === "") { showError("fullName", "Full name required"); valid = false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { showError("email", "Invalid email"); valid = false; }
+  if (!/^[0-9]{10}$/.test(phoneVal)) { showError("phone", "Enter 10 digit phone"); valid = false; }
+  if (srv === "") { showError("service", "Select a service"); valid = false; }
+  if (dt === "") { showError("date", "Select date"); valid = false; }
+  if (tm === "") { showError("time", "Select time"); valid = false; }
 
   if (!valid) event.preventDefault();
 }
 
-// -------------------------------
-// WhatsApp Auto Fill
-// -------------------------------
+// WhatsApp Autofill
 document.getElementById("whatsappBtn").addEventListener("click", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("fullName").value;
-  const service = document.getElementById("service").value;
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
-  const msg = document.getElementById("message").value;
+  const name = fullName.value;
+  const srv = service.value;
+  const dt = date.value;
+  const tm = time.value;
+  const msg = message.value;
 
   let text = `Hello, I want to book an appointment.%0A%0A`;
   if (name) text += `👤 Name: ${name}%0A`;
-  if (service) text += `📌 Service: ${service}%0A`;
-  if (date) text += `📅 Date: ${date}%0A`;
-  if (time) text += `⏰ Time: ${time}%0A`;
+  if (srv) text += `📌 Service: ${srv}%0A`;
+  if (dt) text += `📅 Date: ${dt}%0A`;
+  if (tm) text += `⏰ Time: ${tm}%0A`;
   if (msg) text += `%0A💬 Message: ${msg}%0A`;
 
   window.open(`https://wa.me/916372710439?text=${text}`, "_blank");
