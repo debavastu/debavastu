@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numerology Services – DebaVastu</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>DebaVastu</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="vastu.html">Vastu</a></li>
+                <li><a href="astrology.html">Astrology</a></li>
+                <li><a href="numerology.html" class="active">Numerology</a></li>
+                <li><a href="tarot.html">Tarot</a></li>
+                <li><a href="healing.html">Healing Therapies</a></li>
+                <li><a href="yoga.html">Yoga & Wellness</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Premium Numerology Consultation</h2>
+        <p>Decode your destiny through the power of numbers.</p>
+    </section>
+
+    <section class="intro">
+        <h2>What is Numerology?</h2>
+        <p>Numerology is the sacred study of numbers that reveals your life path, destiny, personality, relationships, and opportunities. Every number vibrates with a frequency that influences your success, health, and spiritual journey.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Numerology Services</h2>
+        <ul>
+            <li>Life Path & Destiny Number Analysis</li>
+            <li>Business Name Numerology</li>
+            <li>Baby Name Correction</li>
+            <li>Vehicle & Property Number Selection</li>
+            <li>Compatibility & Relationship Numerology</li>
+            <li>Mobile Number Correction</li>
+            <li>Name Spelling Correction (Chaldean & Pythagorean)</li>
+        </ul>
+    </section>
+
+    <section class="process">
+        <h2>Consultation Process</h2>
+        <ol>
+            <li>Submit your details through the appointment form</li>
+            <li>Numerology analysis based on name, DOB, and vibrations</li>
+            <li>Receive a detailed report within 24–48 hours</li>
+            <li>Live consultation over phone or video</li>
+        </ol>
+    </section>
+
+    <section class="pricing">
+        <h2>Pricing</h2>
+        <p>Starting at <strong>₹999</strong> depending on the type of consultation.</p>
+    </section>
+
+    <section class="appointment">
+        <h2>Book a Numerology Consultation</h2>
+        <form id="numerologyForm">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="text" name="phone" placeholder="Phone Number" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="text" name="dob" placeholder="Date of Birth (DD-MM-YYYY)" required />
+            <textarea name="message" placeholder="Tell us your requirement"></textarea>
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DebaVastu. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
