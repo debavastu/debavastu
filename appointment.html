@@ -4,164 +4,419 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Book Appointment | DebaVastu</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
   body {
-    animation: fadeIn 1s ease-in-out;
-    font-family: 'Poppins', 'Roboto', sans-serif;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f1ff, #f7fbff, #e8f1ff);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
     margin: 0;
     padding: 0;
-    background: #f5f9ff;
-    color: #002b60;
+    background: linear-gradient(135deg, #e8f1ff 0%, #f7fbff 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #003d8f;
+    animation: fadeIn 1s ease-in-out;
   }
-
   header {
+    animation: headerFade 1s ease-out; 
     background: #003d8f;
-    padding: 20px;
+    padding: 18px;
     text-align: center;
     color: white;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
-
+  .container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #003d8f, #7fb3ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
   .container {
-    max-width: 650px;
+    position: relative;
+    max-width: 600px;
     margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     border-top: 6px solid #003d8f;
+    animation: slideUp 0.6s ease;
   }
-
   h2 {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 26px;
+    margin-bottom: 20px;
   }
-
   label {
-    font-weight: bold;
-    margin-top: 15px;
+    font-weight: 600;
     display: block;
+    margin: 12px 0 6px;
   }
-
-  input,
-  select,
-  textarea {
+  input, select, textarea {
     width: 100%;
     padding: 12px;
-    margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #b8c7e0;
+    border-radius: 8px;
+    border: 1px solid #a5c3e8;
     font-size: 15px;
+    outline: none;
+    transition: 0.3s;
   }
-
+  input:focus, select:focus, textarea:focus {
+    border-color: #003d8f;
+    box-shadow: 0 0 8px rgba(0,61,143,0.3);
+    transform: scale(1.02);
+  }
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a5c3e8;
+    font-size: 15px;
+    outline: none;
+  }
   button {
-    transition: 0.3s ease;
-    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+    animation: pulseGlow 2.2s infinite ease-in-out;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     padding: 14px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 6px;
+    margin-top: 18px;
     background: #003d8f;
     color: white;
+    border: none;
     font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
   }
-
   button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     background: #002b60;
+    transform: translateY(-2px);
   }
-
-  .whatsapp-btn {
-    display: block;
-    text-align: center;
-    background: #25d366;
-    color: white;
-    padding: 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-    font-weight: bold;
-  }
-
-  .whatsapp-btn:hover {
-    background: #1da851;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 15px;
+  .service-icon {
+    margin-right: 6px;
     color: #003d8f;
   }
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    transition: 0.4s ease;
+  }
+
+@keyframes headerFade {
+    0% { opacity: 0; transform: translateY(-25px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0px rgba(0,61,143,0.0); }
+    50% { box-shadow: 0 0 14px rgba(0,61,143,0.45); }
+    100% { box-shadow: 0 0 0px rgba(0,61,143,0.0); }
+  }
+
 </style>
 </head>
 <body>
-
-<header>
-  <nav style="display:flex; justify-content:center; gap:25px; font-size:16px;">
-      <a href="index.html" style="color:white; text-decoration:none;">Home</a>
-      <a href="about.html" style="color:white; text-decoration:none;">About</a>
-      <a href="services.html" style="color:white; text-decoration:none;">Services</a>
-      <a href="appointment.html" style="color:#ffeb3b; font-weight:bold; text-decoration:none;">Book Appointment</a>
-  </nav>
-</header>
+<header>Book an Appointment</header>
 
 <div class="container">
-  <h2>Book Your Appointment</h2>
+  <h2>Fill Your Details</h2>
+  <form action="https://formspree.io/f/mqawnlwo" method="POST" onsubmit="window.location='success.html'">
 
-  <!-- Replace the action with your Formspree endpoint once created -->
-  <form action="https://formspree.io/f/mqawnlwo" method="POST">
+    <label><i class="fa fa-user service-icon"></i>Full Name</label>
+    <input type="text" name="name" required>
 
-    <!-- Auto‑reply email message -->
-    <input type="hidden" name="_autoresponse" value="Thank you for booking your appointment with DebaVastu. We have received your details and will contact you shortly." />
+    <label><i class="fa fa-envelope service-icon"></i>Email</label>
+    <input type="email" name="email" required>
 
-    <label><i class="fa fa-user"></i> Full Name</label>
-    <input type="text" name="fullName" required />
+    <label><i class="fa fa-phone service-icon"></i>Phone</label>
+    <input type="text" name="phone" required>
 
-    <label><i class="fa fa-envelope"></i> Email Address</label>
-    <input type="email" name="email" required />
-
-    <label><i class="fa fa-phone"></i> Phone Number</label>
-    <input type="tel" name="phone" required />
-
-    <label><i class="fa fa-list"></i> Service</label>
+    <label><i class="fa fa-list service-icon"></i>Select Service</label>
     <select name="service" required>
-      <option value="">Select a service</option>
       <option value="Vastu Consultation">Vastu Consultation</option>
       <option value="Astrological Solutions">Astrological Solutions</option>
       <option value="Numerology Consultation">Numerology Consultation</option>
-      <option value="Tarot Reader">Tarot Reader</option>
+      <option value="Tarot Reading">Tarot Reading</option>
       <option value="Healing Therapy">Healing Therapy</option>
     </select>
 
-    <label><i class="fa fa-calendar"></i> Date</label>
-    <input type="date" name="date" required />
+    <label><i class="fa fa-calendar service-icon"></i>Preferred Date</label>
+    <input type="date" name="date" required>
 
-    <label><i class="fa fa-clock"></i> Preferred Time</label>
-    <input type="time" name="time" required />
+    <label><i class="fa fa-clock service-icon"></i>Preferred Time</label>
+    <input type="time" name="time" required>
 
-    <label><i class="fa fa-comment"></i> Message (Optional)</label>
-    <textarea name="message" rows="4" placeholder="Describe your concern"></textarea>
+    <label><i class="fa fa-comment service-icon"></i>Your Message</label>
+    <textarea name="message" rows="4"></textarea>
 
     <button type="submit">Book Appointment</button>
   </form>
-
-  <a class="whatsapp-btn" href="https://wa.me/916372710439?text=I%20want%20to%20book%20an%20appointment%20with%20DebaVastu" target="_blank">Book via WhatsApp</a>
 </div>
 
-<footer>
-  © DebaVastu — All Rights Reserved
-</footer>
+<script>
+  const form = document.querySelector('form');
+  const btn = document.querySelector('button[type="submit"]');
+  form.addEventListener('submit', () => {
+    btn.disabled = true;
+    btn.innerHTML = 'Booking... Please wait';
+  });
+</script>
+<a href="https://wa.me/6372710439" class="whatsapp" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
+<style>
+  .whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: #25D366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    z-index: 999;
+    transition: 0.3s;
+  }
+  .whatsapp:hover {
+    transform: scale(1.12);
+  }
+</style>
+
+<script>
+// Ripple effect on submit button
+const submitBtn = document.querySelector('button[type="submit"]');
+submitBtn.addEventListener('click', function (e) {
+  const rect = this.getBoundingClientRect();
+  const ripple = document.createElement('span');
+  const size = Math.max(rect.width, rect.height);
+  const x = e.clientX - rect.left - size / 2;
+  const y = e.clientY - rect.top - size / 2;
+
+  ripple.style.position = 'absolute';
+  ripple.style.width = ripple.style.height = size + 'px';
+  ripple.style.left = x + 'px';
+  ripple.style.top = y + 'px';
+  ripple.style.background = 'rgba(255,255,255,0.6)';
+  ripple.style.borderRadius = '50%';
+  ripple.style.transform = 'scale(0)';
+  ripple.style.animation = 'rippleEffect 0.6s ease-out';
+
+  this.appendChild(ripple);
+
+  ripple.addEventListener('animationend', () => ripple.remove());
+});
+</script>
+
+<style>
+@keyframes rippleEffect {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+</style>
+
+<script>
+// Scroll reveal animation for all form elements
+const elements = document.querySelectorAll('label, input, select, textarea, button');
+
+const reveal = () => {
+  const trigger = window.innerHeight * 0.92;
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect().top;
+    if (rect < trigger) {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', () => {
+  elements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(25px)';
+    el.style.transition = '0.6s ease';
+  });
+  reveal();
+});
+</script>
+<div class="floating-icons">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-moon"></i>
+  <i class="fa-solid fa-sun"></i>
+  <i class="fa-solid fa-leaf"></i>
+</div>
+
+<style>
+.floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.floating-icons i {
+  position: absolute;
+  color: rgba(0, 61, 143, 0.15);
+  font-size: 22px;
+  animation: floatIcons 12s linear infinite;
+}
+.floating-icons i:nth-child(1) { left: 10%; animation-duration: 14s; font-size: 18px; }
+.floating-icons i:nth-child(2) { left: 30%; animation-duration: 11s; font-size: 24px; }
+.floating-icons i:nth-child(3) { left: 65%; animation-duration: 16s; font-size: 20px; }
+.floating-icons i:nth-child(4) { left: 85%; animation-duration: 13s; font-size: 26px; }
+
+@keyframes floatIcons {
+  0% { transform: translateY(110%); opacity: 0; }
+  20% { opacity: 0.35; }
+  80% { opacity: 0.35; }
+  100% { transform: translateY(-120%); opacity: 0; }
+}
+</style>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment – Debavastu</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eef6ff;
+      margin: 0;
+      padding: 0;
+      color: #003366;
+    }
+    .container {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin: 12px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #c7ddf7;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #0066cc;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #0066cc;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .whatsapp-box {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .whatsapp-box a {
+      color: #009900;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Book an Appointment</h2>
+    <p>Professional Vastu • Astrology • Numerology • Tarot • Healing</p>
+
+    <form action="https://formspree.io/f/mqawnlwo" method="POST" onsubmit="window.location='success.html'">
+
+      <label>Name</label>
+      <input type="text" name="name" required />
+
+      <label>Email</label>
+      <input type="email" name="email" required />
+
+      <label>Phone</label>
+      <input type="text" name="phone" required />
+
+      <label>Select Service</label>
+      <select name="service" required>
+        <option value="">-- Choose --</option>
+        <option>Vastu Consultation</option>
+        <option>Astrological Solutions</option>
+        <option>Numerology Consultation</option>
+        <option>Tarot Reading</option>
+        <option>Healing Therapy</option>
+      </select>
+
+      <label>Message</label>
+      <textarea name="message" rows="4" placeholder="Write your query..."></textarea>
+
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <div class="whatsapp-box">
+      Or message us directly on WhatsApp:<br>
+      <a href="https://wa.me/916372710439" target="_blank">+91 63727 10439</a>
+    </div>
+  </div>
 </body>
 </html>
