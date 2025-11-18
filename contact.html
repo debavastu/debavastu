@@ -31,227 +31,169 @@
   <!-- AOS (Animate on Scroll) for premium animations -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Inline hero + premium styles -->
+  <!-- Inline improvements for premium look -->
   <style>
     :root{
-      --brand-1: #0f766e;
-      --brand-2: #7c3aed;
+      --brand-1: #0f766e; /* teal */
+      --brand-2: #7c3aed; /* violet */
       --muted: #6b7280;
+      --glass: rgba(255,255,255,0.06);
       --card-shadow: 0 10px 30px rgba(16,24,40,0.08);
       --radius: 12px;
     }
 
-    /* Topbar & nav baseline */
+    /* Header gradient */
+    .header-inner {
+      background: linear-gradient(90deg,var(--brand-1),var(--brand-2));
+      color: #fff;
+      padding: 18px 0;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      box-shadow: 0 6px 20px rgba(15,23,42,0.12);
+    }
     .topbar { background: transparent; color: #f3f4f6; padding: 8px 0; }
     .top-contact a { color: inherit; text-decoration: none; }
     .logo img { max-height: 60px; }
 
-    /* HERO */
-    .hero {
-      position: relative;
-      padding: 64px 0 48px;
-      background: linear-gradient(180deg, rgba(15,118,110,0.06), rgba(124,58,237,0.02));
-      overflow: hidden;
+    /* Breadcrumbs */
+    .breadcrumbs{ padding: 48px 0; background: linear-gradient(180deg, rgba(0,0,0,0.05), transparent); }
+    .breadcrumbs h2{ margin:0; font-weight:600; letter-spacing:0.2px; }
+
+    /* Contact section */
+    .contact-us { padding: 60px 0; }
+    .contact-us-left #myMap{
+      width:100%; height:420px; border-radius:12px; box-shadow:var(--card-shadow); overflow:hidden;
     }
-    .hero-inner{
-      display:flex; align-items:center; gap:30px;
+    .contact-us-form{
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), #fff);
+      padding:28px; border-radius:12px; box-shadow:var(--card-shadow);
     }
-    .hero-card{
-      background: rgba(255,255,255,0.98);
-      padding:36px; border-radius:16px; box-shadow: var(--card-shadow); max-width:720px;
+    .contact-us-form h2{ margin-top:0; margin-bottom:8px; color:var(--brand-1); }
+    .contact-us-form p{ color:var(--muted); margin-bottom:18px; }
+
+    /* Form inputs */
+    .form input[type="text"], .form input[type="email"], .form textarea{
+      width:100%; padding:12px 14px; border-radius:8px; border:1px solid #e6e7eb;
+      background:#fff; transition:box-shadow .18s, border-color .18s;
+      font-family: inherit;
     }
-    .hero-title{
-      font-size:32px; font-weight:700; color: #071025; margin-bottom:10px;
-      line-height:1.08;
+    .form input:focus, .form textarea:focus{
+      outline:none; box-shadow:0 6px 20px rgba(99,102,241,0.08); border-color: rgba(124,58,237,0.6);
     }
-    .hero-sub{ color:var(--muted); margin-bottom:18px; font-size:15px;}
-    .hero-cta { display:flex; gap:12px; flex-wrap:wrap; }
-    .btn-primary {
-      background: linear-gradient(90deg,var(--brand-1),var(--brand-2));
-      color:#fff; padding:11px 18px; border-radius:10px; border:none; font-weight:600;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+    .form textarea{ min-height:130px; resize:vertical; }
+
+    .btn { display:inline-block; background: linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:#fff; border:none; padding:10px 18px; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 8px 24px rgba(16,24,40,0.08); }
+    .btn:focus{ outline:3px solid rgba(124,58,237,0.14); }
+
+    /* Inline error messages */
+    .field-error { color:#ef4444; font-size:13px; margin-top:6px; display:none; }
+    .field-success { color:#10b981; font-size:13px; margin-top:6px; display:none; }
+
+    /* Contact info cards */
+    .single-info { background: #fff; padding:18px; border-radius:12px; box-shadow:var(--card-shadow); display:flex; gap:14px; align-items:center; }
+    .single-info i{ font-size:22px; color:var(--brand-2); width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: linear-gradient(180deg, rgba(124,58,237,0.12), rgba(15,118,110,0.06)); }
+
+    /* WhatsApp floating button */
+    .whatsapp-fab{
+      position:fixed; right:18px; bottom:18px; z-index:9999;
+      background: linear-gradient(180deg,#25D366,#06a551); color:#fff;
+      border-radius:999px; width:62px; height:62px; display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 12px 30px rgba(2,6,23,0.18); transition: transform .15s ease, box-shadow .15s;
     }
-    .btn-outline {
-      background:transparent; border:1px solid rgba(7,16,37,0.06); color: #071025; padding:10px 16px; border-radius:10px;
+    .whatsapp-fab:hover{ transform: translateY(-4px); box-shadow: 0 18px 34px rgba(2,6,23,0.22); }
+    .whatsapp-fab .wa-badge{ position:absolute; top:-6px; right:-6px; background:#fff; color:#06a551; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; box-shadow:0 6px 14px rgba(2,6,23,0.12); }
+
+    /* Success toast */
+    .toast {
+      position: fixed; right: 18px; bottom: 100px; z-index: 10000; background: #0f172a; color: #fff;
+      padding: 14px 18px; border-radius: 12px; box-shadow: 0 12px 30px rgba(2,6,23,0.28); display:none;
     }
 
-    /* Illustration container */
-    .hero-illus {
-      flex:1 1 420px; display:flex; align-items:center; justify-content:center; position:relative;
-      min-height:320px;
-    }
-    .illus-wrap{
-      width:100%; max-width:520px; transform: translateY(0);
-      transition: transform .9s cubic-bezier(.2,.9,.2,1);
-    }
-
-    /* floating animation for illustration */
-    .float {
-      animation: floatY 6s ease-in-out infinite;
-      transform-origin: center;
-    }
-    @keyframes floatY {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-12px) rotate(-0.2deg); }
-      100% { transform: translateY(0); }
-    }
-
-    /* subtle stroke animation */
-    .stroke-draw {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-      animation: draw 2.2s ease forwards;
-    }
-    @keyframes draw {
-      to { stroke-dashoffset: 0; }
-    }
-
-    /* decorative floating particles */
-    .particle {
-      position:absolute; border-radius:50%; opacity:0.12; filter: blur(8px);
-    }
-    .p1{ width:128px; height:128px; right:6%; top:6%; background: linear-gradient(120deg,#7c3aed,#0f766e); }
-    .p2{ width:80px; height:80px; left:4%; bottom:10%; background: linear-gradient(120deg,#0f766e,#7c3aed); opacity:0.10; }
-
-    /* Responsive */
+    /* Responsive tweaks */
     @media (max-width: 991px){
-      .hero-inner{ flex-direction:column-reverse; text-align:center; }
-      .hero-card{ max-width:100%; }
-      .hero-illus{ min-height:260px; }
-      .hero-title{ font-size:26px; }
+      .contact-us-left #myMap{ height:320px; margin-bottom:18px; }
+      .header-inner { padding: 14px 0; border-radius:0; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Topbar -->
-  <div class="topbar" role="region" aria-label="topbar">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 col-12">
-          <ul class="top-link">
-            <li><a href="#">Welcome to DEBAVASTU: The Complete Vedic Solutions!</a></li>
-          </ul>
-        </div>
-        <div class="col-md-6 col-12 text-md-right">
-          <ul class="top-contact">
-            <li><i class="fa fa-phone" aria-hidden="true"></i> +91 6372710439</li>
-            <li><i class="fa fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
-            </li>
-          </ul>
-        </div>
+
+  <!-- Preloader (kept for your template) -->
+  <div class="preloader" aria-hidden="true">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+      <div class="indicator" aria-hidden="true">
+        <svg width="16px" height="12px" aria-hidden="true">
+          <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+          <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        </svg>
       </div>
     </div>
   </div>
 
-  <!-- NAV (keeps simple nav above hero) -->
-  <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main Navigation" style="background:transparent;">
-    <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Debavastu Logo" style="max-height:56px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="services.html">Vastu</a></li>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="topbar" role="region" aria-label="topbar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-12">
+            <ul class="top-link" aria-hidden="false">
+              <li><a href="#">Welcome to DEBAVASTU: The Complete Vedic Solutions!</a></li>
             </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-          <li class="nav-item ms-3"><a class="btn-primary" href="appointment.html" style="padding:8px 14px; font-size:14px;">Book Appointment</a></li>
-        </ul>
+          </div>
+          <div class="col-md-6 col-12 text-md-right">
+            <ul class="top-contact">
+              <li><i class="fa fa-phone" aria-hidden="true"></i> +91 6372710439</li>
+              <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero" role="banner" aria-label="Hero">
-    <div class="particle p1" aria-hidden="true"></div>
-    <div class="particle p2" aria-hidden="true"></div>
-
-    <div class="container">
-      <div class="hero-inner">
-        <!-- left: content card -->
-        <div class="hero-card" data-aos="fade-up" data-aos-delay="120">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
-            <div style="width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(90deg,var(--brand-1),var(--brand-2)); color:white; font-weight:700;">
-              DV
+    <div class="header-inner" role="navigation" aria-label="Main Navigation">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-6">
+            <div class="logo">
+              <a href="index.html"><img src="img/logo.png" alt="Debavastu Logo"></a>
             </div>
-            <div style="font-size:13px; color:var(--muted); font-weight:600;">DEBAVASTU — Complete Vedic Solutions</div>
           </div>
 
-          <h1 class="hero-title">Harmonize your space. Awaken prosperity.</h1>
-          <p class="hero-sub">Personalized Vastu, Vedic astrology and energy healing designed for modern living. Book a consultation to transform your home & life with authentic Vedic wisdom.</p>
-
-          <div class="hero-cta">
-            <a class="btn-primary" href="appointment.html" role="button">Book Appointment</a>
-            <a class="btn-outline" href="#contactForm" role="button">Send a Message</a>
+          <div class="col-lg-7 d-none d-lg-block">
+            <nav class="main-menu" aria-label="Primary">
+              <ul class="nav menu d-flex justify-content-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                  <a href="#">Services <i class="icofont-rounded-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown">
+                    <li><a href="services.html">Vastu</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </nav>
           </div>
 
-          <div style="margin-top:18px; color:var(--muted); font-size:14px;">Trusted by clients across India • Online & On-site consultations</div>
-        </div>
-
-        <!-- right: animated illustration -->
-        <div class="hero-illus" data-aos="zoom-in" data-aos-delay="220" aria-hidden="false">
-          <div class="illus-wrap float" role="img" aria-label="Vastu illustration">
-            <!-- Clean SVG illustration: stylized home + waves + lotus -->
-            <svg viewBox="0 0 720 560" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1">
-                  <stop offset="0%" stop-color="#7c3aed"/>
-                  <stop offset="100%" stop-color="#0f766e"/>
-                </linearGradient>
-                <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0b1220" flood-opacity="0.08"/>
-                </filter>
-              </defs>
-
-              <!-- background rounded card -->
-              <rect x="40" y="20" rx="28" ry="28" width="640" height="480" fill="url(#g1)" opacity="0.06"/>
-
-              <!-- house base -->
-              <g transform="translate(120,120)">
-                <path class="stroke-draw" d="M80 200 L80 120 L200 40 L320 120 L320 200 Z" fill="#fff" stroke="#7c3aed" stroke-width="2" opacity="0.96"></path>
-
-                <!-- doorway -->
-                <rect x="160" y="140" width="40" height="60" rx="6" ry="6" fill="#0f766e" opacity="0.98" />
-
-                <!-- windows -->
-                <rect x="100" y="110" width="36" height="34" rx="4" ry="4" fill="#fff" stroke="#d1d5db" stroke-width="1"></rect>
-                <rect x="244" y="110" width="36" height="34" rx="4" ry="4" fill="#fff" stroke="#d1d5db" stroke-width="1"></rect>
-
-                <!-- energy waves (animated path strokes) -->
-                <g transform="translate(0,250)">
-                  <path class="stroke-draw" d="M40 12 C120 -18 200 -18 280 12" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
-                  <path class="stroke-draw" style="animation-delay:0.25s" d="M40 30 C120 0 200 0 280 30" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" opacity="0.85"></path>
-                </g>
-
-                <!-- lotus icon underneath -->
-                <g transform="translate(80,260) scale(0.9)">
-                  <path d="M120 56 C90 34 72 28 60 28 C48 28 30 34 0 56 C30 92 60 108 120 128 C180 108 210 92 240 56 C210 34 192 28 180 28 C168 28 150 34 120 56Z" fill="url(#g1)" filter="url(#shadow)" opacity="0.98" />
-                </g>
-              </g>
-            </svg>
+          <div class="col-lg-2 col-6 text-right">
+            <a href="appointment.html" class="btn" aria-label="Book Appointment">Book Appointment</a>
           </div>
         </div>
-
       </div>
     </div>
   </header>
 
-  <!-- (remaining page kept from prior contact page) -->
   <!-- Breadcrumbs -->
   <div class="breadcrumbs overlay" role="region" aria-label="Breadcrumbs" data-aos="fade-down">
     <div class="container">
       <div class="bread-inner d-flex align-items-center justify-content-between">
         <h2>Contact Us</h2>
-        <ul class="bread-list small text-muted" style="margin:0;">
+        <ul class="bread-list small text-muted" aria-hidden="false" style="margin:0;">
           <li><a href="index.html">Home</a></li>
           <li><i class="icofont-simple-right"></i></li>
           <li class="active">Contact Us</li>
@@ -260,7 +202,7 @@
     </div>
   </div>
 
-  <!-- Contact Section (kept from previous version) -->
+  <!-- Contact Section -->
   <section class="contact-us section" aria-labelledby="contact-title">
     <div class="container">
       <div class="row gy-4 align-items-start">
@@ -268,50 +210,53 @@
         <!-- Map -->
         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
           <div class="contact-us-left">
-            <div id="myMap" role="region" aria-label="Company location map" style="height:420px; border-radius:12px; box-shadow:var(--card-shadow);"></div>
+            <!-- #myMap is initialized by your map-active.js -->
+            <div id="myMap" role="region" aria-label="Company location map"></div>
           </div>
         </div>
 
         <!-- Contact Form -->
         <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
-          <div class="contact-us-form" role="form" aria-describedby="contact-desc" style="background:#fff; padding:28px; border-radius:12px; box-shadow:var(--card-shadow);">
+          <div class="contact-us-form" role="form" aria-describedby="contact-desc">
             <h2 id="contact-title">Contact With Us</h2>
             <p id="contact-desc">If you have any requirement, please feel free to contact us. We'll get back to you within 24-48 business hours.</p>
 
+            <!-- Note: action left as mail/mail.php (server processing). JS will validate before submission. -->
             <form id="contactForm" class="form" method="post" action="mail/mail.php" novalidate>
               <div class="row g-3">
+
                 <div class="col-md-6">
                   <label class="sr-only" for="name">Name</label>
                   <input id="name" name="name" type="text" placeholder="Name" required aria-required="true" />
-                  <div id="nameError" class="field-error" role="alert" style="display:none;color:#ef4444;font-size:13px;margin-top:6px;">Please enter your full name (2+ characters).</div>
+                  <div id="nameError" class="field-error" role="alert">Please enter your full name (2+ characters).</div>
                 </div>
 
                 <div class="col-md-6">
                   <label class="sr-only" for="email">Email</label>
                   <input id="email" name="email" type="email" placeholder="Email" required aria-required="true" />
-                  <div id="emailError" class="field-error" role="alert" style="display:none;color:#ef4444;font-size:13px;margin-top:6px;">Please enter a valid email address.</div>
+                  <div id="emailError" class="field-error" role="alert">Please enter a valid email address.</div>
                 </div>
 
                 <div class="col-md-6">
                   <label class="sr-only" for="phone">Phone</label>
                   <input id="phone" name="phone" type="text" placeholder="Phone (e.g. +91 63727 10439)" required aria-required="true" />
-                  <div id="phoneError" class="field-error" role="alert" style="display:none;color:#ef4444;font-size:13px;margin-top:6px;">Please enter a valid phone number (7–15 digits).</div>
+                  <div id="phoneError" class="field-error" role="alert">Please enter a valid phone number (7–15 digits).</div>
                 </div>
 
                 <div class="col-md-6">
                   <label class="sr-only" for="subject">Subject</label>
                   <input id="subject" name="subject" type="text" placeholder="Subject" required aria-required="true" />
-                  <div id="subjectError" class="field-error" role="alert" style="display:none;color:#ef4444;font-size:13px;margin-top:6px;">Subject must be at least 3 characters.</div>
+                  <div id="subjectError" class="field-error" role="alert">Subject must be at least 3 characters.</div>
                 </div>
 
                 <div class="col-12">
                   <label class="sr-only" for="message">Message</label>
                   <textarea id="message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
-                  <div id="messageError" class="field-error" role="alert" style="display:none;color:#ef4444;font-size:13px;margin-top:6px;">Message must be at least 10 characters.</div>
+                  <div id="messageError" class="field-error" role="alert">Message must be at least 10 characters.</div>
                 </div>
 
                 <div class="col-12 d-flex align-items-center gap-3">
-                  <button id="submitBtn" class="btn-primary" type="submit" aria-live="polite">Send Message</button>
+                  <button id="submitBtn" class="btn" type="submit" aria-live="polite">Send Message</button>
 
                   <div>
                     <label style="cursor:pointer; font-size:14px; color:var(--muted);">
@@ -332,31 +277,31 @@
         <div class="row g-3">
 
           <div class="col-lg-4 col-md-6">
-            <div class="single-info" style="background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow);display:flex;gap:14px;align-items:center;">
-              <i class="icofont-ui-call" aria-hidden="true" style="font-size:22px;color:var(--brand-2);"></i>
+            <div class="single-info">
+              <i class="icofont-ui-call" aria-hidden="true"></i>
               <div>
                 <h3 style="margin:0;">+91 6372710439</h3>
-                <p style="margin:0;color:var(--muted);">contact@debavastu.com</p>
+                <p style="margin:0; color:var(--muted);">contact@debavastu.com</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
-            <div class="single-info" style="background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow);display:flex;gap:14px;align-items:center;">
-              <i class="icofont-google-map" aria-hidden="true" style="font-size:22px;color:var(--brand-2);"></i>
+            <div class="single-info">
+              <i class="icofont-google-map" aria-hidden="true"></i>
               <div>
                 <h3 style="margin:0;">Bhubaneswar</h3>
-                <p style="margin:0;color:var(--muted);">India</p>
+                <p style="margin:0; color:var(--muted);">India</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
-            <div class="single-info" style="background:#fff;padding:18px;border-radius:12px;box-shadow:var(--card-shadow);display:flex;gap:14px;align-items:center;">
-              <i class="icofont-wall-clock" aria-hidden="true" style="font-size:22px;color:var(--brand-2);"></i>
+            <div class="single-info">
+              <i class="icofont-wall-clock" aria-hidden="true"></i>
               <div>
                 <h3 style="margin:0;">Mon - Sat: 8 AM - 5 PM</h3>
-                <p style="margin:0;color:var(--muted);">Sunday Closed</p>
+                <p style="margin:0; color:var(--muted);">Sunday Closed</p>
               </div>
             </div>
           </div>
@@ -367,7 +312,7 @@
     </div>
   </section>
 
-  <!-- Footer (kept previous structure) -->
+  <!-- Footer -->
   <footer id="footer" class="footer" role="contentinfo" data-aos="fade-up">
     <div class="footer-top" style="padding:40px 0;">
       <div class="container">
@@ -421,25 +366,24 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a class="whatsapp-fab" href="https://wa.me/916372710439?text=Hello%20Debavastu%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Debavastu on WhatsApp" style="position:fixed;right:18px;bottom:18px;z-index:9999;background:linear-gradient(180deg,#25D366,#06a551);color:#fff;border-radius:999px;width:62px;height:62px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(2,6,23,0.18);">
-    <span class="wa-badge" style="position:absolute;top:-6px;right:-6px;background:#fff;color:#06a551;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;box-shadow:0 6px 14px rgba(2,6,23,0.12);">WA</span>
+  <!-- WhatsApp Floating Button (opens new tab) -->
+  <a class="whatsapp-fab" href="https://wa.me/916372710439?text=Hello%20Debavastu%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Debavastu on WhatsApp">
+    <span class="wa-badge">WA</span>
     <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path fill="#ffffff" d="M20.52 3.48A11.94 11.94 0 0 0 12 .5 11.96 11.96 0 0 0 1.48 11.52c0 2.1.55 4.15 1.6 5.95L.5 23.5l6.28-2.05c1.7.92 3.6 1.4 5.72 1.4 6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.22-3.46-8.29zM12 21c-1.86 0-3.6-.48-5.13-1.34l-.37-.22L4 19l.62-2.55-.24-.4A8.83 8.83 0 0 1 3.02 11.5 8.98 8.98 0 0 1 12 3.5c2.4 0 4.59.93 6.24 2.64A8.72 8.72 0 0 1 21.98 11.5 8.98 8.98 0 0 1 12 21z"/>
     </svg>
   </a>
 
-  <!-- Success toast -->
-  <div id="successToast" class="toast" role="status" aria-live="polite" aria-atomic="true" style="position:fixed;right:18px;bottom:100px;z-index:10000;background:#0f172a;color:#fff;padding:14px 18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,0.28);display:none;">Your message has been sent successfully.</div>
+  <!-- Toast (success) -->
+  <div id="successToast" class="toast" role="status" aria-live="polite" aria-atomic="true">Your message has been sent successfully.</div>
 
-  <!-- Scripts -->
+  <!-- Scripts (existing + AOS) -->
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.0.js"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/easing.js"></script>
   <script src="js/colors.js"></script>
   <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.nav.js"></script>
   <script src="js/slicknav.min.js"></script>
@@ -456,27 +400,32 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Google Map (ensure key restrictions & billing) -->
+  <!-- Google Map (your key kept as-is; ensure billing & key restrictions are correct in production) -->
   <script src="https://maps.google.com/maps/api/js?key=AIzaSyDGqTyqoPIvYxhn_Sa7ZrK5bENUWhpCo0w"></script>
   <script src="js/gmaps.min.js"></script>
   <script src="js/map-active.js"></script>
 
-  <!-- Init AOS -->
-  <script> AOS.init({ duration:700, once:true }); </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
-  <!-- Form validation & submit (keeps previous behavior) -->
+  <!-- Client-side form validation + UI behavior -->
   <script>
+    // Initialize AOS
+    AOS.init({ duration: 700, once: true });
+
+    // Basic helper validators
     function isValidEmail(email) {
+      // simple email regexp
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
     function isValidPhone(phone) {
+      // allow +, spaces, hyphens, digits — ensure 7-15 digits total
       const digits = phone.replace(/[^0-9]/g, '');
       return digits.length >= 7 && digits.length <= 15;
     }
 
     (function () {
       const form = document.getElementById('contactForm');
-      if (!form) return;
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
       const phoneInput = document.getElementById('phone');
@@ -485,75 +434,89 @@
       const submitBtn = document.getElementById('submitBtn');
       const toast = document.getElementById('successToast');
 
+      // error refs
       const nameError = document.getElementById('nameError');
       const emailError = document.getElementById('emailError');
       const phoneError = document.getElementById('phoneError');
       const subjectError = document.getElementById('subjectError');
       const messageError = document.getElementById('messageError');
 
-      function showError(el) { if(el) el.style.display = 'block'; }
-      function hideError(el) { if(el) el.style.display = 'none'; }
+      // show/hide helpers
+      function showError(el) { el.style.display = 'block'; }
+      function hideError(el) { el.style.display = 'none'; }
 
-      [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(input => {
-        if (!input) return;
-        input.addEventListener('blur', () => {
-          // reuse validation below
-          validateField(input);
-        });
+      // Real-time validation (on blur)
+      nameInput.addEventListener('blur', () => {
+        if (!nameInput.value || nameInput.value.trim().length < 2) showError(nameError);
+        else hideError(nameError);
+      });
+      emailInput.addEventListener('blur', () => {
+        if (!isValidEmail(emailInput.value)) showError(emailError);
+        else hideError(emailError);
+      });
+      phoneInput.addEventListener('blur', () => {
+        if (!isValidPhone(phoneInput.value)) showError(phoneError);
+        else hideError(phoneError);
+      });
+      subjectInput.addEventListener('blur', () => {
+        if (!subjectInput.value || subjectInput.value.trim().length < 3) showError(subjectError);
+        else hideError(subjectError);
+      });
+      messageInput.addEventListener('blur', () => {
+        if (!messageInput.value || messageInput.value.trim().length < 10) showError(messageError);
+        else hideError(messageError);
       });
 
-      function validateField(input){
-        if (!input) return true;
-        const id = input.id;
-        const val = (input.value || '').trim();
-        let ok = true;
-        if (id === 'name') ok = val.length >= 2;
-        else if (id === 'email') ok = isValidEmail(val);
-        else if (id === 'phone') ok = isValidPhone(val);
-        else if (id === 'subject') ok = val.length >= 3;
-        else if (id === 'message') ok = val.length >= 10;
-
-        const errEl = document.getElementById(id + 'Error');
-        if (!ok) showError(errEl); else hideError(errEl);
-        return ok;
-      }
-
+      // On submit: validate and then allow normal form submission if valid.
       form.addEventListener('submit', function (e) {
+        // prevent default until validated
         e.preventDefault();
+
         let valid = true;
-        [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(inp => {
-          if (!validateField(inp)) valid = false;
-        });
+
+        if (!nameInput.value || nameInput.value.trim().length < 2) { showError(nameError); valid = false; } else hideError(nameError);
+        if (!isValidEmail(emailInput.value)) { showError(emailError); valid = false; } else hideError(emailError);
+        if (!isValidPhone(phoneInput.value)) { showError(phoneError); valid = false; } else hideError(phoneError);
+        if (!subjectInput.value || subjectInput.value.trim().length < 3) { showError(subjectError); valid = false; } else hideError(subjectError);
+        if (!messageInput.value || messageInput.value.trim().length < 10) { showError(messageError); valid = false; } else hideError(messageError);
 
         if (!valid) {
-          const first = document.querySelector('.field-error[style*="display: block"]');
-          if (first) {
-            const fld = document.getElementById(first.id.replace('Error',''));
-            if (fld) fld.focus();
+          // focus first invalid field
+          const firstError = document.querySelector('.field-error[style*="display: block"]');
+          if (firstError) {
+            const inputId = firstError.id.replace('Error','');
+            const toFocus = document.getElementById(inputId);
+            if (toFocus) toFocus.focus();
           }
           return;
         }
 
+        // If valid: optional UX feedback + proceed to submit
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
+        // If you rely on server (mail/mail.php), submit the form normally.
+        // We'll use a short delay to show the toast and then submit.
+        // Remove the setTimeout and call form.submit() directly if you want instant submit.
+
         setTimeout(() => {
-          // Show toast
+          // Show success toast
           toast.style.display = 'block';
-          toast.style.opacity = 0;
+          toast.style.opacity = '0';
           toast.animate([{opacity:0},{opacity:1}], {duration:220, fill:'forwards'});
+
+          // hide toast after 3.2s
           setTimeout(() => {
             toast.animate([{opacity:1},{opacity:0}], {duration:220, fill:'forwards'});
-            setTimeout(()=> toast.style.display='none', 240);
+            setTimeout(() => toast.style.display = 'none', 240);
           }, 3200);
 
-          // Submit to server
+          // submit the form normally to server-side handler
           form.submit();
         }, 600);
       });
 
     })();
   </script>
-
 </body>
 </html>
