@@ -41,6 +41,32 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
+
+        <style>
+          /* Small modal for success */
+          .dv-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+          }
+          .dv-modal .card {
+            background: #fff;
+            padding: 22px;
+            max-width: 460px;
+            width: 92%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 18px 50px rgba(12,12,12,0.18);
+            font-family: 'Poppins',sans-serif;
+          }
+          .dv-modal .card h3 { margin-top:0; color:#0b6e4f; }
+          .dv-modal .card p { color:#444; margin:10px 0 18px; }
+          .dv-modal .card .btn { background:#0b6e4f; color:#fff; padding:10px 18px; border-radius:8px; border:none; }
+        </style>
 		
     </head>
     <body>
@@ -133,7 +159,12 @@
             <li>
                 <a href="#">Services <i class="icofont-rounded-down"></i></a>
                 <ul class="dropdown">
-                    <li><a href="services.html">Vastu</a></li>
+                    <li><a href="vastu.html">Vastu</a></li>
+                    <li><a href="astrology.html">Astrology</a></li>
+                    <li><a href="numerology.html">Numerology</a></li>
+                    <li><a href="tarot.html">Tarot</a></li>
+                    <li><a href="healing.html">Healing Therapies</a></li>
+                    <li><a href="yoga.html">Yoga & Wellness</a></li>
                 </ul>
             </li>
 
@@ -169,6 +200,7 @@
 							<div class="col-lg-7">
 								<div class="text">
 									
+		
 									<div class="button">
 									</div>
 								</div>
@@ -210,6 +242,76 @@
 			</div>
 		</section>
 		<!--/ End Slider Area -->
+		
+		<!-- Our Services (NEW) -->
+		<section class="services-area section" id="services" style="padding:60px 0;background:#fbfbfc;">
+		    <div class="container">
+		        <div class="section-title text-center">
+		            <h2>Our Core Services</h2>
+		            <img src="img/section-img.png" alt="#" style="margin:14px 0;">
+		            <p>Holistic Vedic solutions to bring balance, clarity and wellbeing into your life.</p>
+		        </div>
+		
+		        <div class="row" style="margin-top:28px;">
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-compass" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Vastu</h3>
+		                    <p style="color:#555;">Home, office & industrial Vastu consultations, remedial solutions and energy balancing.</p>
+		                    <a href="vastu.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-globe" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Astrology</h3>
+		                    <p style="color:#555;">Kundli analysis, transit guidance, career & relationship astrology tailored for you.</p>
+		                    <a href="astrology.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-ui-calendar" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Numerology</h3>
+		                    <p style="color:#555;">Name analysis, life-path numbers, business & compatibility numerology.</p>
+		                    <a href="numerology.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-magic" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Tarot</h3>
+		                    <p style="color:#555;">Intuitive tarot readings for relationships, career, and life decisions.</p>
+		                    <a href="tarot.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-brainstorming" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Healing Therapies</h3>
+		                    <p style="color:#555;">Alternative therapy, naturopathy, homeopathy, acupressure and energy healing.</p>
+		                    <a href="healing.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-yoga" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
+		                    <p style="color:#555;">Yoga, meditation, pranayama and customized therapeutic yoga programs.</p>
+		                    <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		        </div>
+		    </div>
+		</section>
+		<!-- /End Our Services -->
 		
 		<!-- Start Schedule Area -->
 		<section class="schedule">
@@ -460,28 +562,28 @@
                         <!-- Name -->
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <input name="name" type="text" placeholder="Full Name" required>
+                                <input name="name" type="text" id="b_name" placeholder="Full Name" required>
                             </div>
                         </div>
 
                         <!-- Email -->
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <input name="email" type="email" placeholder="Email Address" required>
+                                <input name="email" type="email" id="b_email" placeholder="Email Address" required>
                             </div>
                         </div>
 
                         <!-- Phone -->
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <input name="phone" type="text" placeholder="Mobile Number" required>
+                                <input name="phone" type="text" id="b_phone" placeholder="Mobile Number" required>
                             </div>
                         </div>
 
                         <!-- Service Category -->
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <select name="service" class="form-control" required>
+                                <select name="service" id="b_service" class="form-control" required>
                                     <option value="">Select Service Category</option>
                                     <option value="Vastu">Vastu</option>
                                     <option value="Astrology">Astrology</option>
@@ -496,14 +598,14 @@
                         <!-- Date -->
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <input type="date" name="date" class="form-control" required>
+                                <input type="date" id="b_date" name="date" class="form-control" required>
                             </div>
                         </div>
 
                         <!-- Message -->
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <textarea name="message" placeholder="Describe your requirement..."></textarea>
+                                <textarea name="message" id="b_message" placeholder="Describe your requirement..."></textarea>
                             </div>
                         </div>
 
@@ -514,7 +616,7 @@
                         <div class="col-lg-5 col-md-4 col-12">
                             <div class="form-group">
                                 <div class="button">
-                                    <button type="submit" class="btn">Book Appointment</button>
+                                    <button type="submit" id="bookBtn" class="btn">Book Appointment</button>
                                 </div>
                             </div>
                         </div>
@@ -536,12 +638,15 @@
 </section>
 <!-- End Appointment -->
 
-		
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /End Newsletter Area -->
+<!-- Success Modal -->
+<div id="dvModal" class="dv-modal" role="dialog" aria-hidden="true">
+  <div class="card" role="document">
+    <h3>Booking Confirmed</h3>
+    <p id="dvModalText">Thank you — your appointment request has been received. We'll contact you shortly.</p>
+    <button id="dvClose" class="btn">OK</button>
+  </div>
+</div>
+
 		
 		<!-- Footer Area -->
 		<footer id="footer" class="footer ">
@@ -584,7 +689,7 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-lg-5 col-md-8 col-14">
 							<div class="single-footer">
 								   <h2>Open Hours</h2>
@@ -716,6 +821,133 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="js/bootstrap.min.js"></script>
+
+        <!-- EmailJS + booking handler -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+        (function(){
+          // Initialize EmailJS with public key
+          try{
+            emailjs.init('dkxgwOwsd0z7BMPyo');
+          }catch(e){
+            console.warn('EmailJS init failed', e);
+          }
+
+          const ownerWhatsApp = '916372710439'; // owner WhatsApp (no plus)
+
+          const form = document.getElementById('bookingForm');
+          const submitBtn = document.getElementById('bookBtn');
+          const modal = document.getElementById('dvModal');
+          const modalText = document.getElementById('dvModalText');
+          const modalClose = document.getElementById('dvClose');
+
+          function showModal(text){
+            modalText.textContent = text;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden','false');
+          }
+          function hideModal(){
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden','true');
+          }
+          modalClose.addEventListener('click', hideModal);
+          modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
+
+          form.addEventListener('submit', async function(e){
+            e.preventDefault();
+            if(submitBtn.getAttribute('data-busy') === '1') return;
+            submitBtn.setAttribute('data-busy','1');
+            submitBtn.textContent = 'Booking...';
+
+            // Collect fields
+            const name = document.getElementById('b_name').value.trim();
+            const email = document.getElementById('b_email').value.trim();
+            const phone = document.getElementById('b_phone').value.trim();
+            const service = document.getElementById('b_service').value;
+            const date = document.getElementById('b_date').value;
+            const message = document.getElementById('b_message').value.trim();
+
+            // Basic validation
+            if(!name || !email || !phone || !service || !date){
+              alert('Please complete all required fields.');
+              submitBtn.removeAttribute('data-busy');
+              submitBtn.textContent = 'Book Appointment';
+              return;
+            }
+
+            // Prepare template params for EmailJS
+            const templateParams = {
+              from_name: name,
+              from_email: email,
+              phone: phone,
+              service: service,
+              preferred_date: date,
+              message: message,
+              site: window.location.hostname
+            };
+
+            // 1) Send email via EmailJS (notification to your template)
+            let emailOk = false;
+            try{
+              await emailjs.send('service_dea8439','template_xrogxm8', templateParams);
+              emailOk = true;
+            }catch(err){
+              console.warn('EmailJS send error', err);
+              emailOk = false;
+            }
+
+            // 2) Save booking locally as backup
+            try{
+              const backup = JSON.parse(localStorage.getItem('deba_bookings_v2')||'[]');
+              backup.push({ id:'bk_'+Date.now(), name, email, phone, service, date, message, created: new Date().toISOString() });
+              localStorage.setItem('deba_bookings_v2', JSON.stringify(backup));
+            }catch(err){
+              console.warn('localStorage error', err);
+            }
+
+            // 3) Attempt to call server-side create-order (if available) - optional, non-blocking
+            let serverResp = null;
+            try{
+              const resp = await fetch('/.netlify/functions/create-order', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({ name, email, phone, service, date, slot: 'N/A', amount: 0 }) // amount 0 -> no payment
+              });
+              if(resp.ok){
+                serverResp = await resp.json();
+              } else {
+                serverResp = { error: await resp.text() };
+              }
+            }catch(err){
+              // ignore - server may not be deployed yet
+              serverResp = { error: 'server-unavailable' };
+            }
+
+            // 4) Open WhatsApp to owner with booking summary (for instant alert)
+            try{
+              const waText = encodeURIComponent(`New booking → ${name} | ${service} | ${date} | ${phone}`);
+              window.open('https://wa.me/'+ownerWhatsApp+'?text='+waText, '_blank');
+            }catch(err){
+              // ignore
+            }
+
+            // 5) Show success or partial-success modal
+            if(emailOk){
+              showModal('Thank you! Your appointment request has been sent. We will contact you shortly.');
+            } else {
+              showModal('Your request is saved locally. Email could not be sent right now. We will try to notify you soon.');
+            }
+
+            // Reset form & button
+            form.reset();
+            submitBtn.removeAttribute('data-busy');
+            submitBtn.textContent = 'Book Appointment';
+          });
+
+        })();
+        </script>
+
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
     </body>
