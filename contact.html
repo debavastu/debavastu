@@ -1,323 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>Contact Us – Premium</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact Us – DEBAVASTU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Stylesheets -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/icofont.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-    <!-- AOS Animation -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- 3D Lottie Library -->
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.13/build/player/lottie.min.js"></script>
-
+    <!-- Page Custom Styles -->
     <style>
-        /* ------------------------------
-           PREMIUM 3D HERO SECTION
-        ------------------------------ */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+        }
+
+        /*******************************
+		HERO 3D SECTION
+		********************************/
         .hero-section {
-            position: relative;
-            padding: 140px 0 120px;
+            padding: 80px 0 80px;
             background: linear-gradient(135deg, #f7f6ff, #ffffff);
-            overflow: hidden;
         }
 
         .hero-title {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* Animated gradient heading */
+        .gradient-animate {
+            background: linear-gradient(90deg, #7c4dff, #ff3cac, #ffb347, #7c4dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradientMove 6s ease infinite;
+            text-shadow: 0 3px 15px rgba(140, 82, 255, 0.25);
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-subtitle {
-            font-size: 18px;
-            opacity: 0.8;
-            max-width: 470px;
+            max-width: 460px;
+            line-height: 1.6;
+            color: #555;
         }
 
         .hero-lottie {
-            width: 450px;
-            height: 450px;
+            width: 380px;
+            height: 380px;
             margin: 0 auto;
         }
 
-        /* ------------------------------
-           PROFESSIONAL CONTACT CARDS
-        ------------------------------ */
-        .pro-contacts .section-title {
-            font-size: 32px;
-            font-weight: 700;
+        @media (max-width: 768px) {
+            .hero-section { text-align: center; }
+            .hero-title { font-size: 34px; }
+            .hero-lottie { width: 300px; height: 300px; }
         }
 
-        .pro-contacts .section-subtitle {
-            font-size: 16px;
-            opacity: 0.8;
+        /**************************************
+        CONTACT SECTIONS 
+        **************************************/
+        .contact-info-blocks {
+            margin-top: 60px;
         }
 
         .contact-card {
-            background: #ffffff;
-            padding: 35px 25px;
+            background: #fff;
+            padding: 25px;
             border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            transition: 0.3s ease;
             text-align: center;
-            transition: all 0.35s ease;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
         }
 
         .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
         }
 
-        .contact-card .icon-wrap {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #6c63ff, #5a54e6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 28px;
-            color: #fff;
-        }
-
-        .contact-card h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .contact-card .contact-link {
-            font-weight: 600;
-            color: #6c63ff;
-            display: block;
-            margin-top: 10px;
-        }
-
-        /* ------------------------------
-           CONTACT FORM PREMIUM
-        ------------------------------ */
-        .contact-form {
-            padding: 40px;
-            border-radius: 20px;
-            background: #fff;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-        }
-
-        .form-control {
-            border-radius: 10px;
-        }
-
-        .btn-theme {
-            background: #6c63ff;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 12px;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-theme:hover {
-            background: #534ceb;
-        }
-
-        /* ------------------------------
-           WHATSAPP FLOAT BUTTON
-        ------------------------------ */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 999;
-        }
-
-        .whatsapp-btn img {
-            width: 64px;
-            height: 64px;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <!-- ============================================= -->
-    <!--                 HERO SECTION                  -->
-    <!-- ============================================= -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <!-- Text -->
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="hero-title">Get in Touch</h1>
-                    <p class="hero-subtitle mt-3">
-                        Contact us for appointments, service inquiries, and support — our team is here to help you.
-                    </p>
-                </div>
-
-                <!-- 3D Lottie Animation -->
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <div id="heroLottie" class="hero-lottie"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================= -->
-    <!--         PROFESSIONAL CONTACT SECTION          -->
-    <!-- ============================================= -->
-    <section class="pro-contacts section py-5">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-title">Our Professional Contacts</h2>
-                    <p class="section-subtitle">Reach us through any of the following channels</p>
-                </div>
-            </div>
-
-            <div class="row g-4">
-
-                <!-- Phone -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card" data-aos="zoom-in">
-                        <div class="icon-wrap">
-                            <i class="icofont-phone"></i>
-                        </div>
-                        <h4>Phone Support</h4>
-                        <p>Available 9 AM – 7 PM</p>
-                        <a href="tel:+916372710439" class="contact-link">+91 63727 10439</a>
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card" data-aos="zoom-in" data-aos-delay="150">
-                        <div class="icon-wrap">
-                            <i class="icofont-email"></i>
-                        </div>
-                        <h4>Email Assistance</h4>
-                        <p>Get replies within 24 hours</p>
-                        <a href="mailto:yourmail@gmail.com" class="contact-link">yourmail@gmail.com</a>
-                    </div>
-                </div>
-
-                <!-- Location -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-wrap">
-                            <i class="icofont-location-pin"></i>
-                        </div>
-                        <h4>Office Address</h4>
-                        <p>Visit our main office</p>
-                        <span class="contact-link">Example Street, Chennai, India</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================= -->
-    <!--              CONTACT FORM SECTION             -->
-    <!-- ============================================= -->
-    <section class="py-5">
-        <div class="container">
-
-            <div class="contact-form shadow-sm" data-aos="fade-up">
-
-                <h3 class="mb-4">Send us a Message</h3>
-
-                <form id="contactForm">
-
-                    <div class="row g-4">
-
-                        <div class="col-md-6">
-                            <input type="text" id="name" class="form-control" placeholder="Your Name">
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="email" id="email" class="form-control" placeholder="Your Email">
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="text" id="phone" class="form-control" placeholder="Phone Number">
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="text" id="subject" class="form-control" placeholder="Subject">
-                        </div>
-
-                        <div class="col-12">
-                            <textarea id="message" class="form-control" rows="4" placeholder="Your Message"></textarea>
-                        </div>
-
-                        <div class="col-12">
-                            <button type="submit" class="btn-theme">Send Message</button>
-                        </div>
-
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ============================================= -->
-    <!--                 WHATSAPP BUTTON               -->
-    <!-- ============================================= -->
-    <a class="whatsapp-btn" href="https://wa.me/916372710439" target="_blank">
-        <img src="https://img.icons8.com/color/96/whatsapp.png">
-    </a>
-
-    <!-- JS Libraries -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-    <script>
-        AOS.init();
-
-        /* 3D Lottie Animation */
-        lottie.loadAnimation({
-            container: document.getElementById("heroLottie"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            path: "https://lottie.host/4d87959f-dcbb-4de5-bd99-1313dcd89e5c/yVdT1L7B7E.json"
-        });
-
-        /* Form Validation */
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const fields = ["name", "email", "phone", "subject", "message"];
-            let valid = true;
-
-            fields.forEach(id => {
-                const el = document.getElementById(id);
-                if (el.value.trim() === "") {
-                    el.style.border = "2px solid red";
-                    valid = false;
-                } else {
-                    el.style.border = "1px solid #ccc";
-                }
-            });
-
-            if (!valid) {
-                alert("Please fill all fields correctly.");
-                return;
-            }
-
-            alert("Form submitted successfully!");
-            this.reset();
-        });
-    </script>
-
-</body>
-</html>
+        .contact-c
