@@ -1,10 +1,342 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Contact Us – DEBAVASTU</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>DEBAVASTU-The Complete Vedic Solutions.</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <style>
+          /* Small modal for success */
+          .dv-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+          }
+          .dv-modal .card {
+            background: #fff;
+            padding: 22px;
+            max-width: 460px;
+            width: 92%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 18px 50px rgba(12,12,12,0.18);
+            font-family: 'Poppins',sans-serif;
+          }
+          .dv-modal .card h3 { margin-top:0; color:#0b6e4f; }
+          .dv-modal .card p { color:#444; margin:10px 0 18px; }
+          .dv-modal .card .btn { background:#0b6e4f; color:#fff; padding:10px 18px; border-radius:8px; border:none; }
+        </style>
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="25px" height="20px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->   
+		
+		
+		<!-- ===================== OPTIMIZED HEADER (ROYAL BLUE THEME) ===================== -->
+
+<style>
+/* ------------------ BASIC RESET ------------------ */
+.header {
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    position: sticky;
+    background: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ------------------ COLOR VARIABLES ------------------ */
+:root {
+    --header-bg: #ffffff;
+    --menu-text: #222;
+    --menu-hover: #4169E1; /* Royal Blue */
+    --primary-blue: #4169E1;
+    --primary-hover: #2a4ebf; 
+    --tint-blue: rgba(65,105,225,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --header-bg: #111;
+        --menu-text: #fff;
+        --menu-hover: #7aa2ff;
+    }
+}
+
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: #4169E1; /* Royal Blue */
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* ------------------ LOGO ------------------ */
+.logo img {
+    max-height: 60px;
+}
+
+/* ------------------ NAVIGATION ------------------ */
+.navigation .menu > li > a {
+    color: var(--menu-text);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 18px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.navigation .menu > li > a:hover {
+    color: var(--menu-hover);
+    transform: translateY(-2px);
+}
+
+/* ------------------ DROPDOWN ------------------ */
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.25s;
+    background: var(--header-bg);
+    border-radius: 8px;
+}
+
+.menu li:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    padding: 12px 18px;
+    color: var(--menu-text);
+    font-weight: 500;
+}
+
+.dropdown li a:hover {
+    background: var(--tint-blue);
+    color: var(--menu-hover);
+}
+
+/* ------------------ BOOK APPOINTMENT BUTTON ------------------ */
+.get-quote .btn {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.get-quote .btn:hover {
+    transform: scale(1.05);
+    background: var(--primary-hover);
+    box-shadow: 0 0 12px rgba(65,105,225,0.6);
+}
+
+/* ------------------ MOBILE MENU ------------------ */
+.mobile-nav {
+    display: none;
+}
+@media (max-width: 991px) {
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* ------------------ FLOATING BUTTONS ------------------ */
+.floating-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.floating-btn a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    animation: pulse 1.8s infinite;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0.5); }
+    70% { transform: scale(1.12); box-shadow: 0 0 0 18px rgba(65,105,225,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0); }
+}
+</style>
+
+<header class="header">
+
+  <!-- ===================== TOP BAR START ===================== -->
+<style>
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: linear-gradient(90deg, #0A8F6A, #005F46);
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+</style>
+
+<div class="topbar">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-5">
+                <p class="topbar-text">DEBAVASTU : The Complete Vedic Solutions!</p>
+            </div>
+
+            <div class="col-lg-6 col-md-7 text-right">
+                <ul class="top-contact">
+                    <li><i class="fa fa-phone"></i> +91 6372710439</li>
+                    <li><i class="fa fa-envelope"></i>
+                        <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ===================== TOP BAR END ===================== -->
+
+    <!-- Header Inner -->
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="DebaVastu">
+                            </a>
+                        </div>
+                        <div class="mobile-nav"></div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-9 col-12">
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+
+                                    <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="vastu.html">Vastu</a></li>
+                                            <li><a href="astrology.html">Astrology</a></li>
+                                            <li><a href="numerology.html">Numerology</a></li>
+                                            <li><a href="tarot.html">Tarot</a></li>
+                                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                                            <li><a href="healing.html">Healing Therapies</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-10 text-right">
+                        <div class="get-quote">
+                            <a href="appointment.html" class="btn">Book Appointment</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- Floating Buttons -->
+<div class="floating-btn">
+    <a href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+916372710439" title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+</div>
+
+<!-- ===================== END OPTIMIZED HEADER ===================== -->
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
