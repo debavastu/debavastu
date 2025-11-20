@@ -5,220 +5,215 @@
     <title>Contact Us – DEBAVASTU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <style>
-        /* Global Black-Gold Theme */
-        body {
-            background: #0c0c0c;
-            color: #e5c676;
-            font-family: 'Poppins', sans-serif;
+        /* Royal Green Theme Colors */
+        :root {
+            --primary-green: #0b3d2e;
+            --secondary-green: #145c44;
+            --gold: #d4af37;
+            --light-gold: #f6e7b1;
+            --text-light: #e8f5e9;
         }
 
-        a { color: #e5c676; }
-        a:hover { color: #ffdf8c; }
+        body {
+            background: #f5f7f5;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
         /* Header */
         .header {
-            background: #000;
-            padding: 12px 0;
-            border-bottom: 1px solid #2a2a2a;
-            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+            background: var(--primary-green);
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 9999;
         }
-        .navbar-brand {
-            color: #e5c676 !important;
+        .header .navbar-brand {
+            color: var(--gold) !important;
             font-weight: 700;
-            font-size: 1.4rem;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
+            letter-spacing: 0.08em;
         }
-        .navbar-nav .nav-link {
-            color: #e5c676 !important;
+        .header .nav-link {
+            color: var(--light-gold) !important;
             margin-left: 25px;
             font-weight: 500;
         }
-        .navbar-nav .nav-link:hover {
-            color: #ffdf8c !important;
+        .header .nav-link:hover {
+            color: var(--gold) !important;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 60px 0;
-            background: linear-gradient(to right, #0c0c0c, #1a1a1a);
-            border-bottom: 1px solid #222;
+        /* Contact Title */
+        .contact-title {
+            background: var(--secondary-green);
+            padding: 50px 0;
+            text-align: center;
+            color: var(--light-gold);
         }
-        .hero h1 {
-            font-size: 38px;
+        .contact-title h2 {
+            font-size: 36px;
             font-weight: 700;
-            color: #e5c676;
-        }
-        .hero p {
-            color: #d6b96a;
-            font-size: 18px;
         }
 
-        /* Contact Form */
+        /* Section */
+        .contact-section {
+            padding: 60px 0;
+        }
         .contact-box {
-            background: #111;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid #2d2d2d;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
-        }
-        .contact-box input,
-        .contact-box textarea,
-        .contact-box select {
-            background: #0e0e0e;
-            border: 1px solid #3a3a3a;
-            color: #e5c676;
-        }
-        .contact-box input::placeholder,
-        .contact-box textarea::placeholder {
-            color: #907d42;
-        }
-        .contact-box input:focus,
-        .contact-box textarea:focus {
-            border-color: #e5c676;
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
-        }
-
-        .btn-gold {
-            background: #e5c676;
-            color: #000;
-            font-weight: 600;
-            border-radius: 50px;
-            padding: 10px 30px;
-            transition: 0.3s;
-        }
-        .btn-gold:hover {
-            background: #ffdf8c;
-            color: #000;
-        }
-
-        /* Contact Details */
-        .info-box {
-            background: #111;
-            border-radius: 12px;
+            background: #ffffff;
             padding: 30px;
-            border: 1px solid #2d2d2d;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        .info-box h4 {
-            color: #ffdf8c;
-            margin-bottom: 15px;
-            font-weight: 600;
+        .contact-box h3 {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+        .contact-box p, .contact-box a {
+            color: #333;
+            font-size: 15px;
+        }
+        .contact-box a:hover{
+            color: var(--secondary-green);
+        }
+
+        /* Map */
+        .map iframe {
+            width: 100%;
+            height: 380px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-green);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--light-gold);
+            margin-top: 40px;
+        }
+        .footer a{
+            color: var(--gold);
         }
 
         /* Floating Buttons */
         .floating-btn {
             position: fixed;
             right: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
             z-index: 9999;
-            border-radius: 50px;
-            padding: 12px 18px;
-            color: #000;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        #whatsappBtn {
-            background: #25D366;
-            bottom: 120px;
-        }
-        #callBtn {
-            background: #e5c676;
-            bottom: 70px;
-        }
+        #callBtn { bottom: 150px; background: var(--gold); color: var(--primary-green); }
+        #whatsappBtn { bottom: 90px; background: #25D366; color: #fff; }
         #appointmentBtn {
-            background: #ffdf8c;
-            bottom: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            background: #000;
-            padding: 40px 0;
-            color: #e5c676;
-            border-top: 1px solid #2a2a2a;
-            margin-top: 50px;
+            bottom: 30px;
+            background: var(--secondary-green);
+            color: var(--light-gold);
+            font-size: 16px;
+            width: auto;
+            padding: 10px 20px;
+            border-radius: 30px;
         }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <nav class="navbar navbar-expand-lg navbar-dark container">
-        <a class="navbar-brand" href="index.html">DEBAVASTU</a>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="index.html">DEBAVASTU</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <div id="nav" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="services.html">Services</a></li>
-                <li><a class="nav-link" href="about.html">About</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <!-- PAGE TITLE -->
+    <section class="contact-title">
+        <h2>Contact Us</h2>
+    </section>
 
-<!-- HERO -->
-<section class="hero text-center">
-    <div class="container">
-        <h1>Contact DebaVastu</h1>
-        <p>Your trusted partner in Remedial Vastu & Vastu Consultation</p>
-    </div>
-</section>
+    <!-- CONTACT DETAILS + FORM -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
 
-<!-- CONTACT CONTENT -->
-<section class="container py-5">
-    <div class="row">
-        
-        <!-- LEFT INFO -->
-        <div class="col-md-5 mb-4">
-            <div class="info-box">
-                <h4>Get in Touch</h4>
-                <p><strong>Phone:</strong> +91 63727 10439</p>
-                <p><strong>Email:</strong> contact@debavastu.com</p>
-                <p><strong>Website:</strong> www.debavastu.com</p>
-                <hr style="border-color:#2d2d2d;">
-                <h4>Office Hours</h4>
-                <p>Mon – Sun: 9:00 AM – 9:00 PM</p>
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <div class="contact-box">
+                        <h3>Get in Touch</h3>
+                        <p><strong>Phone:</strong> +91 63727 10439</p>
+                        <p><strong>Email:</strong> contact@debavastu.com</p>
+                        <p><strong>Location:</strong> India</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="col-md-8 mb-4">
+                    <div class="contact-box">
+                        <h3>Send a Message</h3>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <button class="btn btn-success" style="background: var(--secondary-green); border:none;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Map -->
+            <div class="map mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.83543450966!2d144.9537363155045!3d-37.81627974201185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c511b0de2a0!2sVictoria!5e0!3m2!1sen!2sau!4v1600000000000"></iframe>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT FORM -->
-        <div class="col-md-7">
-            <div class="contact-box">
-                <h4 class="mb-4">Send Us a Message</h4>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 DEBAVASTU. All Rights Reserved.</p>
+    </footer>
 
-                <form id="contactForm">
-                    <input class="form-control mb-3" type="text" placeholder="Your Name" required>
-                    <input class="form-control mb-3" type="email" placeholder="Your Email" required>
-                    <input class="form-control mb-3" type="text" placeholder="Phone Number" required>
-                    <textarea class="form-control mb-3" rows="5" placeholder="Your Message" required></textarea>
-                    <button class="btn-gold">Submit</button>
-                </form>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- FLOATING BUTTONS -->
-<a id="whatsappBtn" href="https://wa.me/916372710439" class="floating-btn">WhatsApp</a>
-<a id="callBtn" href="tel:+916372710439" class="floating-btn">Call</a>
-<a id="appointmentBtn" href="appointment.html" class="floating-btn">Book Appointment</a>
-
-<!-- FOOTER -->
-<footer class="footer text-center">
-    <p>© 2025 DebaVastu · All Rights Reserved</p>
-</footer>
+    <!-- FLOATING BUTTONS -->
+    <a href="tel:+916372710439" class="floating-btn" id="callBtn">📞</a>
+    <a href="https://wa.me/916372710439" class="floating-btn" id="whatsappBtn">💬</a>
+    <a href="appointment.html" class="floating-btn" id="appointmentBtn">Book Appointment</a>
 
 </body>
 </html>
