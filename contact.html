@@ -1,102 +1,416 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8">
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="keywords" content="Vastu, Astrology, Numerology, Healing"/>
+    <meta name="description" content="DebaVastu - The Complete Vedic Solutions"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Title / Favicon -->
     <title>Contact Us – DEBAVASTU</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.png">
 
-    <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
+    <!-- CSS Libraries (CDN for reliability) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+
+    <!-- Page Styles -->
     <style>
-        /* Header */
-        .header {
-            background-color: #ffffff;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-        }
-        .header .navbar-brand {
-            color: #000;
-            font-weight: 700;
-            font-size: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-        .header .navbar-nav .nav-link {
-            color: #000 !important;
-            margin-left: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        .header .navbar-nav .nav-link:hover {
-            color: #007bff !important;
-        }
+      :root{
+        --royal-blue: #4169E1;
+        --deep-green-start: #0A8F6A;
+        --deep-green-end: #005F46;
+      }
 
-        /* Contact Page */
-        .contact-title {
-            background: #f7f7f7;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .contact-title h2 {
-            font-weight: 700;
-            font-size: 32px;
-            margin: 0;
-        }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: #fff;
+        color: #222;
+        -webkit-font-smoothing:antialiased;
+      }
 
-        /* Floating Buttons */
-        .floating-btn {
-            position: fixed;
-            right: 20px;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            z-index: 9999;
-        }
+      /* ---------- Header (keeps your original header styling) ---------- */
+      .header {
+          width: 100%;
+          z-index: 9999;
+          top: 0;
+          position: sticky;
+          background: var(--header-bg, #fff);
+          box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      }
 
-        #callBtn { bottom: 150px; background: #28a745; color: #fff; }
-        #whatsappBtn { bottom: 90px; background: #25D366; color: #fff; }
-        #appointmentBtn {
-            bottom: 30px;
-            background: #007bff;
-            color: #fff;
-            font-size: 16px;
-            width: auto;
-            padding: 10px 20px;
-            border-radius: 30px;
-        }
+      .topbar {
+          background: linear-gradient(90deg, var(--deep-green-start), var(--deep-green-end));
+          padding: 8px 0;
+      }
+      .topbar .topbar-text { color: #fff; font-weight:700; margin:0; }
+      .top-contact { list-style:none; margin:0; padding:0; display:flex; gap:18px; justify-content:flex-end; }
+      .top-contact li { color:#fff; font-weight:600; display:flex; align-items:center; gap:8px; font-size:14px; }
 
-        /* Footer */
-        .footer {
-            background: #111;
-            padding: 40px 0;
-            color: #ccc;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .footer a {
-            color: #fff;
-        }
+      .header-inner { padding: 14px 0; }
+      .logo img { max-height:60px; display:block; }
+      .main-menu .navigation .menu { list-style:none; margin:0; padding:0; display:flex; align-items:center; gap:8px; }
+      .navigation .menu > li > a { color:#222; font-weight:600; padding:12px 10px; text-decoration:none; }
+      .navigation .menu > li > a:hover { color:var(--royal-blue); }
+
+      .get-quote .btn { background: var(--royal-blue); color: #fff; padding:10px 18px; border-radius:8px; font-weight:700; }
+
+      /* ---------- Floating Buttons (stacked) ---------- */
+      .floating-btn {
+          position: fixed;
+          right: 18px;
+          bottom: 20px;
+          z-index: 99999;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-end;
+      }
+      .floating-btn a {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          color:#fff;
+          text-decoration:none;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+          font-size:20px;
+      }
+      .floating-btn .btn-whatsapp { background:#25D366; }
+      .floating-btn .btn-call { background:#28a745; }
+      .floating-btn .btn-book {
+          width:auto;
+          padding:10px 16px;
+          border-radius:28px;
+          background:var(--royal-blue);
+          font-weight:700;
+          font-size:14px;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        padding: 42px 0 30px;
+        background: linear-gradient(135deg,#f7f6ff,#ffffff);
+      }
+      .hero h1 { font-size:36px; font-weight:700; margin-bottom:8px; color:#2b2b2b; }
+      .hero p.lead { max-width:640px; color:#555; }
+
+      /* ---------- Contact area ---------- */
+      .contact-info .card { border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.06); }
+      .contact-info .icon { font-size:26px; color:var(--royal-blue); margin-bottom:8px; }
+
+      .contact-form {
+        background:#fff;
+        border-radius:14px;
+        box-shadow:0 12px 40px rgba(0,0,0,0.06);
+        padding:24px;
+      }
+      .form-control { border-radius:10px; height:48px; }
+
+      .btn-submit {
+        background: var(--royal-blue);
+        color:#fff;
+        padding:12px 22px;
+        border-radius:12px;
+        border:none;
+        font-weight:700;
+      }
+
+      /* ---------- Footer ---------- */
+      .site-footer { background:#0b0b0b; color:#ddd; padding:30px 0; margin-top:40px; text-align:center; }
+      .site-footer a { color:#fff; text-decoration:underline; }
+
+      /* Responsive tweaks */
+      @media (max-width: 991px) {
+        .navigation .menu { flex-direction: column; background:transparent; }
+        .top-contact { justify-content:center; gap:10px; flex-wrap:wrap; }
+      }
     </style>
 </head>
 
 <body>
+  <!-- Preloader (kept for UX if you want to enable) -->
+  <div class="preloader" style="display:none;"></div>
 
-    <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="index.html">DEBAVASTU</a>
+  <!-- ===== HEADER (merged from your header) ===== -->
+  <header class="header" role="banner">
+    <div class="topbar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="topbar-text mb-0">DEBAVASTU : The Complete Vedic Solutions!</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="top-contact mb-0 justify-content-end">
+              <li><i class="fa fa-phone"></i> +91 63727 10439</li>
+              <li><i class="fa fa-envelope"></i> <a href="mailto:contact@debavastu.com" style="color:#fff; text-decoration:none;">contact@debavastu.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="header-inner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-3">
+            <div class="logo">
+              <a href="index.html"><img src="img/logo.png" alt="DebaVastu" style="max-height:56px;"></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-7">
+            <!-- simple nav (kept minimal for clarity) -->
+            <nav class="main-menu">
+              <ul class="navigation menu d-flex justify-content-end align-items-center mb-0">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services <i class="fa fa-chevron-down" style="font-size:12px; margin-left:6px;"></i></a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-md-2 d-none d-md-flex justify-content-end">
+            <div class="get-quote">
+              <a href="appointment.html" class="btn" style="background:var(--royal-blue); color:#fff; border-radius:10px; padding:8px 14px;">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ===== END HEADER ===== -->
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1>Contact DebaVastu</h1>
+          <p class="lead">Book consultations for Vastu, Astrology, Numerology and holistic healing — phone, WhatsApp, or send us a message below and we'll get right back to you.</p>
+        </div>
+        <div class="col-lg-5 text-lg-right d-none d-lg-block">
+          <!-- small brand/visual placeholder -->
+          <img src="img/hero-illustration.png" alt="DebaVastu" style="max-width:220px; opacity:0.95;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT INFO + FORM ===== -->
+  <section class="contact-area py-5">
+    <div class="container">
+      <div class="row">
+
+        <!-- Contact info column -->
+        <div class="col-lg-5 mb-4">
+          <div class="contact-info">
+            <div class="card p-4 mb-3">
+              <div class="d-flex align-items-start">
+                <div class="mr-3 icon"><i class="fa fa-phone"></i></div>
+                <div>
+                  <h5 class="mb-1">Call / WhatsApp</h5>
+                  <p class="mb-0">+91 63727 10439</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card p-4 mb-3">
+              <div class="d-flex align-items-start">
+                <div class="mr-3 icon"><i class="fa fa-envelope"></i></div>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <p class="mb-0">contact@debavastu.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card p-4">
+              <div class="d-flex align-items-start">
+                <div class="mr-3 icon"><i class="fa fa-map-marker-alt"></i></div>
+                <div>
+                  <h5 class="mb-1">Location</h5>
+                  <p class="mb-0">Bhubaneswar, Odisha, India</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="col-lg-7">
+          <div class="contact-form">
+            <h4 class="mb-3">Send us a message</h4>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your name</label>
+                  <input id="name" name="name" class="form-control" placeholder="Full name" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" class="form-control" placeholder="+91 63727 10439" required>
+                  <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="service">Service</label>
+                  <select id="service" name="service" class="form-control">
+                    <option value="">Choose service (optional)</option>
+                    <option>Vastu Consultation</option>
+                    <option>Astrology</option>
+                    <option>Numerology</option>
+                    <option>Yoga & Wellness</option>
+                    <option>Healing Therapies</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell us how we can help..." required></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+
+              <div class="form-group">
+                <button id="submitBtn" type="submit" class="btn-submit">Send Message</button>
+              </div>
+
+              <!-- Success modal replacement -->
+              <div id="successBox" style="display:none; margin-top:14px;">
+                <div style="background:#e9fbe9; border:1px solid #b8efc6; padding:12px; border-radius:8px; color:#0a7a44;">
+                  <strong>Message sent!</strong> We will contact you shortly.
+                </div>
+              </div>
+            </form>
+
+            <small class="text-muted d-block mt-3">Prefer WhatsApp? <a href="https://wa.me/916372710439" target="_blank">Message us on WhatsApp</a>.</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="mb-1">© <span id="year"></span> DebaVastu. All Rights Reserved.</p>
+      <p class="small mb-0"><a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Floating Quick Actions (Call / WhatsApp / Book) ===== -->
+  <div class="floating-btn" aria-hidden="false">
+    <a class="btn-whatsapp" href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp" target="_blank" style="text-decoration:none;">
+      <i class="fa fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <a class="btn-call" href="tel:+916372710439" title="Call Now" style="text-decoration:none;">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </a>
+
+    <a class="btn-book" href="appointment.html" title="Book Appointment" style="text-decoration:none;">
+      <i class="fa fa-calendar-check" style="margin-right:8px;"></i> Book
+    </a>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+
+  <!-- Form handling -->
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Basic bootstrap-style validation + simple submit flow
+    (function(){
+      var form = document.getElementById('contactForm');
+      var submitBtn = document.getElementById('submitBtn');
+      var successBox = document.getElementById('successBox');
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // reset bootstrap-style custom validity display
+        var inputs = form.querySelectorAll('[required]');
+        var valid = true;
+        inputs.forEach(function(inp){
+          inp.classList.remove('is-invalid');
+          if(!inp.value.trim()){
+            valid = false;
+            inp.classList.add('is-invalid');
+          } else {
+            if(inp.type === 'email'){
+              // basic email check
+              if(!/^\S+@\S+\.\S+$/.test(inp.value.trim())){
+                valid = false;
+                inp.classList.add('is-invalid');
+              }
+            }
+          }
+        });
+
+        if(!valid){
+          // focus the first invalid input
+          var firstInvalid = form.querySelector('.is-invalid');
+          if(firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // disable button while "sending"
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Simulate sending — replace with real AJAX/EmailJS call if desired
+        setTimeout(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          form.reset();
+          successBox.style.display = 'block';
+          window.scrollTo({ top: form.offsetTop - 60, behavior: 'smooth' });
+
+          // hide success after a short time
+          setTimeout(function(){ successBox.style.display = 'none'; }, 5000);
+        }, 900);
+
+        // ---------- Optional: Use EmailJS (uncomment & configure) ----------
+        // If you want to connect EmailJS, include the EmailJS SDK and do:
+        //
+        // emailjs.send('service_id','template_id', {
+        //   name: document.getElementById('name').value,
+        //   email: document.getElementById('email').value,
+        //   phone: document.getElementById('phone').value,
+        //   service: document.getElementById('service').value,
+        //   message: document.getElementById('message').value
+        // }).then(function(){
+        //   // success UI
+        // }, function(err){
+        //   // error UI
+        // });
+        // -------------------------------------------------------------------
+      });
+    })();
+  </script>
+</body>
+</html>
