@@ -180,8 +180,15 @@
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
 
-    let name = name.value.trim(), email = email.value.trim(), phone = phone.value.trim(), msg = message.value.trim();
-    if(!name || !email || !phone || !msg) return alert("Please fill all required fields.");
+    let userName = document.getElementById("name").value.trim();
+    let userEmail = document.getElementById("email").value.trim();
+    let userPhone = document.getElementById("phone").value.trim();
+    let userMsg = document.getElementById("message").value.trim();
+
+    if(!userName || !userEmail || !userPhone || !userMsg){
+      alert("Please fill all required fields.");
+      return;
+    }
 
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
