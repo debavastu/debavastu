@@ -5,282 +5,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Numerology – DebaVastu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
-    :root{--dv-blue:#4169E1;--dv-green:#0A8F6A;--bg:#f7f7f7}
-    body{padding-top:120px;margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#222}
-    a{color:inherit}
-    .container{max-width:1100px;margin:30px auto;padding:0 18px}
-    /* Header / Topbar */
-    .header { padding: 18px 0 !important;width:100%;position:fixed;top:0;z-index:9999;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.06)}
-    .topbar{background:linear-gradient(90deg,var(--dv-green),#005F46);padding:8px 0;font-size:14px;color:#fff}
-    .topbar .inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .header-inner{padding:10px 0}
-    .logo img{max-height:65px}
-    .navigation .menu{list-style:none;display:flex;gap:6px;margin:0;padding:0;align-items:center}
-    .navigation .menu>li>a{color:#222;font-size:16px;padding:18px 20px;display:block;font-weight:600;text-decoration:none}
-    .navigation .menu>li{position:relative}
-    .dropdown{position:absolute;left:0;top:100%;min-width:180px;background:#fff;padding:8px 0;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.08);opacity:0;visibility:hidden;transform:translateY(12px);transition:all .2s}
-    .menu li:hover>.dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-    .dropdown li a{display:block;padding:10px 16px;color:#222}
-    .get-quote .btn{background:var(--dv-blue);color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:none}
+    body { margin:0; font-family:'Poppins',sans-serif; background:#f7f7f7; }
 
-    /* Main layout */
-    .grid{display:flex;gap:30px;align-items:flex-start}
-    .col-left{flex:1}
-    .col-right{width:380px}
-    .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+    /* ===================== MERGED HEADER ===================== */
+    :root { --primary-green:#0A8F6A; --primary-dark:#005F46; --primary-blue:#4169E1; --header-bg:#ffffff; --menu-text:#222; --menu-hover:var(--primary-blue); }
 
-    h1,h2,h3{color:#0b3c89}
-    input.form-control{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6}
-    button.btn-primary{background:#0b3c89;color:#fff;border:0;padding:10px;border-radius:8px}
+    .mega-header { background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.08); position:fixed; top:0; left:0; width:100%; z-index:9999; padding:0; }
+    .mega-header .container { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .logo img { height:58px; }
 
-    /* Result box */
-    .result-box{background:#f5f8ff;border-left:5px solid #0b3c89;padding:16px;border-radius:8px}
+    .navigation .menu { list-style:none; display:flex; gap:32px; padding:0; margin:0; align-items:center; font-weight:600; }
+    .navigation .menu li a { font-size:16px; color:#333; padding:10px 6px; display:block; transition:0.25s ease; }
+    .navigation .menu li a:hover { color:var(--primary-blue); transform:translateY(-2px); }
 
-    /* Services */
-    .services .card{padding:18px}
+    .dropdown { position:absolute; top:38px; left:0; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,0.12); padding:12px 0; display:none; list-style:none; width:180px; border-radius:8px; }
+    .menu li:hover > .dropdown { display:block; }
 
-    /* Footer */
-    footer{background:#0b3c89;color:#fff;padding:20px;text-align:center;margin-top:30px}
+    .header-right { display:flex; align-items:center; gap:20px; font-weight:600; }
+    .header-right a { background:#0a58ca; color:#fff; padding:10px 20px; border-radius:6px; font-weight:600; text-decoration:none; }
 
-    /* Floating WhatsApp */
-    .floating-whatsapp{position:fixed;right:20px;bottom:30px;z-index:9999;background:#25D366;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 6px 18px rgba(0,0,0,0.2)}
+    /* ===================== PAGE ===================== */
+    .page-banner { background:linear-gradient(135deg,#0b3c89,#16a085); color:#fff; padding:70px 0; text-align:center; font-size:36px; font-weight:600; margin-top:95px; }
 
-    /* Responsive */
-    @media(max-width:992px){body{padding-top:160px}.grid{flex-direction:column}.col-right{width:100%}}
+    .main-wrapper { max-width:1250px; margin:50px auto; display:flex; gap:40px; }
+    .content-left { flex:1.3; background:#fff; padding:30px; border-radius:12px; box-shadow:0 5px 16px rgba(0,0,0,0.08); }
+    .content-right { flex:0.8; }
+
+    .section-title { font-size:22px; font-weight:600; color:#0b3c89; margin-top:35px; }
+    p, li { font-size:16px; line-height:1.7; }
+
+    .calc-box { background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); position:sticky; top:120px; }
+    .calc-box input { width:100%; padding:12px; margin-bottom:12px; border:1px solid #ccc; border-radius:8px; font-size:15px; }
+    .calc-box button { width:100%; padding:12px; border:none; background:#0b3c89; color:#fff; font-size:16px; border-radius:8px; font-weight:600; cursor:pointer; }
+    .calc-box button:hover { background:#16a085; }
+    .result-box { background:#eef4ff; padding:18px; border-radius:8px; margin-top:18px; }
+
+    footer { background:#0b3c89; color:#fff; text-align:center; padding:30px; margin-top:50px; }
   </style>
-<style>.container{margin-top:20px !important;margin-bottom:20px !important;}.py-5{padding-top:30px!important;padding-bottom:30px!important;} section{padding-top:20px!important; padding-bottom:20px!important;} h2{margin-top:10px!important;margin-bottom:10px!important;}</style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-  <div class="topbar">
-    <div class="container inner">
-      <div>DEBAVASTU : The Complete Vedic Solutions!</div>
-      <div style="display:flex;gap:18px;align-items:center;font-weight:600">
-        <div><i class="fa fa-phone"></i>&nbsp;+91 63727 10439</div>
-        <div><i class="fa fa-envelope"></i>&nbsp;<a href="mailto:contact@debavastu.com" style="color:#fff">contact@debavastu.com</a></div>
-      </div>
+<header class="mega-header">
+  <div class="container">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="DebaVastu"></a>
+      <div style="font-size:15px;font-weight:600;color:#444;line-height:1.2;border-left:2px solid #ccc;padding-left:12px;">DEBAVASTU<br><span style="font-size:13px;font-weight:500;color:#777;">The Complete Vedic Solutions</span></div>
     </div>
-  </div>
 
-  <div class="header-inner">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:18px">
-        <div class="logo"><a href="index.html"><img src="img/logo.png" alt="DebaVastu"></a></div>
-      </div>
+    <nav class="navigation" style="flex:1; display:flex; justify-content:center;">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li style="position:relative;">
+          <a href="#">Services <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="vastu.html">Vastu</a></li>
+            <li><a href="astrology.html">Astrology</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="yoga.html">Yoga & Wellness</a></li>
+            <li><a href="healing.html">Healing Therapies</a></li>
+          </ul>
+        </li>
+        <li><a href="numerology.html">Numerology</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-      <nav class="navigation">
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>
-            <a href="#">Services <i class="fa fa-angle-down"></i></a>
-            <ul class="dropdown">
-              <li><a href="vastu.html">Vastu</a></li>
-              <li><a href="astrology.html">Astrology</a></li>
-              <li><a href="numerology.html">Numerology</a></li>
-              <li><a href="tarot.html">Tarot</a></li>
-              <li><a href="yoga.html">Yoga &amp; Wellness</a></li>
-              <li><a href="healing.html">Healing Therapies</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="get-quote"><a class="btn" href="appointment.html">Book Appointment</a></div>
+    <div class="header-right">
+      <div><i class="fa fa-phone"></i> +91 63727 10439</div>
+      <a href="appointment.html">Book Appointment</a>
     </div>
   </div>
 </header>
 
-<!-- Main Content -->
-<main class="container">
-  <section class="">
-    <h1 class="text-center">Complete Numerology Analysis</h1>
-    <p class="text-center">Integrated Numerology tools: Destiny, Life Path, Soul Urge, Personality, plus PDF report — all in one professional page.</p>
+<div class="page-banner">Numerology</div>
 
-    <div class="grid" style="margin-top:24px">
-      <!-- LEFT: Content & Services -->
-      <div class="col-left">
-        <div class="card mb-4">
-          <h3>What is Numerology?</h3>
-          <p>Numerology is the ancient science of decoding the vibrational influence of numbers in your name and date of birth. At DebaVastu, we provide a complete numerology evaluation aligned with Vedic principles.</p>
-        </div>
+<div class="main-wrapper">
 
-        <div class="card services mb-4">
-          <h3>Our Numerology Services</h3>
-          <ul>
-            <li>Name Correction (Chaldean &amp; Pythagorean)</li>
-            <li>Baby Name Suggestions</li>
-            <li>Business Name Numerology</li>
-            <li>Mobile Number Numerology</li>
-            <li>Career &amp; Relationship Numerology</li>
-            <li>House Number Compatibility</li>
-            <li>Signature &amp; Brand Numerology</li>
-          </ul>
-        </div>
+  <div class="content-left">
 
-        <div class="card mb-4">
-          <h3>Download Full Numerology Report</h3>
-          <p>Get a multi-page detailed PDF based on your name &amp; date of birth.</p>
-          <button class="btn" onclick="buildPDFContent();generatePDF()">Download PDF Report</button>
-        </div>
-      </div>
+    <h2 class="section-title">Understanding Your Core Numerology Numbers</h2>
+    <p>Numerology reveals your personality, destiny, emotions, strengths, challenges, and karmic patterns. At DebaVastu, we use a blend of <strong>Vedic, Chaldean, and Pythagorean numerology</strong> to decode your life blueprint.</p>
 
-      <!-- RIGHT: Single Calculator (kept only) -->
-      <div class="col-right">
-        <div class="card">
-          <h3 class="text-center mb-3">Numerology Calculator</h3>
+    <h2 class="section-title">1. Life Path Number</h2>
+    <ul>
+      <li><strong>1 – Leader:</strong> Independent, ambitious, courageous.</li>
+      <li><strong>2 – Peacemaker:</strong> Emotional, intuitive, sensitive.</li>
+      <li><strong>3 – Creator:</strong> Artistic, expressive, charming.</li>
+      <li><strong>4 – Builder:</strong> Practical, disciplined, hardworking.</li>
+      <li><strong>5 – Explorer:</strong> Adventurous, freedom-loving, quick thinker.</li>
+      <li><strong>6 – Healer:</strong> Family-oriented, responsible, caring.</li>
+      <li><strong>7 – Mystic:</strong> Spiritual, analytical, researcher.</li>
+      <li><strong>8 – Achiever:</strong> Wealth, authority, management.</li>
+      <li><strong>9 – Humanitarian:</strong> Compassion, charity, wisdom.</li>
+    </ul>
 
-          <label class="form-label">Full Name</label>
-          <input type="text" id="nameInput" class="form-control mb-3" placeholder="Enter full name (as on birth certificate)">
+    <h2 class="section-title">2. Destiny / Expression Number</h2>
+    <p>This number reveals your natural talents and long-term achievements.</p>
+    <ul>
+      <li><strong>1:</strong> Leadership roles.</li>
+      <li><strong>2:</strong> Counseling & partnerships.</li>
+      <li><strong>3:</strong> Arts & communication.</li>
+      <li><strong>4:</strong> Engineering & planning.</li>
+      <li><strong>5:</strong> Travel & business.</li>
+      <li><strong>6:</strong> Healing & teaching.</li>
+      <li><strong>7:</strong> Research & spirituality.</li>
+      <li><strong>8:</strong> Finance & management.</li>
+      <li><strong>9:</strong> Social work & global projects.</li>
+    </ul>
 
-          <label class="form-label">Date of Birth</label>
-          <input type="date" id="dobInput" class="form-control mb-3">
+    <h2 class="section-title">3. Soul Urge Number (Heart’s Desire)</h2>
+    <p>This number unveils your inner emotional needs, desires, and true motivation.</p>
 
-          <div style="display:flex;gap:10px;margin-bottom:12px">
-            <button class="btn btn-primary" onclick="calculateAll()" style="flex:1">Calculate</button>
-            <button class="btn" onclick="resetForm()" style="background:#eee">Reset</button>
-          </div>
+    <h2 class="section-title">4. Personality Number</h2>
+    <p>This describes your outer personality, aura, and first impression.</p>
 
-          <div class="result-box" id="combinedResult" style="display:none">
-            <h4>Your Numerology Summary</h4>
-            <p><strong>Destiny (Expression) Number:</strong> <span id="destinyDisplay">-</span></p>
-            <p><strong>Life Path Number:</strong> <span id="lifePathDisplay">-</span></p>
-            <p><strong>Soul Urge Number:</strong> <span id="soulDisplay">-</span></p>
-            <p><strong>Personality Number:</strong> <span id="personalityDisplay">-</span></p>
-            <hr>
-            <p id="summaryMeaning" style="color:#444"></p>
-            <div style="display:flex;gap:10px;margin-top:12px">
-              <button class="btn" onclick="buildPDFContent();generatePDF()" style="background:var(--dv-green);color:#fff;flex:1">Download Report (PDF)</button>
-              <a class="btn" href="appointment.html" style="background:var(--dv-blue);color:#fff;text-align:center;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:8px">Book Appointment</a>
-            </div>
-          </div>
-        </div>
+    <h2 class="section-title">5. Lucky Elements</h2>
+    <ul>
+      <li>Lucky Colors</li>
+      <li>Lucky Days</li>
+      <li>Lucky Numbers</li>
+      <li>Favorable Directions</li>
+      <li>Lucky Gemstones</li>
+    </ul>
+
+    <h2 class="section-title">6. Business & Name Numerology</h2>
+    <ul>
+      <li>Business Name Correction</li>
+      <li>Brand Name Numerology</li>
+      <li>Logo Energy Alignment</li>
+      <li>Mobile & Vehicle Number Analysis</li>
+    </ul>
+
+    <h2 class="section-title">7. Relationship & Marriage Compatibility</h2>
+    <p>Compatibility readings help identify communication style and long-term harmony.</p>
+
+    <h2 class="section-title">8. Master Numbers (11 / 22 / 33)</h2>
+    <ul>
+      <li><strong>11</strong>: Intuition & enlightenment</li>
+      <li><strong>22</strong>: Master builder & achievements</li>
+      <li><strong>33</strong>: Master healer & compassion</li>
+    </ul>
+
+    <h2 class="section-title">9. Remedies & Enhancers</h2>
+    <ul>
+      <li>Lucky colors & gemstones</li>
+      <li>Name correction</li>
+      <li>Mobile number balancing</li>
+      <li>Directional alignment</li>
+      <li>Chakra & sound healing</li>
+    </ul>
+
+    <h2 class="section-title">Book an Expert Numerology Session</h2>
+    <a href="appointment.html" style="background:#4169e1;color:#fff;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;display:inline-block;">Book Consultation</a>
+
+  </div>
+
+  <div class="content-right">
+    <div class="calc-box">
+      <h3 style="margin-bottom:15px; color:#0b3c89;">Numerology Calculator</h3>
+
+      <label>Full Name</label>
+      <input type="text" id="nameInput" placeholder="Enter your full name">
+
+      <label>Date of Birth</label>
+      <input type="date" id="dobInput">
+
+      <button onclick="calculateNumerology()">Calculate</button>
+
+      <div class="result-box">
+        <h4>Your Number: <span id="resultNumber">-</span></h4>
+        <p id="resultMeaning"></p>
       </div>
     </div>
-  </section>
-<section class="container"><div class="card services mb-4"><h3>Advanced Numerology Services</h3><ul><li>Business Partnership Compatibility Analysis</li><li>Yearly Personal Year Forecasting</li><li>Marriage & Relationship Compatibility Chart</li><li>Name Vibrational Correction for Wealth & Career</li><li>Brand Launch Numerology Planning</li><li>Vehicle Number Energy Analysis</li><li>Advanced Chaldean Grid Mapping</li></ul></div></section>
-<section class="container">
-  <div class="card mb-4 p-4">
-    <h3>Why Choose DebaVastu Numerology?</h3>
-    <p>At DebaVastu, our numerology guidance blends ancient vedic calculations with modern analytical precision. Every report is tailored personally, offering clarity, direction, and transformative insights.</p>
-    <ul>
-      <li>✔ Accurate Chaldean & Pythagorean Calculations</li>
-      <li>✔ Personalized Name & Destiny Corrections</li>
-      <li>✔ Career, Love, Health & Business Analysis</li>
-      <li>✔ 100% Hand‑crafted premium numerology reports</li>
-      <li>✔ Trusted by thousands across India</li>
-    </ul>
   </div>
-</section>
-</main>
 
-<!-- Hidden PDF template (filled dynamically) -->
-<div id="numerology-report" style="display:none;padding:28px;font-family:'Poppins',sans-serif;background:#fff;color:#222;">
-  <div style="text-align:center;margin-bottom:8px"><img src="img/logo.png" alt="DebaVastu" style="width:120px"></div>
-  <h2 style="color:var(--dv-blue);">DebaVastu Numerology Report</h2>
-  <p id="pdfIntro">Personalized numerology report generated by DebaVastu.</p>
-  <hr>
-  <h3>Personal Details</h3>
-  <p><strong>Name:</strong> <span id="pdfName">-</span></p>
-  <p><strong>Date of Birth:</strong> <span id="pdfDOB">-</span></p>
-  <h3>Core Numbers</h3>
-  <p><strong>Life Path:</strong> <span id="pdfLife">-</span></p>
-  <p><strong>Destiny:</strong> <span id="pdfDestiny">-</span></p>
-  <p><strong>Soul Urge:</strong> <span id="pdfSoul">-</span></p>
-  <p><strong>Personality:</strong> <span id="pdfPersonality">-</span></p>
-  <h3>Meaning & Guidance</h3>
-  <p id="pdfMeaning"></p>
-  <hr>
-  <h3>Lucky Guidance</h3>
-  <p><strong>Colors:</strong> Blue, Green, White</p>
-  <p><strong>Days:</strong> Monday, Wednesday, Friday</p>
-  <p><strong>Lucky Numbers:</strong> 1,3,5,6</p>
-  <h3>Remedies</h3>
-  <ul>
-    <li>Use lucky colors in your environment</li>
-    <li>Perform small rituals on your lucky day</li>
-    <li>Consider name correction if required</li>
-  </ul>
-  <hr>
-  <p style="text-align:center;font-size:12px;color:#666">© DebaVastu — The Complete Vedic Solutions | www.debavastu.com</p>
 </div>
 
-<!-- Floating WhatsApp -->
-<a class="floating-whatsapp" href="https://wa.me/916372710439?text=Namaste%20I%20need%20a%20numerology%20consultation" title="WhatsApp"><i class="fa fa-whatsapp"></i></a>
-
-<footer>
-  © 2025 DebaVastu — The Complete Vedic Solutions
-</footer>
-
-<!-- html2pdf -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-/* ---------- Numerology logic ---------- */
-function reduce(n){ n = parseInt(n) || 0; while(n>9){ n = n.toString().split('').reduce((a,b)=>a+parseInt(b),0);} return n; }
+function calculateNumerology() {
+  let name = document.getElementById('nameInput').value.toUpperCase();
+  let dob = document.getElementById('dobInput').value;
 
-function nameToTotal(name){ const map={A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8}; let s=0; name = name.toUpperCase().replace(/[^A-Z]/g,''); for(let ch of name){ s += (map[ch]||0);} return s; }
-function vowelsTotal(name){ const v=['A','E','I','O','U']; let s=0; name = name.toUpperCase(); for(let ch of name){ if(v.includes(ch)){ s += nameToTotal(ch); }} return s; }
-function consonantsTotal(name){ const v=['A','E','I','O','U']; let s=0; name = name.toUpperCase(); for(let ch of name){ if(/[A-Z]/.test(ch) && !v.includes(ch)){ s += nameToTotal(ch); }} return s; }
-function lifePathFromDOB(dob){ let digits = dob.replace(/-/g,'').split('').map(Number); let s = digits.reduce((a,b)=>a+b,0); return reduce(s); }
-
-function calculateAll(){ const name = document.getElementById('nameInput').value.trim(); const dob = document.getElementById('dobInput').value; if(!name || !dob){ alert('Please enter both name and date of birth.'); return; }
-  // Destiny (Expression) number
-  const destinyTotal = nameToTotal(name); const destiny = reduce(destinyTotal);
-  // Life Path
-  const lifePath = lifePathFromDOB(dob);
-  // Soul Urge
-  const soul = reduce(vowelsTotal(name));
-  // Personality
-  const personality = reduce(consonantsTotal(name));
-
-  // Display
-  document.getElementById('destinyDisplay').innerText = destiny;
-  document.getElementById('lifePathDisplay').innerText = lifePath;
-  document.getElementById('soulDisplay').innerText = soul;
-  document.getElementById('personalityDisplay').innerText = personality;
-
-  // Meaning summary (combined)
-  const meanings = {
-    1:'Leadership, independence, originality.',
-    2:'Cooperation, sensitivity, diplomacy.',
-    3:'Creativity, joy, self-expression.',
-    4:'Practicality, discipline, foundation-building.',
-    5:'Freedom, change, adventure.',
-    6:'Love, family, responsibility.',
-    7:'Spirituality, intuition, inner wisdom.',
-    8:'Power, authority, financial success.',
-    9:'Compassion, humanitarianism, wisdom.'
-  };
-  const combined = `Destiny (${destiny}), Life Path (${lifePath}), Soul (${soul}), Personality (${personality}) — ${meanings[lifePath] || ''}`;
-  document.getElementById('summaryMeaning').innerText = combined;
-  // Show result box
-  document.getElementById('combinedResult').style.display = 'block';
-}
-
-function resetForm(){ document.getElementById('nameInput').value=''; document.getElementById('dobInput').value=''; document.getElementById('combinedResult').style.display='none'; }
-
-/* ---------- PDF generation ---------- */
-function buildPDFContent(){
-  document.getElementById('pdfName').innerText = document.getElementById('nameInput').value || '-';
-  document.getElementById('pdfDOB').innerText = document.getElementById('dobInput').value || '-';
-  document.getElementById('pdfLife').innerText = document.getElementById('lifePathDisplay').innerText || '-';
-  document.getElementById('pdfDestiny').innerText = document.getElementById('destinyDisplay').innerText || '-';
-  document.getElementById('pdfSoul').innerText = document.getElementById('soulDisplay').innerText || '-';
-  document.getElementById('pdfPersonality').innerText = document.getElementById('personalityDisplay').innerText || '-';
-  document.getElementById('pdfMeaning').innerText = document.getElementById('summaryMeaning').innerText || '-';
-}
-
-function generatePDF(){
-  const element = document.getElementById('numerology-report');
-  var opt = { margin:10, filename:'DebaVastu_Numerology_Report.pdf', image:{type:'jpeg',quality:0.98}, html2canvas:{scale:2}, jsPDF:{unit:'mm',format:'a4',orientation:'portrait'} };
-  html2pdf().set(opt).from(element).save();
-}
-</script>
-
-</body>
-</html>
+  const values = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z
