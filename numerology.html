@@ -1,135 +1,370 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Numerology – DebaVastu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { padding-top:120px;
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f7f7f7;
-    }
-    header {
-      background: linear-gradient(135deg, #0b3c89, #16a085);
-      padding: 20px;
-      color: #fff;
-      text-align: center;
-      font-size: 24px;
-      font-weight: 600;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    h2 {
-      color: #0b3c89;
-      margin-bottom: 15px;
-    }
-    p {
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    footer {
-      background: #0b3c89;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-    /* Floating Book Appointment Button */
-    .float-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #16a085;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-decoration: none;
-      transition: 0.3s ease;
-      z-index: 999;
-    }
-    .float-btn:hover {
-      background: #0b3c89;
-    }
-  </style>
-</head>
-<body>
+ <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="Contact DebaVastu — Vastu, Astrology, Numerology and healing services." />
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>DEBAVASTU-The Complete Vedic Solutions.</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+		
+		<!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
-<!-- ===================== DEBAVASTU FULL HEADER INSERTED ===================== -->
-<header class="header">
-    <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <p>DEBAVASTU : The Complete Vedic Solutions!</p>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <ul class="top-contact">
-                        <li><i class="fa fa-phone"></i> +91 6372710439</li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:contact@debavastu.com">contact@debavastu.com</a></li>
-                    </ul>
+  <!-- Bootstrap (single import) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/icofont.css">
+
+  <!-- AOS (animation) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <style>
+          /* Small modal for success */
+          .dv-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+          }
+          .dv-modal .card {
+            background: #fff;
+            padding: 22px;
+            max-width: 460px;
+            width: 92%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 18px 50px rgba(12,12,12,0.18);
+            font-family: 'Poppins',sans-serif;
+          }
+          .dv-modal .card h3 { margin-top:0; color:#0b6e4f; }
+          .dv-modal .card p { color:#444; margin:10px 0 18px; }
+          .dv-modal .card .btn { background:#0b6e4f; color:#fff; padding:10px 18px; border-radius:8px; border:none; }
+        </style>
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="25px" height="20px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- End Preloader -->   
+		
+		
+		<!-- ===================== OPTIMIZED HEADER (ROYAL BLUE THEME) ===================== -->
 
+<style>
+/* ------------------ BASIC RESET ------------------ */
+.header {
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    position: sticky;
+    background: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ------------------ COLOR VARIABLES ------------------ */
+:root {
+    --header-bg: #ffffff;
+    --menu-text: #222;
+    --menu-hover: #4169E1; /* Royal Blue */
+    --primary-blue: #4169E1;
+    --primary-hover: #2a4ebf; 
+    --tint-blue: rgba(65,105,225,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --header-bg: #111;
+        --menu-text: #fff;
+        --menu-hover: #7aa2ff;
+    }
+}
+
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: #4169E1; /* Royal Blue */
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* ------------------ LOGO ------------------ */
+.logo img {
+    max-height: 60px;
+}
+
+/* ------------------ NAVIGATION ------------------ */
+.navigation .menu > li > a {
+    color: var(--menu-text);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 18px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.navigation .menu > li > a:hover {
+    color: var(--menu-hover);
+    transform: translateY(-2px);
+}
+
+/* ------------------ DROPDOWN ------------------ */
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.25s;
+    background: var(--header-bg);
+    border-radius: 8px;
+}
+
+.menu li:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    padding: 12px 18px;
+    color: var(--menu-text);
+    font-weight: 500;
+}
+
+.dropdown li a:hover {
+    background: var(--tint-blue);
+    color: var(--menu-hover);
+}
+
+/* ------------------ BOOK APPOINTMENT BUTTON ------------------ */
+.get-quote .btn {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.get-quote .btn:hover {
+    transform: scale(1.05);
+    background: var(--primary-hover);
+    box-shadow: 0 0 12px rgba(65,105,225,0.6);
+}
+
+/* ------------------ MOBILE MENU ------------------ */
+.mobile-nav {
+    display: none;
+}
+@media (max-width: 991px) {
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* ------------------ FLOATING BUTTONS ------------------ */
+.floating-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.floating-btn a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    animation: pulse 1.8s infinite;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0.5); }
+    70% { transform: scale(1.12); box-shadow: 0 0 0 18px rgba(65,105,225,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0); }
+}
+</style>
+
+<header class="header">
+
+  <!-- ===================== TOP BAR START ===================== -->
+<style>
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: linear-gradient(90deg, #0A8F6A, #005F46);
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+</style>
+
+<div class="topbar">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-5">
+                <p class="topbar-text">DEBAVASTU : The Complete Vedic Solutions!</p>
+            </div>
+
+            <div class="col-lg-6 col-md-7 text-right">
+                <ul class="top-contact">
+                    <li><i class="fa fa-phone"></i> +91 6372710439</li>
+                    <li><i class="fa fa-envelope"></i>
+                        <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ===================== TOP BAR END ===================== -->
+
+    <!-- Header Inner -->
     <div class="header-inner">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="logo"><a href="index.html"><img src="img/logo.png" alt="DebaVastu Logo"></a></div>
-                    <div class="mobile-nav"></div>
-                </div>
+            <div class="inner">
+                <div class="row align-items-center">
 
-                <div class="col-lg-7 col-md-7 col-12">
-                    <nav class="navigation">
-                        <ul class="menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li>
-                                <a href="#">Services <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="vastu.html">Vastu</a></li>
-                                    <li><a href="astrology.html">Astrology</a></li>
-                                    <li><a href="numerology.html">Numerology</a></li>
-                                    <li><a href="tarot.html">Tarot</a></li>
-                                    <li><a href="yoga.html">Yoga & Wellness</a></li>
-                                    <li><a href="healing.html">Healing Therapies</a></li>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="DebaVastu">
+                            </a>
+                        </div>
+                        <div class="mobile-nav"></div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-9 col-12">
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+
+                                    <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="vastu.html">Vastu</a></li>
+                                            <li><a href="astrology.html">Astrology</a></li>
+                                            <li><a href="numerology.html">Numerology</a></li>
+                                            <li><a href="tarot.html">Tarot</a></li>
+                                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                                            <li><a href="healing.html">Healing Therapies</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                            </nav>
+                        </div>
+                    </div>
 
-                <div class="col-lg-2 col-md-2 col-12 text-right">
-                    <div class="get-quote"><a href="appointment.html" class="btn">Book Appointment</a></div>
+                    <div class="col-lg-2 col-10 text-right">
+                        <div class="get-quote">
+                            <a href="appointment.html" class="btn">Book Appointment</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- ===================== END HEADER ===================== -->
-<nav style="background:#ffffff; padding:12px 20px; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; justify-content:center; gap:30px; font-family:'Poppins',sans-serif; font-weight:500; position:sticky; top:0; z-index:1000;">
-  <a href="index.html" style="text-decoration:none; color:#0b3c89;">Home</a>
-  <a href="about.html" style="text-decoration:none; color:#0b3c89;">About</a>
-  <a href="services.html" style="text-decoration:none; color:#0b3c89;">Services</a>
-  <a href="numerology.html" style="text-decoration:none; color:#0b3c89;">Numerology</a>
-  <a href="contact.html" style="text-decoration:none; color:#0b3c89;">Contact</a>
-</nav>
 
-  <!-- Numerology Calculator Section -->
+    </div>
+
+</header>
+
+<!-- Floating Buttons -->
+<div class="floating-btn">
+    <a href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+916372710439" title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+</div>
+
+<!-- ===================== END OPTIMIZED HEADER ===================== -->
+ 
+<div class="container">
+  <h2>What is Numerology?</h2>
+  <p>Numerology is the ancient metaphysical science of numbers. It studies how numbers influence your personality, destiny, decisions, health, career, and relationships. Each number vibrates with a unique energy, and decoding these energies provides clarity and direction in life.</p>
+
+  <h2>Why Numerology is Important?</h2>
+  <p>Understanding your Life Path Number, Destiny Number, Soul Number, and Personal Year helps you align with positive energies and make better choices. Numerology reveals hidden strengths and removes obstacles created by unfavorable number combinations.</p>
+
+  <h2>DebaVastu Numerology Services</h2>
+  <p>We provide personalized numerology consultations based on Vedic and Chaldean systems. Our guidance includes name correction, business numerology, compatibility analysis, and remedies for number imbalances.</p>
+</div>
+
+
+  
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/916372710439" class="floating-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+ <!-- Numerology Calculator Section -->
   <section class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Numerology Calculator</h2>
@@ -156,32 +391,6 @@
       document.getElementById('resultMeaning').innerText = meanings[sum] || "";
     }
   </script>
-
-
-
-
-<div class="container">
-  <h2>What is Numerology?</h2>
-  <p>Numerology is the ancient metaphysical science of numbers. It studies how numbers influence your personality, destiny, decisions, health, career, and relationships. Each number vibrates with a unique energy, and decoding these energies provides clarity and direction in life.</p>
-
-  <h2>Why Numerology is Important?</h2>
-  <p>Understanding your Life Path Number, Destiny Number, Soul Number, and Personal Year helps you align with positive energies and make better choices. Numerology reveals hidden strengths and removes obstacles created by unfavorable number combinations.</p>
-
-  <h2>DebaVastu Numerology Services</h2>
-  <p>We provide personalized numerology consultations based on Vedic and Chaldean systems. Our guidance includes name correction, business numerology, compatibility analysis, and remedies for number imbalances.</p>
-</div>
-
-
-
-<footer>
-  © 2025 DebaVastu — The Complete Vedic Solutions
-</footer>
-
-  
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/916372710439" class="floating-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-
   <style>
     .floating-btn {
       position: fixed;
