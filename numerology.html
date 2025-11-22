@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Numerology – DebaVastu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
+    }
+    header {
+      background: linear-gradient(135deg, #0b3c89, #16a085);
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #0b3c89;
+      margin-bottom: 15px;
+    }
+    p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    footer {
+      background: #0b3c89;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    /* Floating Book Appointment Button */
+    .float-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #16a085;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: 0.3s ease;
+      z-index: 999;
+    }
+    .float-btn:hover {
+      background: #0b3c89;
+    }
+  </style>
+</head>
+<body>
+  <!-- Numerology Calculator Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Numerology Calculator</h2>
+      <div class="card shadow p-4 mx-auto" style="max-width:600px;">
+        <label for="nameInput" class="form-label">Enter Your Full Name</label>
+        <input type="text" id="nameInput" class="form-control mb-3" placeholder="Your Name">
+        <button class="btn btn-primary w-100" onclick="calculateNumerology()">Calculate</button>
+        <h4 class="mt-4">Your Numerology Number: <span id="resultNumber">-</span></h4>
+        <p id="resultMeaning" class="mt-2"></p>
+      </div>
+    </div>
+  </section>
+  <script>
+    function calculateNumerology(){
+      let name = document.getElementById('nameInput').value.toUpperCase();
+      let sum = 0;
+      const values = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8};
+
+      for(let char of name){ if(values[char]) sum += values[char]; }
+      while(sum > 9){ sum = sum.toString().split('').reduce((a,b)=> a+parseInt(b),0); }
+
+      document.getElementById('resultNumber').innerText = sum;
+      const meanings = {1:"Leadership, independence.",2:"Cooperation, balance.",3:"Creativity, joy.",4:"Stability, discipline.",5:"Freedom, change.",6:"Love, harmony.",7:"Spirituality, intuition.",8:"Power, wealth.",9:"Compassion, wisdom."};
+      document.getElementById('resultMeaning').innerText = meanings[sum] || "";
+    }
+  </script>
+
+
+<header>
+  <div class="topbar bg-dark text-white py-2">
+    <div class="container d-flex justify-content-between">
+      <span>Call: +91 63727 10439</span>
+      <span>Email: contact@debavastu.com</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DebaVastu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="numerology.html">Numerology</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>What is Numerology?</h2>
+  <p>Numerology is the ancient metaphysical science of numbers. It studies how numbers influence your personality, destiny, decisions, health, career, and relationships. Each number vibrates with a unique energy, and decoding these energies provides clarity and direction in life.</p>
+
+  <h2>Why Numerology is Important?</h2>
+  <p>Understanding your Life Path Number, Destiny Number, Soul Number, and Personal Year helps you align with positive energies and make better choices. Numerology reveals hidden strengths and removes obstacles created by unfavorable number combinations.</p>
+
+  <h2>DebaVastu Numerology Services</h2>
+  <p>We provide personalized numerology consultations based on Vedic and Chaldean systems. Our guidance includes name correction, business numerology, compatibility analysis, and remedies for number imbalances.</p>
+</div>
+
+<a href="contact.html" class="float-btn">Book Appointment</a>
+
+<footer>
+  © 2025 DebaVastu — The Complete Vedic Solutions
+</footer>
+
+  <!-- Floating Book Appointment Button -->
+  <a href="https://debavastu.com/appointment" class="floating-btn booking-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/916372710439" class="floating-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+  <style>
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      z-index: 9999;
+      padding: 14px 18px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: floatPulse 2.5s infinite ease-in-out;
+    }
+    .booking-btn {
+      bottom: 100px;
+      background: linear-gradient(45deg, #0d6efd, #0aa09e);
+    }
+    .whatsapp-btn {
+      bottom: 30px;
+      background: #25D366;
+      width: 55px;
+      height: 55px;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 24px;
+    }
+    @keyframes floatPulse {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>
