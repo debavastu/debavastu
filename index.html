@@ -316,33 +316,320 @@
                             <a href="appointment.html" class="btn">Book Appointment</a>
                         </div>
                     </div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DebaVastu Academy</title>
 
-                </div>
-            </div>
-        </div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    </div>
+<style>
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-</header>
+/* COLORS */
+:root{
+  --blue:#003b95;
+  --green:#2ecc71;
+  --white:#fff;
+}
 
-<!-- Floating Buttons -->
-<div class="floating-btn">
-    <a href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp">
-        <i class="fa fa-whatsapp"></i>
-    </a>
+/* TOP BAR */
+.top-bar{
+  width:100%;
+  background:var(--blue);
+  color:var(--white);
+  padding:6px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+}
 
-    <a href="tel:+916372710439" title="Call Now">
-        <i class="fa fa-phone"></i>
-    </a>
+.top-left span{
+  margin-right:15px;
+}
+
+.top-right a{
+  background:var(--green);
+  color:var(--white);
+  padding:6px 12px;
+  border-radius:4px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* HEADER */
+header{
+  width:100%;
+  background:var(--white);
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #eaeaea;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--blue);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:#333;
+  font-size:16px;
+  font-weight:500;
+}
+
+nav ul li a:hover{
+  color:var(--green);
+  transition:.3s;
+}
+
+.menu-icon{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MAIN DROPDOWN */
+nav ul li{
+  position:relative;
+}
+
+nav ul li ul.dropdown{
+  position:absolute;
+  top:40px;
+  left:0;
+  background:var(--blue);
+  padding:10px 0;
+  width:200px;
+  display:none;
+  flex-direction:column;
+  border-radius:6px;
+  z-index:999;
+}
+
+nav ul li:hover > ul.dropdown{
+  display:flex;
+}
+
+nav ul li ul.dropdown li a{
+  color:white !important;
+  padding:10px 20px;
+  display:block;
+}
+
+nav ul li ul.dropdown li a:hover{
+  background:var(--green);
+}
+
+/* SUBMENU (MULTI-LEVEL) */
+nav ul li ul.dropdown li{
+  position:relative;
+}
+
+nav ul li ul.dropdown li ul.submenu{
+  position:absolute;
+  top:0;
+  left:200px;
+  background:var(--blue);
+  width:200px;
+  display:none;
+  padding:10px 0;
+  border-radius:6px;
+}
+
+nav ul li ul.dropdown li:hover > ul.submenu{
+  display:flex;
+}
+
+/* MOBILE SECTION */
+@media(max-width:768px){
+  nav ul{
+    position:absolute;
+    top:120px;
+    left:0;
+    width:100%;
+    background:var(--blue);
+    flex-direction:column;
+    padding:20px;
+    gap:20px;
+    display:none;
+  }
+
+  nav ul.show{
+    display:flex;
+  }
+
+  nav ul li a{
+    color:white;
+    font-size:18px;
+  }
+
+  .menu-icon{
+    display:block;
+  }
+
+  nav ul li ul.dropdown,
+  nav ul li ul.dropdown li ul.submenu{
+    position:relative;
+    width:100%;
+    left:0;
+    border-radius:0;
+  }
+
+  nav ul li:hover > ul.dropdown,
+  nav ul li ul.dropdown li:hover > ul.submenu{
+    display:none;
+  }
+
+  .dropdown-toggle,
+  .submenu-toggle{
+    float:right;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+    padding-right:10px;
+  }
+
+  ul.dropdown,
+  ul.submenu{
+    display:none !important;
+  }
+}
+
+/* FLOATING BUTTONS */
+.floating-call{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--green);
+  color:white;
+  padding:12px 15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.floating-whatsapp{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+function toggleMenu(){
+  document.querySelector("nav ul").classList.toggle("show");
+}
+
+function toggleDropdown(el){
+  const dropdown = el.parentElement.querySelector(".dropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+
+function toggleSubmenu(el){
+  const submenu = el.parentElement.querySelector(".submenu");
+  submenu.style.display = submenu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-left">
+    <span>📞 +91 63727 10439</span>
+    <span>✉️ contact@debavastu.com</span>
+    <span>🏛️ DEBAVASTU</span>
+  </div>
+  <div class="top-right">
+    <a href="#">Book Appointment</a>
+  </div>
 </div>
 
-<!-- ===================== END OPTIMIZED HEADER ===================== -->
+<!-- HEADER -->
+<header>
+  <div class="logo">DEBAVASTU ACADEMY</div>
 
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <nav>
+    <ul>
+      <li><a href="#">🏠 Home</a></li>
+
+      <li>
+        <a href="#">🛠️ Services</a>
+        <span class="dropdown-toggle" onclick="toggleDropdown(this)">▾</span>
+
+        <ul class="dropdown">
+
+          <!-- Vastu -->
+          <li>
+            <a href="#">📐 Vastu</a>
+            <span class="submenu-toggle" onclick="toggleSubmenu(this)">▸</span>
+
+            <ul class="submenu">
+              <li><a href="#">🏡 Home Vastu</a></li>
+              <li><a href="#">🏢 Office Vastu</a></li>
+            </ul>
+          </li>
+
+          <!-- Astrology -->
+          <li>
+            <a href="#">🔮 Astrology</a>
+            <span class="submenu-toggle" onclick="toggleSubmenu(this)">▸</span>
+
+            <ul class="submenu">
+              <li><a href="#">📜 Kundli</a></li>
+              <li><a href="#">💑 Match-Making</a></li>
+            </ul>
+          </li>
+
+          <!-- Numerology -->
+          <li><a href="#">🔢 Numerology</a></li>
+
+          <!-- Remedies -->
+          <li><a href="#">🪬 Remedies</a></li>
+
+        </ul>
+      </li>
+
+      <li><a href="#">🛍️ Products</a></li>
+      <li><a href="#">ℹ️ About</a></li>
+      <li><a href="#">📞 Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+<!-- FLOATING BUTTONS -->
+<a class="floating-whatsapp" href="https://wa.me/916372710439">💬</a>
+<a class="floating-call" href="tel:+916372710439">📞</a>
 
-		
-		<!-- Slider Area -->
+</body>
+</html>
+
+        <!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
 				<!-- Start Single Slider -->
