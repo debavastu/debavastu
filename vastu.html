@@ -1,343 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vastu Consultation | DebaVastu</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vastu Consultation | DebaVastu</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --royal-1:#0a2a66;
+      --royal-2:#0d3a85;
+      --accent:#07b565;
+      --muted:#777;
+      --card:#fff;
+      --page-bg:#f7f7f7;
+      --container-max:1250px;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Poppins",sans-serif;background:var(--page-bg);color:#222;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    /* ---------------- HEADER (site-wide) ---------------- */
+    .main-header {
+        background: linear-gradient(90deg, var(--royal-1), var(--royal-2));
+        box-shadow: 0 3px 14px rgba(0,0,0,0.16);
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+    }
+    .container { max-width:var(--container-max); margin:0 auto; padding:0 18px; }
+    .header-wrapper{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px; }
+
+    .logo-area{ display:flex; align-items:center; gap:12px; }
+    .logo-link{ display:flex; align-items:center; gap:14px; text-decoration:none; }
+    /* Use uploaded local file path for logo */
+    .header-logo {
+        width:105px;
+        height:auto;
+        display:block;
+        mix-blend-mode: normal; /* ensure visibility */
+        opacity:1;
+        border-radius:50%;
+        filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+        background: transparent;
+    }
+    .brand-text{ font-weight:700; font-size:22px; color:#fff; letter-spacing:1px; text-shadow:0 2px 8px rgba(0,0,0,0.25) }
+
+    /* nav */
+    .menu{ list-style:none; display:flex; gap:26px; margin:0; padding:0; align-items:center; }
+    .m-link{ color:#fff; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:0.25s; }
+    .m-link:hover{ color:var(--accent); transform:translateY(-3px); }
+
+    /* dropdown */
+    .menu li{ position:relative; }
+    .dropdown-menu{ display:none; position:absolute; background:var(--card); min-width:220px; border-radius:10px; padding:8px 0; margin-top:12px; box-shadow:0 8px 30px rgba(0,0,0,0.12); }
+    .menu li:hover > .dropdown-menu { display:block; }
+    .dropdown-menu a{ display:block; padding:10px 14px; color:var(--royal-1); text-decoration:none; font-weight:500; }
+    .dropdown-menu a:hover{ background:#f6f8ff; }
+
+    .appointment-btn{ background:var(--accent); padding:10px 18px; border-radius:8px; color:#fff; font-weight:700; text-decoration:none; box-shadow:0 6px 18px rgba(7,181,101,0.18) }
+    .appointment-btn:hover{ opacity:0.92; transform:translateY(-2px); }
+
+    .mobile-toggle{ display:none; color:#fff; font-size:26px; cursor:pointer; }
+
+    @media(max-width:980px){
+      .menu{ display:none; position:absolute; left:0; right:0; top:70px; flex-direction:column; background:linear-gradient(180deg,var(--royal-1),var(--royal-2)); padding:20px; gap:10px; }
+      .mobile-toggle{ display:block; }
+      .header-wrapper{ padding:12px 0; }
+    }
+
+    /* ---------------- HERO / BANNER ---------------- */
+    .banner {
+      padding:72px 0 42px;
+      background: linear-gradient(135deg,var(--royal-1), #0b3c89 60%);
+      color:#fff;
+    }
+    .banner .container { display:flex; gap:30px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .banner-content { max-width:720px; }
+    .banner h1{ margin:0 0 10px; font-size:36px; font-weight:700; letter-spacing:0.2px; }
+    .banner p{ margin:0 0 18px; color:#e6f0ff; font-size:16px; line-height:1.6; }
+    .banner .cta { display:inline-flex; gap:12px; align-items:center; }
+
+    .btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:700 }
+    .btn.secondary { background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.14) }
+
+    /* ---------------- LAYOUT ---------------- */
+    .main { max-width:var(--container-max); margin:30px auto 60px; padding:0 18px; display:flex; gap:36px; align-items:flex-start; }
+    .content { flex:1.4; background:var(--card); padding:26px; border-radius:12px; box-shadow:0 10px 26px rgba(13,26,58,0.06); }
+    .sidebar { flex:0.7; position:sticky; top:110px; }
+
+    h2.section-title{ color:var(--royal-1); margin-top:8px; font-size:22px; }
+    p, li { color:#333; font-size:15.5px; line-height:1.75; }
+
+    ul.simple { padding-left:20px; margin:12px 0 20px; }
+    ul.simple li { margin:8px 0; }
+
+    /* pricing table */
+    .pricing-table{ width:100%; border-collapse:collapse; margin-top:12px; }
+    .pricing-table th, .pricing-table td{ text-align:left; padding:12px 10px; border-bottom:1px solid #f0f0f0; }
+    .pricing-table th{ background:#fbfdff; color:var(--royal-1) }
+
+    /* case studies */
+    .case { background:#f8fbff; padding:14px; border-radius:10px; margin-bottom:12px; border:1px solid #eef6ff; }
+
+    /* FAQ */
+    .faq-item { margin-bottom:12px; }
+    .faq-item h4 { margin:0 0 6px; font-size:16px; color:var(--royal-1) }
+
+    /* APPOINTMENT FORM */
+    .form-card { background:var(--card); padding:18px; border-radius:12px; box-shadow:0 8px 26px rgba(2,12,34,0.04) }
+    .form-card input, .form-card textarea { width:100%; padding:12px; border-radius:8px; border:1px solid #e6e6e6; margin-bottom:10px; font-size:15px; }
+    .form-card textarea{ min-height:120px; resize:vertical }
+    .form-note { font-size:13px; color:var(--muted) }
+
+    /* footer */
+    footer.site-footer { background:var(--royal-1); color:#fff; padding:28px 0; text-align:center; margin-top:40px }
+
+    /* small screen */
+    @media(max-width:900px){
+      .main { flex-direction:column; padding:0 14px; }
+      .sidebar{ position:static; top:auto; width:100% }
+      .banner .container { flex-direction:column; align-items:flex-start; gap:18px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
-<header class="main-header">
-    <div class="container" style="max-width:1250px;margin:auto;">
 
-        <!-- HEADER WRAPPER -->
-        <div class="header-wrapper">
-            
-            <!-- LOGO + TEXT -->
-            <div class="logo-area">
-                <a href="index.html" class="logo-link">
-                    
-                    <!-- LOGO -->
-                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+  <!-- ================= HEADER (copied & fixed) ================= -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-wrapper">
 
-                    <!-- BRAND NAME -->
-                    <div class="brand-text">DEBAVASTU</div>
-                </a>
-            </div>
-
-            <!-- MENU -->
-            <nav class="nav-menu">
-                <ul class="menu">
-                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
-
-                    <!-- SERVICES DROPDOWN -->
-                    <li class="dropdown">
-                        <a href="#" class="m-link">
-                            <i class="fa fa-handshake-o"></i> Services 
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="vastu.html">Vastu</a></li>
-                            <li><a href="astrology.html">Astrology</a></li>
-                            <li><a href="numerology.html">Numerology</a></li>
-                            <li><a href="tarot.html">Tarot</a></li>
-                            <li><a href="yoga.html">Yoga & Wellness</a></li>
-                            <li><a href="healing.html">Healing Therapies</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
-
-                    <!-- BOOK APPOINTMENT -->
-                    <li>
-                        <a href="appointment.html" class="appointment-btn">
-                            Book Appointment
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- MOBILE MENU -->
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="fa fa-bars"></i>
-            </div>
-
+        <div class="logo-area">
+          <a href="index.html" class="logo-link">
+            <!-- developer: using uploaded file path from session -->
+            <img src="/mnt/data/70a1abef-190d-4a23-b4f3-ea5dad6cbce1.png" alt="DebaVastu Logo" class="header-logo">
+            <div class="brand-text">DEBAVASTU</div>
+          </a>
         </div>
 
+        <nav>
+          <ul class="menu" id="mainMenu">
+            <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+
+            <li>
+              <a href="#" class="m-link"><i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down" style="font-size:14px"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="vastu.html">Vastu</a></li>
+                <li><a href="astrology.html">Astrology</a></li>
+                <li><a href="numerology.html">Numerology</a></li>
+                <li><a href="tarot.html">Tarot</a></li>
+                <li><a href="yoga.html">Yoga & Wellness</a></li>
+                <li><a href="healing.html">Healing Therapies</a></li>
+              </ul>
+            </li>
+
+            <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+            <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+
+            <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-toggle" id="mobileToggle"><i class="fa fa-bars"></i></div>
+      </div>
     </div>
-</header>
-<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
+  </header>
 
+  <!-- ================= HERO / BANNER ================= -->
+  <section class="banner" aria-hidden="false">
+    <div class="container">
+      <div class="banner-content">
+        <h1>Professional Vastu Consultation</h1>
+        <p>Scientific + Traditional Vastu solutions for homes, offices and commercial spaces. Practical remedies, no demolition required.</p>
+        <div class="cta">
+          <a href="#appointment" class="btn">Book Consultation</a>
+          <a href="contact.html" class="btn secondary">Contact Us</a>
+        </div>
+      </div>
 
-<!-- ▬▬▬▬▬ CSS START ▬▬▬▬▬ -->
-<style>
-/* HEADER BACKGROUND */
-.main-header {
-    background: linear-gradient(90deg, #0a2a66, #0d3a85);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-}
+      <div style="max-width:420px; color:#fff" aria-hidden="true">
+        <!-- light decorative card -->
+        <div style="background:rgba(255,255,255,0.06); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.18)">
+          <strong>Quick Facts</strong>
+          <ul style="margin:10px 0 0; padding-left:18px; color:#e6f0ff;">
+            <li>Online & Onsite consultations</li>
+            <li>Remedies without structural changes</li>
+            <li>Follow-up support included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* HEADER LAYOUT */
-.header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-}
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+    <section class="content" aria-labelledby="whatIsVastu">
+      <h2 id="whatIsVastu" class="section-title">What is Vastu Shastra?</h2>
+      <p>Vastu Shastra is the ancient Indian science of architecture that aligns built spaces with natural energies. Proper Vastu enhances health, relationships, wealth, and mental peace. DebaVastu blends traditional knowledge with modern diagnostics to deliver practical, effective solutions.</p>
 
-.logo-area {
-    display: flex;
-    align-items: center;
-}
+      <h3 class="section-title">Why Choose Our Vastu Services?</h3>
+      <ul class="simple">
+        <li>Experienced Vastu consultants with practical, modern solutions.</li>
+        <li>Data-driven analysis and direction-based diagnostics.</li>
+        <li>Remedial solutions that avoid major structural work.</li>
+        <li>Clear reports, step-by-step guidance and follow-up.</li>
+      </ul>
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-}
+      <h3 class="section-title">Services We Provide</h3>
+      <ul class="simple">
+        <li>Home Vastu (single rooms & full-home audit)</li>
+        <li>Office & Commercial Vastu</li>
+        <li>Industrial & Factory Vastu</li>
+        <li>Vastu for plot & property purchase analysis</li>
+        <li>Interior layout planning & placement</li>
+        <li>Online Vastu consultation via video</li>
+      </ul>
 
-/* SMOOTH LOGO BLEND */
-.header-logo {
-    width: 95px;
-    height: auto;
-    mix-blend-mode: screen;
-    opacity: 0.96;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
-}
+      <h3 class="section-title">Our Process</h3>
+      <ol class="simple">
+        <li>Initial consultation — understand goals & concerns.</li>
+        <li>Collect plans, photos or a short walk-through video.</li>
+        <li>Detailed directional & energy analysis.</li>
+        <li>Custom remedial plan with prioritized actions.</li>
+        <li>Implementation guidance and follow-up.</li>
+      </ol>
 
-/* BRAND TEXT */
-.brand-text {
-    font-weight: 700;
-    font-size: 24px;
-    color: #ffffff;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
+      <h3 class="section-title">Pricing</h3>
+      <table class="pricing-table" aria-label="pricing">
+        <thead>
+          <tr><th>Service</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Home Vastu (Online)</td><td>₹999</td></tr>
+          <tr><td>Office / Shop Vastu</td><td>₹1,499</td></tr>
+          <tr><td>Full Property Vastu</td><td>₹2,499</td></tr>
+          <tr><td>Remedial Vastu (No Demolition)</td><td>₹1,499</td></tr>
+        </tbody>
+      </table>
 
-/* MENU */
-.menu {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
+      <h3 class="section-title">Case Studies</h3>
+      <div class="case">
+        <strong>Case Study 1:</strong> A family home with frequent arguments and downturn in finances — after positional corrections and energy balancing, household harmony improved within 45 days.
+      </div>
+      <div class="case">
+        <strong>Case Study 2:</strong> A retail outlet suffering losses relocated major display area following our Vastu plan — revenue picked up in 3 months.
+      </div>
 
-.m-link {
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
-}
-.m-link:hover {
-    color: #07b565;
-}
+      <h3 class="section-title">FAQs</h3>
+      <div class="faq-item">
+        <h4>Do you provide remedies without demolition?</h4>
+        <p>Yes. We specialize in non-invasive corrections using placement, colour, elements, and directional solutions.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How long until results appear?</h4>
+        <p>Results vary; some clients notice changes in weeks, others in a few months depending on the intervention and follow-up.</p>
+      </div>
 
-/* DROPDOWN */
-.menu li { position: relative; }
+    </section>
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: #fff;
-    min-width: 200px;
-    border-radius: 8px;
-    padding: 0;
-    margin-top: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-}
+    <!-- SIDEBAR: appointment + contact -->
+    <aside class="sidebar" aria-labelledby="bookTitle">
+      <div class="form-card" id="bookCard">
+        <h3 id="bookTitle" style="margin-top:0;color:var(--royal-1)">Book Your Vastu Consultation</h3>
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+        <form id="appointmentForm" onsubmit="return handleAppointment(event)">
+          <label class="small">Full Name</label>
+          <input id="apName" name="name" type="text" placeholder="Your full name" required>
 
-.dropdown-menu li a {
-    display: block;
-    padding: 12px;
-    color: #0a2a66;
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-}
+          <label class="small">Phone</label>
+          <input id="apPhone" name="phone" type="tel" placeholder="+91 9XXXXXXXXX" pattern="[0-9+\-\s]{7,20}" required>
 
-.dropdown-menu li:last-child a {
-    border-bottom: none;
-}
+          <label class="small">Email</label>
+          <input id="apEmail" name="email" type="email" placeholder="you@example.com">
 
-/* BUTTON */
-.appointment-btn {
-    background: #07b565;
-    padding: 10px 18px;
-    border-radius: 8px;
-    color: #fff !important;
-    font-weight: 600;
-    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
-    transition: 0.3s;
-}
-.appointment-btn:hover {
-    opacity: 0.85;
-}
+          <label class="small">Service Type</label>
+          <select id="apService" name="service">
+            <option>Home Vastu (Online)</option>
+            <option>Office / Shop Vastu</option>
+            <option>Full Property Vastu</option>
+            <option>Remedial Vastu</option>
+          </select>
 
-/* MOBILE */
-.mobile-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-}
+          <label class="small">Brief Concern</label>
+          <textarea id="apConcern" name="concern" placeholder="Describe your concern (optional)"></textarea>
 
-@media(max-width:900px){
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: #0a2a66;
-        padding: 20px;
-        width: 100%;
-        gap: 12px;
+          <div style="display:flex;gap:10px;align-items:center;margin-top:6px;">
+            <button type="submit" class="btn">Book Now</button>
+            <div class="form-note small muted" id="formStatus" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid #f0f6ff">
+        <div style="font-size:14px;color:#333">
+          <strong>Quick Contact</strong>
+          <p style="margin:8px 0 0"><i class="fa fa-phone"></i> +91 63727 10439</p>
+          <p style="margin:8px 0 0"><i class="fa fa-envelope"></i> contact@debavastu.com</p>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="form-card">
+        <h4 style="margin-top:0;color:var(--royal-1)">Vastu Reminders</h4>
+        <ul class="simple">
+          <li>Keep northeast light & clutter-free.</li>
+          <li>Master bedroom in southwest for stable relationships.</li>
+          <li>Keep main entrance welcoming & unobstructed.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="curYear"></span> DebaVastu — The Complete Vedic Solutions</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // show current year
+    document.getElementById('curYear').innerText = new Date().getFullYear();
+
+    // mobile menu toggle
+    document.getElementById('mobileToggle').addEventListener('click', function(){
+      const menu = document.getElementById('mainMenu');
+      if (!menu) return;
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      if (menu.style.display === 'flex') {
+        menu.style.flexDirection = 'column';
+        menu.style.alignItems = 'flex-start';
+        menu.style.padding = '18px';
+      }
+    });
+
+    // Appointment form handler (demo: shows success message)
+    function handleAppointment(e){
+      e.preventDefault();
+      const name = document.getElementById('apName').value.trim();
+      const phone = document.getElementById('apPhone').value.trim();
+      const email = document.getElementById('apEmail').value.trim();
+      const service = document.getElementById('apService').value;
+      const concern = document.getElementById('apConcern').value.trim();
+
+      // Basic validation
+      if (!name || !phone) {
+        document.getElementById('formStatus').innerText = 'Please complete required fields.';
+        setTimeout(()=> document.getElementById('formStatus').innerText = '', 3000);
+        return false;
+      }
+
+      // In production: send via AJAX to your backend or EmailJS
+      // For now: show a friendly success message
+      document.getElementById('formStatus').innerText = 'Booking received — we will call you shortly.';
+      // clear form lightly
+      document.getElementById('appointmentForm').reset();
+
+      setTimeout(()=> document.getElementById('formStatus').innerText = '', 6000);
+      return false;
     }
-    .mobile-toggle {
-        display: block;
-    }
-}
-</style>
-
-<script>
-function toggleMenu(){
-    const menu = document.querySelector(".menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-</script>
-
-
-    <!-- Banner -->
-    <section class="banner vastu-banner">
-        <div class="container">
-            <h1>Professional Vastu Consultation</h1>
-            <p>Transform Your Home, Office & Life with Scientific & Traditional Vastu Remedies</p>
-            <a href="#appointment" class="btn">Book Consultation</a>
-        </div>
-    </section>
-
-    <!-- About Vastu -->
-    <section class="section about-vastu">
-        <div class="container">
-            <h2>What Is Vastu Shastra?</h2>
-            <p>Vastu Shastra is an ancient Indian science of architecture that harmonizes your living and working spaces with natural energies. A properly balanced space enhances health, wealth, relationships, peace, and overall success.</p>
-            <p>DebaVastu offers a unique blend of traditional Vastu + modern scientific analysis, ensuring accurate, practical, and cost-effective solutions.</p>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="section benefits">
-        <div class="container">
-            <h2>Benefits of Vastu Consultation</h2>
-            <ul>
-                <li>Improves financial stability and growth</li>
-                <li>Enhances peace, positivity, and harmony</li>
-                <li>Promotes health and well‑being</li>
-                <li>Increases career success and opportunities</li>
-                <li>Strengthens relationships and family bonding</li>
-                <li>Corrects energy imbalances without demolition</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Services Offered -->
-    <section class="section vastu-services">
-        <div class="container">
-            <h2>Vastu Services Offered</h2>
-            <ul>
-                <li>Home Vastu Analysis</li>
-                <li>Office / Business Vastu</li>
-                <li>Factory / Industrial Vastu</li>
-                <li>Vastu for Property Purchase</li>
-                <li>Vastu for Interior Planning</li>
-                <li>Online Vastu Consultation</li>
-                <li>Remedial Vastu Without Demolition</li>
-                <li>Energy, Aura & Directional Scanning</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section process">
-        <div class="container">
-            <h2>How the Vastu Consultation Works</h2>
-            <ol>
-                <li>Discuss your concerns & requirements</li>
-                <li>Share floor plan / videos / property details</li>
-                <li>Scientific & directional analysis</li>
-                <li>Identify imbalances and energy blocks</li>
-                <li>Provide practical remedies without demolition</li>
-                <li>Follow‑up support until results are achieved</li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section pricing">
-        <div class="container">
-            <h2>Consultation Charges</h2>
-            <table class="pricing-table">
-                <tr><th>Service</th><th>Price</th></tr>
-                <tr><td>Home Vastu (Online)</td><td>₹999</td></tr>
-                <tr><td>Office / Shop Vastu</td><td>₹1499</td></tr>
-                <tr><td>Full Property Vastu</td><td>₹2499</td></tr>
-                <tr><td>Remedial Vastu</td><td>₹1499</td></tr>
-            </table>
-        </div>
-    </section>
-
-    <!-- Case Studies -->
-    <section class="section case-studies">
-        <div class="container">
-            <h2>Case Studies</h2>
-            <p><strong>Case Study 1:</strong> A home with financial instability saw improvement
-               within 45 days after energy corrections.</p>
-            <p><strong>Case Study 2:</strong> A business facing losses showed consistent growth after
-               directional adjustments.</p>
-        </div>
-    </section>
-
-    <!-- FAQs -->
-    <section class="section faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>Do you offer Vastu without demolition?</h3>
-                <p>Yes. We specialize in corrective remedies that require no structural changes.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can Vastu really improve life?</h3>
-                <p>Properly applied Vastu balances energies, leading to positive outcomes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointment Form -->
-    <section class="section appointment" id="appointment">
-        <div class="container">
-            <h2>Book Your Vastu Consultation</h2>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Phone">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Your Concern"></textarea>
-                <button class="btn">Book Now</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 DebaVastu. All Rights Reserved.</p>
-        </div>
-    </footer>
+  </script>
 </body>
 </html>
