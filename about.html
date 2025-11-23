@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- Title -->
-        <title>DEBAVASTU-The Complete Vedic Solutions.</title>
+        <title>DEBAVASTU</title>
 		
 		<!-- Favicon -->
         <link rel="icon" href="img/favicon.png">
@@ -98,255 +98,212 @@
         <!-- End Preloader -->   
 		
 		
-		<!-- ===================== OPTIMIZED HEADER (ROYAL BLUE THEME) ===================== -->
+		<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
+<header class="main-header">
+    <div class="container" style="max-width:1250px;margin:auto;">
 
+        <!-- HEADER WRAPPER -->
+        <div class="header-wrapper">
+            
+            <!-- LOGO + TEXT -->
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    
+                    <!-- LOGO -->
+                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+
+                    <!-- BRAND NAME -->
+                    <div class="brand-text">DEBAVASTU</div>
+                </a>
+            </div>
+
+            <!-- MENU -->
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+
+                    <!-- SERVICES DROPDOWN -->
+                    <li class="dropdown">
+                        <a href="#" class="m-link">
+                            <i class="fa fa-handshake-o"></i> Services 
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                            <li><a href="healing.html">Healing Therapies</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+
+                    <!-- BOOK APPOINTMENT -->
+                    <li>
+                        <a href="appointment.html" class="appointment-btn">
+                            Book Appointment
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
+
+
+<!-- ▬▬▬▬▬ CSS START ▬▬▬▬▬ -->
 <style>
-/* ------------------ BASIC RESET ------------------ */
-.header {
-    width: 100%;
-    z-index: 9999;
-    top: 0;
-    position: sticky;
-    background: var(--header-bg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+/* HEADER BACKGROUND */
+.main-header {
+    background: linear-gradient(90deg, #0a2a66, #0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
 
-/* ------------------ COLOR VARIABLES ------------------ */
-:root {
-    --header-bg: #ffffff;
-    --menu-text: #222;
-    --menu-hover: #4169E1; /* Royal Blue */
-    --primary-blue: #4169E1;
-    --primary-hover: #2a4ebf; 
-    --tint-blue: rgba(65,105,225,0.12);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --header-bg: #111;
-        --menu-text: #fff;
-        --menu-hover: #7aa2ff;
-    }
-}
-
-/* ------------------ TOPBAR ------------------ */
-.topbar {
-    background: #4169E1; /* Royal Blue */
-    padding: 8px 0;
-}
-.topbar p, .topbar a, .topbar li {
-    color: #ffffff !important;
-    font-weight: 600;
-}
-
-/* ------------------ LOGO ------------------ */
-.logo img {
-    max-height: 60px;
-}
-
-/* ------------------ NAVIGATION ------------------ */
-.navigation .menu > li > a {
-    color: var(--menu-text);
-    font-size: 16px;
-    font-weight: 600;
-    padding: 15px 18px;
-    display: block;
-    transition: 0.3s ease;
-}
-
-.navigation .menu > li > a:hover {
-    color: var(--menu-hover);
-    transform: translateY(-2px);
-}
-
-/* ------------------ DROPDOWN ------------------ */
-.dropdown {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: 0.25s;
-    background: var(--header-bg);
-    border-radius: 8px;
-}
-
-.menu li:hover > .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown li a {
-    padding: 12px 18px;
-    color: var(--menu-text);
-    font-weight: 500;
-}
-
-.dropdown li a:hover {
-    background: var(--tint-blue);
-    color: var(--menu-hover);
-}
-
-/* ------------------ BOOK APPOINTMENT BUTTON ------------------ */
-.get-quote .btn {
-    background: var(--primary-blue);
-    color: #fff;
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: 0.3s;
-    margin-right: 20px;
-}
-
-.get-quote .btn:hover {
-    transform: scale(1.05);
-    background: var(--primary-hover);
-    box-shadow: 0 0 12px rgba(65,105,225,0.6);
-}
-
-/* ------------------ MOBILE MENU ------------------ */
-.mobile-nav {
-    display: none;
-}
-@media (max-width: 991px) {
-    .mobile-nav {
-        display: block;
-    }
-}
-
-/* ------------------ FLOATING BUTTONS ------------------ */
-.floating-btn {
-    position: fixed;
-    right: 18px;
-    bottom: 20px;
-    z-index: 99999;
+/* HEADER LAYOUT */
+.header-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.floating-btn a {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: var(--primary-blue);
-    color: #fff;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 26px;
-    animation: pulse 1.8s infinite;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     text-decoration: none;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0.5); }
-    70% { transform: scale(1.12); box-shadow: 0 0 0 18px rgba(65,105,225,0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0); }
+/* SMOOTH LOGO BLEND */
+.header-logo {
+    width: 95px;
+    height: auto;
+    mix-blend-mode: screen;
+    opacity: 0.96;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
 }
-</style>
 
-<header class="header">
-
-  <!-- ===================== TOP BAR START ===================== -->
-<style>
-/* ------------------ TOPBAR ------------------ */
-.topbar {
-    background: linear-gradient(90deg, #0A8F6A, #005F46);
-    padding: 8px 0;
+/* BRAND TEXT */
+.brand-text {
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.topbar p, .topbar a, .topbar li {
-    color: #ffffff !important;
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.m-link {
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.m-link:hover {
+    color: #07b565;
+}
+
+/* DROPDOWN */
+.menu li { position: relative; }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px;
+    color: #0a2a66;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+/* BUTTON */
+.appointment-btn {
+    background: #07b565;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #fff !important;
     font-weight: 600;
+    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
+    transition: 0.3s;
+}
+.appointment-btn:hover {
+    opacity: 0.85;
+}
+
+/* MOBILE */
+.mobile-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:900px){
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #0a2a66;
+        padding: 20px;
+        width: 100%;
+        gap: 12px;
+    }
+    .mobile-toggle {
+        display: block;
+    }
 }
 </style>
 
-<div class="topbar">
-    <div class="container">
-        <div class="row">
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
 
-            <div class="col-lg-6 col-md-5">
-                <p class="topbar-text">DEBAVASTU : The Complete Vedic Solutions!</p>
-            </div>
-
-            <div class="col-lg-6 col-md-7 text-right">
-                <ul class="top-contact">
-                    <li><i class="fa fa-phone"></i> +91 6372710439</li>
-                    <li><i class="fa fa-envelope"></i>
-                        <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- ===================== TOP BAR END ===================== -->
-
-    <!-- Header Inner -->
-    <div class="header-inner">
-        <div class="container">
-            <div class="inner">
-                <div class="row align-items-center">
-
-                    <div class="col-lg-3 col-md-3 col-12">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="DebaVastu">
-                            </a>
-                        </div>
-                        <div class="mobile-nav"></div>
-                    </div>
-
-                    <div class="col-lg-7 col-md-9 col-12">
-                        <div class="main-menu">
-                            <nav class="navigation">
-                                <ul class="nav menu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-
-                                    <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a href="vastu.html">Vastu</a></li>
-                                            <li><a href="astrology.html">Astrology</a></li>
-                                            <li><a href="numerology.html">Numerology</a></li>
-                                            <li><a href="tarot.html">Tarot</a></li>
-                                            <li><a href="yoga.html">Yoga & Wellness</a></li>
-                                            <li><a href="healing.html">Healing Therapies</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-10 text-right">
-                        <div class="get-quote">
-                            <a href="appointment.html" class="btn">Book Appointment</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</header>
-
-<!-- Floating Buttons -->
-<div class="floating-btn">
-    <a href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp">
-        <i class="fa fa-whatsapp"></i>
-    </a>
-
-    <a href="tel:+916372710439" title="Call Now">
-        <i class="fa fa-phone"></i>
-    </a>
-</div>
-
-<!-- ===================== END OPTIMIZED HEADER ===================== -->
 		
 		<!-- Start Why choose -->
 		<section class="why-choose section" >
@@ -522,6 +479,7 @@
 		<script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
