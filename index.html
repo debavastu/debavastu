@@ -98,11 +98,7 @@
             <!-- LOGO + TEXT -->
             <div class="logo-area">
                 <a href="index.html" class="logo-link">
-                    
-                    <!-- LOGO -->
                     <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
-
-                    <!-- BRAND NAME -->
                     <div class="brand-text">DEBAVASTU</div>
                 </a>
             </div>
@@ -156,6 +152,7 @@
 
 <!-- ▬▬▬▬▬ CSS START ▬▬▬▬▬ -->
 <style>
+
 /* HEADER BACKGROUND */
 .main-header {
     background: linear-gradient(90deg, #0a2a66, #0d3a85);
@@ -170,19 +167,10 @@
     padding: 12px 0;
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-}
+.logo-area { display: flex; align-items: center; }
+.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-}
-
-/* SMOOTH LOGO BLEND */
+/* LOGO */
 .header-logo {
     width: 95px;
     height: auto;
@@ -192,7 +180,7 @@
     filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
 }
 
-/* BRAND TEXT */
+/* BRAND */
 .brand-text {
     font-weight: 700;
     font-size: 24px;
@@ -210,44 +198,57 @@
     padding: 0;
     align-items: center;
 }
+.menu li { position: relative; }
 
+/* MENU LINKS */
 .m-link {
     color: #fff;
     font-weight: 500;
     transition: 0.3s;
+    padding: 12px 5px;
 }
-.m-link:hover {
-    color: #07b565;
-}
+.m-link:hover { color: #07b565; }
 
-/* DROPDOWN */
-.menu li { position: relative; }
-
+/* =============================
+   STABLE DROPDOWN FIX
+=============================== */
 .dropdown-menu {
-    display: none;
     position: absolute;
-    background: #fff;
-    min-width: 200px;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
     border-radius: 8px;
     padding: 0;
-    margin-top: 10px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease-in-out;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    z-index: 999;
 }
 
+/* SHOW ON HOVER */
 .dropdown:hover .dropdown-menu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
+/* MENU ITEMS */
+.dropdown-menu li { width: 100%; }
 .dropdown-menu li a {
-    display: block;
-    padding: 12px;
-    color: #0a2a66;
+    padding: 12px 16px;
     font-weight: 500;
+    display: block;
+    color: #0a2a66;
     border-bottom: 1px solid #eee;
 }
-
-.dropdown-menu li:last-child a {
-    border-bottom: none;
+.dropdown-menu li:last-child a { border-bottom: none; }
+.dropdown-menu li a:hover {
+    background: #f2f6ff;
+    color: #0d3a85;
 }
 
 /* BUTTON */
@@ -260,11 +261,9 @@
     box-shadow: 0 3px 10px rgba(7,181,101,0.35);
     transition: 0.3s;
 }
-.appointment-btn:hover {
-    opacity: 0.85;
-}
+.appointment-btn:hover { opacity: 0.85; }
 
-/* MOBILE */
+/* MOBILE MENU */
 .mobile-toggle {
     color: #fff;
     font-size: 28px;
@@ -281,9 +280,7 @@
         width: 100%;
         gap: 12px;
     }
-    .mobile-toggle {
-        display: block;
-    }
+    .mobile-toggle { display: block; }
 }
 </style>
 
@@ -293,7 +290,6 @@ function toggleMenu(){
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 </script>
-
 
 		
 		<!-- Slider Area -->
