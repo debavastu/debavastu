@@ -1,403 +1,353 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Numerology – DebaVastu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology – DebaVastu</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --royal-1:#0a2a66;
-      --royal-2:#0d3a85;
-      --accent:#07b565;
-      --card:#ffffff;
-      --muted:#777;
-      --page-bg:#f7f7f7;
-    }
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    *{box-sizing:border-box}
-    body{margin:0;font-family:"Poppins",sans-serif;background:var(--page-bg);color:#222;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #fff;
+        }
 
-    /* ---------------- HEADER (homepage style) ---------------- */
-    .main-header {
-        background: linear-gradient(90deg, var(--royal-1), var(--royal-2));
-        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        position: relative;
-        z-index: 999;
-    }
-    .container { max-width:1250px;margin:0 auto;padding:0 18px; }
-    .header-wrapper{ display:flex;align-items:center;justify-content:space-between;padding:12px 0; }
+        /* HEADER */
+        header {
+            background: white;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
 
-    .logo-area{ display:flex;align-items:center; }
-    .logo-link{ display:flex;align-items:center;gap:14px;text-decoration:none; }
-    /* header logo uses local uploaded file path */
-    .header-logo {
-        width:95px;height:auto;mix-blend-mode:screen;opacity:0.96;border-radius:50%;
-        filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
-        display:block;
-    }
-    .brand-text{ font-weight:700;font-size:24px;color:#fff;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,0.3) }
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
 
-    .menu{ list-style:none; display:flex; gap:28px; margin:0; padding:0; align-items:center }
-    .m-link{ color:#fff; font-weight:500; text-decoration:none; transition:0.25s }
-    .m-link i{ margin-right:8px }
-    .m-link:hover{ color:var(--accent) }
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #003399;
+        }
 
-    .dropdown-menu{ display:none; position:absolute; background:#fff; min-width:200px; border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,0.25); padding:0; margin-top:10px }
-    .menu li{ position:relative }
-    .menu li:hover > .dropdown-menu{ display:block; }
-    .dropdown-menu li a{ display:block; padding:12px 14px; color:var(--royal-1); text-decoration:none; border-bottom:1px solid #eee }
-    .dropdown-menu li:last-child a{ border-bottom:none }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    .appointment-btn{ background:var(--accent); padding:10px 18px; border-radius:8px; color:#fff; font-weight:600; text-decoration:none; box-shadow:0 3px 10px rgba(7,181,101,0.35) }
-    .appointment-btn:hover{ opacity:0.9 }
+        nav ul li a {
+            text-decoration: none;
+            color: #003399;
+            font-weight: 500;
+        }
 
-    .mobile-toggle{ display:none;color:#fff;font-size:28px;cursor:pointer }
+        .appointment-btn {
+            background: #009900;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    @media(max-width:900px){
-      .menu{ display:none; flex-direction:column; width:100%; background:var(--royal-1); padding:20px 16px; gap:12px }
-      .mobile-toggle{ display:block }
-    }
+        /* Mobile menu toggle */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #003399;
+        }
 
-    /* ---------------- PAGE LAYOUT ---------------- */
-    .page-banner{ background: linear-gradient(135deg,#0b3c89,#16a085); color:#fff; padding:70px 0; text-align:center; font-size:36px; font-weight:600; margin-top:12px }
-    .main-wrapper{ max-width:1250px; margin:30px auto; display:flex; gap:40px; padding:0 18px 60px }
-    .content-left{ flex:1.3; background:var(--card); padding:30px; border-radius:12px; box-shadow:0 5px 16px rgba(0,0,0,0.08) }
-    .content-right{ flex:0.75; }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                background: white;
+                padding: 20px;
+            }
 
-    .section-title{ font-size:22px; font-weight:600; color:#0b3c89; margin-top:20px }
-    p, li{ font-size:16px; line-height:1.7 }
+            nav ul {
+                flex-direction: column;
+            }
 
-    /* calculator box */
-    .calc-box{ background:#fff; padding:22px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); position:sticky; top:120px }
-    .calc-box label{ display:block; font-weight:600; margin:8px 0 6px; color:#333; }
-    .calc-box input, .calc-box select{ width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:8px; font-size:15px }
-    .calc-box button{ width:100%; padding:12px; border:none; background:#0b3c89; color:#fff; font-size:16px; border-radius:8px; font-weight:600; cursor:pointer }
-    .calc-box button:hover{ background:#16a085 }
-    .result-box{ background:#eef4ff; padding:16px; border-radius:8px; margin-top:14px }
+            .menu-icon {
+                display: block;
+            }
+        }
 
-    footer{ background:#0b3c89; color:#fff; text-align:center; padding:30px; margin-top:50px }
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 350px;
+            background: url("img/numerology-banner.jpg") center/cover no-repeat;
+            position: relative;
+        }
 
-    /* small helpers */
-    .muted{ color:var(--muted) }
-    .small{ font-size:13px }
-  </style>
+        .banner-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner h1 {
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .banner { height: 260px; }
+            .banner h1 { font-size: 32px; }
+        }
+
+        /* SECTION */
+        .section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: #003399;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #f8faff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #003399;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #003399;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        /* FLOATING BUTTONS */
+        .float-btn {
+            position: fixed;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .call-btn {
+            bottom: 150px;
+            background: #28a745;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            bottom: 90px;
+            background: #25D366;
+            color: white;
+        }
+
+        .book-btn {
+            bottom: 30px;
+            background: #003399;
+            color: white;
+        }
+
+        .float-btn a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #003399;
+            padding: 40px 20px;
+            margin-top: 50px;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
 </head>
+
 <body>
 
-  <!-- ------------------ HEADER (homepage header copied) ------------------ -->
-  <header class="main-header">
-    <div class="container">
-      <div class="header-wrapper">
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">DebaVastu</div>
 
-        <div class="logo-area">
-          <a href="index.html" class="logo-link">
-            <!-- using uploaded local file path from session as instructed -->
-            <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
-            <div class="brand-text">DEBAVASTU</div>
-          </a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="astrology.html">Astrology</a></li>
+                    <li><a href="vastu.html">Vastu</a></li>
+                    <li><a href="numerology.html">Numerology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <a href="appointment.html" class="appointment-btn">Book Appointment</a>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <nav class="nav-menu">
-          <ul class="menu">
-            <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
-
-            <li class="dropdown">
-              <a href="#" class="m-link"><i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="vastu.html">Vastu</a></li>
-                <li><a href="astrology.html">Astrology</a></li>
-                <li><a href="numerology.html">Numerology</a></li>
-                <li><a href="tarot.html">Tarot</a></li>
-                <li><a href="yoga.html">Yoga & Wellness</a></li>
-                <li><a href="healing.html">Healing Therapies</a></li>
-              </ul>
-            </li>
-
-            <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-            <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
-
-            <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-          </ul>
-        </nav>
-
-        <div class="mobile-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ------------------ PAGE BANNER ------------------ -->
-  <div class="page-banner">Numerology</div>
-
-  <!-- ------------------ MAIN CONTENT ------------------ -->
-  <div class="main-wrapper">
-
-    <div class="content-left">
-
-      <h2 class="section-title">Understanding Your Core Numerology Numbers</h2>
-      <p>Numerology reveals your personality, destiny, emotions, strengths, challenges, and karmic patterns. At DebaVastu, we use a blend of traditional Chaldean name mapping (for name-based numbers) together with DOB calculations for Life Path.</p>
-
-      <h2 class="section-title">1. Life Path Number</h2>
-      <p>The Life Path is calculated from your Date of Birth (day + month + year). We reduce the sum to a single digit except when a master number (11 or 22) appears.</p>
-
-      <h2 class="section-title">2. Destiny / Expression Number</h2>
-      <p>Calculated from your full name using the Chaldean mapping (values assigned to letters). This shows your natural talents and long-term achievements.</p>
-
-      <h2 class="section-title">3. Soul Urge (Heart's Desire)</h2>
-      <p>Sum of the vowels in your name (A E I O U). Shows inner motivations and deepest desires.</p>
-
-      <h2 class="section-title">4. Personality Number</h2>
-      <p>Sum of consonants in your name. Reflects the outward personality and first impressions.</p>
-
-      <h2 class="section-title">5. Interpretations</h2>
-      <p>Below the calculator you'll get short meanings for the numbers. Use these as a starting point for deeper readings.</p>
-
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="banner-overlay">
+            <h1>Premium Numerology Consultation</h1>
+        </div>
     </div>
 
-    <!-- ------------------ SIDEBAR CALCULATOR ------------------ -->
-    <aside class="content-right">
-      <div class="calc-box">
-        <h3 style="margin-bottom:12px;color:#0b3c89">Numerology Calculator (Chaldean)</h3>
+    <!-- SECTION: ABOUT NUMEROLOGY -->
+    <div class="section">
+        <h2>What is Numerology?</h2>
+        <p>
+            Numerology is the ancient science of numbers that reveals the deepest truths
+            of your personality, destiny, life purpose, relationships, and future events.
+            At DebaVastu, we use **Chaldean + Pythagorean systems** to provide the most
+            accurate insights for your life path.
+        </p>
+    </div>
 
-        <label for="fullName">Full Name (as on your ID)</label>
-        <input id="fullName" type="text" placeholder="Enter your full name">
+    <!-- SECTION: BENEFITS -->
+    <div class="section">
+        <h2>Benefits of Numerology</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Relationship Insights</h3>
+                <p>Understand compatibility and emotional alignment.</p>
+            </div>
 
-        <label for="dob">Date of Birth</label>
-        <input id="dob" type="date">
+            <div class="card">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Career Guidance</h3>
+                <p>Choose the career path aligned with your destiny number.</p>
+            </div>
 
-        <button id="calcBtn">Calculate</button>
-
-        <div class="result-box" id="resultBox" aria-live="polite">
-          <h4>Your Numbers</h4>
-          <p><strong>Life Path:</strong> <span id="lifePath">-</span></p>
-          <p><strong>Expression / Destiny:</strong> <span id="expression">-</span></p>
-          <p><strong>Soul Urge:</strong> <span id="soulUrge">-</span></p>
-          <p><strong>Personality:</strong> <span id="personality">-</span></p>
-
-          <hr style="border:none;border-top:1px solid #dfeaff;margin:12px 0">
-
-          <div id="meanings">
-            <h4 style="margin:6px 0 10px">Meanings</h4>
-            <div id="meaningLife" class="small muted">Life Path meaning will appear here.</div>
-            <div id="meaningExpr" class="small muted" style="margin-top:6px">Expression meaning will appear here.</div>
-            <div id="meaningSoul" class="small muted" style="margin-top:6px">Soul Urge meaning will appear here.</div>
-            <div id="meaningPers" class="small muted" style="margin-top:6px">Personality meaning will appear here.</div>
-          </div>
+            <div class="card">
+                <i class="fa-solid fa-star"></i>
+                <h3>Name Correction</h3>
+                <p>Perfect name vibrations for success and prosperity.</p>
+            </div>
         </div>
-      </div>
-    </aside>
+    </div>
 
-  </div>
+    <!-- SECTION: NUMEROLOGY TYPES -->
+    <div class="section">
+        <h2>Core Numerology Readings</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-infinity"></i>
+                <h3>Life Path Number</h3>
+                <p>The blueprint of your soul — your purpose and lessons.</p>
+            </div>
 
-  <footer>
-    © <span id="year"></span> DebaVastu — The Complete Vedic Solutions
-  </footer>
+            <div class="card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Destiny Number</h3>
+                <p>Defines your talents, strengths, and future success.</p>
+            </div>
 
-  <!-- ------------------ SCRIPTS ------------------ -->
-  <script>
-    // show current year
-    document.getElementById('year').innerText = new Date().getFullYear();
+            <div class="card">
+                <i class="fa-solid fa-signature"></i>
+                <h3>Name Number</h3>
+                <p>Your name vibration and how it affects your fortune.</p>
+            </div>
+        </div>
+    </div>
 
-    // Chaldean mapping
-    const chaldeanMap = {
-      A:1, I:1, J:1, Q:1, Y:1,
-      B:2, K:2, R:2,
-      C:3, G:3, L:3, S:3,
-      D:4, M:4, T:4,
-      E:5, H:5, N:5, X:5,
-      U:6, V:6, W:6,
-      O:7, Z:7,
-      F:8, P:8
-    };
+    <!-- SECTION: CONSULTATION -->
+    <div class="section">
+        <h2>Numerology Consultation</h2>
+        <p>
+            Our numerology sessions are personalized and include your detailed report,
+            life path analysis, compatibility reading, name correction, and yearly
+            prediction for smooth success.
+        </p>
+    </div>
 
-    // helper: reduce while preserving master numbers 11,22 (and 33 just in case)
-    function reducePreserveMasters(n) {
-      if (n === 11 || n === 22 || n === 33) return n;
-      let s = Math.abs(n).toString().split('').reduce((a,b)=>a+Number(b),0);
-      while (s > 9 && s !== 11 && s !== 22 && s !== 33) {
-        s = s.toString().split('').reduce((a,b)=>a+Number(b),0);
-      }
-      return s;
-    }
+    <!-- FLOATING BUTTONS -->
+    <div class="float-btn call-btn">
+        <a href="tel:+916372710439">
+            <i class="fa fa-phone"></i> Call Now
+        </a>
+    </div>
 
-    // Life Path from DOB (YYYY-MM-DD or similar)
-    function computeLifePath(dobStr) {
-      if (!dobStr) return null;
-      // extract digits
-      const digits = dobStr.replace(/[^0-9]/g,'').split('').map(Number);
-      const sum = digits.reduce((a,b)=>a+b,0);
-      return reducePreserveMasters(sum);
-    }
+    <div class="float-btn whatsapp-btn">
+        <a href="https://wa.me/916372710439" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
 
-    // Expression (full name) using Chaldean
-    function computeExpression(name) {
-      if (!name) return null;
-      const letters = name.toUpperCase().replace(/[^A-Z]/g,'').split('');
-      if (letters.length === 0) return null;
-      const sum = letters.reduce((acc,ch)=>{
-        const v = chaldeanMap[ch] || 0;
-        return acc + v;
-      },0);
-      return reducePreserveMasters(sum);
-    }
+    <div class="float-btn book-btn">
+        <a href="appointment.html">
+            <i class="fa fa-calendar"></i> Book Now
+        </a>
+    </div>
 
-    // Soul Urge: vowels A E I O U (we include Y as optional; by default NOT counted as vowel here)
-    function computeSoulUrge(name) {
-      if (!name) return null;
-      const vowels = name.toUpperCase().replace(/[^A-Z]/g,'').split('').filter(ch => 'AEIOU'.indexOf(ch) !== -1);
-      if (vowels.length === 0) return null;
-      const sum = vowels.reduce((acc,ch)=> acc + (chaldeanMap[ch] || 0),0);
-      return reducePreserveMasters(sum);
-    }
+    <!-- FOOTER -->
+    <footer>
+        © 2025 DebaVastu — All Rights Reserved.
+    </footer>
 
-    // Personality: consonants only
-    function computePersonality(name) {
-      if (!name) return null;
-      const letters = name.toUpperCase().replace(/[^A-Z]/g,'').split('').filter(ch => 'AEIOU'.indexOf(ch) === -1);
-      if (letters.length === 0) return null;
-      const sum = letters.reduce((acc,ch)=> acc + (chaldeanMap[ch] || 0),0);
-      return reducePreserveMasters(sum);
-    }
+    <!-- SCRIPT -->
+    <script>
+        function toggleMenu() {
+            let nav = document.getElementById("navbar");
+            nav.style.display = nav.style.display === "block" ? "none" : "block";
+        }
+    </script>
 
-    // Short meanings for digits (can be expanded)
-    const meanings = {
-      life: {
-        1: "Leader — independence, ambition, initiative.",
-        2: "Peacemaker — diplomacy, sensitivity, cooperation.",
-        3: "Creative — communication, expression, sociability.",
-        4: "Builder — discipline, structure, practicality.",
-        5: "Explorer — change, freedom, adaptability.",
-        6: "Nurturer — responsibility, family, service.",
-        7: "Seeker — introspection, spirituality, analysis.",
-        8: "Manager — power, success, material mastery.",
-        9: "Humanitarian — compassion, completion, wisdom.",
-        11: "Master Intuition — spiritual insight, inspiration (master number).",
-        22: "Master Builder — large-scale achievement, leadership (master number).",
-        33: "Master Teacher — compassion, guidance (rare master number)."
-      },
-      expr: {
-        1: "Expression: Leadership and strong individuality.",
-        2: "Expression: Cooperation, partners, diplomacy.",
-        3: "Expression: Creativity, communication, charm.",
-        4: "Expression: Practicality, stability, craftsmanship.",
-        5: "Expression: Versatile, adventurous, persuasive.",
-        6: "Expression: Service, domestic talents, healing.",
-        7: "Expression: Study, research, spiritual pursuits.",
-        8: "Expression: Business, authority, ambition.",
-        9: "Expression: Humanitarian, broad vision, idealism.",
-        11: "Expression: Visionary leader with spiritual emphasis.",
-        22: "Expression: Powerful force to build and organize.",
-        33: "Expression: Master healer and teacher."
-      },
-      soul: {
-        1: "Soul: Desire for independence and leadership.",
-        2: "Soul: Desire for harmony, relationship & peace.",
-        3: "Soul: Desire for creativity and expression.",
-        4: "Soul: Desire for security and order.",
-        5: "Soul: Desire for adventure and freedom.",
-        6: "Soul: Desire for love, family, responsibility.",
-        7: "Soul: Desire for inner knowledge and solitude.",
-        8: "Soul: Desire for power, influence, achievement.",
-        9: "Soul: Desire for service, compassion, completion.",
-        11: "Soul: Intuitive sensitivity and spiritual calling.",
-        22: "Soul: Drive to make a great practical impact."
-      },
-      pers: {
-        1: "Personality: Appears confident, independent.",
-        2: "Personality: Appears diplomatic, gentle.",
-        3: "Personality: Appears friendly, expressive.",
-        4: "Personality: Appears grounded, dependable.",
-        5: "Personality: Appears adventurous, adaptable.",
-        6: "Personality: Appears caring, responsible.",
-        7: "Personality: Appears introspective, reserved.",
-        8: "Personality: Appears authoritative, businesslike.",
-        9: "Personality: Appears compassionate, idealistic.",
-        11: "Personality: Magnetic, inspiring presence.",
-        22: "Personality: Commanding, practical leader."
-      }
-    };
-
-    // UI elements
-    const btn = document.getElementById('calcBtn');
-    const lifeEl = document.getElementById('lifePath');
-    const exprEl = document.getElementById('expression');
-    const soulEl = document.getElementById('soulUrge');
-    const persEl = document.getElementById('personality');
-
-    const meaningLife = document.getElementById('meaningLife');
-    const meaningExpr = document.getElementById('meaningExpr');
-    const meaningSoul = document.getElementById('meaningSoul');
-    const meaningPers = document.getElementById('meaningPers');
-
-    function displayMeaning(targetEl, map, value, defaultText){
-      if (value === null || value === undefined) {
-        targetEl.innerText = defaultText || '';
-        return;
-      }
-      const text = (map && map[value]) ? map[value] : ("Number " + value);
-      targetEl.innerText = text;
-    }
-
-    function formatNumber(n){
-      return (n === null || n === undefined) ? '-' : n;
-    }
-
-    btn.addEventListener('click', function(){
-      const fullName = document.getElementById('fullName').value.trim();
-      const dob = document.getElementById('dob').value;
-
-      if (!fullName) {
-        alert('Please enter your full name (as in your ID).');
-        return;
-      }
-      if (!dob) {
-        alert('Please enter your date of birth.');
-        return;
-      }
-
-      // calculate numbers
-      const life = computeLifePath(dob);
-      const expr = computeExpression(fullName);
-      const soul = computeSoulUrge(fullName);
-      const pers = computePersonality(fullName);
-
-      // show
-      lifeEl.innerText = formatNumber(life);
-      exprEl.innerText = formatNumber(expr);
-      soulEl.innerText = formatNumber(soul);
-      persEl.innerText = formatNumber(pers);
-
-      // show meanings
-      displayMeaning(meaningLife, meanings.life, life, '—');
-      displayMeaning(meaningExpr, meanings.expr, expr, '—');
-      displayMeaning(meaningSoul, meanings.soul, soul, '—');
-      displayMeaning(meaningPers, meanings.pers, pers, '—');
-    });
-
-    // bonus: calculate on Enter key for fields
-    document.getElementById('fullName').addEventListener('keydown', function(e){
-      if (e.key === 'Enter') { e.preventDefault(); btn.click(); }
-    });
-    document.getElementById('dob').addEventListener('keydown', function(e){
-      if (e.key === 'Enter') { e.preventDefault(); btn.click(); }
-    });
-
-    // Extra: small usage notes printed to console (for debugging)
-    console.log("Numerology (Chaldean) page loaded. Chaldean mapping used.");
-  </script>
-
-  <!-- toggle menu script -->
-  <script>
-  function toggleMenu(){
-    const menu = document.querySelector(".menu");
-    if (!menu) return;
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-  }
-  </script>
 </body>
 </html>
