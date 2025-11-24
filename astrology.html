@@ -5,10 +5,137 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Astrology Consultation – DebaVastu</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body{font-family:Inter,Arial;margin:0;color:#222;line-height:1.6}
-    header{background:#0b6e4f;color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
-    header a{color:#fff;text-decoration:none}
+
+    /* TOPBAR */
+    .topbar {
+        background: #08306A;
+        color: #fff;
+        padding: 6px 0;
+        font-size: 14px;
+    }
+    .top-left i { margin-right: 5px; }
+
+    .top-appointment-btn {
+        background: #07b565;
+        padding: 6px 14px;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* HEADER */
+    .main-header {
+        background: linear-gradient(90deg, #0a2a66, #0d3a85);
+        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+    }
+
+    /* LOGO */
+    .header-logo {
+        width: 95px;
+        mix-blend-mode: screen;
+        border-radius: 50%;
+    }
+
+    /* BRAND TEXT */
+    .brand-text {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-left: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* MENU */
+    .menu {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+        margin: 0;
+        padding: 0;
+    }
+    .menu li { position: relative; }
+
+    .m-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 12px 5px;
+        transition: 0.3s;
+    }
+    .m-link:hover { color: #07b565; }
+
+    /* DROPDOWN */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        min-width: 220px;
+        border-radius: 8px;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        z-index: 9999;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        padding: 12px 16px;
+        color: #0a2a66;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+    }
+
+    .dropdown-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li a:hover {
+        background: #eef4ff;
+        color: #0d3a85;
+    }
+
+    /* MOBILE */
+    .mobile-toggle {
+        display: none;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    @media(max-width:900px){
+        .menu {
+            display: none;
+            flex-direction: column;
+            background: #0a2a66;
+            padding: 20px;
+            gap: 12px;
+        }
+        .mobile-toggle {
+            display: block;
+        }
+    }
+
+    /* PAGE CONTENT */
     .container{max-width:1150px;margin:auto;padding:26px 16px}
     .hero{background:url('../img/astrology-hero.jpg') center/cover no-repeat;color:#fff;padding:90px 0;text-align:center}
     .hero h1{font-size:40px;margin:0 0 10px}
@@ -19,13 +146,69 @@
   </style>
 </head>
 <body>
-<header>
-  <div><a href="/">DEBAVASTU</a></div>
-  <nav>
-    <a href="/">Home</a> | <a href="vastu.html">Vastu</a> | <a href="astrology.html">Astrology</a> | <a href="numerology.html">Numerology</a>
-  </nav>
-</header>
 
+<!-- ▬▬▬▬▬ TOPBAR START ▬▬▬▬▬ -->
+<div class="topbar">
+    <div class="container" style="max-width:1250px;margin:auto; display:flex; justify-content:space-between; align-items:center;">
+        <div class="top-left">
+            <i class="fa fa-phone"></i> +91 63727 10439
+        </div>
+        <div class="top-right">
+            <a href="appointment.html" class="top-appointment-btn">Book Appointment</a>
+        </div>
+    </div>
+</div>
+<!-- ▬▬▬▬▬ TOPBAR END ▬▬▬▬▬ -->
+
+
+<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
+<header class="main-header">
+    <div class="container" style="max-width:1250px;margin:auto;">
+        <div class="header-wrapper">
+
+            <!-- LOGO + BRAND -->
+            <div class="logo-area" style="display:flex;align-items:center;">
+                <a href="index.html" class="logo-link" style="display:flex;align-items:center;text-decoration:none;">
+                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+                    <div class="brand-text">DEBAVASTU</div>
+                </a>
+            </div>
+
+            <!-- NAV MENU -->
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="m-link"><i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                            <li><a href="healing.html">Healing Therapies</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+    </div>
+</header>
+<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
+
+
+<!-- ▬▬▬▬▬ HERO SECTION ▬▬▬▬▬ -->
 <section class="hero">
   <div class="container">
     <h1>Astrology Consultation</h1>
@@ -57,7 +240,7 @@
     <li>Chart preparation & analysis.</li>
     <li>Live video/voice consultation (30–45 mins).</li>
     <li>PDF report + remedies.</li>
-    <li>Follow‑up support for 7 days.</li>
+    <li>Follow-up support for 7 days.</li>
   </ol>
 </section>
 
@@ -86,5 +269,13 @@
 <footer>
   © 2025 DebaVastu – Astrology Services
 </footer>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
+
 </body>
 </html>
