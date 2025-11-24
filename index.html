@@ -88,239 +88,208 @@
         <!-- End Preloader -->   
 
 
-<!-- ======================= HEADER START ======================= -->
-<header id="mainHeader" class="header">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/logo.png" alt="DebaVastu Logo">
-      </a>
+<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
+<header class="main-header">
+    <div class="container" style="max-width:1250px;margin:auto;">
+
+        <!-- HEADER WRAPPER -->
+        <div class="header-wrapper">
+            
+            <!-- LOGO + TEXT -->
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+                    <div class="brand-text">DEBAVASTU</div>
+                </a>
+            </div>
+
+            <!-- MENU -->
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+
+                    <!-- SERVICES DROPDOWN -->
+                    <li class="dropdown">
+                        <a href="#" class="m-link">
+                            <i class="fa fa-handshake-o"></i> Services 
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                            <li><a href="healing.html">Healing Therapies</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+
+                    <!-- BOOK APPOINTMENT -->
+                    <li>
+                        <a href="appointment.html" class="appointment-btn">
+                            Book Appointment
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+
     </div>
-
-    <nav class="navbar">
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-
-        <li class="dropdown">
-          <a href="#">Services</a>
-          <ul class="dropdown-menu">
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga</a></li>
-            <li><a href="healing.html">Healing</a></li>
-          </ul>
-        </li>
-
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <a href="appointment.html" class="header-btn">Book Appointment</a>
-
-      <div class="mobile-menu-icon" id="mobileMenuBtn">
-        <span></span><span></span><span></span>
-      </div>
-    </nav>
-  </div>
 </header>
-<!-- ======================= HEADER END ========================= -->
+<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
 
-<!-- ======================= FLOATING BUTTONS ==================== -->
 
-<a href="tel:+916372710439" class="float-call">
-  <img src="img/call.png" alt="Call">
-</a>
-
-<a href="https://wa.me/916372710439" target="_blank" class="float-whatsapp">
-  <img src="img/whatsapp.png" alt="WhatsApp">
-</a>
-
-<a href="appointment.html" class="float-appointment">Book Appointment</a>
-
-<!-- ======================= JS FOR HEADER ======================== -->
-<script>
-  // Sticky Header on Scroll
-  window.addEventListener("scroll", function () {
-    const header = document.getElementById("mainHeader");
-    header.classList.toggle("sticky", window.scrollY > 20);
-  });
-
-  // Mobile Menu Toggle
-  const mobileBtn = document.getElementById("mobileMenuBtn");
-  const navMenu = document.querySelector(".nav-menu");
-
-  mobileBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    mobileBtn.classList.toggle("open");
-  });
-</script>
-
-<!-- ======================= CSS ================================ -->
+<!-- ▬▬▬▬▬ CSS START ▬▬▬▬▬ -->
 <style>
-/* HEADER BASE */
-.header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  padding: 15px 0;
-  transition: 0.3s;
-  background: transparent;
+
+/* HEADER BACKGROUND */
+.main-header {
+    background: linear-gradient(90deg, #0a2a66, #0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
 
-.header.sticky {
-  background: #0a2a7a;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+/* HEADER LAYOUT */
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
 }
 
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.logo-area { display: flex; align-items: center; }
+.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+
+/* LOGO */
+.header-logo {
+    width: 95px;
+    height: auto;
+    mix-blend-mode: screen;
+    opacity: 0.96;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
 }
 
-.logo img {
-  width: 150px;
+/* BRAND */
+.brand-text {
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* NAVIGATION */
-.navbar {
-  display: flex;
-  align-items: center;
+/* MENU */
+.menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
+.menu li { position: relative; }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-
-.nav-menu li a {
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-/* DROPDOWN */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: white;
-  list-style: none;
-  padding: 10px 0;
-  border-radius: 8px;
-  margin-top: 10px;
-  width: 180px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu li a {
-  color: #0a2a7a;
-  padding: 10px 20px;
-  display: block;
-}
-
-.dropdown-menu li a:hover {
-  background: #f0f0f0;
-}
-
-/* HEADER BUTTON */
-.header-btn {
-  margin-left: 25px;
-  background: #11b56a;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* MOBILE STYLES */
-.mobile-menu-icon {
-  width: 30px;
-  cursor: pointer;
-  margin-left: 20px;
-  display: none;
-}
-
-.mobile-menu-icon span {
-  display: block;
-  height: 3px;
-  margin: 5px;
-  background: white;
-  transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    background: #0a2a7a;
-    flex-direction: column;
-    width: 250px;
-    height: 100vh;
-    padding-top: 20px;
+/* MENU LINKS */
+.m-link {
+    color: #fff;
+    font-weight: 500;
     transition: 0.3s;
-  }
+    padding: 12px 5px;
+}
+.m-link:hover { color: #07b565; }
 
-  .nav-menu.active {
-    right: 0;
-  }
+/* =============================
+   STABLE DROPDOWN FIX
+=============================== */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    z-index: 999;
+}
 
-  .mobile-menu-icon {
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* MENU ITEMS */
+.dropdown-menu li { width: 100%; }
+.dropdown-menu li a {
+    padding: 12px 16px;
+    font-weight: 500;
     display: block;
-  }
+    color: #0a2a66;
+    border-bottom: 1px solid #eee;
+}
+.dropdown-menu li:last-child a { border-bottom: none; }
+.dropdown-menu li a:hover {
+    background: #f2f6ff;
+    color: #0d3a85;
+}
 
-  .header-btn {
+/* BUTTON */
+.appointment-btn {
+    background: #07b565;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
+    transition: 0.3s;
+}
+.appointment-btn:hover { opacity: 0.85; }
+
+/* MOBILE MENU */
+.mobile-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
     display: none;
-  }
 }
 
-/* FLOATING BUTTONS */
-.float-call,
-.float-whatsapp {
-  position: fixed;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  z-index: 9999;
-}
-
-.float-call {
-  bottom: 130px;
-}
-
-.float-whatsapp {
-  bottom: 70px;
-}
-
-.float-call img,
-.float-whatsapp img {
-  width: 55px;
-}
-
-.float-appointment {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #11b56a;
-  padding: 12px 20px;
-  color: white;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  z-index: 9999;
+@media(max-width:900px){
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #0a2a66;
+        padding: 20px;
+        width: 100%;
+        gap: 12px;
+    }
+    .mobile-toggle { display: block; }
 }
 </style>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
 
 		
 		<!-- Slider Area -->
