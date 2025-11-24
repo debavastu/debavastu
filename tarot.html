@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Reading – DebaVastu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; margin:0; padding:0; }
+
+        /* HEADER */
+        header {
+            background: #0a1a5a;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            margin: 0; padding: 0;
+            display: flex; gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-appointment {
+            background: #00a86b;
+            padding: 10px 18px;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* MOBILE */
+        @media(max-width: 768px){
+            nav ul { display: none; }
+        }
+
+        /* BANNER */
+        .banner {
+            position: relative;
+            height: 300px;
+            background: url('img/about-banner.jpg') center/cover no-repeat;
+        }
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .banner-overlay h1 {
+            font-size: 42px;
+            margin: 0;
+            font-weight: 700;
+        }
+        .banner-overlay p {
+            margin-top: 10px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: #0a1a5a;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 25px;
+        }
+        .card {
+            padding: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .card h3 {
+            color: #00a86b;
+            margin-bottom: 10px;
+        }
+
+        /* FOUNDER */
+        .founder {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            background: #f4f4f4;
+            padding: 50px 20px;
+            border-radius: 15px;
+        }
+        .founder img {
+            width: 260px;
+            border-radius: 15px;
+        }
+        @media(max-width:768px){
+            .founder { flex-direction: column; text-align: center; }
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a1a5a;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* FLOATING BUTTONS */
+        .float-btn {
+            position: fixed;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .call-btn { bottom: 160px; }
+        .whatsapp-btn { bottom: 100px; }
+        .book-btn { bottom: 40px; }
+
+        .float-btn a {
+            display: block;
+            background: #00a86b;
+            color: white;
+            padding: 14px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">DEBAVASTU</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vastu.html">Vastu</a></li>
+            <li><a href="astrology.html">Astrology</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+    <div class="banner-overlay">
+        <h1>Tarot Reading</h1>
+        <p>Vastu • Astrology • Numerology • Tarot • Yoga • Healing</p>
+    </div>
+</section>
+
+<!-- TAROT SERVICES -->
+<section class="section">
+    <h2>Our Tarot Reading Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>General Tarot Reading</h3>
+            <p>Get clarity on life, relationships, career, and future paths with a detailed intuitive reading.</p>
+        </div>
+
+        <div class="card">
+            <h3>Love & Relationship Tarot</h3>
+            <p>Understand your partner, relationship future, compatibility, and emotional guidance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Career & Finance Tarot</h3>
+            <p>Find direction in job, business, money flow, and important decisions.</p>
+        </div>
+
+        <div class="card">
+            <h3>Yes / No Tarot</h3>
+            <p>Quick answers for urgent decisions with accurate intuitive guidance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Spiritual Tarot</h3>
+            <p>Gain insights into your spiritual journey, karmic blocks, and inner healing.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOUNDER SECTION -->
+<section class="section">
+    <div class="founder">
+        <img src="img/founder.jpg" alt="Founder">
+
+        <div>
+            <h2>Meet the Founder</h2>
+            <p><strong>Vastu Consultant • Astrologer • Numerologist • Tarot Expert • Yoga Trainer • Reiki & Energy Healer</strong></p>
+            <p>With 10+ years of experience, I am dedicated to guiding people through Vastu, Astrology, Tarot, and holistic healing practices. My mission is to bring clarity, balance, and positivity into your life.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 DebaVastu — All Rights Reserved
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btn call-btn"><a href="tel:6372710439">📞</a></div>
+<div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
+<div class="float-btn book-btn"><a href="tel:6372710439">📅</a></div>
+
+</body>
+</html>
