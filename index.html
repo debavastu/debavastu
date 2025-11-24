@@ -209,45 +209,66 @@
 }
 .m-link:hover { color: #07b565; }
 
-/* =============================
-   STABLE DROPDOWN FIX
-=============================== */
+/* =======================================
+   FINAL STABLE DROPDOWN - NO MOVEMENT
+======================================= */
+
+/* NO GAP — KEEP MOUSE HOVER AREA 100% */
+.menu li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+/* BASE DROPDOWN */
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 100%;              /* PERFECT alignment under tab */
     left: 0;
+
     background: #ffffff;
     min-width: 220px;
     border-radius: 8px;
+
+    margin: 0;              /* ❗ critical fix */
     padding: 0;
-    margin: 0;
+
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease-in-out;
+
+    transform: translateY(0);  /* ❗ remove movement */
+
+    transition: opacity 0.18s ease-in-out;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    z-index: 999;
+    z-index: 9999;
 }
 
 /* SHOW ON HOVER */
-.dropdown:hover .dropdown-menu {
+.dropdown:hover > .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
 }
 
-/* MENU ITEMS */
-.dropdown-menu li { width: 100%; }
+/* MENU ITEMS INSIDE DROPDOWN */
+.dropdown-menu li {
+    width: 100%;
+}
+
 .dropdown-menu li a {
-    padding: 12px 16px;
-    font-weight: 500;
     display: block;
+    padding: 12px 16px;
     color: #0a2a66;
     border-bottom: 1px solid #eee;
+    font-weight: 500;
+    white-space: nowrap;
 }
-.dropdown-menu li:last-child a { border-bottom: none; }
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
 .dropdown-menu li a:hover {
-    background: #f2f6ff;
+    background: #eef4ff;
     color: #0d3a85;
 }
 
