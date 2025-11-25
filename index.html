@@ -1,293 +1,345 @@
-/* ---------------------------------------
-       MAIN HEADER (from Homepage)
-    --------------------------------------- */
-    .main-header {
-      background: linear-gradient(90deg, #0a2a66, #0d3a85);
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 999;
-    }
-    .header-wrapper {
-      max-width: 1250px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 15px;
-    }
-    .logo-link {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-    .header-logo {
-      width: 90px;
-      border-radius: 50%;
-      mix-blend-mode: screen;
-    }
-    .brand-text {
-      color: #fff;
-      font-size: 26px;
-      font-weight: 700;
-    }
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>DEBAVASTU</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    .menu {
-      display: flex;
-      list-style: none;
-      gap: 28px;
-      padding: 0;
-      margin: 0;
-      align-items: center;
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <style>
+          /* Small modal for success */
+          .dv-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+          }
+          .dv-modal .card {
+            background: #fff;
+            padding: 22px;
+            max-width: 460px;
+            width: 92%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 18px 50px rgba(12,12,12,0.18);
+            font-family: 'Poppins',sans-serif;
+          }
+          .dv-modal .card h3 { margin-top:0; color:#0b6e4f; }
+          .dv-modal .card p { color:#444; margin:10px 0 18px; }
+          .dv-modal .card .btn { background:#0b6e4f; color:#fff; padding:10px 18px; border-radius:8px; border:none; }
+        </style>
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="25px" height="20px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->   
+		
+		
+		<!-- ===================== OPTIMIZED HEADER (ROYAL BLUE THEME) ===================== -->
+
+<style>
+/* ------------------ BASIC RESET ------------------ */
+.header {
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    position: sticky;
+    background: var(--header-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ------------------ COLOR VARIABLES ------------------ */
+:root {
+    --header-bg: #ffffff;
+    --menu-text: #222;
+    --menu-hover: #4169E1; /* Royal Blue */
+    --primary-blue: #4169E1;
+    --primary-hover: #2a4ebf; 
+    --tint-blue: rgba(65,105,225,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --header-bg: #111;
+        --menu-text: #fff;
+        --menu-hover: #7aa2ff;
     }
-    .m-link {
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-      padding: 12px 5px;
-      transition: 0.3s;
+}
+
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: #4169E1; /* Royal Blue */
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* ------------------ LOGO ------------------ */
+.logo img {
+    max-height: 60px;
+}
+
+/* ------------------ NAVIGATION ------------------ */
+.navigation .menu > li > a {
+    color: var(--menu-text);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 18px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.navigation .menu > li > a:hover {
+    color: var(--menu-hover);
+    transform: translateY(-2px);
+}
+
+/* ------------------ DROPDOWN ------------------ */
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.25s;
+    background: var(--header-bg);
+    border-radius: 8px;
+}
+
+.menu li:hover > .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    padding: 12px 18px;
+    color: var(--menu-text);
+    font-weight: 500;
+}
+
+.dropdown li a:hover {
+    background: var(--tint-blue);
+    color: var(--menu-hover);
+}
+
+/* ------------------ BOOK APPOINTMENT BUTTON ------------------ */
+.get-quote .btn {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.get-quote .btn:hover {
+    transform: scale(1.05);
+    background: var(--primary-hover);
+    box-shadow: 0 0 12px rgba(65,105,225,0.6);
+}
+
+/* ------------------ MOBILE MENU ------------------ */
+.mobile-nav {
+    display: none;
+}
+@media (max-width: 991px) {
+    .mobile-nav {
+        display: block;
     }
-    .m-link:hover { color:#07b565; }
+}
 
-    /* DROPDOWN */
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      background: #fff;
-      border-radius: 8px;
-      padding: 0;
-      margin: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.18s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-      z-index: 9999;
-    }
-    .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-    .dropdown-menu li { list-style: none; }
-    .dropdown-menu li a {
-      display: block;
-      padding: 12px 16px;
-      color: #0a2a66;
-      border-bottom: 1px solid #eee;
-      text-decoration: none;
-    }
-    .dropdown-menu li a:hover {
-      background: #eef4ff;
-    }
+/* ------------------ FLOATING BUTTONS ------------------ */
+.floating-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-    /* HEADER BOOK APPOINTMENT BUTTON */
-    .appointment-btn {
-      background: #07b565;
-      padding: 10px 18px;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .appointment-btn:hover { opacity: 0.85; }
+.floating-btn a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    animation: pulse 1.8s infinite;
+    text-decoration: none;
+}
 
-    /* MOBILE MENU */
-    .mobile-toggle {
-      display: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
-    }
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0.5); }
+    70% { transform: scale(1.12); box-shadow: 0 0 0 18px rgba(65,105,225,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(65,105,225,0); }
+}
+</style>
 
-    @media(max-width:900px){
-      .menu {
-        display: none;
-        flex-direction: column;
-        background: #0a2a66;
-        width: 100%;
-        padding: 20px;
-        gap: 12px;
-      }
-      .mobile-toggle { display:block; }
-    }
+<header class="header">
 
-    /* ---------------------------------------
-       PAGE CONTENT
-    --------------------------------------- */
-    .container { max-width:1150px;margin:auto;padding:26px 16px; }
-    .hero {
-      background:url('../img/astrology-hero.jpg') center/cover no-repeat;
-      color:#fff;
-      padding:90px 0;
-      text-align:center;
-    }
-    .hero h1 { font-size:40px;margin:0 0 10px; }
-    .section-title { text-align:center; font-size:30px; margin-bottom:12px; }
+  <!-- ===================== TOP BAR START ===================== -->
+<style>
+/* ------------------ TOPBAR ------------------ */
+.topbar {
+    background: linear-gradient(90deg, #0A8F6A, #005F46);
+    padding: 8px 0;
+}
+.topbar p, .topbar a, .topbar li {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+</style>
 
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
-    .card {
-      background:#fff;
-      padding:20px;
-      border-radius:12px;
-      border:1px solid #eee;
-      box-shadow:0 6px 20px rgba(0,0,0,0.05);
-    }
+<div class="topbar">
+    <div class="container">
+        <div class="row">
 
-    footer {
-      background:#0b0b0b;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
+            <div class="col-lg-6 col-md-5">
+                <p class="topbar-text">DEBAVASTU : The Complete Vedic Solutions!</p>
+            </div>
 
-    /* ---------------------------------------
-       FLOATING BUTTONS
-    --------------------------------------- */
+            <div class="col-lg-6 col-md-7 text-right">
+                <ul class="top-contact">
+                    <li><i class="fa fa-phone"></i> +91 6372710439</li>
+                    <li><i class="fa fa-envelope"></i>
+                        <a href="mailto:contact@debavastu.com">contact@debavastu.com</a>
+                    </li>
+                </ul>
+            </div>
 
-    /* Appointment Button */
-    .float-appointment {
-      position: fixed;
-      bottom: 170px;
-      right: 22px;
-      background: #07b565;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      transition: 0.3s;
-      z-index: 9999;
-    }
-    .float-appointment:hover {
-      transform: scale(1.08);
-      background:#069a52;
-    }
+        </div>
+    </div>
+</div>
+<!-- ===================== TOP BAR END ===================== -->
 
-    /* Call Button */
-    .float-call {
-      position:fixed;
-      bottom:100px;
-      right:22px;
-      background:#0b3d91;
-      color:#fff;
-      width:55px;
-      height:55px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      border-radius:50%;
-      font-size:24px;
-      text-decoration:none;
-      z-index:9999;
-      box-shadow:0 6px 18px rgba(0,0,0,0.25);
-    }
+    <!-- Header Inner -->
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row align-items-center">
 
-    /* WhatsApp Button */
-    .float-whatsapp {
-      position:fixed;
-      bottom:30px;
-      right:22px;
-      background:#25D366;
-      color:#fff;
-      width:55px;
-      height:55px;
-      border-radius:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:26px;
-      text-decoration:none;
-      z-index:9999;
-      box-shadow:0 6px 18px rgba(0,0,0,0.25);
-      transition:.3s;
-    }
-    .float-whatsapp:hover { transform:scale(1.1); }
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="DebaVastu">
+                            </a>
+                        </div>
+                        <div class="mobile-nav"></div>
+                    </div>
 
-    /* MOBILE FIX */
-    @media (max-width:600px){
-      .float-appointment {
-        bottom:140px;
-        right:18px;
-        padding:12px 18px;
-        font-size:14px;
-      }
-      .float-call {
-        bottom:82px;
-        right:16px;
-        width:50px;height:50px;
-        font-size:22px;
-      }
-      .float-whatsapp {
-        bottom:20px;
-        right:16px;
-        width:50px;height:50px;
-      }
-    }
-  </style>
+                    <div class="col-lg-7 col-md-9 col-12">
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
 
-  <script>
-    function toggleMenu(){
-      const menu = document.querySelector(".menu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-    }
-  </script>
-</head>
-<body>
+                                    <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="vastu.html">Vastu</a></li>
+                                            <li><a href="astrology.html">Astrology</a></li>
+                                            <li><a href="numerology.html">Numerology</a></li>
+                                            <li><a href="tarot.html">Tarot</a></li>
+                                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                                            <li><a href="healing.html">Healing Therapies</a></li>
+                                        </ul>
+                                    </li>
 
-<!-- ---------------------------------------
-     UPDATED HEADER (Same as Homepage)
---------------------------------------- -->
-<header class="main-header">
-  <div class="header-wrapper">
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
 
-    <a href="index.html" class="logo-link">
-      <img src="img/logo.png" class="header-logo">
-      <div class="brand-text">DEBAVASTU</div>
-    </a>
+                    <div class="col-lg-2 col-10 text-right">
+                        <div class="get-quote">
+                            <a href="appointment.html" class="btn">Book Appointment</a>
+                        </div>
+                    </div>
 
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+                </div>
+            </div>
+        </div>
 
-        <li class="dropdown">
-          <a href="#" class="m-link"><i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga & Wellness</a></li>
-            <li><a href="healing.html">Healing Therapies</a></li>
-          </ul>
-        </li>
-
-        <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-        <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
-
-        <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-      </ul>
-    </nav>
-
-    <div class="mobile-toggle" onclick="toggleMenu()">
-      <i class="fa fa-bars"></i>
     </div>
 
-  </div>
 </header>
+
+<!-- Floating Buttons -->
+<div class="floating-btn">
+    <a href="https://wa.me/916372710439?text=Namaste%20I%20want%20to%20book%20an%20appointment" title="WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+916372710439" title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+</div>
+
+<!-- ===================== END OPTIMIZED HEADER ===================== -->
+
+</header>
+
 		
 		<!-- Slider Area -->
 		<section class="slider">
