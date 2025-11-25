@@ -88,150 +88,296 @@
         <!-- End Preloader -->   
 
 
-<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
-<header class="main-header" style="background:#0a2a66; box-shadow:0 3px 12px rgba(0,0,0,0.15);">
-    <div class="container" style="max-width:1250px;margin:auto;">
-
-        <!-- HEADER WRAPPER -->
-        <div class="header-wrapper" 
-             style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;">
-
-             <!-- LOGO + TEXT -->
-            <div class="logo-area">
-                <a href="index.html" class="logo-link">
-                    
-                    <!-- LOGO -->
-                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
-
-                    <!-- BRAND NAME -->
-                    <div class="brand-text">DEBAVASTU</div>
-                </a>
-            </div>
-
-                    <!-- DEBAVASTU NAME -->
-                    <div style="
-                        font-weight:700;
-                        font-size:24px;
-                        color:#ffffff;
-                        letter-spacing:1px;
-                        text-shadow:0 2px 8px rgba(0,0,0,0.3);
-                    ">
-                        DEBAVASTU
-                    </div>
-                </a>
-            </div>
-
-
-            <!-- MENU -->
-            <nav class="nav-menu">
-                <ul class="menu" 
-                    style="display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;">
-
-                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
-
-                    <!-- SERVICES DROPDOWN -->
-                    <li class="dropdown">
-                        <a href="#" class="m-link">
-                            <i class="fa fa-handshake-o"></i> Services 
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="vastu.html">Vastu</a></li>
-                            <li><a href="astrology.html">Astrology</a></li>
-                            <li><a href="numerology.html">Numerology</a></li>
-                            <li><a href="tarot.html">Tarot</a></li>
-                            <li><a href="yoga.html">Yoga & Wellness</a></li>
-                            <li><a href="healing.html">Healing Therapies</a></li>
-                         </ul>
-                    </li>
-
-                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
-
-                    <!-- BOOK APPOINTMENT BUTTON -->
-                    <li>
-                        <a href="appointment.html" 
-                           style="
-                               background:#07b565;
-                               padding:10px 18px;
-                               border-radius:8px;
-                               color:#fff;
-                               font-weight:600;
-                               box-shadow:0 3px 10px rgba(7,181,101,0.35);
-                               transition:0.3s;
-                           "
-                           onmouseover="this.style.opacity='0.85'"
-                           onmouseout="this.style.opacity='1'">
-                            Book Appointment
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-
-            <!-- MOBILE MENU BUTTON -->
-            <div class="mobile-toggle" onclick="toggleMenu()" 
-                 style="color:#fff;font-size:28px;cursor:pointer;display:none;">
-                <i class="fa fa-bars"></i>
-            </div>
-
-        </div>
-
-    </div>
-</header>
-<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
-
-<style>
-.m-link {
-    color:#fff;
-    font-weight:500;
-    transition:0.3s;
-}
-.m-link:hover {
-    color:#07b565;
-}
-
-/* Dropdown */
-.menu li { position:relative; }
-.dropdown-menu {
-    display:none; position:absolute; background:#fff; min-width:200px;
-    border-radius:8px; padding:0; margin-top:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.25);
-}
-.dropdown:hover .dropdown-menu { display:block; }
-.dropdown-menu li a {
-    display:block; padding:12px; color:#0a2a66;
-    font-weight:500; border-bottom:1px solid #eee;
-}
-.dropdown-menu li:last-child a { border-bottom:none; }
-
-/* SUBMENU */
-.submenu-list {
-    display:none; position:absolute; left:200px; top:0;
-    background:#fff; min-width:180px;
-    border-radius:6px; box-shadow:0 4px 14px rgba(0,0,0,0.25);
-}
-.submenu:hover .submenu-list { display:block; }
-
-/* MOBILE */
-@media(max-width:900px){
-    .menu {
-        display:none; flex-direction:column; background:#0a2a66;
-        padding:20px; width:100%; gap:12px;
+/* ---------------------------------------
+       MAIN HEADER (from Homepage)
+    --------------------------------------- */
+    .main-header {
+      background: linear-gradient(90deg, #0a2a66, #0d3a85);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 999;
     }
-    .mobile-toggle { display:block; }
-}
-</style>
+    .header-wrapper {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .header-logo {
+      width: 90px;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+    }
+    .brand-text {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+    }
 
-<script>
-function toggleMenu(){
-    const menu = document.querySelector(".menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-</script>
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+    .m-link {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 5px;
+      transition: 0.3s;
+    }
+    .m-link:hover { color:#07b565; }
 
+    /* DROPDOWN */
+    .dropdown { position: relative; }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.18s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      z-index: 9999;
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 16px;
+      color: #0a2a66;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+    }
+    .dropdown-menu li a:hover {
+      background: #eef4ff;
+    }
+
+    /* HEADER BOOK APPOINTMENT BUTTON */
+    .appointment-btn {
+      background: #07b565;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .appointment-btn:hover { opacity: 0.85; }
+
+    /* MOBILE MENU */
+    .mobile-toggle {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media(max-width:900px){
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #0a2a66;
+        width: 100%;
+        padding: 20px;
+        gap: 12px;
+      }
+      .mobile-toggle { display:block; }
+    }
+
+    /* ---------------------------------------
+       PAGE CONTENT
+    --------------------------------------- */
+    .container { max-width:1150px;margin:auto;padding:26px 16px; }
+    .hero {
+      background:url('../img/astrology-hero.jpg') center/cover no-repeat;
+      color:#fff;
+      padding:90px 0;
+      text-align:center;
+    }
+    .hero h1 { font-size:40px;margin:0 0 10px; }
+    .section-title { text-align:center; font-size:30px; margin-bottom:12px; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+    .card {
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      border:1px solid #eee;
+      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background:#0b0b0b;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    /* ---------------------------------------
+       FLOATING BUTTONS
+    --------------------------------------- */
+
+    /* Appointment Button */
+    .float-appointment {
+      position: fixed;
+      bottom: 170px;
+      right: 22px;
+      background: #07b565;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      z-index: 9999;
+    }
+    .float-appointment:hover {
+      transform: scale(1.08);
+      background:#069a52;
+    }
+
+    /* Call Button */
+    .float-call {
+      position:fixed;
+      bottom:100px;
+      right:22px;
+      background:#0b3d91;
+      color:#fff;
+      width:55px;
+      height:55px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      font-size:24px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* WhatsApp Button */
+    .float-whatsapp {
+      position:fixed;
+      bottom:30px;
+      right:22px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      transition:.3s;
+    }
+    .float-whatsapp:hover { transform:scale(1.1); }
+
+    /* MOBILE FIX */
+    @media (max-width:600px){
+      .float-appointment {
+        bottom:140px;
+        right:18px;
+        padding:12px 18px;
+        font-size:14px;
+      }
+      .float-call {
+        bottom:82px;
+        right:16px;
+        width:50px;height:50px;
+        font-size:22px;
+      }
+      .float-whatsapp {
+        bottom:20px;
+        right:16px;
+        width:50px;height:50px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu(){
+      const menu = document.querySelector(".menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+</head>
+<body>
+
+<!-- ---------------------------------------
+     UPDATED HEADER (Same as Homepage)
+--------------------------------------- -->
+<header class="main-header">
+  <div class="header-wrapper">
+
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" class="header-logo">
+      <div class="brand-text">DEBAVASTU</div>
+    </a>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="m-link"><i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="vastu.html">Vastu</a></li>
+            <li><a href="astrology.html">Astrology</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="yoga.html">Yoga & Wellness</a></li>
+            <li><a href="healing.html">Healing Therapies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+        <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+
+        <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-toggle" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+
+  </div>
+</header>
 		
 		<!-- Slider Area -->
 		<section class="slider">
