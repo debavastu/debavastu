@@ -89,141 +89,221 @@
 
 
 
-
-<!-- ---------------------------------------
-     UPDATED HEADER (Fully Fixed)
---------------------------------------- -->
-
+<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
 <header class="main-header">
-  <div class="header-wrapper">
+    <div class="container" style="max-width:1250px;margin:auto;">
 
-    <a href="index.html" class="logo-link">
-      <img src="img/logo.png" class="header-logo">
-      <div class="brand-text">DEBAVASTU</div>
-    </a>
+        <div class="header-wrapper">
 
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+            <!-- LOGO -->
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+                    <div class="brand-text">DEBAVASTU</div>
+                </a>
+            </div>
 
-        <!-- SERVICES DROPDOWN -->
-        <li class="dropdown">
-          <a href="#" class="m-link dropdown-toggle">
-            <i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i>
-          </a>
+            <!-- MENU -->
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
 
-          <ul class="dropdown-menu">
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga</a></li>
-            <li><a href="healing.html">Healing</a></li>
-          </ul>
-        </li>
+                    <!-- SERVICES DROPDOWN -->
+                    <li class="dropdown">
+                        <a href="#" class="m-link dropdown-toggle">
+                            <i class="fa fa-handshake-o"></i> Services 
+                            <i class="fa fa-angle-down"></i>
+                        </a>
 
-        <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-        <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga & Wellness</a></li>
+                            <li><a href="healing.html">Healing Therapies</a></li>
+                        </ul>
+                    </li>
 
-        <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-      </ul>
-    </nav>
+                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
 
-    <div class="mobile-toggle" onclick="toggleMenu()">
-      <i class="fa fa-bars"></i>
+                    <!-- BOOK APPOINTMENT BUTTON -->
+                    <li>
+                        <a href="appointment.html" class="appointment-btn">
+                            Book Appointment
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+
     </div>
-
-  </div>
 </header>
+<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
 
-<!-- ---------------------------------------
-     HEADER CSS FIXED (Paste in <style>)
---------------------------------------- -->
+
+<!-- ▬▬▬▬▬ HEADER CSS FIXED ▬▬▬▬▬ -->
 <style>
 /* Base Header */
 .main-header {
-  background: linear-gradient(90deg, #0a2a66, #0d3a85);
-  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-  position: relative;
-  z-index: 999;
+    background: linear-gradient(90deg, #0a2a66, #0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
 .header-wrapper {
-  max-width: 1250px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
 }
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-}
+.logo-area { display: flex; align-items: center; }
+.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .header-logo {
-  width: 90px;
-  border-radius: 50%;
-  mix-blend-mode: screen;
+    width: 95px;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0.96;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
 }
 .brand-text {
-  color: #fff;
-  font-size: 26px;
-  font-weight: 700;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
+/* MENU */
 .menu {
-  display: flex;
-  list-style: none;
-  gap: 28px;
-  padding: 0;
-  margin: 0;
-  align-items: center;
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
+.menu li { position: relative; z-index: 1000; }
 
-.menu li { position: relative; }
-
-/* Links */
 .m-link {
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 12px 5px;
-  transition: 0.3s;
+    color: #fff;
+    font-weight: 500;
+    padding: 12px 5px;
+    transition: 0.3s;
 }
-.m-link:hover { color:#07b565; }
+.m-link:hover { color: #07b565; }
 
-/* DROPDOWN BASE */
+/* DROPDOWN */
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 220px;
-  background: #fff;
-  border-radius: 8px;
-  padding: 0;
-  margin: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.18s;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  z-index: 99999;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all .25s ease-in-out;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    z-index: 9999;
 }
 .dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .dropdown-menu li a {
-  display: block;
-  padding: 12px 16px;
-  color: #0a2a66;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+    color: #0a2a66;
+    border-bottom: 1px solid #eee;
 }
-.dropdown-
+.dropdown-menu li:last-child a { border-bottom: none; }
+.dropdown-menu li a:hover { background: #f2f6ff; }
 
+/* Button */
+.appointment-btn {
+    background: #07b565;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
+}
+
+/* MOBILE */
+.mobile-toggle {
+    display: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media(max-width:900px){
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #0a2a66;
+        width: 100%;
+        padding: 20px;
+        gap: 12px;
+    }
+    .mobile-toggle { display: block; }
+
+    /* MOBILE DROPDOWN FIX */
+    .dropdown-menu {
+        position: relative;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: none;
+        background: #0a2a66;
+        border-left: 3px solid #07b565;
+        margin-top: 6px;
+        box-shadow: none;
+        width: 100%;
+    }
+    .dropdown-menu li a {
+        color: #fff !important;
+    }
+    .dropdown-menu.open {
+        display: block !important;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: none !important;
+    }
+}
+</style>
+
+
+<!-- ▬▬▬▬▬ DROPDOWN JS FIX ▬▬▬▬▬ -->
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+// Mobile dropdown click
+document.addEventListener("DOMContentLoaded", function () {
+    const trigger = document.querySelector(".dropdown > a");
+    const submenu = document.querySelector(".dropdown-menu");
+
+    trigger.addEventListener("click", function(e){
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            submenu.classList.toggle("open");
+        }
+    });
+});
+</script>
 
 		
 		<!-- Slider Area -->
