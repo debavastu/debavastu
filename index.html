@@ -89,8 +89,9 @@
 
 
 <!-- ---------------------------------------
-     UPDATED HEADER (Same as Homepage)
+     UPDATED HEADER (Fully Fixed)
 --------------------------------------- -->
+
 <header class="main-header">
   <div class="header-wrapper">
 
@@ -104,8 +105,12 @@
         <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
 
+        <!-- SERVICES DROPDOWN -->
         <li class="dropdown">
-          <a href="#" class="m-link"><i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i></a>
+          <a href="#" class="m-link dropdown-toggle">
+            <i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i>
+          </a>
+
           <ul class="dropdown-menu">
             <li><a href="vastu.html">Vastu</a></li>
             <li><a href="astrology.html">Astrology</a></li>
@@ -129,136 +134,93 @@
 
   </div>
 </header>
-<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
 
-<!-- ▬▬▬▬▬ CSS START ▬▬▬▬▬ -->
+<!-- ---------------------------------------
+     HEADER CSS FIXED (Paste in <style>)
+--------------------------------------- -->
 <style>
+/* Base Header */
 .main-header {
-    background: linear-gradient(90deg, #0a2a66, #0d3a85);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #0a2a66, #0d3a85);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 999;
 }
 .header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
 }
-.logo-area { display: flex; align-items: center; }
-.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
 .header-logo {
-    width: 95px;
-    height: auto;
-    mix-blend-mode: screen;
-    opacity: 0.96;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
+  width: 90px;
+  border-radius: 50%;
+  mix-blend-mode: screen;
 }
 .brand-text {
-    font-weight: 700;
-    font-size: 24px;
-    color: #ffffff;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
 }
+
 .menu {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
+
 .menu li { position: relative; }
+
+/* Links */
 .m-link {
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
-    padding: 12px 5px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px 5px;
+  transition: 0.3s;
 }
-.m-link:hover { color: #07b565; }
+.m-link:hover { color:#07b565; }
+
+/* DROPDOWN BASE */
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    min-width: 220px;
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease-in-out;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    z-index: 999;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.18s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  z-index: 99999;
 }
 .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
-.dropdown-menu li { width: 100%; }
+
 .dropdown-menu li a {
-    padding: 12px 16px;
-    font-weight: 500;
-    display: block;
-    color: #0a2a66;
-    border-bottom: 1px solid #eee;
+  display: block;
+  padding: 12px 16px;
+  color: #0a2a66;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
 }
-.dropdown-menu li:last-child a { border-bottom: none; }
-.dropdown-menu li a:hover {
-    background: #f2f6ff;
-    color: #0d3a85;
-}
-.appointment-btn {
-    background: #07b565;
-    padding: 10px 18px;
-    border-radius: 8px;
-    color: #fff !important;
-    font-weight: 600;
-    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
-    transition: 0.3s;
-}
-.appointment-btn:hover { opacity: 0.85; }
-.mobile-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-}
-@media(max-width:900px){
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: #0a2a66;
-        padding: 20px;
-        width: 100%;
-        gap: 12px;
-    }
-    .mobile-toggle { display: block; }
-}
-</style>
-
-<!-- ▬▬▬▬▬ MOBILE MENU SCRIPT ▬▬▬▬▬ -->
-<script>
-function toggleMenu(){
-    const menu = document.querySelector(".menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-/* MOBILE DROPDOWN CLICK HANDLER */
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.querySelector(".dropdown > a");
-    const submenu = document.querySelector(".dropdown-menu");
-
-    dropdown.addEventListener("click", function(e){
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            submenu.classList.toggle("open");
-        }
-    });
-});
-</script>
+.dropdown-
 
 
 		
