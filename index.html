@@ -10,6 +10,7 @@
 <link rel="icon" href="img/favicon.png">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
+<!-- CORE CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/owl-carousel.css">
@@ -24,59 +25,64 @@
 .header-wrapper{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
 .logo-area{display:flex;align-items:center;gap:12px;}
 .header-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 10px rgba(255,255,255,.55));}
-.header-logo:hover{transform:scale(1.1);filter:drop-shadow(0 0 18px rgba(255,255,255,.95));}
+.header-logo:hover{transform:scale(1.12);filter:drop-shadow(0 0 20px rgba(255,255,255,.95));}
 .brand-text{color:#fff;font-size:30px;font-weight:700;text-shadow:0 2px 6px rgba(255,255,255,.35);}
 
 .menu{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
 .m-link{color:#fff!important;font-size:17px;font-weight:600;transition:.3s;}
 .m-link:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
 
-/* ===== DROPDOWN ===== */
+/* DROPDOWN */
 .dropdown{position:relative;}
 .service-trigger{font-size:17px!important;font-weight:600!important;color:#fff!important;letter-spacing:0.5px;}
 .service-trigger:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
-.service-trigger i{transition:.3s;color:#fff;}
-.dropdown.open .service-trigger i{transform:rotate(180deg);}
-
 .dropdown-menu{display:none;position:absolute;background:rgba(0,11,57,.96);padding:14px;border-radius:10px;top:48px;min-width:220px;box-shadow:0 6px 28px rgba(0,0,0,.45);}
 .dropdown-menu li{padding:7px 0;}
 .dropdown-menu li a{color:#fff!important;}
 .dropdown-menu li a:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
 .dropdown.open .dropdown-menu{display:block;}
+.dropdown.open .service-trigger i{transform:rotate(180deg);}
+.service-trigger i{transition:.3s;color:#fff;}
 
 .mobile-toggle{display:none;font-size:30px;color:#fff;}
 @media(max-width:920px){
-.mobile-toggle{display:block;}
-.menu{display:none;flex-direction:column;width:100%;background:#00114d;padding:25px 0;gap:24px;}
-.dropdown-menu{background:transparent;box-shadow:none;position:static;}
+    .mobile-toggle{display:block;}
+    .menu{display:none;flex-direction:column;width:100%;background:#00114d;padding:25px 0;gap:24px;}
+    .dropdown-menu{background:transparent;box-shadow:none;position:static;}
 }
 
-/* ===== BOOK BUTTON ===== */
+/* BOOK BUTTON */
 .appointment-btn{background:#00c786;padding:10px 18px;border-radius:6px;color:#fff!important;font-weight:600;box-shadow:0 0 12px rgba(0,255,179,.45);}
-.appointment-btn:hover{transform:scale(1.05);}
+.appointment-btn:hover{transform:scale(1.06);}
 
-/* ===== SLIDER ===== */
-.hero-slider { position: relative; }
+/* ===== OWL THEME FIX (MANDATORY) ===== */
+.owl-carousel .owl-dots{text-align:center;margin-top:15px;}
+.owl-carousel .owl-dot span{
+    width:14px;height:14px;
+    background:#d9d9d9;
+    display:block;border-radius:50%;
+    transition:.3s;
+}
+.owl-carousel .owl-dot.active span{
+    background:#00c786;
+    transform:scale(1.2);
+}
+.owl-carousel .owl-stage-outer{border-radius:0!important;}
+
+/* SLIDER */
 .hero-slider .single-slider{
-    height: 550px;
-    background-size: cover;
-    background-position: center;
+    height:560px;
+    background-size:cover;
+    background-position:center;
     display:flex;
     align-items:center;
 }
-.single-slider .text {
-    color:#fff;
-    padding-top:150px;
-}
-.single-slider h2 {
-    font-size:42px;
-    color:#fff;
-    text-shadow:0 0 12px rgba(0,0,0,.55);
-}
+.single-slider .text{color:#fff;text-shadow:0 0 14px rgba(0,0,0,.55);}
+.single-slider h2{font-size:46px;font-weight:700;}
 
 /* FLOAT BUTTONS */
 .dv-floating-buttons{position:fixed;bottom:22px;right:22px;display:flex;flex-direction:column;gap:12px;z-index:9999;}
-.dv-floating-buttons a{background:#00c786;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:22px;box-shadow:0 0 12px rgba(0,255,179,.45);}
+.dv-floating-buttons a{background:#00c786;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:24px;box-shadow:0 0 12px rgba(0,255,179,.45);}
 </style>
 </head>
 <body>
@@ -116,7 +122,7 @@
 </div>
 </header>
 
-<!-- ===== ONLY ONE SLIDER (FIXED) ===== -->
+<!-- ===== SLIDER ===== -->
 <section class="slider">
 <div class="hero-slider owl-carousel">
     <div class="single-slider" style="background-image:url('img/slider.jpg')">
@@ -131,7 +137,7 @@
 </div>
 </section>
 
-<!-- ⭐ FLOATING WhatsApp / Call ⭐ -->
+<!-- FLOAT BUTTONS -->
 <div class="dv-floating-buttons">
     <a href="https://wa.me/916372710439" target="_blank"><i class="fa fa-whatsapp"></i></a>
     <a href="tel:916372710439"><i class="fa fa-phone"></i></a>
@@ -474,7 +480,7 @@
 			</footer>
 		<!--/ End Footer Area -->
             
-<!-- ===== JS SCRIPTS ===== -->
+<!-- ===== JS ===== -->
 <script src="js/jquery.min.js"></script>
 <script src="js/owl-carousel.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -482,11 +488,11 @@
 <script>
 $(document).ready(function(){
     $(".hero-slider").owlCarousel({
+        items:1,
+        loop:true,
         autoplay:true,
         autoplayTimeout:3500,
         smartSpeed:900,
-        loop:true,
-        items:1,
         dots:true,
         nav:false
     });
@@ -494,24 +500,20 @@ $(document).ready(function(){
 </script>
 
 <script>
-const menu = document.querySelector(".menu");
-const toggle = document.querySelector(".mobile-toggle");
 const dropdown = document.querySelector(".dropdown");
 const trigger = document.querySelector(".service-trigger");
-
-toggle.addEventListener("click", e=>{
-    e.stopPropagation();
-    menu.style.display = menu.style.display==="flex" ? "none":"flex";
-});
+const menu = document.querySelector(".menu");
+const toggle = document.querySelector(".mobile-toggle");
 
 trigger.addEventListener("click", e=>{
     e.preventDefault();
-    e.stopPropagation();
     dropdown.classList.toggle("open");
 });
-
+toggle.addEventListener("click", ()=>{
+    menu.style.display = menu.style.display==="flex" ? "none":"flex";
+});
 document.addEventListener("click", e=>{
-    if(!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggle.contains(e.target)){
+    if(!dropdown.contains(e.target) && !trigger.contains(e.target)){
         dropdown.classList.remove("open");
     }
 });
