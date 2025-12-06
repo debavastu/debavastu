@@ -3,247 +3,584 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Vastu, Astrology, Numerology, Tarot, Healing, Yoga">
-    <meta name="description" content="Holistic Vastu, Astrology & Healing services">
+    <meta name="keywords" content="Vastu, Astrology, Healing, Numerology, Tarot, Yoga">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DEBAVASTU</title>
 
     <link rel="icon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
-    <!-- Core CSS -->
+    <!-- Theme CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/icofont.css">
-    <link rel="stylesheet" href="css/slicknav.min.css">
     <link rel="stylesheet" href="css/owl-carousel.css">
-    <link rel="stylesheet" href="css/datepicker.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/slicknav.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-
-/*===== HEADER FINAL (ASTROLOGY STYLE) =====*/
+/* ===== HEADER ===== */
 .main-header {
-    background: linear-gradient(90deg, #000a3d, #003a8f);
-    box-shadow: 0 4px 22px rgba(0,0,0,0.35);
+    background: linear-gradient(90deg, #000a3d, #003b94);
     position: sticky;
     top: 0;
     z-index: 9999;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
-
-.header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 0;
-}
-
-.logo-area { display:flex; align-items:center; gap:12px;}
-
+.header-wrapper { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.logo-area { display:flex; align-items:center; gap:12px; }
 .header-logo {
-    width:80px;
-    height:80px;
-    border-radius:50%;
+    width:80px; height:80px; border-radius:50%;
     object-fit:cover;
-    transition:.4s;
-    filter:drop-shadow(0 0 10px rgba(255,255,255,.5));
+    transition:0.4s ease;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.55));
 }
-.header-logo:hover{
+.header-logo:hover {
     transform:scale(1.1);
-    filter:drop-shadow(0 0 20px rgba(255,255,255,.9));
+    filter:drop-shadow(0 0 18px rgba(255,255,255,0.95));
 }
-
 .brand-text {
-    color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-    text-shadow:0 0 18px rgba(255,255,255,.7);
+    color:#fff; font-size:30px; font-weight:700;
+    text-shadow:0 2px 6px rgba(255,255,255,0.35);
 }
 
-.menu {
-    display:flex;
-    gap:30px;
-    list-style:none;
-    margin:0;
-    padding:0;
-    align-items:center;
+/* MENU WHITE + GLOW */
+.menu { display:flex; gap:32px; list-style:none; margin:0; padding:0; align-items:center; }
+.m-link {
+    color:#ffffff !important;
+    font-size:17px; font-weight:600; letter-spacing:0.5px;
+    transition:0.3s ease-in-out;
+}
+.m-link:hover {
+    color:#ffffff !important;
+    text-shadow:0 0 14px rgba(255,255,255,1);
 }
 
-.m-link, .service-trigger {
-    color:#fff;
-    font-size:17px;
-    font-weight:600;
-    transition:.25s ease-in-out;
+/* DROPDOWN */
+.dropdown { position:relative; }
+.service-trigger { cursor:pointer; display:flex; align-items:center; gap:6px; color:#fff !important; }
+.service-trigger i { color:#fff; transition:0.3s; }
+.dropdown.open .service-trigger i { transform:rotate(180deg); }
+
+.dropdown-menu {
+    display:none;
+    position:absolute;
+    background:rgba(0, 11, 57, 0.96);
+    padding:14px 14px;
+    border-radius:10px;
+    top:48px;
+    min-width:220px;
+    box-shadow:0px 6px 28px rgba(0,0,0,0.45);
 }
-.m-link:hover, .service-trigger:hover{
-    text-shadow:0 0 15px #fff;
+.dropdown-menu li { padding:7px 0; }
+.dropdown-menu li a { font-size:15px; color:#fff !important; }
+.dropdown-menu li a:hover {
+    color:#ffffff !important;
+    text-shadow:0 0 14px rgba(255,255,255,1);
 }
+.dropdown.open .dropdown-menu { display:block; }
 
-/*======== DROPDOWN ========*/
-.dropdown{position:relative;}
-.service-trigger{i {transition:.3s;} cursor:pointer;display:flex;align-items:center;gap:5px;}
-
-.dropdown-menu{
-    display:none;position:absolute;top:48px;min-width:220px;
-    background:rgba(0,18,72,.97);padding:14px;border-radius:10px;
-    box-shadow:0 6px 30px rgba(0,0,0,.55);
-    animation:fadeIn .3s ease;
-}
-.dropdown.open .dropdown-menu{display:block;}
-
-.dropdown-menu li{padding:7px 0;}
-.dropdown-menu li a{
-    color:white !important;font-size:15px;font-weight:500;
-}
-.dropdown-menu li a:hover{
-    color:#bafff2 !important;text-shadow:0 0 12px #bafff2;
-}
-
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;}}
-
-/* BUTTON */
-.appointment-btn{
-    background:#00c786;border-radius:6px;padding:10px 18px;color:#fff !important;
-    font-weight:700;box-shadow:0 0 12px rgba(0,255,179,.55);
-}
-.appointment-btn:hover{transform:scale(1.05);}
-
-/* MOBILE NAVIGATION */
-.mobile-toggle{display:none;font-size:30px;color:#fff;cursor:pointer;}
-
-@media(max-width:920px){
-    .mobile-toggle{display:block;}
-    .menu{
-        display:none;flex-direction:column;width:100%;padding:28px 0;
-        background:#000a3d;text-align:center;gap:22px;
+/* MOBILE */
+.mobile-toggle { display:none; font-size:30px; color:#fff; cursor:pointer; }
+@media (max-width:920px){
+    .mobile-toggle { display:block; }
+    .menu {
+        display:none; flex-direction:column; width:100%;
+        background:#00114d; padding:25px 0; text-align:center; gap:24px;
     }
-    .dropdown-menu{position:static;background:transparent;box-shadow:none;}
+    .dropdown-menu { background:transparent; box-shadow:none; position:static; }
 }
 
-/* FLOATING WHATSAPP + CALL */
-.dv-floating-buttons{
-    position:fixed;right:22px;bottom:22px;display:flex;
-    flex-direction:column;gap:10px;z-index:999999;
+/* BOOK BUTTON */
+.appointment-btn {
+    background:#00c786; padding:10px 18px; border-radius:6px;
+    color:#fff !important; font-weight:600;
+    transition:0.3s ease; box-shadow:0 0 12px rgba(0,255,179,0.45);
 }
-.dv-floating-buttons a{
-    width:50px;height:50px;background:#00d084;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;color:#fff;
-    font-size:22px;box-shadow:0 0 15px rgba(0,255,179,.6);
-}
+.appointment-btn:hover { transform:scale(1.05); }
 
+/* SLIDER */
+.hero-slider .single-slider {
+    height:550px;
+    background-size:cover;
+    background-position:center;
+}
 </style>
 </head>
 <body>
 
-<!-- =================== HEADER =================== -->
+<!-- ===== HEADER ===== -->
 <header class="main-header">
-<div class="container" style="max-width:1250px;">
-<div class="header-wrapper">
+    <div class="container" style="max-width:1250px;">
+        <div class="header-wrapper">
+            <div class="logo-area">
+                <a href="index.html"><img src="img/logo.png" class="header-logo"></a>
+                <div class="brand-text">DEBAVASTU</div>
+            </div>
 
-    <div class="logo-area">
-        <a href="index.html"><img src="img/logo.png" class="header-logo"></a>
-        <div class="brand-text">DEBAVASTU</div>
-    </div>
+            <ul class="menu">
+                <li><a class="m-link" href="index.html">Home</a></li>
+                <li><a class="m-link" href="about.html">About</a></li>
+                
+                <li class="dropdown">
+                    <a class="service-trigger">Services <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="vastu.html">Vastu</a></li>
+                        <li><a href="astrology.html">Astrology</a></li>
+                        <li><a href="numerology.html">Numerology</a></li>
+                        <li><a href="tarot.html">Tarot</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="healing.html">Healing</a></li>
+                        <!-- ❌ Products removed from dropdown -->
+                    </ul>
+                </li>
 
-    <ul class="menu">
-        <li><a class="m-link" href="index.html">Home</a></li>
-        <li><a class="m-link" href="about.html">About</a></li>
-
-        <li class="dropdown">
-            <a class="m-link service-trigger">Services <i class="fa fa-angle-down"></i></a>
-            <ul class="dropdown-menu">
-                <li><a href="vastu.html">Vastu</a></li>
-                <li><a href="astrology.html">Astrology</a></li>
-                <li><a href="numerology.html">Numerology</a></li>
-                <li><a href="tarot.html">Tarot</a></li>
-                <li><a href="yoga.html">Yoga</a></li>
-                <li><a href="healing.html">Healing</a></li>
-                <li><a href="products.html">Products</a></li>
+                <!-- 👉 Products now separate tab -->
+                <li><a class="m-link" href="products.html">Products</a></li>
+                <li><a class="m-link" href="contact.html">Contact</a></li>
+                <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
             </ul>
-        </li>
 
-        <li><a class="m-link" href="contact.html">Contact</a></li>
-        <li><a class="appointment-btn" href="appointment.html">Book Appointment</a></li>
-    </ul>
-
-    <div class="mobile-toggle">☰</div>
-</div>
-</div>
+            <div class="mobile-toggle">☰</div>
+        </div>
+    </div>
 </header>
 
-<!-- FLOATING ACTION BUTTONS -->
-<div class="dv-floating-buttons">
-    <a href="https://wa.me/916372710439" target="_blank"><i class="fa fa-whatsapp"></i></a>
-    <a href="tel:+916372710439"><i class="fa fa-phone"></i></a>
-</div>
+<!-- Slider Area -->
+		<section class="slider">
+			<div class="hero-slider">
+				<!-- Start Single Slider -->
+				<div class="single-slider" style="background-image:url('img/slider.jpg')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-7">
+								<div class="text">
+									
+		
+									<div class="button">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single Slider -->
+				<!-- Start Single Slider -->
+				<div class="single-slider" style="background-image:url('img/slider2.jpg')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-7">
+								<div class="text">
+									
+									<div class="button">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>									
+				</div>
+				<!-- Start End Slider -->
+				<!-- Start Single Slider -->
+				<div class="single-slider" style="background-image:url('img/slider3.jpg')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="text">
+									
+									<div class="button">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>																		
+				</div>
+				<!-- End Single Slider -->
+			</div>
+		</section>
+		<!--/ End Slider Area -->
+		
+		<!-- Our Services (NEW) -->
+		<section class="services-area section" id="services" style="padding:60px 0;background:#fbfbfc;">
+		    <div class="container">
+		        <div class="section-title text-center">
+		            <h2>Our Core Services</h2>
+		            <img src="img/section-img.png" alt="#" style="margin:14px 0;">
+		            <p>Holistic Vedic solutions to bring balance, clarity and wellbeing into your life.</p>
+		        </div>
+		
+		        <div class="row" style="margin-top:28px;">
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-compass" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Vastu</h3>
+		                    <p style="color:#555;">Home, office & industrial Vastu consultations, remedial solutions and energy balancing.</p>
+		                    <a href="vastu.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-globe" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Astrology</h3>
+		                    <p style="color:#555;">Kundli analysis, transit guidance, career & relationship astrology tailored for you.</p>
+		                    <a href="astrology.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-ui-calendar" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Numerology</h3>
+		                    <p style="color:#555;">Name analysis, life-path numbers, business & compatibility numerology.</p>
+		                    <a href="numerology.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-magic" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Tarot</h3>
+		                    <p style="color:#555;">Intuitive tarot readings for relationships, career, and life decisions.</p>
+		                    <a href="tarot.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		               </div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-yoga" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
+		                    <p style="color:#555;">Yoga, meditation, pranayama and customized therapeutic yoga programs.</p>
+		                    <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>   
+						</div>
+		            </div>
+		
+		            <div class="col-lg-4 col-md-6 col-12">
+		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+		                    <i class="icofont-brainstorming" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
+		                    <h3 style="margin-bottom:8px;">Healing Therapies</h3>
+		                    <p style="color:#555;">Alternative therapy, naturopathy, homeopathy, acupressure and energy healing.</p>
+		                    <a href="healing.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		<!-- /End Our Services -->
+		
+		
+		<!-- Start Feautes -->
+		<section class="Feautes section">
+			
+								
+<!-- Start Why choose -->
+		<section class="why-choose section" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-title">
+							<h2>Unlock a life of vibrant health, true wealth, and endless possibility with our Vedic solutions.</h2>
+							<img src="img/section-img.png" alt="#">							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<!-- Start Choose Left -->
+						<div class="choose-left">
+							<h3>DEBAVASTU</h3>
+							<p>DEBAVASTU is a premier provider of comprehensive Vastu Shastra consulting, Astrology advisory, and Energy Healing solutions. Our mission is to deliver scientifically informed and time-tested practices that promote balance, success, and well-being for individuals and organizations alike. </p>
+							<p>Our approach combines ancient knowledge with a modern perspective, ensuring that our services remain relevant, effective, and results-oriented in today’s dynamic environment. </p>
+							<div class="row">
+								<div class="col-lg-6">
+									<ul class="list">
+										<li><i class="fa fa-caret-right"></i>Vastu Analysis & Remedies.</li>
+										<li><i class="fa fa-caret-right"></i>Vastu Visit & Design.</li>
+										<li><i class="fa fa-caret-right"></i>Kundli Analysis.</li>
+									</ul>
+								</div>
+								<div class="col-lg-6">
+									<ul class="list">
+										<li><i class="fa fa-caret-right"></i>Vedic Remedies and Solutions </li>
+										<li><i class="fa fa-caret-right"></i>Energy Healing.</li>
+										<li><i class="fa fa-caret-right"></i>Meditation and Mindfulness.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- End Choose Left -->
+					</div>
+					<div class="col-lg-6 col-12">
+						<!-- Start Choose Rights -->
+						<div class="choose-right">
+							<div class="video-image">
+								<!-- Video Animation -->
+								<div class="promo-video">
+									<div class="waves-block">
+										<div class="waves wave-1"></div>
+										<div class="waves wave-2"></div>
+										<div class="waves wave-3"></div>
+									</div>
+								</div>
+								<!--/ End Video Animation -->
+								<a href="https://www.youtube.com/watch?v=AqPMV1TbBYA" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+							</div>
+						</div>
+						<!-- End Choose Rights -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Why choose -->
+		<!-- Start Blog Area -->
+		<section class="blog section" id="blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-title">
+							<h2>Keep up with Our Most Recent Information.</h2>
+							<img src="img/section-img.png" alt="#">
+							<p>offers expert solutions in Vastu Shastra, Astrology, and Healing to help individuals and businesses achieve balance, prosperity, and well-being.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-12">
+						<!-- Single Blog -->
+						<div class="single-news">
+							<div class="news-head">
+								<img src="img/blog1.jpg" alt="#">
+							</div>
+							<div class="news-body">
+								<div class="news-content">
+									<div class="date">Vastu Plan</div>
+									<h2><a href="services.html">Specializing in both residential and commercial Vastu plans.</a></h2>
+									<p class="text">Our services include comprehensive Vastu consultations, detailed assessment reports, and practical implementation strategies to align your space with the principles of Vastu.</p>
+								</div>
+							</div>
+						</div>
+						<!-- End Single Blog -->
+					</div>
+					<div class="col-lg-4 col-md-6 col-12">
+						<!-- Single Blog -->
+						<div class="single-news">
+							<div class="news-head">
+								<img src="img/blog2.jpg" alt="#">
+							</div>
+							<div class="news-body">
+								<div class="news-content">
+									<div class="date">vastu purusha mandala</div>
+									<h2><a href="services.html">The Vastu Purusha Mandala is the ancient Indian architectural science focusing on optimizing spatial energy.</a></h2>
+									<p class="text">It serves as a blueprint for the layout of a building or site, embodying the ideal balance of energies and directions to promote harmony.</p>
+								</div>
+							</div>
+						</div>
+						<!-- End Single Blog -->
+					</div>
+					<div class="col-lg-4 col-md-6 col-12">
+						<!-- Single Blog -->
+						<div class="single-news">
+							<div class="news-head">
+								<img src="img/blog3.jpg" alt="#">
+							</div>
+							<div class="news-body">
+								<div class="news-content">
+									<div class="date">Healing Energy</div>
+									<h2><a href="services.html">Healing energy promotes physical, emotional, and spiritual well-being.</a></h2>
+									<p class="text">Healing energy is a holistic concept that emphasizes the interconnection of the body, mind, and spirit.</p>
+								</div>
+							</div>
+						</div>
+						<!-- End Single Blog -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Blog Area -->
+		
+		
 
 
-<!-- ========== SLIDER (UNCHANGED FROM YOUR VERSION) ========== -->
-<section class="slider">
-    <div class="hero-slider">
-        <div class="single-slider" style="background-image:url('img/slider.jpg')"></div>
-        <div class="single-slider" style="background-image:url('img/slider2.jpg')"></div>
-        <div class="single-slider" style="background-image:url('img/slider3.jpg')"></div>
-    </div>
-</section>
-
-
-<!-- 🔽 (Your original content continues untouched) 🔽 -->
-
-<!-- ---- EVERYTHING BELOW IS EXACTLY AS YOU PROVIDED ---- -->
-
-<!-- Services -->
-<section class="services-area section" style="padding:60px;background:#fbfbfc;">
-    <div class="container">
-        <div class="section-title text-center">
-            <h2>Our Core Services</h2>
-            <img src="img/section-img.png" alt="#" style="margin:14px 0;">
-            <p>Holistic Vedic solutions for balance and wellbeing.</p>
-        </div>
-        
-        <!-- (Service cards remain unchanged) -->
-        
-    </div>
-</section>
-
-<!-- Footer -->
-<footer id="footer" class="footer">
-<!-- Same content preserved exactly -->
-</footer>
-
-
+		<!-- Footer Area -->
+		<footer id="footer" class="footer ">
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>About Us</h2>
+								<p>our specialized services in Vastu , Astrology and Healing. Our mission is to provide holistic solutions that resonate with the energy of your surroundings.</p>
+								<!-- Social -->
+								<ul class="social">
+									<li><a href="#"><i class="icofont-facebook"></i></a></li>
+									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
+									<li><a href="#"><i class="icofont-twitter"></i></a></li>
+								</ul>
+								<!-- End Social -->
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer f-link">
+								<h2>Quick Links</h2>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<ul>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+																							
+										</ul>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<ul>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>	
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-5 col-md-8 col-14">
+							<div class="single-footer">
+								   <h2>Open Hours</h2>
+								   <p>For your convenience, we offer online consultations upon request. Please contact us to schedule your appointment.</p>
+								   <ul class="time-sidual">
+									   <li class="day">Monday - Friday <span>7.00-19.00</span></li>
+									   <li class="day">Saturday - Sunday <span>7.00-16.00</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Footer Top -->
+			<!-- Start Fun-facts -->
+		<div id="fun-facts" class="fun-facts section overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-home"></i>
+							<div class="content">
+								<span class="counter">505</span>
+								<p>Vastu Services</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+					<div class="col-lg-2 col-md-5 col-10">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-user-alt-3"></i>
+							<div class="content">
+								<span class="counter">2050</span>
+								<p>Astro Services</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+						</div>
+					<div class="col-lg-2 col-md-5 col-10">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont-simple-smile"></i>
+							<div class="content">
+								<span class="counter">550</span>
+								<p>Healing Services</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->						
+					</div>
+					<div class="col-lg-2 col-md-5 col-10">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont-simple-smile"></i>
+							<div class="content">
+								<span class="counter">3055</span>
+								<p>Happy Clients</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+					<div class="col-lg-2 col-md-5 col-10">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-table"></i>
+							<div class="content">
+								<span class="counter">10</span>
+								<p>Years of Experience</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Fun-facts -->
+			<!-- Copyright -->
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<div class="copyright-content">
+								<p>© Copyright 2025  |  All Rights Reserved by <a href="http://www.debavastu.com"</a> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+			</footer>
+		<!--/ End Footer Area -->
+            
 <!-- SCRIPTS (Correct Order) -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/owl-carousel.js"></script>
 <script src="js/main.js"></script>
 
+<!-- JS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/owl-carousel.js"></script>
 <script>
-// Dropdown Logic
+$(".hero-slider").owlCarousel({
+    autoplay:true,
+    autoplayTimeout:3500,
+    smartSpeed:900,
+    loop:true,
+    items:1,
+    dots:true,
+    nav:false
+});
+</script>
+
+<script>
+/* Mobile menu + dropdown stability */
 const menu = document.querySelector(".menu");
-const toggleBtn = document.querySelector(".mobile-toggle");
+const toggle = document.querySelector(".mobile-toggle");
 const dropdown = document.querySelector(".dropdown");
 const trigger = document.querySelector(".service-trigger");
 
-toggleBtn.addEventListener("click", e => {
+toggle.addEventListener("click", e=>{
     e.stopPropagation();
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    dropdown.classList.remove("open");
 });
 
-trigger.addEventListener("click", e => {
+trigger.addEventListener("click", e=>{
     e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle("open");
 });
 
-document.addEventListener("click", e => {
-    if (!dropdown.contains(e.target) && !trigger.contains(e.target)) dropdown.classList.remove("open");
+document.addEventListener("click", e=>{
+    if(!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggle.contains(e.target)){
+        dropdown.classList.remove("open");
+    }
 });
 </script>
 
