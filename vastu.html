@@ -28,7 +28,6 @@
         gap: 14px;
     }
 
-    /* PERFECT CIRCULAR LOGO */
     .logo-circle {
         width: 78px;
         height: 78px;
@@ -69,8 +68,7 @@
         font-weight: 600;
     }
 
-    /* DROPDOWN */
-    .dropdown { position: relative; }
+    /* CLICK DROPDOWN */
     .dropdown-menu {
         display: none;
         position: absolute;
@@ -80,9 +78,16 @@
         top: 38px;
         min-width: 190px;
     }
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
     .dropdown-menu li { padding: 6px 0; }
     .dropdown-menu li a { font-size: 15px; }
-    .dropdown:hover .dropdown-menu { display: block; }
+
+    .dropdown-toggle {
+        cursor: pointer;
+        user-select: none;
+    }
 
     /* MOBILE MENU */
     .hamburger { display: none; font-size: 28px; cursor: pointer; }
@@ -102,7 +107,10 @@
         }
 
         nav ul li { padding: 12px 0; }
-        .dropdown:hover .dropdown-menu { position: static; }
+        .dropdown-menu {
+            position: static;
+            width: 100%;
+        }
     }
 
     /* BANNER */
@@ -119,8 +127,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         color: white;
+        text-align: center;
     }
     .banner h1 {
         font-size: 42px;
@@ -133,7 +141,7 @@
         opacity: 0.9;
     }
 
-    /* SECTION */
+    /* CONTENT */
     .section {
         max-width: 1100px;
         margin: auto;
@@ -198,7 +206,7 @@
             <li><a href="about.html">ℹ️ About</a></li>
 
             <li class="dropdown">
-                <a href="#">🛠 Services ▾</a>
+                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
                 <ul class="dropdown-menu">
                     <li><a href="vastu.html">📐 Vastu</a></li>
                     <li><a href="astrology.html">🔮 Astrology</a></li>
@@ -224,22 +232,22 @@
     </div>
 </section>
 
-<!-- VASTU CONTENT -->
+<!-- CONTENT -->
 <section class="section">
     <h2>What is Vastu Shastra?</h2>
     <p>
-        Vastu is the ancient architectural science that aligns your home or workspace 
-        with cosmic energies to create harmony, success, good health and prosperity. 
-        Each direction holds a specific energy field that influences your life, mindset and growth.
+        Vastu aligns physical spaces with cosmic forces to balance harmony, prosperity,
+        health, wealth and spiritual upliftment. Every direction influences specific
+        areas of life and energy flow.
     </p>
 
     <h2>Benefits of Vastu</h2>
     <p>
-        ✔ Health & positivity increase <br>
-        ✔ Financial flow stabilizes <br>
-        ✔ Relationships improve <br>
-        ✔ Removes negative blocks <br>
-        ✔ Brings peace, harmony & growth
+        ✔ Improves health & mental peace <br>
+        ✔ Enhances wealth flow & stability <br>
+        ✔ Harmonizes relationships <br>
+        ✔ Removes energy blockages <br>
+        ✔ Boosts positivity & success
     </p>
 </section>
 
@@ -258,6 +266,12 @@ function toggleMenu(){
     const menu = document.querySelector("nav ul");
     menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
+
+// CLICK-TOGGLE SERVICES DROPDOWN (stable like index page)
+document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+});
 </script>
 
 </body>
