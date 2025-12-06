@@ -3,16 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DEBAVASTU</title>
 
     <link rel="icon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/icofont.css">
+    <link rel="stylesheet" href="css/slicknav.min.css">
     <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
@@ -36,53 +44,52 @@
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.45));
     transition:0.4s ease;
 }
-.header-logo:hover { transform:scale(1.08); }
+.header-logo:hover {
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 18px rgba(255,255,255,0.65));
+}
 
 .brand-text {
     color:#fff;
-    font-size:30px;
+    font-size:30px;    /* ← MATCHED VASTU */
     font-weight:700;
     letter-spacing:.6px;
     text-shadow:0 2px 6px rgba(0,0,0,0.45);
 }
 
-.menu { display:flex; gap:32px; list-style:none; align-items:center; }
+/* MENU */
+.menu { display:flex; gap:32px; list-style:none; align-items:center; margin:0; padding:0; }
 .m-link {
     color:#fff;
     font-size:16px;
     font-weight:500;
     transition:0.3s ease;
 }
-.m-link:hover { color:#00ffe5; text-shadow:0 0 10px rgba(0,255,213,0.9); }
-
-/* ================== PERFECT STABLE DROPDOWN ================== */
-.dropdown { position: relative; }
-
-@media(min-width:921px) {
-    .dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(16px);
-        transition: all .28s ease;
-        position: absolute;
-        background:#00114d;
-        padding:14px;
-        border-radius:10px;
-        min-width:240px;
-        z-index:99999;
-        top:100%;
-        margin-top:0;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown-menu:hover {
-        opacity:1;
-        visibility:visible;
-        transform:translateY(0);
-    }
+.m-link:hover {
+    color:#00ffe5;
+    text-shadow:0 0 10px rgba(0,255,213,0.9);
 }
 
-/* MOBILE TAP MENU */
-.mobile-toggle { display:none; font-size:32px; color:#fff; cursor:pointer; }
+/* DROPDOWN EXACT BEHAVIOUR */
+.dropdown { position:relative; }
+.dropdown-menu {
+    display:none;
+    position:absolute;
+    background:#00114d;
+    padding:14px;
+    border-radius:8px;
+    top:40px;
+    min-width:200px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.45);
+}
+.dropdown-menu li { padding:6px 0; }
+.dropdown-menu li a { color:white !important; font-size:15px; }
+.dropdown-menu li a:hover { color:#00ffe5 !important; }
+.dropdown:hover .dropdown-menu { display:block; }
+
+/* MOBILE ONLY */
+.mobile-toggle { display:none; font-size:30px; color:#fff; cursor:pointer; }
+
 @media(max-width:920px){
     .mobile-toggle { display:block; }
     .menu {
@@ -90,17 +97,15 @@
         flex-direction:column;
         width:100%;
         background:#00114d;
-        padding:22px;
+        padding:20px;
         gap:22px;
     }
     .dropdown-menu {
-        display:none;
-        background:#00114d;
-        border-left:3px solid #00ffe5;
         position:static;
+        background:#00114d;
         box-shadow:none;
+        border-left:3px solid #00ffe5;
     }
-    .dropdown.open .dropdown-menu { display:block !important; }
 }
 
 /* BOOK BUTTON */
@@ -110,21 +115,23 @@
     border-radius:6px;
     color:#fff !important;
     font-weight:600;
+    transition:0.3s ease;
     box-shadow:0 0 12px rgba(0,255,179,0.45);
 }
+.appointment-btn:hover { transform:scale(1.05); }
 
 /* FLOAT BUTTONS */
-.dv-floating-buttons { position:fixed; bottom:25px; right:25px; display:flex; flex-direction:column; gap:14px; z-index:999999; }
+.dv-floating-buttons { bottom:25px !important; right:25px !important; position:fixed; display:flex; flex-direction:column; gap:14px; z-index:9999; }
 .dv-btn-circle {
     width:58px;height:58px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
     font-size:30px;color:#fff;
-    background:#25D366;
     box-shadow:0 8px 22px rgba(0,0,0,0.28);
-    transition:.28s ease;
+    transition:0.28s ease;
 }
-.dv-call-btn { background:#00114d; }
 .dv-btn-circle:hover { transform:scale(1.14); }
+.dv-call-btn { background:#00114d; }
+.dv-btn-circle { background:#25D366; }
 </style>
 
 </head>
@@ -134,6 +141,7 @@
 <header class="main-header">
     <div class="container" style="max-width:1250px;margin:auto;">
         <div class="header-wrapper">
+
             <div class="logo-area">
                 <a href="index.html" class="logo-link">
                     <img src="img/logo.png" class="header-logo">
@@ -142,10 +150,11 @@
             </div>
 
             <ul class="menu">
-                <li><a class="m-link" href="index.html">Home</a></li>
-                <li><a class="m-link" href="about.html">About</a></li>
+                <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
+
                 <li class="dropdown">
-                    <a class="m-link service-trigger">Services <i class="fa fa-angle-down"></i></a>
+                    <a class="m-link service-trigger"><i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="vastu.html">Vastu</a></li>
                         <li><a href="astrology.html">Astrology</a></li>
@@ -155,12 +164,14 @@
                         <li><a href="healing.html">Healing</a></li>
                     </ul>
                 </li>
-                <li><a class="m-link" href="products.html">Products</a></li>
-                <li><a class="m-link" href="contact.html">Contact</a></li>
+
+                <li><a class="m-link" href="products.html"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+
                 <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
             </ul>
 
-            <div class="mobile-toggle">☰</div>
+            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
         </div>
     </div>
 </header>
@@ -727,37 +738,7 @@
         })();
         </script>
 
-<script>
-// SLIDER
-$(".hero-slider").owlCarousel({
-    items:1,
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:3500,
-    smartSpeed:900,
-    dots:true,
-    nav:false
-});
-
-// MOBILE MENU
-const toggle = document.querySelector(".mobile-toggle");
-const menu = document.querySelector(".menu");
-
-toggle.addEventListener("click", ()=>{
-    menu.style.display = (menu.style.display==="flex") ? "none":"flex";
-});
-
-// MOBILE SERVICES OPEN
-const trigger = document.querySelector(".service-trigger");
-const dropdown = document.querySelector(".dropdown");
-
-trigger.addEventListener("click", e=>{
-    if(window.innerWidth <= 920){
-        e.preventDefault();
-        dropdown.classList.toggle("open");
-    }
-});
-</script>
-
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
     </body>
 </html>
