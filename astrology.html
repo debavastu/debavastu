@@ -1,264 +1,383 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astrology – DebaVastu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Astrology Consultation – DebaVastu</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-body { margin:0; font-family:"Poppins", sans-serif; }
+  <style>
+    body { font-family: Inter, Arial; margin: 0; color: #222; line-height: 1.6; }
 
-/* ================= HEADER EXACT MATCH ================= */
-header {
-    background: linear-gradient(90deg, #00114d, #003b94);
-    padding: 14px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    position: sticky;
-    top:0;
-    z-index:999;
-    box-shadow:0 4px 14px rgba(0,0,0,0.25);
-}
-.logo-area { display:flex; align-items:center; gap:14px; }
-.logo-circle {
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    object-fit:cover;
-    transition:.4s;
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.55));
-}
-.logo-circle:hover {
-    transform:scale(1.08);
-    filter:drop-shadow(0 0 18px rgba(255,255,255,0.85));
-}
-.logo-text {
-    font-size:30px;
-    font-weight:700;
-    color:white;
-    letter-spacing:.6px;
-    text-shadow:0 2px 6px rgba(0,0,0,0.45);
-}
-
-nav ul {
-    list-style:none;
-    display:flex;
-    gap:30px;
-    margin:0;
-    padding:0;
-}
-nav ul li a {
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    font-size:16px;
-    transition:.28s;
-}
-nav ul li a:hover {
-    color:#00ffe5;
-    text-shadow:0 0 10px rgba(0,255,213,0.9);
-}
-
-/* BOOK BUTTON */
-.btn-appointment {
-    background:#00c786;
-    padding:10px 18px;
-    border-radius:6px;
-    color:white;
-    font-weight:600;
-    text-decoration:none;
-    transition:.3s;
-    box-shadow:0 0 12px rgba(0,255,179,0.45);
-}
-.btn-appointment:hover { transform:scale(1.07); }
-
-/* ================= STABLE DROPDOWN ================= */
-.dropdown { position:relative; }
-.dropdown-menu {
-    position:absolute;
-    top:100%;
-    background:#001b57;
-    padding:14px;
-    border-radius:8px;
-    min-width:220px;
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    box-shadow:0 4px 16px rgba(0,0,0,0.35);
-    transition:.28s ease;
-}
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-}
-.dropdown-menu li { list-style:none; padding:8px 0; }
-.dropdown-menu li a {
-    color:white;
-    font-size:15px;
-}
-.dropdown-menu li a:hover { color:#00ffe5; }
-
-/* MOBILE MENU */
-.hamburger { display:none; font-size:30px; color:white; cursor:pointer; }
-
-@media(max-width:920px){
-    .hamburger { display:block; }
-    nav ul {
-        display:none;
-        flex-direction:column;
-        background:#00114d;
-        position:absolute;
-        top:96px;
-        width:100%;
-        padding:18px;
-        gap:18px;
+    /* ---------------------------------------
+       MAIN HEADER (from Homepage)
+    --------------------------------------- */
+    .main-header {
+      background: linear-gradient(90deg, #0a2a66, #0d3a85);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 999;
     }
+    .header-wrapper {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .header-logo {
+      width: 90px;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+    }
+    .brand-text {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+    .m-link {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 5px;
+      transition: 0.3s;
+    }
+    .m-link:hover { color:#07b565; }
+
+    /* DROPDOWN */
+    .dropdown { position: relative; }
     .dropdown-menu {
-        opacity:1;
-        visibility:visible;
-        pointer-events:auto;
-        position:static;
-        border-left:3px solid #00ffe5;
-        padding-left:8px;
-        box-shadow:none;
-        display:none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.18s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      z-index: 9999;
     }
-    .dropdown.open .dropdown-menu { display:block; }
-}
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 16px;
+      color: #0a2a66;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+    }
+    .dropdown-menu li a:hover {
+      background: #eef4ff;
+    }
 
-/* ================= HERO ================= */
-.banner {
-    height:300px;
-    background:url('img/astrology-banner.jpg') center/cover no-repeat;
-    position:relative;
-}
-.banner .overlay {
-    position:absolute; inset:0;
-    background:rgba(0,0,0,0.45);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
-.banner h1 { font-size:42px; font-weight:700; }
+    /* HEADER BOOK APPOINTMENT BUTTON */
+    .appointment-btn {
+      background: #07b565;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .appointment-btn:hover { opacity: 0.85; }
 
-/* CONTENT */
-.section {
-    max-width:1100px;
-    margin:auto;
-    padding:60px 22px;
-    text-align:center;
-}
-.section h2 { font-size:32px; color:#0a1a5a; }
-.section p { color:#333; font-size:18px; line-height:1.7; }
+    /* MOBILE MENU */
+    .mobile-toggle {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
 
-/* FOOTER */
-footer {
-    background:#0a1a5a;
-    color:white;
-    padding:24px;
-    text-align:center;
-    margin-top:40px;
-}
+    @media(max-width:900px){
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #0a2a66;
+        width: 100%;
+        padding: 20px;
+        gap: 12px;
+      }
+      .mobile-toggle { display:block; }
+    }
 
-/* FLOAT BUTTONS */
-.float-btn { position:fixed; right:22px; z-index:9999; }
-.call-btn { bottom:160px; }
-.whatsapp-btn { bottom:100px; }
-.book-btn { bottom:40px; }
-.float-btn a {
-    background:#00a86b;
-    padding:15px;
-    border-radius:50%;
-    font-size:22px;
-    color:white;
-    text-decoration:none;
-}
-</style>
+    /* ---------------------------------------
+       PAGE CONTENT
+    --------------------------------------- */
+    .container { max-width:1150px;margin:auto;padding:26px 16px; }
+    .hero {
+      background:url('../img/astrology-hero.jpg') center/cover no-repeat;
+      color:#fff;
+      padding:90px 0;
+      text-align:center;
+    }
+    .hero h1 { font-size:40px;margin:0 0 10px; }
+    .section-title { text-align:center; font-size:30px; margin-bottom:12px; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+    .card {
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      border:1px solid #eee;
+      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background:#0b0b0b;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    /* ---------------------------------------
+       FLOATING BUTTONS
+    --------------------------------------- */
+
+    /* Appointment Button */
+    .float-appointment {
+      position: fixed;
+      bottom: 170px;
+      right: 22px;
+      background: #07b565;
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      z-index: 9999;
+    }
+    .float-appointment:hover {
+      transform: scale(1.08);
+      background:#069a52;
+    }
+
+    /* Call Button */
+    .float-call {
+      position:fixed;
+      bottom:100px;
+      right:22px;
+      background:#0b3d91;
+      color:#fff;
+      width:55px;
+      height:55px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      font-size:24px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* WhatsApp Button */
+    .float-whatsapp {
+      position:fixed;
+      bottom:30px;
+      right:22px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      transition:.3s;
+    }
+    .float-whatsapp:hover { transform:scale(1.1); }
+
+    /* MOBILE FIX */
+    @media (max-width:600px){
+      .float-appointment {
+        bottom:140px;
+        right:18px;
+        padding:12px 18px;
+        font-size:14px;
+      }
+      .float-call {
+        bottom:82px;
+        right:16px;
+        width:50px;height:50px;
+        font-size:22px;
+      }
+      .float-whatsapp {
+        bottom:20px;
+        right:16px;
+        width:50px;height:50px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu(){
+      const menu = document.querySelector(".menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <div class="logo-area">
-        <img src="img/logo.png" class="logo-circle">
-        <div class="logo-text">DEBAVASTU</div>
-    </div>
+<!-- ---------------------------------------
+     UPDATED HEADER (Same as Homepage)
+--------------------------------------- -->
+<header class="main-header">
+  <div class="header-wrapper">
 
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" class="header-logo">
+      <div class="brand-text">DEBAVASTU</div>
+    </a>
 
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+      <ul class="menu">
+        <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
 
-            <li class="dropdown">
-                <a class="service-trigger">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="vastu.html">Vastu</a></li>
-                    <li><a href="astrology.html">Astrology</a></li>
-                    <li><a href="numerology.html">Numerology</a></li>
-                    <li><a href="tarot.html">Tarot</a></li>
-                    <li><a href="yoga.html">Yoga</a></li>
-                    <li><a href="healing.html">Healing</a></li>
-                </ul>
-            </li>
+        <li class="dropdown">
+          <a href="#" class="m-link"><i class="fa fa-handshake"></i> Services <i class="fa fa-angle-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="vastu.html">Vastu</a></li>
+            <li><a href="astrology.html">Astrology</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="yoga.html">Yoga</a></li>
+            <li><a href="healing.html">Healing</a></li>
+          </ul>
+        </li>
 
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
+        <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+
+        <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+      </ul>
     </nav>
 
-    <a href="appointment.html" class="btn-appointment">Book Appointment</a>
+    <div class="mobile-toggle" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+
+  </div>
 </header>
 
-<!-- ================= BANNER ================= -->
-<section class="banner">
-    <div class="overlay">
-        <h1>Astrology Consultation</h1>
-        <p>Cosmic Guidance • Planetary Insight • Life Clarity</p>
-    </div>
+
+<!-- ---------------------------------------
+     PAGE CONTENT
+--------------------------------------- -->
+<section class="hero">
+  <div class="container">
+    <h1>Astrology Consultation</h1>
+    <p>Accurate Vedic Astrology for life guidance and clarity.</p>
+  </div>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<section class="section">
-    <h2>Astrological Insight</h2>
-    <p>
-        Vedic Astrology decodes your karmic blueprint and planetary timings
-        providing clarity on destiny, relationships, career and health cycles.
-    </p>
+<section class="container">
+  <h2 class="section-title">About Astrology</h2>
+  <p>Our Vedic Astrology consultation provides deep insights into your birth chart (Janam Kundli), planetary influences, ongoing dashas, and transits.</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section class="container">
+  <h2 class="section-title">Astrology Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Kundli Analysis</h3><p>Birth chart reading, graha strengths, yogas.</p></div>
+    <div class="card"><h3>Career Astrology</h3><p>Job timing, foreign prospects, promotions.</p></div>
+    <div class="card"><h3>Marriage & Compatibility</h3><p>Kundli matching & relationship insights.</p></div>
+    <div class="card"><h3>Finance & Wealth</h3><p>Investment periods & financial guidance.</p></div>
+    <div class="card"><h3>Muhurat</h3><p>Best timings for important life events.</p></div>
+    <div class="card"><h3>Transit & Dasha</h3><p>Planetary effects & upcoming events.</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Consultation Process</h2>
+  <ol>
+    <li>Share birth details</li>
+    <li>Chart preparation</li>
+    <li>Live consultation</li>
+    <li>PDF report + remedies</li>
+    <li>Follow-up support</li>
+  </ol>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Pricing</h2>
+  <div class="grid">
+    <div class="card"><h3>Basic – ₹999</h3><p>Kundli overview + guidance</p></div>
+    <div class="card"><h3>Standard – ₹1999</h3><p>Career, finance & relationships</p></div>
+    <div class="card"><h3>Premium – ₹2999</h3><p>Full reading + remedies + PDF</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Book Appointment</h2>
+  <form>
+    <label>Name</label>
+    <input required>
+    <label>Email</label>
+    <input type="email" required>
+    <label>Birth Details</label>
+    <textarea required></textarea>
+    <button type="submit" style="padding:12px 20px;border-radius:8px;background:#ffd700;border:none;font-weight:700">Submit</button>
+  </form>
+</section>
+
 <footer>
-    © 2025 DebaVastu — All Rights Reserved
+  © 2025 DebaVastu – Astrology Services
 </footer>
 
-<!-- FLOAT BUTTONS -->
-<div class="float-btn call-btn"><a href="tel:+916372710439">📞</a></div>
-<div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
-<div class="float-btn book-btn"><a href="appointment.html">📅</a></div>
+<!-- Floating Buttons -->
+<a href="appointment.html" class="float-appointment">
+  <i class="fa fa-calendar-check"></i> Book Appointment
+</a>
 
-<script>
-function toggleMenu(){
-    const menu = document.querySelector("nav ul");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
+<a href="tel:+916372710439" class="float-call">
+  <i class="fa fa-phone"></i>
+</a>
 
-// MOBILE DROPDOWN TAP-TO-OPEN
-document.querySelector(".service-trigger").addEventListener("click", function(e){
-    if(window.innerWidth <= 920){
-        e.preventDefault();
-        this.parentElement.classList.toggle("open");
-    }
-});
-</script>
+<a href="https://wa.me/916372710439?text=Hi%20I%20want%20Astrology%20Consultation" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
