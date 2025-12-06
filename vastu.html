@@ -195,27 +195,82 @@
         margin-top: 40px;
     }
 
-    /* FLOAT BUTTONS */
-    .float-btn {
-        position: fixed;
-        right: 20px;
-        z-index: 999;
+   /* ---------------------------------------
+       FLOATING BUTTONS
+    --------------------------------------- */
+
+   
+    /* Call Button */
+    .float-call {
+      position:fixed;
+      bottom:100px;
+      right:22px;
+      background:#0b3d91;
+      color:#fff;
+      width:55px;
+      height:55px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:50%;
+      font-size:24px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
     }
-    .call-btn { bottom: 160px; }
-    .whatsapp-btn { bottom: 100px; }
-    .book-btn { bottom: 40px; }
-    .float-btn a {
-        background: #00a86b;
-        padding: 15px;
-        border-radius: 50%;
-        font-size: 22px;
-        color: white;
-        text-decoration: none;
-        display: block;
+
+    /* WhatsApp Button */
+    .float-whatsapp {
+      position:fixed;
+      bottom:30px;
+      right:22px;
+      background:#25D366;
+      color:#fff;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26px;
+      text-decoration:none;
+      z-index:9999;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      transition:.3s;
     }
-</style>
+    .float-whatsapp:hover { transform:scale(1.1); }
+
+    /* MOBILE FIX */
+    @media (max-width:600px){
+      .float-appointment {
+        bottom:140px;
+        right:18px;
+        padding:12px 18px;
+        font-size:14px;
+      }
+      .float-call {
+        bottom:82px;
+        right:16px;
+        width:50px;height:50px;
+        font-size:22px;
+      }
+      .float-whatsapp {
+        bottom:20px;
+        right:16px;
+        width:50px;height:50px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu(){
+      const menu = document.querySelector(".menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 </head>
 <body>
+
 
 <!-- HEADER (MATCHED EXACTLY TO ASTROLOGY PAGE) -->
 <header>
@@ -281,10 +336,6 @@
     © 2025 DebaVastu — All Rights Reserved
 </footer>
 
-<!-- FLOAT BUTTONS -->
-<div class="float-btn call-btn"><a href="tel:6372710439">📞</a></div>
-<div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
-<div class="float-btn book-btn"><a href="tel:6372710439">📅</a></div>
 
 <script>
 function toggleMenu(){
