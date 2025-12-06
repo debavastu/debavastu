@@ -1,268 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About DebaVastu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – DebaVastu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<style>
+body { margin:0; font-family:"Poppins",sans-serif; background:#fafafa; }
 
-    <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; }
+/* ================= HEADER (Exact Vastu Header) ================= */
+header {
+    background: linear-gradient(90deg, #00114d, #003b94);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+.logo-area { display:flex; align-items:center; gap:12px; }
+.logo-circle {
+    width:74px;height:74px;border-radius:50%;
+    object-fit:cover;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,0.25));
+    transition:.4s;
+}
+.logo-circle:hover { transform:scale(1.08); filter:drop-shadow(0 0 20px rgba(255,255,255,0.45)); }
+.logo-text { font-size:28px; font-weight:700; color:white; }
 
-        /* HEADER */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        .header-container {
-            width: 95%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-        }
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            color: #0d47a1;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-size: 16px;
-            color: #000;
-        }
-        nav ul li a:hover { color: #0d47a1; }
+nav ul {
+    list-style:none;display:flex;gap:32px;
+    margin:0;padding:0;
+}
+nav ul li a {
+    color:white;text-decoration:none;font-size:16px;
+    font-weight:500;transition:.3s;
+}
+nav ul li a:hover { color:#00ffd5; }
 
-        .btn-appointment {
-            background: #0d47a1;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .btn-appointment:hover { background: #083075; }
+/* Dropdown */
+.dropdown { position:relative; }
+.dropdown-menu {
+    display:none;position:absolute;background:#001b57;
+    padding:14px;border-radius:8px;top:38px;min-width:200px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.35);
+}
+.dropdown-menu li { padding:7px 0; }
+.dropdown-menu li a { color:#fff; font-size:15px; }
+.dropdown-menu li a:hover { color:#00ffd5; }
+.dropdown.open .dropdown-menu { display:block; }
 
-        /* MOBILE NAV */
-        @media(max-width: 850px) {
-            nav ul { 
-                position: fixed;
-                top: 0; right: -100%;
-                width: 70%; height: 100%;
-                background: #fff;
-                flex-direction: column;
-                justify-content: center;
-                gap: 30px;
-                transition: .4s;
-                box-shadow: -3px 0 10px rgba(0,0,0,0.2);
-            }
-            nav ul.show { right: 0; }
-            .menu-btn { font-size: 24px; cursor: pointer; display: block; }
-        }
-        .menu-btn { display: none; }
+.btn-appointment {
+    background:#00c786;padding:10px 18px;
+    border-radius:6px;color:white;text-decoration:none;
+    font-weight:600;box-shadow:0 0 12px rgba(0,255,179,0.4);
+}
+.btn-appointment:hover { transform:scale(1.05); }
 
-        /* BANNER IMAGE */
-        .banner-image {
-            position: relative;
-            background: url('img/about-banner.jpg') center/cover no-repeat;
-            width: 100%;
-            height: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .banner-overlay {
-            background: rgba(0,0,0,0.45);
-            position: absolute;
-            inset: 0;
-        }
-        .banner-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        .banner-content h1 {
-            color: #fff;
-            font-size: 40px;
-            margin-bottom: 8px;
-        }
-        .banner-content p {
-            color: #dfeaff;
-            font-size: 18px;
-        }
+.hamburger { display:none;color:white;font-size:28px;cursor:pointer; }
 
-        /* GRADIENT INTRO */
-        .intro-band {
-            padding: 40px 15px;
-            background: linear-gradient(to right, #0d47a1, #1976d2);
-            text-align: center;
-            color: white;
-        }
-        .intro-band h2 { font-size: 30px; margin-bottom: 10px; }
-        .intro-band p { max-width: 900px; margin: auto; font-size: 17px; }
+@media(max-width:768px){
+    .hamburger{ display:block; }
+    nav ul {
+        flex-direction:column;background:#00114d;
+        position:absolute;top:82px;left:0;width:100%;
+        display:none;padding:22px;gap:18px;
+    }
+    .dropdown-menu{ position:static; box-shadow:none; }
+}
 
-        /* ABOUT CONTENT */
-        .section {
-            width: 90%;
-            max-width: 1100px;
-            margin: 60px auto;
-        }
-        .section h2 {
-            font-size: 32px;
-            color: #0d47a1;
-            margin-bottom: 10px;
-        }
-        .section p {
-            font-size: 17px;
-            line-height: 1.7;
-            color: #444;
-        }
+/* ================= CONTENT ================= */
+.section {
+    max-width:1100px;margin:auto;padding:60px 20px;
+}
+.section h2 {
+    text-align:center;font-size:34px;
+    color:#00317a;margin-bottom:20px;
+}
+.section img {
+    width:100%;max-width:800px;display:block;margin:auto;
+    border-radius:12px;
+}
+.section p {
+    text-align:center;font-size:18px;color:#333;
+    line-height:1.8;margin-bottom:22px;
+}
+.list-points {
+    max-width:750px;margin:auto;text-align:left;
+    font-size:17px;color:#555;line-height:1.8;
+}
+.list-points li {
+    margin-bottom:12px;
+}
 
-        /* FOUNDER SECTION */
-        .founder-box {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .founder-box img {
-            width: 320px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .founder-info h3 { font-size: 26px; color: #0d47a1; }
-        .founder-info ul {
-            margin: 12px 0;
-            padding-left: 20px;
-        }
-        .founder-info ul li {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
+/* ================= FOOTER ================= */
+footer {
+    background:#0a1a5a;color:white;text-align:center;
+    padding:25px;margin-top:40px;
+}
 
-        /* FLOATING BUTTONS */
-        .float-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #0d47a1;
-            color: #fff;
-            padding: 14px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            z-index: 999;
-        }
-        .float-call {
-            bottom: 85px;
-            background: #0d47a1;
-        }
-        .float-whatsapp {
-            bottom: 150px;
-            background: #25d366;
-        }
-    </style>
+/* ================= FLOATING BUTTONS ================= */
+.float-call, .float-whatsapp {
+    position:fixed; right:22px;
+    width:55px;height:55px;
+    display:flex;justify-content:center;align-items:center;
+    border-radius:50%;color:white;
+    text-decoration:none;font-size:26px;
+    z-index:999;
+}
+.float-call { bottom:100px;background:#0b3d91;font-size:24px; }
+.float-whatsapp { bottom:30px;background:#25D366;transition:.3s; }
+.float-whatsapp:hover { transform:scale(1.1); }
+
+</style>
 </head>
-
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
-    <div class="header-container">
-        <div class="logo">DebaVastu</div>
-
-        <nav>
-            <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="astrology.html">Astrology</a></li>
-                <li><a href="vastu.html">Vastu</a></li>
-                <li><a href="numerology.html">Numerology</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a class="btn-appointment" href="appointment.html">Book Appointment</a></li>
-            </ul>
-        </nav>
-
-        <div class="menu-btn" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
+    <div class="logo-area">
+        <img src="img/logo.png" class="logo-circle">
+        <div class="logo-text">DEBAVASTU</div>
     </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="vastu.html">📐 Vastu</a></li>
+                    <li><a href="astrology.html">🔮 Astrology</a></li>
+                    <li><a href="numerology.html">🔢 Numerology</a></li>
+                    <li><a href="tarot.html">🃏 Tarot</a></li>
+                    <li><a href="yoga.html">🧘 Yoga</a></li>
+                    <li><a href="healing.html">✨ Healing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
 </header>
 
+<!-- ================= ABOUT CONTENT ================= -->
+<section class="section">
+    <h2>About DebaVastu</h2>
+    <p>
+        DebaVastu provides complete holistic alignment of energy,
+        space and destiny through a unique scientific–spiritual approach.
+    </p>
+    <p>
+        Combining authentic Vastu Shastra, Astrology, Numerology,
+        Tarot, Energy Healing and Yogic sciences, we help individuals,
+        homes and corporations achieve balance, prosperity and inner harmony.
+    </p>
+
+    <br>
+    <h2>Our Vision</h2>
+    <p>
+        To harmonize cosmic order and human life through ancient Vedic knowledge
+        interpreted for modern reality — accessible, practical and result-driven.
+    </p>
+
+    <br>
+    <h2>Core Expertise</h2>
+    <ul class="list-points">
+        <li>✔ Residential, Commercial & Industrial Vastu</li>
+        <li>✔ On-site & remote space energy correction</li>
+        <li>✔ Astrology & life guidance with remedial solutions</li>
+        <li>✔ Numerology name balancing, business success corrections</li>
+        <li>✔ Tarot for clarity, psychological direction & decisions</li>
+        <li>✔ Healing therapy: Aura, Chakra, Sound, Crystal, Reiki</li>
+        <li>✔ Yogic lifestyle, meditation & pranayama balancing</li>
+    </ul>
+
+    <br>
+    <h2>Why Choose Us?</h2>
+    <ul class="list-points">
+        <li>🌟 Traditional wisdom blended with scientific alignment</li>
+        <li>🌟 Practical solutions without demolition & renovation</li>
+        <li>🌟 Personalized cosmic analysis for each individual</li>
+        <li>🌟 Decade-long professional consultation expertise</li>
+        <li>🌟 3000+ harmonized homes & satisfied consultations</li>
+    </ul>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    © 2025 DebaVastu — All Rights Reserved
+</footer>
+
+<!-- ================= FLOAT BUTTONS ================= -->
+<a href="tel:+916372710439" class="float-call">📞</a>
+<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+
 <script>
-function toggleMenu() {
-    document.getElementById("nav-links").classList.toggle("show");
+function toggleMenu(){
+    const menu = document.querySelector("nav ul");
+    menu.style.display = (menu.style.display==="block") ? "none" : "block";
 }
+document.querySelector('.dropdown-toggle')
+.addEventListener('click', function(e){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+});
 </script>
-
-<!-- IMAGE BANNER -->
-<section class="banner-image">
-    <div class="banner-overlay"></div>
-    <div class="banner-content">
-        <h1>About DebaVastu</h1>
-        <p>Vastu • Astrology • Numerology • Tarot • Yoga • Healing</p>
-    </div>
-</section>
-
-<!-- GRADIENT INTRO -->
-<section class="intro-band">
-    <h2>Transforming Lives Through Ancient Vedic Wisdom</h2>
-    <p>DebaVastu provides a holistic approach to life using the powerful combination of
-       Vastu Shastra, Astrology, Numerology, Tarot, Healing, Yoga & Energy Sciences.</p>
-</section>
-
-<!-- ABOUT MAIN -->
-<section class="section">
-    <h2>Who We Are</h2>
-    <p>DebaVastu is a complete Vedic solution provider offering a blend of ancient sciences
-       and modern corrective techniques. Our approach is practical, result-oriented, and
-       tailored to each individual’s unique energy patterns.</p>
-</section>
-
-<!-- FOUNDER -->
-<section class="section">
-    <h2>Meet the Founder</h2>
-
-    <div class="founder-box">
-        <img src="img/founder.jpg" alt="Founder">
-
-        <div class="founder-info">
-            <h3>Debadatta</h3>
-            <ul>
-                <li>Vastu Consultant</li>
-                <li>Astrologer</li>
-                <li>Numerologist</li>
-                <li>Tarot Expert</li>
-                <li>Yoga Trainer</li>
-                <li>Reiki & Energy Healer</li>
-                <li>10+ Years Experience</li>
-            </ul>
-
-            <p>"My mission is to guide people toward a more balanced, prosperous, and harmonious life.
-            Every home, every person, and every situation carries its own energy. When aligned correctly,
-            life becomes smoother, opportunities increase, and true happiness begins to flow."</p>
-        </div>
-    </div>
-</section>
-
-<!-- FLOATING BUTTONS -->
-<a href="tel:+916372710439" class="float-btn float-call"><i class="fa fa-phone"></i> Call Now</a>
-<a href="https://wa.me/916372710439" class="float-btn float-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-<a href="appointment.html" class="float-btn"><i class="fa fa-calendar"></i> Appointment</a>
 
 </body>
 </html>
