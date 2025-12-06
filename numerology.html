@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" conte<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numerology – DebaVastu</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +9,7 @@
 <style>
     body { margin: 0; font-family: "Poppins", sans-serif; }
 
-    /* SAME HEADER (NO CHANGE) */
+    /* HEADER (exact vastu header) */
     header {
         background: linear-gradient(90deg, #00114d, #003b94);
         padding: 14px 24px;
@@ -27,66 +23,52 @@
     }
     .logo-area { display: flex; align-items: center; gap: 12px; }
     .logo-circle {
-        width: 74px; height: 74px;
-        border-radius: 50%; object-fit: cover;
+        width: 74px; height: 74px; border-radius: 50%;
+        object-fit: cover;
         filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
-        transition: 0.4s ease;
+        transition: 0.4s;
     }
-    .logo-circle:hover { transform: scale(1.07); filter: drop-shadow(0 0 18px rgba(255,255,255,0.45)); }
-
-    .logo-text { font-size: 28px; font-weight: 700; letter-spacing: 1px; color: white; }
+    .logo-text { font-size: 28px; font-weight: 700; color: white; }
 
     nav ul {
-        list-style: none;
-        display: flex;
-        gap: 32px;
-        margin: 0; padding: 0;
+        list-style: none; display: flex;
+        gap: 32px; margin: 0; padding: 0;
     }
     nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        font-size: 16px;
-        transition: 0.3s ease;
+        text-decoration: none; color: white;
+        font-weight: 500; font-size: 16px;
+        transition: 0.3s;
     }
     nav ul li a:hover { color: #00ffd5; }
+
     .btn-appointment {
         background: #00c786; padding: 10px 18px;
-        border-radius: 6px; color: #fff;
+        border-radius: 6px; color: white;
         text-decoration: none; font-weight: 600;
-        box-shadow: 0 0 10px rgba(0,255,179,0.45);
-        transition: 0.3s ease;
     }
-    .btn-appointment:hover { transform: scale(1.04); }
 
     .dropdown { position: relative; }
     .dropdown-menu {
-        display: none; position: absolute;
+        display: none; position: absolute; top: 38px;
         background: #001b57; padding: 14px;
-        border-radius: 8px; top: 38px;
+        border-radius: 8px;
         min-width: 200px;
         box-shadow: 0 4px 14px rgba(0,0,0,0.35);
     }
-    .dropdown-menu li { padding: 7px 0; }
-    .dropdown-menu li a { font-size: 15px; color: white; }
-    .dropdown-menu li a:hover { color: #00ffd5; }
-    .dropdown-toggle { cursor: pointer; }
     .dropdown.open .dropdown-menu { display: block; }
+    .dropdown-menu li { padding: 7px 0; }
+    .dropdown-menu li a { color: white; font-size: 15px; }
 
-    .hamburger { display: none; font-size: 28px; color: #fff; cursor: pointer; }
+    .hamburger { display: none; font-size: 28px; color: white; cursor: pointer; }
 
     @media(max-width:768px){
         .hamburger { display: block; }
         nav ul {
             flex-direction: column;
             background: #00114d;
-            position: absolute;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            display: none;
-            gap: 18px;
+            position: absolute; top: 82px; left: 0;
+            width: 100%; padding: 20px;
+            display: none; gap: 18px;
         }
         .dropdown-menu { position: static; box-shadow: none; }
     }
@@ -102,59 +84,46 @@
         background: rgba(0,0,0,0.45);
         display: flex; flex-direction: column;
         justify-content: center; align-items: center;
-        text-align: center; color: white;
+        color: white; text-align: center;
     }
-    .banner h1 { font-size: 42px; font-weight: 700; margin: 0; }
-    .banner p { font-size: 18px; margin-top: 10px; opacity: 0.9; }
+    .banner h1 { font-size: 42px; margin: 0; }
 
     /* CONTENT */
-    .section { max-width: 1100px; margin: auto; padding: 60px 20px; }
-    .section h2 { text-align: center; font-size: 32px; color: #0a1a5a; margin-bottom: 22px; }
-    .section p { text-align: center; font-size: 18px; color: #333; line-height: 1.7; }
+    .section {
+        max-width: 1100px; padding: 60px 20px; margin: auto;
+        text-align: center;
+    }
+    .section h2 { font-size: 32px; margin-bottom: 18px; color: #0a1a5a; }
+    .section p { font-size: 18px; color: #333; line-height: 1.7; }
 
     /* FOOTER */
     footer {
+        text-align: center;
         background: #0a1a5a;
         color: white;
-        text-align: center;
-        padding: 25px;
+        padding: 22px;
         margin-top: 40px;
     }
 
     /* FLOAT BUTTONS */
-    .float-call {
-        position:fixed;
-        bottom:100px; right:22px;
-        background:#0b3d91;
-        color:#fff;
-        width:55px; height:55px;
+    .float-call, .float-whatsapp {
+        position:fixed; width:55px; height:55px; right:22px;
         display:flex; justify-content:center; align-items:center;
-        border-radius:50%;
-        font-size:24px; text-decoration:none;
-        z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.25);
+        border-radius:50%; font-size:24px; color:#fff;
+        text-decoration:none; box-shadow:0 6px 18px rgba(0,0,0,0.25);
+        z-index:9999;
     }
-    .float-whatsapp {
-        position:fixed;
-        bottom:30px; right:22px;
-        background:#25D366;
-        color:#fff;
-        width:55px; height:55px;
-        border-radius:50%;
-        display:flex; justify-content:center; align-items:center;
-        font-size:26px; text-decoration:none;
-        z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.25);
-        transition:.3s;
-    }
-    .float-whatsapp:hover { transform:scale(1.1); }
+    .float-call { bottom:100px; background:#0b3d91; }
+    .float-whatsapp { bottom:30px; background:#25D366; font-size:26px; }
 </style>
 </head>
 
 <body>
 
-<!-- SAME HEADER (NO CHANGE) -->
+<!-- HEADER (exact vastu, no duplicate) -->
 <header>
     <div class="logo-area">
-        <img src="img/logo.png" alt="DebaVastu Logo" class="logo-circle">
+        <img src="img/logo.png" class="logo-circle">
         <div class="logo-text">DEBAVASTU</div>
     </div>
 
@@ -188,7 +157,7 @@
 <section class="banner">
     <div class="overlay">
         <h1>Numerology Consultation</h1>
-        <p>Decode Your Destiny • Discover Life Path • Align Name Energy</p>
+        <p>Decode Your Life Path • Name Vibration • Destiny Numbers</p>
     </div>
 </section>
 
@@ -196,37 +165,25 @@
 <section class="section">
     <h2>What is Numerology?</h2>
     <p>
-        Numerology reveals your destiny blueprint through numbers derived from your date of birth & name vibration.
-        <br>It helps decode patterns, timing & personality energies.
+        Numerology reveals your destiny blueprint using birth numbers, name values
+        and cosmic energy patterns to guide career, relationships and growth.
     </p>
 
-    <h2>Core Benefits</h2>
+    <h2>Benefits</h2>
     <p>
-        ✔ Name correction for success<br>
-        ✔ Life path karmic decoding<br>
-        ✔ Marriage & compatibility numbers<br>
-        ✔ Business name numerology<br>
-        ✔ Career & finance growth timing<br>
-        ✔ Lucky colors, dates & numbers activation
+        ✔ Name correction & business name success<br>
+        ✔ Marriage compatibility & relationship clarity<br>
+        ✔ Lucky dates, colors & number activation<br>
+        ✔ Life path & destiny decoding<br>
+        ✔ Career growth & timing analysis
     </p>
 </section>
 
-<section class="section">
-    <h2>What You Receive</h2>
-    <p>
-        🌟 Life Path & Destiny Analysis <br>
-        🌟 Business Name & Logo Numerology <br>
-        🌟 Compatibility & Relationship Scores <br>
-        🌟 Lucky Elements & Remedial Alignments
-    </p>
-</section>
-
-<!-- FOOTER -->
 <footer>
     © 2025 DebaVastu — All Rights Reserved
 </footer>
 
-<!-- FLOAT BUTTONS -->
+<!-- FLOATING BUTTONS -->
 <a href="tel:+916372710439" class="float-call">📞</a>
 <a href="https://wa.me/916372710439" class="float-whatsapp">💬</a>
 
@@ -240,355 +197,6 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
     this.parentElement.classList.toggle('open');
 });
 </script>
-
-</body>
-</html>
-nt="width=device-width, initial-scale=1.0">
-    <title>Numerology – DebaVastu</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-    <!-- Styles -->
-    <style>
-        body {
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: #fff;
-        }
-
-        /* HEADER */
-        header {
-            background: white;
-            width: 100%;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            color: #003399;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #003399;
-            font-weight: 500;
-        }
-
-        .appointment-btn {
-            background: #009900;
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Mobile menu toggle */
-        .menu-icon {
-            display: none;
-            font-size: 26px;
-            cursor: pointer;
-            color: #003399;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                background: white;
-                padding: 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-        }
-
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 350px;
-            background: url("img/numerology-banner.jpg") center/cover no-repeat;
-            position: relative;
-        }
-
-        .banner-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.45);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .banner h1 {
-            color: white;
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            .banner { height: 260px; }
-            .banner h1 { font-size: 32px; }
-        }
-
-        /* SECTION */
-        .section {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section h2 {
-            font-size: 32px;
-            color: #003399;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .section p {
-            line-height: 1.8;
-            color: #333;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .card {
-            background: #f8faff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .card i {
-            font-size: 40px;
-            color: #003399;
-            margin-bottom: 12px;
-        }
-
-        .card h3 {
-            color: #003399;
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
-
-        /* FLOATING BUTTONS */
-        .float-btn {
-            position: fixed;
-            right: 20px;
-            z-index: 9999;
-        }
-
-        .call-btn {
-            bottom: 150px;
-            background: #28a745;
-            color: white;
-        }
-
-        .whatsapp-btn {
-            bottom: 90px;
-            background: #25D366;
-            color: white;
-        }
-
-        .book-btn {
-            bottom: 30px;
-            background: #003399;
-            color: white;
-        }
-
-        .float-btn a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 18px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-        }
-
-        /* FOOTER */
-        footer {
-            background: #003399;
-            padding: 40px 20px;
-            margin-top: 50px;
-            color: white;
-            text-align: center;
-        }
-
-    </style>
-</head>
-
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <div class="header-container">
-            <div class="logo">DebaVastu</div>
-
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fa fa-bars"></i>
-            </div>
-
-            <nav id="navbar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="astrology.html">Astrology</a></li>
-                    <li><a href="vastu.html">Vastu</a></li>
-                    <li><a href="numerology.html">Numerology</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <a href="appointment.html" class="appointment-btn">Book Appointment</a>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- BANNER -->
-    <div class="banner">
-        <div class="banner-overlay">
-            <h1>Premium Numerology Consultation</h1>
-        </div>
-    </div>
-
-    <!-- SECTION: ABOUT NUMEROLOGY -->
-    <div class="section">
-        <h2>What is Numerology?</h2>
-        <p>
-            Numerology is the ancient science of numbers that reveals the deepest truths
-            of your personality, destiny, life purpose, relationships, and future events.
-            At DebaVastu, we use **Chaldean + Pythagorean systems** to provide the most
-            accurate insights for your life path.
-        </p>
-    </div>
-
-    <!-- SECTION: BENEFITS -->
-    <div class="section">
-        <h2>Benefits of Numerology</h2>
-        <div class="cards">
-            <div class="card">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Relationship Insights</h3>
-                <p>Understand compatibility and emotional alignment.</p>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-briefcase"></i>
-                <h3>Career Guidance</h3>
-                <p>Choose the career path aligned with your destiny number.</p>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-star"></i>
-                <h3>Name Correction</h3>
-                <p>Perfect name vibrations for success and prosperity.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION: NUMEROLOGY TYPES -->
-    <div class="section">
-        <h2>Core Numerology Readings</h2>
-        <div class="cards">
-            <div class="card">
-                <i class="fa-solid fa-infinity"></i>
-                <h3>Life Path Number</h3>
-                <p>The blueprint of your soul — your purpose and lessons.</p>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-bullseye"></i>
-                <h3>Destiny Number</h3>
-                <p>Defines your talents, strengths, and future success.</p>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-signature"></i>
-                <h3>Name Number</h3>
-                <p>Your name vibration and how it affects your fortune.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION: CONSULTATION -->
-    <div class="section">
-        <h2>Numerology Consultation</h2>
-        <p>
-            Our numerology sessions are personalized and include your detailed report,
-            life path analysis, compatibility reading, name correction, and yearly
-            prediction for smooth success.
-        </p>
-    </div>
-
-    <!-- FLOATING BUTTONS -->
-    <div class="float-btn call-btn">
-        <a href="tel:+916372710439">
-            <i class="fa fa-phone"></i> Call Now
-        </a>
-    </div>
-
-    <div class="float-btn whatsapp-btn">
-        <a href="https://wa.me/916372710439" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-    </div>
-
-    <div class="float-btn book-btn">
-        <a href="appointment.html">
-            <i class="fa fa-calendar"></i> Book Now
-        </a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 DebaVastu — All Rights Reserved.
-    </footer>
-
-    <!-- SCRIPT -->
-    <script>
-        function toggleMenu() {
-            let nav = document.getElementById("navbar");
-            nav.style.display = nav.style.display === "block" ? "none" : "block";
-        }
-    </script>
 
 </body>
 </html>
