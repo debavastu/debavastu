@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* ================= HEADER EXACT AS VASTU ================= */
+/* ================= HEADER ================= */
 .main-header {
     background: linear-gradient(90deg,#00114d,#003a92);
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
@@ -37,10 +37,7 @@
 .logo-area { display:flex; align-items:center; gap:12px; }
 
 .header-logo {
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    object-fit:cover;
+    width:85px;height:85px;border-radius:50%;object-fit:cover;
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.45));
     transition:0.4s ease;
 }
@@ -51,7 +48,7 @@
 
 .brand-text {
     color:#fff;
-    font-size:30px;    /* ← MATCHED VASTU */
+    font-size:30px;
     font-weight:700;
     letter-spacing:.6px;
     text-shadow:0 2px 6px rgba(0,0,0,0.45);
@@ -60,17 +57,17 @@
 /* MENU */
 .menu { display:flex; gap:32px; list-style:none; align-items:center; margin:0; padding:0; }
 .m-link {
-    color:#fff;
+    color:#fff !important;
     font-size:16px;
     font-weight:500;
     transition:0.3s ease;
 }
 .m-link:hover {
-    color:#00ffe5;
+    color:#00ffe5!important;
     text-shadow:0 0 10px rgba(0,255,213,0.9);
 }
 
-/* DROPDOWN EXACT BEHAVIOUR */
+/* DROPDOWN UPDATED STABLE */
 .dropdown { position:relative; }
 .dropdown-menu {
     display:none;
@@ -85,6 +82,9 @@
 .dropdown-menu li { padding:6px 0; }
 .dropdown-menu li a { color:white !important; font-size:15px; }
 .dropdown-menu li a:hover { color:#00ffe5 !important; }
+
+/* Hover + Click handling */
+.dropdown.open .dropdown-menu { display:block !important; }
 .dropdown:hover .dropdown-menu { display:block; }
 
 /* MOBILE ONLY */
@@ -121,7 +121,7 @@
 .appointment-btn:hover { transform:scale(1.05); }
 
 /* FLOAT BUTTONS */
-.dv-floating-buttons { bottom:25px !important; right:25px !important; position:fixed; display:flex; flex-direction:column; gap:14px; z-index:9999; }
+.dv-floating-buttons { bottom:25px; right:25px; position:fixed; display:flex; flex-direction:column; gap:14px; z-index:9999; }
 .dv-btn-circle {
     width:58px;height:58px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
@@ -593,15 +593,27 @@ function toggleMenu(){
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 
-// mobile dropdown tap
-document.addEventListener("click", e=>{
-    const dropdown = document.querySelector(".dropdown");
-    if(dropdown && !dropdown.contains(e.target)) dropdown.classList.remove("open");
+/* DESKTOP CLICK + HOVER */
+document.querySelector(".service-trigger").addEventListener("click", e=>{
+    if(window.innerWidth > 920){
+        e.preventDefault();
+        document.querySelector(".dropdown").classList.toggle("open");
+    }
 });
+
+/* MOBILE TAP */
 document.querySelector(".service-trigger").addEventListener("click", e=>{
     if(window.innerWidth <= 920){
         e.preventDefault();
         document.querySelector(".dropdown").classList.toggle("open");
+    }
+});
+
+/* CLICK OUTSIDE TO CLOSE */
+document.addEventListener("click", e=>{
+    const dropdown = document.querySelector(".dropdown");
+    if(!dropdown.contains(e.target)){
+        dropdown.classList.remove("open");
     }
 });
 </script>
