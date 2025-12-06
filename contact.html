@@ -139,4 +139,85 @@
             <li><a href="about.html">ℹ️ About</a></li>
 
             <li class="dropdown">
-                <a href="#" class="dropdown-togg
+                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="vastu.html">📐 Vastu</a></li>
+                    <li><a href="astrology.html">🔮 Astrology</a></li>
+                    <li><a href="numerology.html">🔢 Numerology</a></li>
+                    <li><a href="tarot.html">🃏 Tarot</a></li>
+                    <li><a href="yoga.html">🧘 Yoga</a></li>
+                    <li><a href="healing.html">✨ Healing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
+</header>
+
+<section class="section">
+    <h2>Get in Touch</h2>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+            <h3>📍 Address</h3>
+            <p>DebaVastu Consultation Office<br>India</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>📞 Phone</h3>
+            <p><a href="tel:+916372710439">+91 63727 10439</a></p>
+        </div>
+
+        <div class="contact-box">
+            <h3>📧 Email</h3>
+            <p>support@debavastu.com</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>🕘 Working Hours</h3>
+            <p>Mon–Sun : 9 AM to 7 PM</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>Send Us a Message</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea rows="5" placeholder="Your Message / Query" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Google Map Placeholder -->
+    <iframe src="https://maps.google.com/maps?q=India&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<footer>
+    © 2025 DebaVastu — All Rights Reserved
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="tel:+916372710439" class="float-call">📞</a>
+<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector("nav ul");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+document.querySelector('.dropdown-toggle')
+.addEventListener('click', function(e){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
