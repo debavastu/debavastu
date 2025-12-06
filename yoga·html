@@ -3,251 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga & Wellness – DebaVastu</title>
-
+    <title>Yoga – DebaVastu</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+<style>
+    body { margin: 0; font-family: "Poppins", sans-serif; }
 
-    <style>
-        body { font-family: 'Poppins', sans-serif; margin:0; padding:0; }
+    /* SAME HEADER */
+    header {
+        background: linear-gradient(90deg, #00114d, #003b94);
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
 
-        /* HEADER */
-        header {
-            background: #0a1a5a;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-circle {
+        width: 74px; height: 74px; border-radius: 50%; object-fit: cover;
+        filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+        transition: .4s;
+    }
+    .logo-circle:hover { transform: scale(1.08); filter: drop-shadow(0 0 18px rgba(255,255,255,0.45)); }
+
+    .logo-text {
+        font-size: 28px; font-weight: 700;
+        color: white; letter-spacing: 1px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    nav ul { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
+    nav ul li a {
+        text-decoration: none; color:white; font-size: 16px;
+        font-weight: 500; transition: 0.3s ease;
+    }
+    nav ul li a:hover { color: #00ffd5; }
+
+    .dropdown { position: relative; }
+    .dropdown-menu {
+        display:none; position:absolute; background:#001b57;
+        padding:14px; border-radius:8px; top:38px; min-width:200px;
+        box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    }
+    .dropdown-menu li { padding:7px 0; }
+    .dropdown-menu li a { color:white;font-size:15px; }
+    .dropdown-menu li a:hover { color:#00ffd5; }
+    .dropdown.open .dropdown-menu { display:block; }
+
+    .dropdown-toggle { cursor:pointer; user-select:none; }
+
+    .btn-appointment {
+        background:#00c786; padding:10px 18px; border-radius:6px;
+        color:white; font-weight:600; text-decoration:none;
+    }
+
+    .hamburger { display:none; font-size:28px; color:white; cursor:pointer; }
+
+    @media(max-width:768px){
+        .hamburger { display:block; }
         nav ul {
-            margin: 0; padding: 0;
-            display: flex; gap: 25px;
-            list-style: none;
+            flex-direction:column; background:#00114d;
+            position:absolute; top:82px; left:0; width:100%;
+            padding:20px; display:none; gap:18px;
         }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .btn-appointment {
-            background: #00a86b;
-            padding: 10px 18px;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .dropdown-menu { position:static; box-shadow:none; }
+    }
 
-        /* MOBILE */
-        @media(max-width: 768px){
-            nav ul { display: none; }
-        }
+    /* CONTENT */
+    .section { max-width:1100px; margin:auto; padding:60px 20px; }
+    .section h2 { text-align:center; color:#0a1a5a; font-size:32px; margin-bottom:25px; }
+    .section p { text-align:center; font-size:18px; color:#333; line-height:1.7; }
 
-        /* BANNER */
-        .banner {
-            position: relative;
-            height: 300px;
-            background: url('img/about-banner.jpg') center/cover no-repeat;
-        }
-        .banner-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .banner-overlay h1 {
-            font-size: 42px;
-            margin: 0;
-            font-weight: 700;
-        }
-        .banner-overlay p {
-            margin-top: 10px;
-            font-size: 16px;
-            opacity: 0.9;
-        }
+    /* FOOTER */
+    footer {
+        background:#0a1a5a; color:white; text-align:center;
+        padding:25px; margin-top:40px;
+    }
 
-        /* SECTIONS */
-        .section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 32px;
-            color: #0a1a5a;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-            gap: 25px;
-        }
-        .card {
-            padding: 25px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .card h3 {
-            color: #00a86b;
-            margin-bottom: 10px;
-        }
-
-        /* FOUNDER */
-        .founder {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            background: #f4f4f4;
-            padding: 50px 20px;
-            border-radius: 15px;
-        }
-        .founder img {
-            width: 260px;
-            border-radius: 15px;
-        }
-        @media(max-width:768px){
-            .founder { flex-direction: column; text-align: center; }
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0a1a5a;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        /* FLOATING BUTTONS */
-        .float-btn {
-            position: fixed;
-            right: 20px;
-            z-index: 999;
-        }
-        .call-btn { bottom: 160px; }
-        .whatsapp-btn { bottom: 100px; }
-        .book-btn { bottom: 40px; }
-
-        .float-btn a {
-            display: block;
-            background: #00a86b;
-            color: white;
-            padding: 14px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        }
-    </style>
+    /* FLOAT BUTTONS */
+    .float-call {
+        position:fixed; bottom:100px; right:22px;
+        background:#0b3d91; color:white;
+        width:55px; height:55px; border-radius:50%;
+        display:flex; justify-content:center; align-items:center;
+        font-size:24px; text-decoration:none; z-index:999;
+    }
+    .float-whatsapp {
+        position:fixed; bottom:30px; right:22px;
+        background:#25D366; color:white;
+        width:55px; height:55px; border-radius:50%;
+        display:flex; justify-content:center; align-items:center;
+        font-size:26px; text-decoration:none; z-index:999;
+        transition:.3s;
+    }
+    .float-whatsapp:hover { transform:scale(1.1); }
+</style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-    <div class="logo">DEBAVASTU</div>
+    <div class="logo-area">
+        <img src="img/logo.png" class="logo-circle">
+        <div class="logo-text">DEBAVASTU</div>
+    </div>
 
-    <nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="vastu.html">📐 Vastu</a></li>
+                    <li><a href="astrology.html">🔮 Astrology</a></li>
+                    <li><a href="numerology.html">🔢 Numerology</a></li>
+                    <li><a href="tarot.html">🃏 Tarot</a></li>
+                    <li><a href="yoga.html">🧘 Yoga</a></li>
+                    <li><a href="healing.html">✨ Healing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
         </ul>
     </nav>
 
     <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
 </header>
 
-<!-- BANNER -->
-<section class="banner">
-    <div class="banner-overlay">
-        <h1>Yoga & Wellness</h1>
-        <p>Vastu • Astrology • Numerology • Tarot • Yoga • Healing</p>
-    </div>
-</section>
-
-<!-- YOGA SERVICES -->
+<!-- A: INTRO -->
 <section class="section">
-    <h2>Our Yoga Services</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Hatha Yoga</h3>
-            <p>A traditional form of yoga that focuses on physical postures and breathing techniques for balance and strength.</p>
-        </div>
-
-        <div class="card">
-            <h3>Pranayama (Breathing)</h3>
-            <p>Powerful breathing practices that energize the body, calm the mind, and improve overall vitality.</p>
-        </div>
-
-        <div class="card">
-            <h3>Meditation & Mindfulness</h3>
-            <p>Guided meditation sessions designed to reduce stress, improve focus, and enhance emotional wellbeing.</p>
-        </div>
-
-        <div class="card">
-            <h3>Therapeutic Yoga</h3>
-            <p>Specialized yoga for back pain, stress relief, anxiety, joint pain, and overall healing.</p>
-        </div>
-
-        <div class="card">
-            <h3>Chakra Balancing Yoga</h3>
-            <p>Activate and align your energy centers for emotional stability, inner clarity, and spiritual harmony.</p>
-        </div>
-
-        <div class="card">
-            <h3>Beginner to Advanced Yoga</h3>
-            <p>Customized sessions for all levels — learn at your own pace and progress steadily.</p>
-        </div>
-
-    </div>
+    <h2>Yoga & Mind-Body Alignment</h2>
+    <p>
+        Yoga unites breath, body and consciousness.
+        It harmonizes the nervous system, calms emotional clutter and strengthens inner balance.
+    </p>
 </section>
 
-<!-- FOUNDER SECTION -->
+<!-- B: FULL CONTENT -->
 <section class="section">
-    <div class="founder">
-        <img src="img/founder.jpg" alt="Founder">
+    <h2>Why Yoga Matters</h2>
+    <p>
+        ✔ Emotional clarity<br>
+        ✔ Improved immunity<br>
+        ✔ Strength & flexibility<br>
+        ✔ Reduced anxiety & stress<br>
+        ✔ Deep sleep & mental reset
+    </p>
 
-        <div>
-            <h2>Meet the Founder</h2>
-            <p><strong>Vastu Consultant • Astrologer • Numerologist • Tarot Expert • Yoga Trainer • Reiki & Energy Healer</strong></p>
-            <p>With 10+ years of experience, I help people achieve balance, physical wellness, and spiritual clarity through yoga and holistic healing methods.</p>
-        </div>
-    </div>
+    <h2>Types of Yoga Offered</h2>
+    <p>
+        • Hatha Yoga – breath + body balance<br>
+        • Pranayama – oxygen flow & energetic expansion<br>
+        • Power Yoga – stamina & body conditioning<br>
+        • Yin Yoga – emotional release<br>
+        • Guided meditation – calm nervous system<br>
+        • Chakra & Pranic breathing – aura cleansing
+    </p>
+
+    <h2>Yoga Benefits</h2>
+    <p>
+        Yoga strengthens physical structure,
+        stabilizes hormonal response, restores sleep cycle,
+        and supports a peaceful, confident mind-body state.
+    </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     © 2025 DebaVastu — All Rights Reserved
 </footer>
 
-<!-- FLOATING BUTTONS -->
-<div class="float-btn call-btn"><a href="tel:6372710439">📞</a></div>
-<div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
-<div class="float-btn book-btn"><a href="tel:6372710439">📅</a></div>
+<!-- FLOAT -->
+<a href="tel:+916372710439" class="float-call">📞</a>
+<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector("nav ul");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+document.querySelector('.dropdown-toggle').addEventListener('click', function(e){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>
