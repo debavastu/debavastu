@@ -4,48 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products – DebaVastu</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         body { margin: 0; font-family: "Poppins", sans-serif; }
 
+        /* TOP BAR */
+        .top-bar {
+            background: #00124a;
+            color: white;
+            padding: 6px 18px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar span { margin-right: 15px; }
+        .top-btn {
+            background: #00a86b;
+            padding: 6px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
         /* HEADER */
-        header {
+        .main-header {
             background: #0a1a5a;
-            padding: 15px 25px;
+            padding: 14px 20px;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: white;
             position: sticky;
             top: 0;
             z-index: 999;
         }
-        header .logo {
+        .logo { font-size: 26px; font-weight: 700; }
+        .hamburger {
             font-size: 26px;
-            font-weight: 700;
+            color: white;
+            display: none;
+            cursor: pointer;
         }
         nav ul {
-            list-style: none; display: flex; gap: 25px;
-            padding: 0; margin: 0;
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
         }
         nav ul li a {
-            text-decoration: none;
             color: white;
+            text-decoration: none;
             font-weight: 500;
         }
-        .btn-appointment {
-            background: #00a86b;
-            padding: 10px 18px;
-            color: white;
+
+        /* DROPDOWN */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #0a1a5a;
+            top: 35px;
+            padding: 10px;
             border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
+            min-width: 180px;
         }
-        @media(max-width:768px){
-            nav ul { display: none; }
-        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li { padding: 5px 0; }
+        .dropdown-menu li a { font-size: 14px; }
 
         /* BANNER */
         .banner {
@@ -61,23 +89,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             color: white;
+            text-align: center;
         }
-        .banner .overlay h1 {
-            font-size: 42px;
-            margin: 0;
-            font-weight: 700;
-        }
-        .banner .overlay p {
-            font-size: 16px;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
+        .banner .overlay h1 { font-size: 42px; margin: 0; }
+        .banner .overlay p { opacity: 0.9; margin-top: 10px; }
 
         /* SECTION */
         .section {
-            max-width: 1100px; margin: auto;
+            max-width: 1100px;
+            margin: auto;
             padding: 60px 20px;
         }
         .section h2 {
@@ -87,15 +108,14 @@
             margin-bottom: 25px;
         }
 
-        /* PRODUCTS GRID */
+        /* PRODUCTS */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
             gap: 25px;
         }
-
         .product-card {
-            background: #fff;
+            background: white;
             border-radius: 12px;
             padding: 20px;
             text-align: center;
@@ -104,27 +124,16 @@
         .product-card img {
             width: 100%;
             height: 180px;
-            object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 15px;
+            object-fit: cover;
         }
-        .product-card h3 {
-            margin: 0;
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: #0a1a5a;
-        }
-        .product-card p {
-            margin: 0;
-            color: #444;
-            margin-bottom: 15px;
-        }
-        .product-card .btn {
-            display: inline-block;
+        .product-card h3 { color: #0a1a5a; margin: 12px 0 4px; }
+        .product-card p { color: #444; margin-bottom: 12px; }
+        .btn {
             background: #00a86b;
+            color: white;
             padding: 8px 15px;
             border-radius: 6px;
-            color: white;
             text-decoration: none;
             font-weight: 600;
         }
@@ -132,10 +141,9 @@
         /* FOOTER */
         footer {
             background: #0a1a5a;
+            padding: 25px;
             color: white;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
         }
 
         /* FLOAT BUTTONS */
@@ -147,96 +155,109 @@
         .call-btn { bottom: 160px; }
         .whatsapp-btn { bottom: 100px; }
         .book-btn { bottom: 40px; }
-
         .float-btn a {
             background: #00a86b;
             padding: 15px;
             border-radius: 50%;
             font-size: 22px;
             color: white;
-            text-decoration: none;
             display: block;
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        /* MOBILE */
+        @media(max-width:768px){
+            .hamburger { display: block; }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                top: 68px;
+                left: 0;
+                background: #0a1a5a;
+                padding: 15px;
+                display: none;
+                position: absolute;
+            }
+            nav ul li { padding: 10px 0; }
+            .dropdown:hover .dropdown-menu { position: static; }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">DEBAVASTU</div>
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div>
+        <span>📞 +91 6372710439</span>
+        <span>✉ debavastu@gmail.com</span>
+    </div>
+    <a href="tel:6372710439" class="top-btn">Book Appointment</a>
+</div>
 
-    <nav>
+<!-- HEADER -->
+<header class="main-header">
+    <div class="logo">DEBAVASTU</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga</a></li>
-            <li><a href="healing.html">Healing</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li class="dropdown">
+                <a href="#">🛠 Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="vastu.html">Vastu</a></li>
+                    <li><a href="astrology.html">Astrology</a></li>
+                    <li><a href="numerology.html">Numerology</a></li>
+                    <li><a href="healing.html">Healing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
         </ul>
     </nav>
-
-    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
 </header>
 
 <!-- BANNER -->
 <section class="banner">
     <div class="overlay">
         <h1>Our Products</h1>
-        <p>Vastu • Astrology • Numerology • Healing Products</p>
+        <p>Premium Spiritual & Energy-Balancing Solutions</p>
     </div>
 </section>
 
-<!-- PRODUCTS SECTION -->
+<!-- PRODUCTS -->
 <section class="section">
     <h2>Premium Spiritual Products</h2>
-
     <div class="products-grid">
 
         <div class="product-card">
-            <img src="img/products/pyramid.jpg" alt="">
+            <img src="img/products/pyramid.jpg">
             <h3>Vastu Pyramid</h3>
-            <p>Correct energy imbalances and enhance positivity.</p>
-            <a href="#" class="btn">Buy Now</a>
+            <p>Correct energy imbalances & enhance positivity.</p>
+            <a href="https://wa.me/916372710439?text=I%20want%20to%20buy%20Vastu%20Pyramid" class="btn">Buy Now</a>
         </div>
 
         <div class="product-card">
-            <img src="img/products/yantra.jpg" alt="">
+            <img src="img/products/yantra.jpg">
             <h3>Shree Yantra</h3>
-            <p>For wealth, success & divine blessings.</p>
-            <a href="#" class="btn">Buy Now</a>
+            <p>For prosperity, success & divine blessings.</p>
+            <a href="https://wa.me/916372710439?text=I%20want%20to%20buy%20Shree%20Yantra" class="btn">Buy Now</a>
         </div>
 
         <div class="product-card">
-            <img src="img/products/crystals.jpg" alt="">
+            <img src="img/products/crystals.jpg">
             <h3>Healing Crystals</h3>
-            <p>Natural crystals for aura and chakra balancing.</p>
-            <a href="#" class="btn">Buy Now</a>
+            <p>Balance aura and promote inner healing.</p>
+            <a href="https://wa.me/916372710439?text=I%20want%20to%20buy%20Healing%20Crystals" class="btn">Buy Now</a>
         </div>
 
         <div class="product-card">
-            <img src="img/products/rudraksha.jpg" alt="">
+            <img src="img/products/rudraksha.jpg">
             <h3>Rudraksha</h3>
-            <p>Original Nepal & Indonesian rudraksha beads.</p>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
-
-        <div class="product-card">
-            <img src="img/products/bracelet.jpg" alt="">
-            <h3>Energy Bracelets</h3>
-            <p>Protection • Confidence • Healing energies.</p>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
-
-        <div class="product-card">
-            <img src="img/products/salt-lamp.jpg" alt="">
-            <h3>Himalayan Salt Lamp</h3>
-            <p>Purifies air and improves mental clarity.</p>
-            <a href="#" class="btn">Buy Now</a>
+            <p>Genuine Nepal & Indonesian beads.</p>
+            <a href="https://wa.me/916372710439?text=I%20want%20to%20buy%20Rudraksha" class="btn">Buy Now</a>
         </div>
 
     </div>
@@ -251,6 +272,13 @@
 <div class="float-btn call-btn"><a href="tel:6372710439">📞</a></div>
 <div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
 <div class="float-btn book-btn"><a href="tel:6372710439">📅</a></div>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector("#menu ul");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
