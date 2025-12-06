@@ -1,23 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="Site keywords here">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Title -->
     <title>DEBAVASTU</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="img/favicon.png">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
-    <!-- CSS Core -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -32,98 +25,82 @@
     <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* 🔥 NEW UNIFIED HEADER */
+/* HEADER REFINED (Unified all pages) */
 .main-header {
     background: linear-gradient(90deg, #00114d, #003b94);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.28);
     position: sticky;
     top: 0;
     z-index: 9999;
 }
-.header-wrapper {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 0;
-}
+.header-wrapper { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
 .logo-area { display:flex; align-items:center; gap:12px; }
+
 .header-logo {
-    width:78px;
-    height:78px;
+    width:80px;
+    height:80px;
     border-radius:50%;
     object-fit:cover;
-    transition:0.35s ease;
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
+    transition:0.4s ease;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.45));
 }
 .header-logo:hover {
-    transform:scale(1.07);
-    filter:drop-shadow(0 0 16px rgba(255,255,255,0.45));
+    transform:scale(1.1);
+    filter:drop-shadow(0 0 18px rgba(255,255,255,0.6));
 }
 .brand-text {
     color:#fff;
-    font-size:28px;
+    font-size:30px;
     font-weight:700;
-    text-shadow:0 2px 6px rgba(0,0,0,0.25);
     letter-spacing:1px;
+    text-shadow:0 2px 6px rgba(0,0,0,0.35);
 }
 
 /* MENU */
-.menu {
-    display:flex;
-    gap:32px;
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-.m-link {
-    color:#fff;
-    font-size:16px;
-    font-weight:500;
-    transition:0.3s ease;
-}
+.menu { display:flex; gap:32px; list-style:none; margin:0; padding:0; align-items:center; }
+.m-link { color:#fff; font-size:16px; font-weight:500; transition:0.3s ease; }
 .m-link:hover {
-    color:#00ffd5;
-    text-shadow:0 0 8px rgba(0,255,213,0.75);
+    color:#00ffe5;
+    text-shadow:0 0 10px rgba(0,255,213,0.9);
 }
 
-/* DROPDOWN */
+/* DROPDOWN CLICK MENU */
 .dropdown { position:relative; }
+.service-trigger { cursor:pointer; display:flex; align-items:center; gap:6px; }
+.service-trigger i { transition:0.3s ease; }
+.dropdown.open .service-trigger i { transform:rotate(180deg); }
+
 .dropdown-menu {
     display:none;
     position:absolute;
-    background:#001b57;
+    background:#001a66;
     padding:14px;
     border-radius:8px;
     top:42px;
     min-width:200px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    box-shadow:0 4px 16px rgba(0,0,0,0.45);
 }
 .dropdown-menu li { padding:6px 0; }
-.dropdown-menu li a { color:white !important; }
-.dropdown-menu li a:hover { color:#00ffd5 !important; }
+.dropdown-menu li a { color:white !important; font-size:15px; }
+.dropdown-menu li a:hover { color:#00ffe5 !important; }
 .dropdown.open .dropdown-menu { display:block; }
-.service-trigger { cursor:pointer; }
 
 /* MOBILE */
-.mobile-toggle {
-    display:none; color:#fff; font-size:30px; cursor:pointer;
-}
+.mobile-toggle { display:none; font-size:30px; color:#fff; cursor:pointer; }
 @media(max-width:920px){
     .mobile-toggle { display:block; }
-
     .menu {
         display:none;
         flex-direction:column;
         width:100%;
         background:#00114d;
         padding:20px;
-        gap:22px;
+        gap:24px;
     }
-
     .dropdown-menu {
         position:static;
-        background:#00114d;
         box-shadow:none;
+        background:#00114d;
     }
 }
 
@@ -135,25 +112,21 @@
     color:#fff !important;
     font-weight:600;
     transition:0.3s ease;
-    box-shadow:0 0 10px rgba(0,255,179,0.35);
+    box-shadow:0 0 12px rgba(0,255,179,0.45);
 }
-.appointment-btn:hover {
-    transform:scale(1.04);
-    box-shadow:0 0 16px rgba(0,255,179,0.55);
-}
+.appointment-btn:hover { transform:scale(1.05); }
 
-/* FLOATING BUTTONS FIX */
+/* FLOAT BUTTONS FIX */
 .dv-floating-buttons { bottom:25px !important; right:25px !important; }
 </style>
 </head>
 
 <body>
 
-<!-- 🌟 UPDATED HEADER START -->
+<!-- HEADER -->
 <header class="main-header">
     <div class="container" style="max-width:1250px;margin:auto;">
         <div class="header-wrapper">
-
             <div class="logo-area">
                 <a href="index.html" class="logo-link">
                     <img src="img/logo.png" class="header-logo">
@@ -166,7 +139,7 @@
                 <li><a class="m-link" href="about.html">About</a></li>
 
                 <li class="dropdown">
-                    <a class="m-link service-trigger">Services ▾</a>
+                    <a class="m-link service-trigger">Services <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="vastu.html">Vastu</a></li>
                         <li><a href="astrology.html">Astrology</a></li>
@@ -186,22 +159,8 @@
         </div>
     </div>
 </header>
-<!-- 🌟 UPDATED HEADER END -->
 
-<!-- 🎯 EVERYTHING BELOW REMAINS SAME (UNTOUCHED CONTENT) -->
-
-<script>
-function toggleMenu(){
-    const menu = document.querySelector(".menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-document.querySelector(".service-trigger").addEventListener("click", function(e){
-    e.preventDefault();
-    this.parentElement.classList.toggle("open");
-});
-</script>
-
+<!-- 🔥 EXACT HOME CONTENT BELOW (DO NOT CHANGE) -->
 
 <!-- ⭐ FLOATING BUTTONS ⭐ -->
 <div class="dv-floating-buttons">
@@ -778,6 +737,38 @@ document.querySelector(".service-trigger").addEventListener("click", function(e)
 
         })();
         </script>
+<script>
+const menu = document.querySelector(".menu");
+const toggleBtn = document.querySelector(".mobile-toggle");
+const serviceTrigger = document.querySelector(".service-trigger");
+const dropdown = document.querySelector(".dropdown");
+
+// 📌 Mobile Menu Toggle
+toggleBtn.addEventListener("click", () => {
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    dropdown.classList.remove("open");   // close services if menu collapses
+});
+
+// 📌 Dropdown Toggle (Click Only)
+serviceTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    dropdown.classList.toggle("open");
+});
+
+// 📌 Close Dropdown if Clicking Outside
+document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target) && !serviceTrigger.contains(e.target)) {
+        dropdown.classList.remove("open");
+    }
+});
+
+// 📌 Reset on Load (avoids stuck dropdown between pages)
+window.addEventListener("load", () => {
+    dropdown.classList.remove("open");
+    menu.style.display = "";
+});
+</script>
+
 
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
