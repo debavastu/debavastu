@@ -3,251 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healing Therapies – DebaVastu</title>
-
+    <title>Healing – DebaVastu</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body { margin: 0; font-family: "Poppins", sans-serif; }
+<style>
+    body { margin: 0; font-family: "Poppins", sans-serif; }
 
-        /* HEADER */
-        header {
-            background: #0a1a5a;
-            padding: 15px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        header .logo {
-            font-size: 26px;
-            font-weight: 700;
-        }
+    /* HEADER */
+    header {
+        background: linear-gradient(90deg, #00114d, #003b94);
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-circle {
+        width: 74px; height: 74px; border-radius: 50%;
+        object-fit: cover; transition: .4s;
+        filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
+    }
+    .logo-circle:hover {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 18px rgba(255,255,255,0.45));
+    }
+    .logo-text {
+        font-size: 28px; font-weight: 700;
+        color: white; letter-spacing: 1px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    nav ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    nav ul li a {
+        text-decoration: none; font-size: 16px; color:white;
+        font-weight: 500; transition: .3s;
+    }
+    nav ul li a:hover { color: #00ffd5; }
+
+    .dropdown { position: relative; }
+    .dropdown-menu {
+        display: none; position: absolute;
+        background:#001b57; padding:14px;
+        border-radius:8px; top:38px; min-width:200px;
+        box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    }
+    .dropdown-menu li { padding:7px 0; }
+    .dropdown-menu li a { color:white; font-size:15px; }
+    .dropdown-menu li a:hover { color:#00ffd5; }
+    .dropdown.open .dropdown-menu { display:block; }
+    .dropdown-toggle { cursor:pointer; }
+
+    .btn-appointment {
+        background:#00c786; padding:10px 18px;
+        border-radius:6px; color:white;
+        font-weight:600; text-decoration:none;
+    }
+
+    .hamburger { display:none; color:white; font-size:28px; cursor:pointer; }
+
+    @media(max-width:768px){
+        .hamburger { display:block; }
         nav ul {
-            list-style: none; display: flex; gap: 25px;
-            padding: 0; margin: 0;
+            flex-direction:column; background:#00114d;
+            position:absolute; top:82px; left:0; width:100%;
+            padding:20px; display:none; gap:18px;
         }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-        }
-        .btn-appointment {
-            background: #00a86b;
-            padding: 10px 18px;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        @media(max-width:768px){
-            nav ul { display: none; }
-        }
+        .dropdown-menu { position:static; box-shadow:none; }
+    }
 
-        /* BANNER */
-        .banner {
-            height: 300px;
-            background: url('img/about-banner.jpg') center/cover no-repeat;
-            position: relative;
-        }
-        .banner .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .banner .overlay h1 {
-            font-size: 42px;
-            margin: 0;
-            font-weight: 700;
-        }
-        .banner .overlay p {
-            font-size: 16px;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
+    /* CONTENT */
+    .section { max-width:1100px; margin:auto; padding:60px 20px; }
+    .section h2 { text-align:center; font-size:32px; margin-bottom:25px; color:#0a1a5a; }
+    .section p { text-align:center; font-size:18px; color:#444; line-height:1.7; }
 
-        /* SECTIONS */
-        .section {
-            max-width: 1100px; margin: auto;
-            padding: 60px 20px;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 32px;
-            color: #0a1a5a;
-            margin-bottom: 25px;
-        }
+    footer {
+        background:#0a1a5a; color:white;
+        text-align:center; padding:25px;
+        margin-top:40px;
+    }
 
-        /* CARDS GRID */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-            gap: 25px;
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            color: #00a86b;
-        }
-        .card p {
-            margin: 0;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* FOUNDER */
-        .founder {
-            display: flex;
-            gap: 25px;
-            padding: 40px 25px;
-            background: #f4f4f4;
-            border-radius: 15px;
-            align-items: center;
-        }
-        .founder img {
-            width: 260px;
-            border-radius: 15px;
-        }
-        @media(max-width:768px){
-            .founder { flex-direction: column; text-align: center; }
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0a1a5a;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-        }
-
-        /* FLOAT BUTTONS */
-        .float-btn {
-            position: fixed;
-            right: 20px;
-            z-index: 999;
-        }
-        .call-btn { bottom: 160px; }
-        .whatsapp-btn { bottom: 100px; }
-        .book-btn { bottom: 40px; }
-
-        .float-btn a {
-            background: #00a86b;
-            padding: 15px;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            font-size: 22px;
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-    </style>
+    /* FLOAT BUTTONS */
+    .float-call {
+        position:fixed; bottom:100px; right:22px;
+        background:#0b3d91; width:55px; height:55px;
+        border-radius:50%; color:white; font-size:24px;
+        display:flex; justify-content:center; align-items:center;
+        text-decoration:none; z-index:999;
+    }
+    .float-whatsapp {
+        position:fixed; bottom:30px; right:22px;
+        background:#25D366; width:55px; height:55px;
+        border-radius:50%; color:white; font-size:26px;
+        display:flex; justify-content:center; align-items:center;
+        text-decoration:none; z-index:999; transition:.3s;
+    }
+    .float-whatsapp:hover { transform:scale(1.1); }
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-    <div class="logo">DEBAVASTU</div>
+    <div class="logo-area">
+        <img src="img/logo.png" class="logo-circle">
+        <div class="logo-text">DEBAVASTU</div>
+    </div>
 
-    <nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="vastu.html">Vastu</a></li>
-            <li><a href="astrology.html">Astrology</a></li>
-            <li><a href="numerology.html">Numerology</a></li>
-            <li><a href="tarot.html">Tarot</a></li>
-            <li><a href="yoga.html">Yoga</a></li>
-            <li><a href="healing.html">Healing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="vastu.html">📐 Vastu</a></li>
+                    <li><a href="astrology.html">🔮 Astrology</a></li>
+                    <li><a href="numerology.html">🔢 Numerology</a></li>
+                    <li><a href="tarot.html">🃏 Tarot</a></li>
+                    <li><a href="yoga.html">🧘 Yoga</a></li>
+                    <li><a href="healing.html">✨ Healing</a></li>
+                </ul>
+            </li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
         </ul>
     </nav>
 
     <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
 </header>
 
-<!-- BANNER -->
-<section class="banner">
-    <div class="overlay">
-        <h1>Healing Therapies</h1>
-        <p>Vastu • Astrology • Numerology • Tarot • Yoga • Healing</p>
-    </div>
-</section>
-
-<!-- HEALING SERVICES -->
+<!-- A: Introduction -->
 <section class="section">
-    <h2>Our Healing Services</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Reiki Healing</h3>
-            <p>Universal energy healing that balances mind, body, and emotions through gentle hand-based therapy.</p>
-        </div>
-
-        <div class="card">
-            <h3>Lama Fera</h3>
-            <p>A powerful Tibetan healing technique used to remove negative energy, fear, and emotional blocks.</p>
-        </div>
-
-        <div class="card">
-            <h3>Chakra Balancing</h3>
-            <p>Align and activate your 7 chakras for emotional clarity, confidence, and spiritual harmony.</p>
-        </div>
-
-        <div class="card">
-            <h3>Aura Cleansing</h3>
-            <p>Remove energy blockages, negativity, and emotional heaviness from your auric field.</p>
-        </div>
-
-        <div class="card">
-            <h3>Crystal Healing</h3>
-            <p>Healing with natural crystals to relieve stress, boost positivity, and enhance energy flow.</p>
-        </div>
-
-        <div class="card">
-            <h3>Sound Therapy</h3>
-            <p>Healing using Tibetan bowls and vibrations to calm the nervous system and reduce stress.</p>
-        </div>
-
-    </div>
+    <h2>Healing & Energy Transformation</h2>
+    <p>
+        Healing restores the natural vibration of body, mind and aura.
+        It clears emotional residue and balances inner frequencies.
+    </p>
 </section>
 
-<!-- FOUNDER -->
+<!-- B: Full Healing Content -->
 <section class="section">
-    <div class="founder">
-        <img src="img/founder.jpg">
+    <h2>Healing Modalities</h2>
+    <p>
+        ✔ Reiki & Chakra Therapy<br>
+        ✔ Aura Correction & Cleansing<br>
+        ✔ Sound Healing (Tibetan Bowls)<br>
+        ✔ Crystal Grid Charging<br>
+        ✔ Pranic & Quantum Healing<br>
+        ✔ Emotional trauma release
+    </p>
 
-        <div>
-            <h2>Meet the Founder</h2>
-            <p><strong>Vastu Consultant • Astrologer • Numerologist • Tarot Expert • Yoga Trainer • Reiki & Energy Healer</strong></p>
-            <p>With over 10 years of experience, I help individuals unlock deeper healing, emotional relief, and spiritual transformation using holistic energy methods.</p>
-        </div>
-    </div>
+    <h2>What Healing Does</h2>
+    <p>
+        • Removes emotional blocks<br>
+        • Improves sleep & nervous system<br>
+        • Stabilizes mood & anxiety<br>
+        • Restores confidence & clarity<br>
+        • Clears karmic residue & mental fatigue
+    </p>
+
+    <h2>Who Needs Healing?</h2>
+    <p>
+        Anyone suffering from:
+        • emotional burnout
+        • relationship strain
+        • karmic heaviness
+        • grief or sudden loss
+        • deep stress cycles
+    </p>
+
+    <h2>Healing Tools Used</h2>
+    <p>
+        🔸 Crystals (cleansing + charging)<br>
+        🔸 Mantra resonance<br>
+        🔸 Tibetan singing bowls<br>
+        🔸 Salt aura detox<br>
+        🔸 Agnihotra healing flame
+    </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     © 2025 DebaVastu — All Rights Reserved
 </footer>
 
-<!-- FLOAT BUTTONS -->
-<div class="float-btn call-btn"><a href="tel:6372710439">📞</a></div>
-<div class="float-btn whatsapp-btn"><a href="https://wa.me/916372710439">💬</a></div>
-<div class="float-btn book-btn"><a href="tel:6372710439">📅</a></div>
+<a href="tel:+916372710439" class="float-call">📞</a>
+<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+    const menu = document.querySelector("nav ul");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+document.querySelector('.dropdown-toggle')
+.addEventListener('click', function(e){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>
