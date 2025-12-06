@@ -1,143 +1,165 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Site keywords here">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DEBAVASTU</title>
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="Site keywords here">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Title -->
+        <title>DEBAVASTU</title>
 
-    <link rel="icon" href="img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/icofont.css">
-    <link rel="stylesheet" href="css/slicknav.min.css">
-    <link rel="stylesheet" href="css/owl-carousel.css">
-    <link rel="stylesheet" href="css/datepicker.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/nice-select.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/icofont.css">
+        <link rel="stylesheet" href="css/slicknav.min.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* ================= HEADER EXACT AS VASTU ================= */
+/* HEADER */
 .main-header {
-    background: linear-gradient(90deg,#00114d,#003a92);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+    background: linear-gradient(90deg,#0a2a66,#0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
 }
-.header-wrapper { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-.logo-area { display:flex; align-items:center; gap:12px; }
+.header-wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 0;
+}
+.logo-area { display:flex; align-items:center; }
+.logo-link { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.header-logo { width:95px; border-radius:50%; opacity:0.96; }
+.brand-text { color:#fff; font-size:24px; font-weight:700; }
 
-.header-logo {
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    object-fit:cover;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.45));
-    transition:0.4s ease;
-}
-.header-logo:hover {
-    transform:scale(1.08);
-    filter:drop-shadow(0 0 18px rgba(255,255,255,0.65));
-}
+.menu { display:flex; gap:28px; list-style:none; align-items:center; margin:0; padding:0; }
+.m-link { color:#fff; font-weight:500; padding:12px 5px; }
+.m-link:hover { color:#07b565; }
 
-.brand-text {
-    color:#fff;
-    font-size:30px;    /* ← MATCHED VASTU */
-    font-weight:700;
-    letter-spacing:.6px;
-    text-shadow:0 2px 6px rgba(0,0,0,0.45);
-}
-
-/* MENU */
-.menu { display:flex; gap:32px; list-style:none; align-items:center; margin:0; padding:0; }
-.m-link {
-    color:#fff;
-    font-size:16px;
-    font-weight:500;
-    transition:0.3s ease;
-}
-.m-link:hover {
-    color:#00ffe5;
-    text-shadow:0 0 10px rgba(0,255,213,0.9);
-}
-
-/* DROPDOWN EXACT BEHAVIOUR */
-.dropdown { position:relative; }
+/* DESKTOP DROPDOWN */
 .dropdown-menu {
-    display:none;
     position:absolute;
-    background:#00114d;
-    padding:14px;
+    top:100%;
+    left:0;
+    background:#fff;
+    min-width:220px;
     border-radius:8px;
-    top:40px;
-    min-width:200px;
-    box-shadow:0 4px 16px rgba(0,0,0,0.45);
+    padding:0;
+    margin:0;
+    display:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    z-index:9999;
 }
-.dropdown-menu li { padding:6px 0; }
-.dropdown-menu li a { color:white !important; font-size:15px; }
-.dropdown-menu li a:hover { color:#00ffe5 !important; }
-.dropdown:hover .dropdown-menu { display:block; }
+.dropdown:hover .dropdown-menu {
+    display:block;
+}
 
-/* MOBILE ONLY */
-.mobile-toggle { display:none; font-size:30px; color:#fff; cursor:pointer; }
+.dropdown-menu li a {
+    display:block;
+    padding:12px 16px;
+    color:#0a2a66;
+    border-bottom:1px solid #eee;
+}
+.dropdown-menu li:last-child a { border-bottom:none; }
+.dropdown-menu li a:hover { background:#f2f6ff; }
 
-@media(max-width:920px){
-    .mobile-toggle { display:block; }
+/* Appointment Button */
+.appointment-btn {
+    background:#07b565;
+    padding:10px 16px;
+    border-radius:8px;
+    color:#fff !important;
+    font-weight:600;
+    box-shadow:0 3px 10px rgba(7,181,101,0.35);
+}
+
+/* MOBILE MENU */
+.mobile-toggle {
+    color:#fff; font-size:28px; display:none; cursor:pointer;
+}
+
+@media(max-width:900px){
     .menu {
         display:none;
         flex-direction:column;
+        background:#0a2a66;
         width:100%;
-        background:#00114d;
         padding:20px;
-        gap:22px;
+        gap:14px;
     }
+
+    /* TAP-TO-OPEN MOBILE DROPDOWN */
     .dropdown-menu {
-        position:static;
-        background:#00114d;
+        position:relative;
+        background:#0a2a66;
+        display:none !important;
+        width:100%;
+        border-left:3px solid #07b565;
         box-shadow:none;
-        border-left:3px solid #00ffe5;
     }
+    .dropdown-menu.open { display:block !important; }
+    .dropdown:hover .dropdown-menu { display:none !important; }
+
+    .dropdown-menu li a { color:#fff !important; }
+
+    .mobile-toggle { display:block; }
 }
 
-/* BOOK BUTTON */
-.appointment-btn {
-    background:#00c786;
-    padding:10px 18px;
-    border-radius:6px;
-    color:#fff !important;
-    font-weight:600;
-    transition:0.3s ease;
-    box-shadow:0 0 12px rgba(0,255,179,0.45);
+/* FLOATING BUTTONS */
+.dv-floating-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
-.appointment-btn:hover { transform:scale(1.05); }
-
-/* FLOAT BUTTONS */
-.dv-floating-buttons { bottom:25px !important; right:25px !important; position:fixed; display:flex; flex-direction:column; gap:14px; z-index:9999; }
 .dv-btn-circle {
-    width:58px;height:58px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-size:30px;color:#fff;
-    box-shadow:0 8px 22px rgba(0,0,0,0.28);
-    transition:0.28s ease;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.dv-btn-circle:hover { transform:scale(1.14); }
-.dv-call-btn { background:#00114d; }
-.dv-btn-circle { background:#25D366; }
+.dv-btn-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+.dv-call-btn {
+    background:#0a2a66;
+}
+.dv-call-btn i { font-size:28px; }
 </style>
 
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="main-header">
     <div class="container" style="max-width:1250px;margin:auto;">
         <div class="header-wrapper">
@@ -149,37 +171,86 @@
                 </a>
             </div>
 
-            <ul class="menu">
-                <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
 
-                <li class="dropdown">
-                    <a class="m-link service-trigger"><i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="vastu.html">Vastu</a></li>
-                        <li><a href="astrology.html">Astrology</a></li>
-                        <li><a href="numerology.html">Numerology</a></li>
-                        <li><a href="tarot.html">Tarot</a></li>
-                        <li><a href="yoga.html">Yoga</a></li>
-                        <li><a href="healing.html">Healing</a></li>
-                    </ul>
-                </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="m-link service-trigger">
+                            <i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="healing.html">Healing</a></li>
+                        </ul>
+                    </li>
 
-                <li><a class="m-link" href="products.html"><i class="fa fa-shopping-bag"></i> Products</a></li>
-                <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+                    <li><a class="m-link" href="products.html"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
 
-                <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-            </ul>
+                    <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+                </ul>
+            </nav>
 
-            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
         </div>
     </div>
 </header>
 
-<!-- FLOAT BUTTONS -->
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+/* TAP-TO-OPEN DROPDOWN (Mobile) */
+document.addEventListener("DOMContentLoaded", function () {
+    const triggers = document.querySelectorAll(".service-trigger");
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", function(e){
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+
+                const menu = this.parentElement.querySelector(".dropdown-menu");
+
+                document.querySelectorAll(".dropdown-menu.open").forEach(openMenu => {
+                    if (openMenu !== menu) openMenu.classList.remove("open");
+                });
+
+                menu.classList.toggle("open");
+            }
+        });
+    });
+});
+</script>
+
+<!-- ⭐ FLOATING BUTTONS ⭐ -->
 <div class="dv-floating-buttons">
-    <a href="https://wa.me/916372710439" class="dv-btn-circle"><i class="fa fa-whatsapp"></i></a>
-    <a href="tel:+916372710439" class="dv-btn-circle dv-call-btn"><i class="fa fa-phone"></i></a>
+
+    <!-- WhatsApp Chat -->
+    <a href="https://wa.me/916372710439?text=Hello%20DebaVastu%2C%20I%20need%20a%20consultation."
+       target="_blank"
+       class="dv-btn-circle"
+       title="Chat on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Call Button -->
+    <a href="tel:+916372710439"
+       class="dv-btn-circle dv-call-btn"
+       title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+
 </div>
 
 	
