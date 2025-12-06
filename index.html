@@ -616,153 +616,39 @@
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script>
-        (function(){
-          // Initialize EmailJS with public key
-          try{
-            emailjs.init('dkxgwOwsd0z7BMPyo');
-          }catch(e){
-            console.warn('EmailJS init failed', e);
-          }
-
-          const ownerWhatsApp = '916372710439'; // owner WhatsApp (no plus)
-
-          const form = document.getElementById('bookingForm');
-          const submitBtn = document.getElementById('bookBtn');
-          const modal = document.getElementById('dvModal');
-          const modalText = document.getElementById('dvModalText');
-          const modalClose = document.getElementById('dvClose');
-
-          function showModal(text){
-            modalText.textContent = text;
-            modal.style.display = 'flex';
-            modal.setAttribute('aria-hidden','false');
-          }
-          function hideModal(){
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden','true');
-          }
-          modalClose.addEventListener('click', hideModal);
-          modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
-
-          form.addEventListener('submit', async function(e){
-            e.preventDefault();
-            if(submitBtn.getAttribute('data-busy') === '1') return;
-            submitBtn.setAttribute('data-busy','1');
-            submitBtn.textContent = 'Booking...';
-
-            // Collect fields
-            const name = document.getElementById('b_name').value.trim();
-            const email = document.getElementById('b_email').value.trim();
-            const phone = document.getElementById('b_phone').value.trim();
-            const service = document.getElementById('b_service').value;
-            const date = document.getElementById('b_date').value;
-            const message = document.getElementById('b_message').value.trim();
-
-            // Basic validation
-            if(!name || !email || !phone || !service || !date){
-              alert('Please complete all required fields.');
-              submitBtn.removeAttribute('data-busy');
-              submitBtn.textContent = 'Book Appointment';
-              return;
-            }
-
-            // Prepare template params for EmailJS
-            const templateParams = {
-              from_name: name,
-              from_email: email,
-              phone: phone,
-              service: service,
-              preferred_date: date,
-              message: message,
-              site: window.location.hostname
-            };
-
-            // 1) Send email via EmailJS (notification to your template)
-            let emailOk = false;
-            try{
-              await emailjs.send('service_dea8439','template_xrogxm8', templateParams);
-              emailOk = true;
-            }catch(err){
-              console.warn('EmailJS send error', err);
-              emailOk = false;
-            }
-
-            // 2) Save booking locally as backup
-            try{
-              const backup = JSON.parse(localStorage.getItem('deba_bookings_v2')||'[]');
-              backup.push({ id:'bk_'+Date.now(), name, email, phone, service, date, message, created: new Date().toISOString() });
-              localStorage.setItem('deba_bookings_v2', JSON.stringify(backup));
-            }catch(err){
-              console.warn('localStorage error', err);
-            }
-
-            // 3) Attempt to call server-side create-order (if available) - optional, non-blocking
-            let serverResp = null;
-            try{
-              const resp = await fetch('/.netlify/functions/create-order', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({ name, email, phone, service, date, slot: 'N/A', amount: 0 }) // amount 0 -> no payment
-              });
-              if(resp.ok){
-                serverResp = await resp.json();
-              } else {
-                serverResp = { error: await resp.text() };
-              }
-            }catch(err){
-              // ignore - server may not be deployed yet
-              serverResp = { error: 'server-unavailable' };
-            }
-
-            // 4) Open WhatsApp to owner with booking summary (for instant alert)
-            try{
-              const waText = encodeURIComponent(`New booking → ${name} | ${service} | ${date} | ${phone}`);
-              window.open('https://wa.me/'+ownerWhatsApp+'?text='+waText, '_blank');
-            }catch(err){
-              // ignore
-            }
-
-            // 5) Show success or partial-success modal
-            if(emailOk){
-              showModal('Thank you! Your appointment request has been sent. We will contact you shortly.');
-            } else {
-              showModal('Your request is saved locally. Email could not be sent right now. We will try to notify you soon.');
-            }
-
-            // Reset form & button
-            form.reset();
-            submitBtn.removeAttribute('data-busy');
-            submitBtn.textContent = 'Book Appointment';
-          });
-
-        })();
-        </script>
-<script>
+        <script>
 const menu = document.querySelector(".menu");
 const toggleBtn = document.querySelector(".mobile-toggle");
-const serviceTrigger = document.querySelector(".service-trigger");
 const dropdown = document.querySelector(".dropdown");
+const serviceTrigger = document.querySelector(".service-trigger");
 
-// 📌 Mobile Menu Toggle
-toggleBtn.addEventListener("click", () => {
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-    dropdown.classList.remove("open");   // close services if menu collapses
+/* ========= MOBILE MENU ========= */
+toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const visible = menu.style.display === "flex";
+    menu.style.display = visible ? "none" : "flex";
+    dropdown.classList.remove("open");
 });
 
-// 📌 Dropdown Toggle (Click Only)
+/* ========= SERVICES DROPDOWN CLICK ========= */
 serviceTrigger.addEventListener("click", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     dropdown.classList.toggle("open");
 });
 
-// 📌 Close Dropdown if Clicking Outside
+/* ========= CLOSE ONLY IF REAL OUTSIDE CLICK ========= */
 document.addEventListener("click", (e) => {
-    if (!dropdown.contains(e.target) && !serviceTrigger.contains(e.target)) {
+    if(
+        !dropdown.contains(e.target) && 
+        !serviceTrigger.contains(e.target) &&
+        !toggleBtn.contains(e.target)
+    ){
         dropdown.classList.remove("open");
     }
 });
 
-// 📌 Reset on Load (avoids stuck dropdown between pages)
+/* ========= RESET STATE ON PAGE LOAD ========= */
 window.addEventListener("load", () => {
     dropdown.classList.remove("open");
     menu.style.display = "";
