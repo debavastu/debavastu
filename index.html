@@ -1,152 +1,129 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Vastu, Astrology, Healing, Numerology, Tarot, Yoga">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DEBAVASTU</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="Vastu, Astrology, Healing, Numerology, Tarot, Yoga">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>DEBAVASTU</title>
+<link rel="icon" href="img/favicon.png">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/owl-carousel.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/slicknav.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/owl-carousel.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/slicknav.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* ===== HEADER ===== */
-.main-header {
-    background: linear-gradient(90deg, #000a3d, #003b94);
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+/* HEADER SAME AS LAST (NO CHANGE) */
+.main-header{background:linear-gradient(90deg,#000a3d,#003b94);position:sticky;top:0;z-index:9999;box-shadow:0 4px 18px rgba(0,0,0,.45);}
+.header-wrapper{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.logo-area{display:flex;align-items:center;gap:12px;}
+.header-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 10px rgba(255,255,255,.55));}
+.header-logo:hover{transform:scale(1.1);filter:drop-shadow(0 0 18px rgba(255,255,255,.95));}
+.brand-text{color:#fff;font-size:30px;font-weight:700;text-shadow:0 2px 6px rgba(255,255,255,.35);}
+.menu{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
+.m-link{color:#fff!important;font-size:17px;font-weight:600;transition:.3s;}
+.m-link:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
+.dropdown{position:relative;}
+.service-trigger{cursor:pointer;display:flex;align-items:center;gap:6px;color:#fff!important;}
+.service-trigger i{transition:.3s;}
+.dropdown.open .service-trigger i{transform:rotate(180deg);}
+.dropdown-menu{display:none;position:absolute;background:rgba(0,11,57,.96);padding:14px;border-radius:10px;top:48px;min-width:220px;box-shadow:0 6px 28px rgba(0,0,0,.45);}
+.dropdown-menu li{padding:7px 0;}
+.dropdown-menu li a{color:#fff!important;}
+.dropdown-menu li a:hover{text-shadow:0 0 12px #fff;}
+.dropdown.open .dropdown-menu{display:block;}
+.mobile-toggle{display:none;}
+@media(max-width:920px){
+.mobile-toggle{display:block;font-size:30px;color:#fff;}
+.menu{display:none;flex-direction:column;width:100%;background:#00114d;padding:25px 0;gap:24px;}
+.dropdown-menu{background:transparent;box-shadow:none;position:static;}
 }
-.header-wrapper { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-.logo-area { display:flex; align-items:center; gap:12px; }
-.header-logo {
-    width:80px; height:80px; border-radius:50%;
-    object-fit:cover;
-    transition:0.4s ease;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.55));
-}
-.header-logo:hover {
-    transform:scale(1.1);
-    filter:drop-shadow(0 0 18px rgba(255,255,255,0.95));
-}
-.brand-text {
-    color:#fff; font-size:30px; font-weight:700;
-    text-shadow:0 2px 6px rgba(255,255,255,0.35);
-}
+.appointment-btn{background:#00c786;padding:10px 18px;border-radius:6px;color:#fff!important;font-weight:600;box-shadow:0 0 12px rgba(0,255,179,.45);}
+.appointment-btn:hover{transform:scale(1.05);}
 
-/* MENU WHITE + GLOW */
-.menu { display:flex; gap:32px; list-style:none; margin:0; padding:0; align-items:center; }
-.m-link {
-    color:#ffffff !important;
-    font-size:17px; font-weight:600; letter-spacing:0.5px;
-    transition:0.3s ease-in-out;
+/* ⭐ SLIDER FULLY RESTORED ⭐ */
+.hero-slider { position: relative; }
+.hero-slider .single-slider{
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    align-items:center;
 }
-.m-link:hover {
-    color:#ffffff !important;
-    text-shadow:0 0 14px rgba(255,255,255,1);
+.single-slider .text {
+    padding-top:150px;
+    color:#fff;
 }
-
-/* DROPDOWN */
-.dropdown { position:relative; }
-.service-trigger { cursor:pointer; display:flex; align-items:center; gap:6px; color:#fff !important; }
-.service-trigger i { color:#fff; transition:0.3s; }
-.dropdown.open .service-trigger i { transform:rotate(180deg); }
-
-.dropdown-menu {
-    display:none;
-    position:absolute;
-    background:rgba(0, 11, 57, 0.96);
-    padding:14px 14px;
-    border-radius:10px;
-    top:48px;
-    min-width:220px;
-    box-shadow:0px 6px 28px rgba(0,0,0,0.45);
+.single-slider h1, .single-slider h2 {
+    color:#fff;
+    text-shadow:0 0 12px rgba(0,0,0,.55);
 }
-.dropdown-menu li { padding:7px 0; }
-.dropdown-menu li a { font-size:15px; color:#fff !important; }
-.dropdown-menu li a:hover {
-    color:#ffffff !important;
-    text-shadow:0 0 14px rgba(255,255,255,1);
-}
-.dropdown.open .dropdown-menu { display:block; }
-
-/* MOBILE */
-.mobile-toggle { display:none; font-size:30px; color:#fff; cursor:pointer; }
-@media (max-width:920px){
-    .mobile-toggle { display:block; }
-    .menu {
-        display:none; flex-direction:column; width:100%;
-        background:#00114d; padding:25px 0; text-align:center; gap:24px;
-    }
-    .dropdown-menu { background:transparent; box-shadow:none; position:static; }
-}
-
-/* BOOK BUTTON */
-.appointment-btn {
-    background:#00c786; padding:10px 18px; border-radius:6px;
-    color:#fff !important; font-weight:600;
-    transition:0.3s ease; box-shadow:0 0 12px rgba(0,255,179,0.45);
-}
-.appointment-btn:hover { transform:scale(1.05); }
-
-/* SLIDER */
-.hero-slider .single-slider {
-    height:550px;
-    background-size:cover;
-    background-position:center;
+.single-slider .button a{
+    color:#fff;
+    background:#00c786;
+    padding:12px 28px;
+    border-radius:6px;
+    font-weight:600;
 }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <header class="main-header">
-    <div class="container" style="max-width:1250px;">
-        <div class="header-wrapper">
-            <div class="logo-area">
-                <a href="index.html"><img src="img/logo.png" class="header-logo"></a>
-                <div class="brand-text">DEBAVASTU</div>
-            </div>
+<div class="container" style="max-width:1250px;">
+<div class="header-wrapper">
+<div class="logo-area">
+<a href="index.html"><img src="img/logo.png" class="header-logo"></a>
+<div class="brand-text">DEBAVASTU</div>
+</div>
 
-            <ul class="menu">
-                <li><a class="m-link" href="index.html">Home</a></li>
-                <li><a class="m-link" href="about.html">About</a></li>
-                
-                <li class="dropdown">
-                    <a class="service-trigger">Services <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="vastu.html">Vastu</a></li>
-                        <li><a href="astrology.html">Astrology</a></li>
-                        <li><a href="numerology.html">Numerology</a></li>
-                        <li><a href="tarot.html">Tarot</a></li>
-                        <li><a href="yoga.html">Yoga</a></li>
-                        <li><a href="healing.html">Healing</a></li>
-                        <!-- ❌ Products removed from dropdown -->
-                    </ul>
-                </li>
+<ul class="menu">
+<li><a class="m-link" href="index.html">Home</a></li>
+<li><a class="m-link" href="about.html">About</a></li>
 
-                <!-- 👉 Products now separate tab -->
-                <li><a class="m-link" href="products.html">Products</a></li>
-                <li><a class="m-link" href="contact.html">Contact</a></li>
-                <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-            </ul>
+<li class="dropdown">
+<a class="service-trigger">Services <i class="fa fa-angle-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="vastu.html">Vastu</a></li>
+<li><a href="astrology.html">Astrology</a></li>
+<li><a href="numerology.html">Numerology</a></li>
+<li><a href="tarot.html">Tarot</a></li>
+<li><a href="yoga.html">Yoga</a></li>
+<li><a href="healing.html">Healing</a></li>
+</ul>
+</li>
 
-            <div class="mobile-toggle">☰</div>
-        </div>
-    </div>
+<li><a class="m-link" href="products.html">Products</a></li>
+<li><a class="m-link" href="contact.html">Contact</a></li>
+<li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+</ul>
+
+<div class="mobile-toggle">☰</div>
+</div>
+</div>
 </header>
+
+<!-- ⭐ FIXED SLIDER ⭐ -->
+<section class="slider">
+<div class="hero-slider owl-carousel">
+    <div class="single-slider" style="background-image:url('img/slider.jpg')">
+        <div class="container"><div class="text"><h2>Welcome to DebaVastu</h2></div></div>
+    </div>
+    <div class="single-slider" style="background-image:url('img/slider2.jpg')">
+        <div class="container"><div class="text"><h2>Transform Your Space & Life</h2></div></div>
+    </div>
+    <div class="single-slider" style="background-image:url('img/slider3.jpg')">
+        <div class="container"><div class="text"><h2>Energy • Harmony • Prosperity</h2></div></div>
+    </div>
+</div>
+</section>
 
 <!-- Slider Area -->
 		<section class="slider">
@@ -538,29 +515,22 @@
 			</footer>
 		<!--/ End Footer Area -->
             
-<!-- SCRIPTS (Correct Order) -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl-carousel.js"></script>
-<script src="js/main.js"></script>
-
 <!-- JS -->
 <script src="js/jquery.min.js"></script>
 <script src="js/owl-carousel.js"></script>
 <script>
 $(".hero-slider").owlCarousel({
-    autoplay:true,
-    autoplayTimeout:3500,
-    smartSpeed:900,
-    loop:true,
-    items:1,
-    dots:true,
-    nav:false
+autoplay:true,
+autoplayTimeout:3500,
+smartSpeed:900,
+loop:true,
+items:1,
+dots:true,
+nav:false
 });
 </script>
 
 <script>
-/* Mobile menu + dropdown stability */
 const menu = document.querySelector(".menu");
 const toggle = document.querySelector(".mobile-toggle");
 const dropdown = document.querySelector(".dropdown");
@@ -568,15 +538,13 @@ const trigger = document.querySelector(".service-trigger");
 
 toggle.addEventListener("click", e=>{
     e.stopPropagation();
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    menu.style.display = menu.style.display==="flex" ? "none":"flex";
 });
-
 trigger.addEventListener("click", e=>{
     e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle("open");
 });
-
 document.addEventListener("click", e=>{
     if(!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggle.contains(e.target)){
         dropdown.classList.remove("open");
