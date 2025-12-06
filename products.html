@@ -28,12 +28,27 @@
             gap: 12px;
         }
         .logo-img {
-            height: 45px;
+            height: 48px;
             width: auto;
         }
         .logo-text {
             font-size: 26px;
             font-weight: 700;
+            color: white;
+        }
+
+        /* LOGO GLOW EFFECT */
+        .logo-effect {
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.18));
+        }
+        .logo-effect:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 14px rgba(255,255,255,0.40));
+        }
+
+        @media(max-width:768px){
+            .logo-effect:hover { transform: scale(1); } /* no zoom on mobile */
         }
 
         nav ul {
@@ -73,17 +88,16 @@
         .dropdown-menu li a { font-size: 15px; }
         .dropdown:hover .dropdown-menu { display: block; }
 
-        /* MOBILE */
+        /* MOBILE MENU */
         .hamburger { display: none; font-size: 28px; cursor: pointer; }
 
         @media(max-width:768px){
             .hamburger { display: block; }
-
             nav ul {
                 flex-direction: column;
                 background: #0a1a5a;
                 position: absolute;
-                top: 65px;
+                top: 68px;
                 left: 0;
                 width: 100%;
                 padding: 15px;
@@ -107,8 +121,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
+            color: white;
         }
         .banner h1 {
             font-size: 42px;
@@ -129,7 +143,7 @@
             margin-bottom: 25px;
         }
 
-        /* PRODUCTS */
+        /* PRODUCTS GRID */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -139,8 +153,8 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .product-card img {
             width: 100%;
@@ -148,7 +162,7 @@
             border-radius: 12px;
             object-fit: cover;
         }
-        .product-card h3 { color: #0a1a5a; margin: 12px 0 4px; }
+        .product-card h3 { color: #0a1a5a; margin-top: 12px; }
         .product-card p { color: #444; margin-bottom: 12px; }
         .btn {
             background: #00a86b;
@@ -195,7 +209,7 @@
 <!-- HEADER -->
 <header>
     <div class="logo-area">
-        <img src="img/logo.png" alt="DebaVastu Logo" class="logo-img">
+        <img src="img/logo.png" alt="DebaVastu Logo" class="logo-img logo-effect">
         <div class="logo-text">DEBAVASTU</div>
     </div>
 
@@ -236,8 +250,8 @@
 <!-- PRODUCTS -->
 <section class="section">
     <h2>Premium Spiritual Products</h2>
-    <div class="products-grid">
 
+    <div class="products-grid">
         <div class="product-card">
             <img src="img/products/pyramid.jpg">
             <h3>Vastu Pyramid</h3>
@@ -265,7 +279,6 @@
             <p>Authentic spiritual protection beads.</p>
             <a href="https://wa.me/916372710439?text=Interested%20in%20Rudraksha" class="btn">Buy Now</a>
         </div>
-
     </div>
 </section>
 
