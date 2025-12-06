@@ -19,35 +19,43 @@
 <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* HEADER SAME AS LAST (NO CHANGE) */
+/* ===== HEADER ===== */
 .main-header{background:linear-gradient(90deg,#000a3d,#003b94);position:sticky;top:0;z-index:9999;box-shadow:0 4px 18px rgba(0,0,0,.45);}
 .header-wrapper{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
 .logo-area{display:flex;align-items:center;gap:12px;}
 .header-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 10px rgba(255,255,255,.55));}
 .header-logo:hover{transform:scale(1.1);filter:drop-shadow(0 0 18px rgba(255,255,255,.95));}
 .brand-text{color:#fff;font-size:30px;font-weight:700;text-shadow:0 2px 6px rgba(255,255,255,.35);}
+
 .menu{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
 .m-link{color:#fff!important;font-size:17px;font-weight:600;transition:.3s;}
 .m-link:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
+
+/* ===== DROPDOWN ===== */
 .dropdown{position:relative;}
-.service-trigger{cursor:pointer;display:flex;align-items:center;gap:6px;color:#fff!important;}
-.service-trigger i{transition:.3s;}
+.service-trigger{font-size:17px!important;font-weight:600!important;color:#fff!important;letter-spacing:0.5px;}
+.service-trigger:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
+.service-trigger i{transition:.3s;color:#fff;}
 .dropdown.open .service-trigger i{transform:rotate(180deg);}
+
 .dropdown-menu{display:none;position:absolute;background:rgba(0,11,57,.96);padding:14px;border-radius:10px;top:48px;min-width:220px;box-shadow:0 6px 28px rgba(0,0,0,.45);}
 .dropdown-menu li{padding:7px 0;}
 .dropdown-menu li a{color:#fff!important;}
-.dropdown-menu li a:hover{text-shadow:0 0 12px #fff;}
+.dropdown-menu li a:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
 .dropdown.open .dropdown-menu{display:block;}
-.mobile-toggle{display:none;}
+
+.mobile-toggle{display:none;font-size:30px;color:#fff;}
 @media(max-width:920px){
-.mobile-toggle{display:block;font-size:30px;color:#fff;}
+.mobile-toggle{display:block;}
 .menu{display:none;flex-direction:column;width:100%;background:#00114d;padding:25px 0;gap:24px;}
 .dropdown-menu{background:transparent;box-shadow:none;position:static;}
 }
+
+/* ===== BOOK BUTTON ===== */
 .appointment-btn{background:#00c786;padding:10px 18px;border-radius:6px;color:#fff!important;font-weight:600;box-shadow:0 0 12px rgba(0,255,179,.45);}
 .appointment-btn:hover{transform:scale(1.05);}
 
-/* ⭐ SLIDER FULLY RESTORED ⭐ */
+/* ===== SLIDER ===== */
 .hero-slider { position: relative; }
 .hero-slider .single-slider{
     height: 550px;
@@ -57,25 +65,23 @@
     align-items:center;
 }
 .single-slider .text {
-    padding-top:150px;
     color:#fff;
+    padding-top:150px;
 }
-.single-slider h1, .single-slider h2 {
+.single-slider h2 {
+    font-size:42px;
     color:#fff;
     text-shadow:0 0 12px rgba(0,0,0,.55);
 }
-.single-slider .button a{
-    color:#fff;
-    background:#00c786;
-    padding:12px 28px;
-    border-radius:6px;
-    font-weight:600;
-}
+
+/* FLOAT BUTTONS */
+.dv-floating-buttons{position:fixed;bottom:22px;right:22px;display:flex;flex-direction:column;gap:12px;z-index:9999;}
+.dv-floating-buttons a{background:#00c786;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:22px;box-shadow:0 0 12px rgba(0,255,179,.45);}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ===== HEADER ===== -->
 <header class="main-header">
 <div class="container" style="max-width:1250px;">
 <div class="header-wrapper">
@@ -89,7 +95,7 @@
 <li><a class="m-link" href="about.html">About</a></li>
 
 <li class="dropdown">
-<a class="service-trigger">Services <i class="fa fa-angle-down"></i></a>
+<a class="m-link service-trigger">Services <i class="fa fa-angle-down"></i></a>
 <ul class="dropdown-menu">
 <li><a href="vastu.html">Vastu</a></li>
 <li><a href="astrology.html">Astrology</a></li>
@@ -110,7 +116,7 @@
 </div>
 </header>
 
-<!-- ⭐ FIXED SLIDER ⭐ -->
+<!-- ===== ONLY ONE SLIDER (FIXED) ===== -->
 <section class="slider">
 <div class="hero-slider owl-carousel">
     <div class="single-slider" style="background-image:url('img/slider.jpg')">
@@ -125,58 +131,11 @@
 </div>
 </section>
 
-<!-- Slider Area -->
-		<section class="slider">
-			<div class="hero-slider">
-				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('img/slider.jpg')">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-7">
-								<div class="text">
-									
-		
-									<div class="button">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Slider -->
-				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('img/slider2.jpg')">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-7">
-								<div class="text">
-									
-									<div class="button">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>									
-				</div>
-				<!-- Start End Slider -->
-				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('img/slider3.jpg')">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8">
-								<div class="text">
-									
-									<div class="button">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>																		
-				</div>
-				<!-- End Single Slider -->
-			</div>
-		</section>
-		<!--/ End Slider Area -->
+<!-- ⭐ FLOATING WhatsApp / Call ⭐ -->
+<div class="dv-floating-buttons">
+    <a href="https://wa.me/916372710439" target="_blank"><i class="fa fa-whatsapp"></i></a>
+    <a href="tel:916372710439"><i class="fa fa-phone"></i></a>
+</div>
 		
 		<!-- Our Services (NEW) -->
 		<section class="services-area section" id="services" style="padding:60px 0;background:#fbfbfc;">
@@ -515,18 +474,22 @@
 			</footer>
 		<!--/ End Footer Area -->
             
-<!-- JS -->
+<!-- ===== JS SCRIPTS ===== -->
 <script src="js/jquery.min.js"></script>
 <script src="js/owl-carousel.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 <script>
-$(".hero-slider").owlCarousel({
-autoplay:true,
-autoplayTimeout:3500,
-smartSpeed:900,
-loop:true,
-items:1,
-dots:true,
-nav:false
+$(document).ready(function(){
+    $(".hero-slider").owlCarousel({
+        autoplay:true,
+        autoplayTimeout:3500,
+        smartSpeed:900,
+        loop:true,
+        items:1,
+        dots:true,
+        nav:false
+    });
 });
 </script>
 
@@ -540,11 +503,13 @@ toggle.addEventListener("click", e=>{
     e.stopPropagation();
     menu.style.display = menu.style.display==="flex" ? "none":"flex";
 });
+
 trigger.addEventListener("click", e=>{
     e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle("open");
 });
+
 document.addEventListener("click", e=>{
     if(!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggle.contains(e.target)){
         dropdown.classList.remove("open");
