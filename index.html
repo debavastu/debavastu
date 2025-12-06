@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* HEADER REFINED (Unified all pages) */
+/* HEADER REFINED */
 .main-header {
     background: linear-gradient(90deg, #00114d, #003b94);
     box-shadow: 0 4px 14px rgba(0,0,0,0.28);
@@ -35,7 +35,6 @@
 }
 .header-wrapper { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
 .logo-area { display:flex; align-items:center; gap:12px; }
-
 .header-logo {
     width:80px;
     height:80px;
@@ -44,10 +43,7 @@
     transition:0.4s ease;
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.45));
 }
-.header-logo:hover {
-    transform:scale(1.1);
-    filter:drop-shadow(0 0 18px rgba(255,255,255,0.6));
-}
+.header-logo:hover { transform:scale(1.1); filter:drop-shadow(0 0 18px rgba(255,255,255,0.6)); }
 .brand-text {
     color:#fff;
     font-size:30px;
@@ -59,17 +55,13 @@
 /* MENU */
 .menu { display:flex; gap:32px; list-style:none; margin:0; padding:0; align-items:center; }
 .m-link { color:#fff; font-size:16px; font-weight:500; transition:0.3s ease; }
-.m-link:hover {
-    color:#00ffe5;
-    text-shadow:0 0 10px rgba(0,255,213,0.9);
-}
+.m-link:hover { color:#00ffe5; text-shadow:0 0 10px rgba(0,255,213,0.9); }
 
-/* DROPDOWN CLICK MENU */
+/* DROPDOWN */
 .dropdown { position:relative; }
 .service-trigger { cursor:pointer; display:flex; align-items:center; gap:6px; }
 .service-trigger i { transition:0.3s ease; }
 .dropdown.open .service-trigger i { transform:rotate(180deg); }
-
 .dropdown-menu {
     display:none;
     position:absolute;
@@ -97,11 +89,7 @@
         padding:20px;
         gap:24px;
     }
-    .dropdown-menu {
-        position:static;
-        box-shadow:none;
-        background:#00114d;
-    }
+    .dropdown-menu { position:static; box-shadow:none; background:#00114d; }
 }
 
 /* BOOK BUTTON */
@@ -116,7 +104,6 @@
 }
 .appointment-btn:hover { transform:scale(1.05); }
 
-/* FLOAT BUTTONS FIX */
 .dv-floating-buttons { bottom:25px !important; right:25px !important; }
 </style>
 </head>
@@ -128,10 +115,10 @@
     <div class="container" style="max-width:1250px;margin:auto;">
         <div class="header-wrapper">
             <div class="logo-area">
-                <a href="index.html" class="logo-link">
+                <a href="index.html">
                     <img src="img/logo.png" class="header-logo">
-                    <div class="brand-text">DEBAVASTU</div>
                 </a>
+                <div class="brand-text">DEBAVASTU</div>
             </div>
 
             <ul class="menu">
@@ -155,33 +142,16 @@
                 <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
             </ul>
 
-            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+            <div class="mobile-toggle">☰</div>
         </div>
     </div>
 </header>
 
-<!-- 🔥 EXACT HOME CONTENT BELOW (DO NOT CHANGE) -->
-
 <!-- ⭐ FLOATING BUTTONS ⭐ -->
 <div class="dv-floating-buttons">
-
-    <!-- WhatsApp Chat -->
-    <a href="https://wa.me/916372710439?text=Hello%20DebaVastu%2C%20I%20need%20a%20consultation."
-       target="_blank"
-       class="dv-btn-circle"
-       title="Chat on WhatsApp">
-        <i class="fa fa-whatsapp"></i>
-    </a>
-
-    <!-- Call Button -->
-    <a href="tel:+916372710439"
-       class="dv-btn-circle dv-call-btn"
-       title="Call Now">
-        <i class="fa fa-phone"></i>
-    </a>
-
+    <a href="https://wa.me/916372710439?text=Hello DebaVastu, I need consultation." target="_blank"><i class="fa fa-whatsapp"></i></a>
+    <a href="tel:916372710439"><i class="fa fa-phone"></i></a>
 </div>
-
 	
 	<!-- Slider Area -->
 		<section class="slider">
@@ -573,90 +543,40 @@
 			</footer>
 		<!--/ End Footer Area -->
 		
-		<!-- jquery Min JS -->
-        <script src="js/jquery.min.js"></script>
-		<!-- jquery Migrate JS -->
-		<script src="js/jquery-migrate-3.0.0.js"></script>
-		<!-- jquery Ui JS -->
-		<script src="js/jquery-ui.min.js"></script>
-		<!-- Easing JS -->
-        <script src="js/easing.js"></script>
-		<!-- Color JS -->
-		<script src="js/colors.js"></script>
-		<!-- Popper JS -->
-		<script src="js/popper.min.js"></script>
-		<!-- Bootstrap Datepicker JS -->
-		<script src="js/bootstrap-datepicker.js"></script>
-		<!-- Jquery Nav JS -->
-        <script src="js/jquery.nav.js"></script>
-		<!-- Slicknav JS -->
-		<script src="js/slicknav.min.js"></script>
-		<!-- ScrollUp JS -->
-        <script src="js/jquery.scrollUp.min.js"></script>
-		<!-- Niceselect JS -->
-		<script src="js/niceselect.js"></script>
-		<!-- Tilt Jquery JS -->
-		<script src="js/tilt.jquery.min.js"></script>
-		<!-- Owl Carousel JS -->
-        <script src="js/owl-carousel.js"></script>
-		<!-- counterup JS -->
-		<script src="js/jquery.counterup.min.js"></script>
-		<!-- Steller JS -->
-		<script src="js/steller.js"></script>
-		<!-- Wow JS -->
-		<script src="js/wow.min.js"></script>
-		<!-- Magnific Popup JS -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- Counter Up CDN JS -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
-
-        <!-- EmailJS + booking handler -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script>
-        <script>
+		<script>
 const menu = document.querySelector(".menu");
 const toggleBtn = document.querySelector(".mobile-toggle");
 const dropdown = document.querySelector(".dropdown");
-const serviceTrigger = document.querySelector(".service-trigger");
+const trigger = document.querySelector(".service-trigger");
 
-/* ========= MOBILE MENU ========= */
+/* MOBILE MENU */
 toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    const visible = menu.style.display === "flex";
-    menu.style.display = visible ? "none" : "flex";
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     dropdown.classList.remove("open");
 });
 
-/* ========= SERVICES DROPDOWN CLICK ========= */
-serviceTrigger.addEventListener("click", (e) => {
+/* DROPDOWN CLICK */
+trigger.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle("open");
 });
 
-/* ========= CLOSE ONLY IF REAL OUTSIDE CLICK ========= */
+/* CLOSE ON OUTSIDE CLICK ONLY */
 document.addEventListener("click", (e) => {
-    if(
-        !dropdown.contains(e.target) && 
-        !serviceTrigger.contains(e.target) &&
-        !toggleBtn.contains(e.target)
-    ){
+    if (!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggleBtn.contains(e.target)) {
         dropdown.classList.remove("open");
     }
 });
 
-/* ========= RESET STATE ON PAGE LOAD ========= */
+/* RESET ON LOAD */
 window.addEventListener("load", () => {
     dropdown.classList.remove("open");
     menu.style.display = "";
 });
 </script>
 
-
-		<!-- Main JS -->
-		<script src="js/main.js"></script>
-    </body>
+<script src="js/main.js"></script>
+</body>
 </html>
