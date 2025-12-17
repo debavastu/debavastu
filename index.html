@@ -1,131 +1,260 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="Vastu, Astrology, Healing, Numerology, Tarot, Yoga">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>DEBAVASTU</title>
-<link rel="icon" href="img/favicon.png">
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="Site keywords here">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Title -->
+        <title>DEBAVASTU</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/owl-carousel.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/slicknav.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/responsive.css">
+        <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/nice-select.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/icofont.css">
+        <link rel="stylesheet" href="css/slicknav.min.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
 <style>
-/* HEADER SAME AS LAST (NO CHANGE) */
-.main-header{background:linear-gradient(90deg,#000a3d,#003b94);position:sticky;top:0;z-index:9999;box-shadow:0 4px 18px rgba(0,0,0,.45);}
-.header-wrapper{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
-.logo-area{display:flex;align-items:center;gap:12px;}
-.header-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;transition:.4s;filter:drop-shadow(0 0 10px rgba(255,255,255,.55));}
-.header-logo:hover{transform:scale(1.1);filter:drop-shadow(0 0 18px rgba(255,255,255,.95));}
-.brand-text{color:#fff;font-size:30px;font-weight:700;text-shadow:0 2px 6px rgba(255,255,255,.35);}
-.menu{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
-.m-link{color:#fff!important;font-size:17px;font-weight:600;transition:.3s;}
-.m-link:hover{text-shadow:0 0 14px rgba(255,255,255,1);}
-.dropdown{position:relative;}
-.service-trigger{cursor:pointer;display:flex;align-items:center;gap:6px;color:#fff!important;}
-.service-trigger i{transition:.3s;}
-.dropdown.open .service-trigger i{transform:rotate(180deg);}
-.dropdown-menu{display:none;position:absolute;background:rgba(0,11,57,.96);padding:14px;border-radius:10px;top:48px;min-width:220px;box-shadow:0 6px 28px rgba(0,0,0,.45);}
-.dropdown-menu li{padding:7px 0;}
-.dropdown-menu li a{color:#fff!important;}
-.dropdown-menu li a:hover{text-shadow:0 0 12px #fff;}
-.dropdown.open .dropdown-menu{display:block;}
-.mobile-toggle{display:none;}
-@media(max-width:920px){
-.mobile-toggle{display:block;font-size:30px;color:#fff;}
-.menu{display:none;flex-direction:column;width:100%;background:#00114d;padding:25px 0;gap:24px;}
-.dropdown-menu{background:transparent;box-shadow:none;position:static;}
+/* HEADER */
+.main-header {
+    background: linear-gradient(90deg,#0a2a66,#0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
 }
-.appointment-btn{background:#00c786;padding:10px 18px;border-radius:6px;color:#fff!important;font-weight:600;box-shadow:0 0 12px rgba(0,255,179,.45);}
-.appointment-btn:hover{transform:scale(1.05);}
-
-/* ⭐ SLIDER FULLY RESTORED ⭐ */
-.hero-slider { position: relative; }
-.hero-slider .single-slider{
-    height: 550px;
-    background-size: cover;
-    background-position: center;
+.header-wrapper {
     display:flex;
     align-items:center;
+    justify-content:space-between;
+    padding:12px 0;
 }
-.single-slider .text {
-    padding-top:150px;
-    color:#fff;
+.logo-area { display:flex; align-items:center; }
+.logo-link { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.header-logo { width:95px; border-radius:50%; opacity:0.96; }
+.brand-text { color:#fff; font-size:24px; font-weight:700; }
+
+.menu { display:flex; gap:28px; list-style:none; align-items:center; margin:0; padding:0; }
+.m-link { color:#fff; font-weight:500; padding:12px 5px; }
+.m-link:hover { color:#07b565; }
+
+/* DESKTOP DROPDOWN */
+.dropdown-menu {
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    min-width:220px;
+    border-radius:8px;
+    padding:0;
+    margin:0;
+    display:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    z-index:9999;
 }
-.single-slider h1, .single-slider h2 {
-    color:#fff;
-    text-shadow:0 0 12px rgba(0,0,0,.55);
+.dropdown:hover .dropdown-menu {
+    display:block;
 }
-.single-slider .button a{
-    color:#fff;
-    background:#00c786;
-    padding:12px 28px;
-    border-radius:6px;
+
+.dropdown-menu li a {
+    display:block;
+    padding:12px 16px;
+    color:#0a2a66;
+    border-bottom:1px solid #eee;
+}
+.dropdown-menu li:last-child a { border-bottom:none; }
+.dropdown-menu li a:hover { background:#f2f6ff; }
+
+/* Appointment Button */
+.appointment-btn {
+    background:#07b565;
+    padding:10px 16px;
+    border-radius:8px;
+    color:#fff !important;
     font-weight:600;
+    box-shadow:0 3px 10px rgba(7,181,101,0.35);
 }
+
+/* MOBILE MENU */
+.mobile-toggle {
+    color:#fff; font-size:28px; display:none; cursor:pointer;
+}
+
+@media(max-width:900px){
+    .menu {
+        display:none;
+        flex-direction:column;
+        background:#0a2a66;
+        width:100%;
+        padding:20px;
+        gap:14px;
+    }
+
+    /* TAP-TO-OPEN MOBILE DROPDOWN */
+    .dropdown-menu {
+        position:relative;
+        background:#0a2a66;
+        display:none !important;
+        width:100%;
+        border-left:3px solid #07b565;
+        box-shadow:none;
+    }
+    .dropdown-menu.open { display:block !important; }
+    .dropdown:hover .dropdown-menu { display:none !important; }
+
+    .dropdown-menu li a { color:#fff !important; }
+
+    .mobile-toggle { display:block; }
+}
+
+/* FLOATING BUTTONS */
+.dv-floating-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.dv-btn-circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dv-btn-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+.dv-call-btn {
+    background:#0a2a66;
+}
+.dv-call-btn i { font-size:28px; }
 </style>
+
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="main-header">
-<div class="container" style="max-width:1250px;">
-<div class="header-wrapper">
-<div class="logo-area">
-<a href="index.html"><img src="img/logo.png" class="header-logo"></a>
-<div class="brand-text">DEBAVASTU</div>
-</div>
+    <div class="container" style="max-width:1250px;margin:auto;">
+        <div class="header-wrapper">
 
-<ul class="menu">
-<li><a class="m-link" href="index.html">Home</a></li>
-<li><a class="m-link" href="about.html">About</a></li>
+            <div class="logo-area">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" class="header-logo">
+                    <div class="brand-text">DEBAVASTU</div>
+                </a>
+            </div>
 
-<li class="dropdown">
-<a class="service-trigger">Services <i class="fa fa-angle-down"></i></a>
-<ul class="dropdown-menu">
-<li><a href="vastu.html">Vastu</a></li>
-<li><a href="astrology.html">Astrology</a></li>
-<li><a href="numerology.html">Numerology</a></li>
-<li><a href="tarot.html">Tarot</a></li>
-<li><a href="yoga.html">Yoga</a></li>
-<li><a href="healing.html">Healing</a></li>
-</ul>
-</li>
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
 
-<li><a class="m-link" href="products.html">Products</a></li>
-<li><a class="m-link" href="contact.html">Contact</a></li>
-<li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-</ul>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="m-link service-trigger">
+                            <i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vastu.html">Vastu</a></li>
+                            <li><a href="astrology.html">Astrology</a></li>
+                            <li><a href="numerology.html">Numerology</a></li>
+                            <li><a href="tarot.html">Tarot</a></li>
+                            <li><a href="yoga.html">Yoga</a></li>
+                            <li><a href="healing.html">Healing</a></li>
+                        </ul>
+                    </li>
 
-<div class="mobile-toggle">☰</div>
-</div>
-</div>
+                    <li><a class="m-link" href="products.html"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+
+                    <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+    </div>
 </header>
 
-<!-- ⭐ FIXED SLIDER ⭐ -->
-<section class="slider">
-<div class="hero-slider owl-carousel">
-    <div class="single-slider" style="background-image:url('img/slider.jpg')">
-        <div class="container"><div class="text"><h2>Welcome to DebaVastu</h2></div></div>
-    </div>
-    <div class="single-slider" style="background-image:url('img/slider2.jpg')">
-        <div class="container"><div class="text"><h2>Transform Your Space & Life</h2></div></div>
-    </div>
-    <div class="single-slider" style="background-image:url('img/slider3.jpg')">
-        <div class="container"><div class="text"><h2>Energy • Harmony • Prosperity</h2></div></div>
-    </div>
-</div>
-</section>
+<script>
+function toggleMenu(){
+    const menu = document.querySelector(".menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
 
-<!-- Slider Area -->
+/* TAP-TO-OPEN DROPDOWN (Mobile) */
+document.addEventListener("DOMContentLoaded", function () {
+    const triggers = document.querySelectorAll(".service-trigger");
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", function(e){
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+
+                const menu = this.parentElement.querySelector(".dropdown-menu");
+
+                document.querySelectorAll(".dropdown-menu.open").forEach(openMenu => {
+                    if (openMenu !== menu) openMenu.classList.remove("open");
+                });
+
+                menu.classList.toggle("open");
+            }
+        });
+    });
+});
+</script>
+
+<!-- ⭐ FLOATING BUTTONS ⭐ -->
+<div class="dv-floating-buttons">
+
+    <!-- WhatsApp Chat -->
+    <a href="https://wa.me/916372710439?text=Hello%20DebaVastu%2C%20I%20need%20a%20consultation."
+       target="_blank"
+       class="dv-btn-circle"
+       title="Chat on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Call Button -->
+    <a href="tel:+916372710439"
+       class="dv-btn-circle dv-call-btn"
+       title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+
+</div>
+
+	
+	<!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
 				<!-- Start Single Slider -->
@@ -226,19 +355,32 @@
 		            </div>
 		
 		            <div class="col-lg-4 col-md-6 col-12">
-		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
-		                    <i class="icofont-yoga" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
-		                    <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
-		                    <p style="color:#555;">Yoga, meditation, pranayama and customized therapeutic yoga programs.</p>
-		                    <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>   
-						</div>
-		            </div>
+    <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+        
+        <i class="icofont-yoga" style="font-size:46px;color:#d4a017;margin-bottom:10px;"></i>
+        
+        <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
+        
+        <p style="color:#555;">
+            Holistic yoga, pranayama & mindfulness to improve flexibility, calm the mind and restore inner balance.
+        </p>
+        
+        <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">
+            Learn More
+        </a>
+        
+    </div>
+</div>
 		
 		            <div class="col-lg-4 col-md-6 col-12">
 		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
 		                    <i class="icofont-brainstorming" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
 		                    <h3 style="margin-bottom:8px;">Healing Therapies</h3>
-		                    <p style="color:#555;">Alternative therapy, naturopathy, homeopathy, acupressure and energy healing.</p>
+		                   <ul style="list-style:none; padding:0; margin-top:8px; font-size:15px; color:#555;">
+    <li>✨ Reiki • Chakra Balancing</li>
+    <li>🔮 Crystal & Aura Cleansing</li>
+    <li>🎼 Sound & Vibrational Therapy</li>
+</ul>
 		                    <a href="healing.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
 		                </div>
 		            </div>
@@ -514,43 +656,173 @@
 			<!--/ End Copyright -->
 			</footer>
 		<!--/ End Footer Area -->
-            
-<!-- JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/owl-carousel.js"></script>
-<script>
-$(".hero-slider").owlCarousel({
-autoplay:true,
-autoplayTimeout:3500,
-smartSpeed:900,
-loop:true,
-items:1,
-dots:true,
-nav:false
-});
-</script>
+		
+		<!-- jquery Min JS -->
+        <script src="js/jquery.min.js"></script>
+		<!-- jquery Migrate JS -->
+		<script src="js/jquery-migrate-3.0.0.js"></script>
+		<!-- jquery Ui JS -->
+		<script src="js/jquery-ui.min.js"></script>
+		<!-- Easing JS -->
+        <script src="js/easing.js"></script>
+		<!-- Color JS -->
+		<script src="js/colors.js"></script>
+		<!-- Popper JS -->
+		<script src="js/popper.min.js"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="js/bootstrap-datepicker.js"></script>
+		<!-- Jquery Nav JS -->
+        <script src="js/jquery.nav.js"></script>
+		<!-- Slicknav JS -->
+		<script src="js/slicknav.min.js"></script>
+		<!-- ScrollUp JS -->
+        <script src="js/jquery.scrollUp.min.js"></script>
+		<!-- Niceselect JS -->
+		<script src="js/niceselect.js"></script>
+		<!-- Tilt Jquery JS -->
+		<script src="js/tilt.jquery.min.js"></script>
+		<!-- Owl Carousel JS -->
+        <script src="js/owl-carousel.js"></script>
+		<!-- counterup JS -->
+		<script src="js/jquery.counterup.min.js"></script>
+		<!-- Steller JS -->
+		<script src="js/steller.js"></script>
+		<!-- Wow JS -->
+		<script src="js/wow.min.js"></script>
+		<!-- Magnific Popup JS -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Counter Up CDN JS -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
 
-<script>
-const menu = document.querySelector(".menu");
-const toggle = document.querySelector(".mobile-toggle");
-const dropdown = document.querySelector(".dropdown");
-const trigger = document.querySelector(".service-trigger");
+        <!-- EmailJS + booking handler -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+        (function(){
+          // Initialize EmailJS with public key
+          try{
+            emailjs.init('dkxgwOwsd0z7BMPyo');
+          }catch(e){
+            console.warn('EmailJS init failed', e);
+          }
 
-toggle.addEventListener("click", e=>{
-    e.stopPropagation();
-    menu.style.display = menu.style.display==="flex" ? "none":"flex";
-});
-trigger.addEventListener("click", e=>{
-    e.preventDefault();
-    e.stopPropagation();
-    dropdown.classList.toggle("open");
-});
-document.addEventListener("click", e=>{
-    if(!dropdown.contains(e.target) && !trigger.contains(e.target) && !toggle.contains(e.target)){
-        dropdown.classList.remove("open");
-    }
-});
-</script>
+          const ownerWhatsApp = '916372710439'; // owner WhatsApp (no plus)
 
-</body>
+          const form = document.getElementById('bookingForm');
+          const submitBtn = document.getElementById('bookBtn');
+          const modal = document.getElementById('dvModal');
+          const modalText = document.getElementById('dvModalText');
+          const modalClose = document.getElementById('dvClose');
+
+          function showModal(text){
+            modalText.textContent = text;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden','false');
+          }
+          function hideModal(){
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden','true');
+          }
+          modalClose.addEventListener('click', hideModal);
+          modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
+
+          form.addEventListener('submit', async function(e){
+            e.preventDefault();
+            if(submitBtn.getAttribute('data-busy') === '1') return;
+            submitBtn.setAttribute('data-busy','1');
+            submitBtn.textContent = 'Booking...';
+
+            // Collect fields
+            const name = document.getElementById('b_name').value.trim();
+            const email = document.getElementById('b_email').value.trim();
+            const phone = document.getElementById('b_phone').value.trim();
+            const service = document.getElementById('b_service').value;
+            const date = document.getElementById('b_date').value;
+            const message = document.getElementById('b_message').value.trim();
+
+            // Basic validation
+            if(!name || !email || !phone || !service || !date){
+              alert('Please complete all required fields.');
+              submitBtn.removeAttribute('data-busy');
+              submitBtn.textContent = 'Book Appointment';
+              return;
+            }
+
+            // Prepare template params for EmailJS
+            const templateParams = {
+              from_name: name,
+              from_email: email,
+              phone: phone,
+              service: service,
+              preferred_date: date,
+              message: message,
+              site: window.location.hostname
+            };
+
+            // 1) Send email via EmailJS (notification to your template)
+            let emailOk = false;
+            try{
+              await emailjs.send('service_dea8439','template_xrogxm8', templateParams);
+              emailOk = true;
+            }catch(err){
+              console.warn('EmailJS send error', err);
+              emailOk = false;
+            }
+
+            // 2) Save booking locally as backup
+            try{
+              const backup = JSON.parse(localStorage.getItem('deba_bookings_v2')||'[]');
+              backup.push({ id:'bk_'+Date.now(), name, email, phone, service, date, message, created: new Date().toISOString() });
+              localStorage.setItem('deba_bookings_v2', JSON.stringify(backup));
+            }catch(err){
+              console.warn('localStorage error', err);
+            }
+
+            // 3) Attempt to call server-side create-order (if available) - optional, non-blocking
+            let serverResp = null;
+            try{
+              const resp = await fetch('/.netlify/functions/create-order', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({ name, email, phone, service, date, slot: 'N/A', amount: 0 }) // amount 0 -> no payment
+              });
+              if(resp.ok){
+                serverResp = await resp.json();
+              } else {
+                serverResp = { error: await resp.text() };
+              }
+            }catch(err){
+              // ignore - server may not be deployed yet
+              serverResp = { error: 'server-unavailable' };
+            }
+
+            // 4) Open WhatsApp to owner with booking summary (for instant alert)
+            try{
+              const waText = encodeURIComponent(`New booking → ${name} | ${service} | ${date} | ${phone}`);
+              window.open('https://wa.me/'+ownerWhatsApp+'?text='+waText, '_blank');
+            }catch(err){
+              // ignore
+            }
+
+            // 5) Show success or partial-success modal
+            if(emailOk){
+              showModal('Thank you! Your appointment request has been sent. We will contact you shortly.');
+            } else {
+              showModal('Your request is saved locally. Email could not be sent right now. We will try to notify you soon.');
+            }
+
+            // Reset form & button
+            form.reset();
+            submitBtn.removeAttribute('data-busy');
+            submitBtn.textContent = 'Book Appointment';
+          });
+
+        })();
+        </script>
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+    </body>
 </html>
