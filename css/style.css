@@ -1,0 +1,116 @@
+/* =====================================================
+   DEBAVASTU – SLIDER & HEADER FINAL FIX
+   (Overrides Mediplus defaults safely)
+   ===================================================== */
+
+/* ---------- GLOBAL RESET ---------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ---------- HEADER FIX ---------- */
+.main-header {
+    position: relative;
+    z-index: 9999;
+    margin-bottom: 0 !important;
+}
+
+header,
+.header,
+.header-inner {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ---------- SLIDER CONTAINER FIX ---------- */
+.slider {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: relative;
+}
+
+/* ---------- SLIDE FIX (NO CUTTING) ---------- */
+.slider .single-slider {
+    height: 80vh;
+    min-height: 580px;
+    max-height: 820px;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Remove white overlay from Mediplus */
+.slider .single-slider:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15); /* soft premium overlay */
+    z-index: 1;
+}
+
+/* Ensure content stays above overlay */
+.slider .single-slider .container,
+.slider .single-slider .text {
+    position: relative;
+    z-index: 2;
+}
+
+/* ---------- OWL CAROUSEL FIX ---------- */
+.hero-slider,
+.hero-slider .owl-stage-outer,
+.hero-slider .owl-stage,
+.hero-slider .owl-item {
+    height: 100%;
+}
+
+.hero-slider .owl-item .single-slider {
+    height: 100%;
+}
+
+/* ---------- DESKTOP ---------- */
+@media (min-width: 1200px) {
+    .slider .single-slider {
+        height: 85vh;
+        min-height: 600px;
+    }
+}
+
+/* ---------- LAPTOP ---------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .slider .single-slider {
+        height: 75vh;
+        min-height: 520px;
+    }
+}
+
+/* ---------- TABLET ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+    .slider .single-slider {
+        height: 65vh;
+        min-height: 460px;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 767px) {
+    .slider .single-slider {
+        height: 55vh;
+        min-height: 420px;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 450px) {
+    .slider .single-slider {
+        height: 50vh;
+        min-height: 380px;
+    }
+}
