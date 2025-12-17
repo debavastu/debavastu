@@ -1,16 +1,23 @@
 /* =====================================
-Template Name: Mediplus (Customized for DebaVastu)
-Author: Naimur Rahman + Custom Overrides
-Version: 1.1 (Slider Fixed)
+Mediplus (Customized for DebaVastu)
+Slider FINAL FIX – No gap, No cut
 ===================================== */
 
 /* =========================
-GLOBAL FIXES (ALL DEVICES)
+GLOBAL FIXES
 ========================= */
 
-/* Push slider below fixed header */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* IMPORTANT: no top gap */
 .slider {
-    margin-top: 90px;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 /* Slider base fix */
@@ -18,33 +25,44 @@ GLOBAL FIXES (ALL DEVICES)
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Premium overlay instead of white wash */
+/* Dark premium overlay (NOT white) */
 .slider .single-slider:before {
-    background: #000 !important;
-    opacity: 0.25 !important;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 1;
+}
+
+/* Ensure text/content above overlay */
+.slider .single-slider .container,
+.slider .single-slider .text {
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================
 DESKTOP (≥ 992px)
 ========================= */
-@media only screen and (min-width: 992px) {
-
+@media (min-width: 992px) {
     .slider .single-slider {
         height: 80vh !important;
-        min-height: 520px !important;
-        max-height: 720px !important;
+        min-height: 560px !important;
+        max-height: 760px !important;
     }
-
 }
 
 /* =========================
 TABLET (768px – 991px)
 ========================= */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
 
     .section {
         padding: 70px 0;
@@ -52,19 +70,18 @@ TABLET (768px – 991px)
 
     .slider .single-slider {
         height: 65vh !important;
-        min-height: 460px !important;
+        min-height: 480px !important;
     }
 
     .slider .single-slider .text {
-        margin-top: 80px;
+        margin-top: 0 !important;
     }
-
 }
 
 /* =========================
 MOBILE (≤ 767px)
 ========================= */
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
 
     .section {
         padding: 50px 0;
@@ -75,20 +92,15 @@ MOBILE (≤ 767px)
         min-height: 420px !important;
     }
 
-    .slider .single-slider .text {
-        margin-top: 60px;
-    }
-
     .slider .owl-carousel .owl-nav {
         display: none;
     }
-
 }
 
 /* =========================
 SMALL MOBILE (≤ 450px)
 ========================= */
-@media only screen and (max-width: 450px) {
+@media (max-width: 450px) {
 
     .section {
         padding: 45px 0;
@@ -98,16 +110,10 @@ SMALL MOBILE (≤ 450px)
         height: 50vh !important;
         min-height: 380px !important;
     }
-
-    .slider .single-slider .text {
-        margin-top: 40px;
-    }
-
 }
 
 /* =========================
-MEDIPLUS ORIGINAL FALLBACKS
-(kept minimal – slider overridden)
+MINIMAL FALLBACKS
 ========================= */
 
 .section-title h2 {
