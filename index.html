@@ -2,120 +2,184 @@
 <html class="no-js" lang="zxx">
     <head>
         <!-- Meta Tags -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="keywords" content="Site keywords here">
-		<meta name="description" content="">
-		<meta name='copyright' content=''>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
-		<!-- Title -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="Site keywords here">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Title -->
         <title>DEBAVASTU</title>
-		
-		<!-- Favicon -->
-        <link rel="icon" href="img/favicon.png">
-		
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- Nice Select CSS -->
-		<link rel="stylesheet" href="css/nice-select.css">
-		<!-- Font Awesome CSS -->
+        <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/nice-select.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
-		<!-- icofont CSS -->
         <link rel="stylesheet" href="css/icofont.css">
-		<!-- Slicknav -->
-		<link rel="stylesheet" href="css/slicknav.min.css">
-		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/slicknav.min.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
-		<!-- Datepicker CSS -->
-		<link rel="stylesheet" href="css/datepicker.css">
-		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/datepicker.css">
         <link rel="stylesheet" href="css/animate.min.css">
-		<!-- Magnific Popup CSS -->
         <link rel="stylesheet" href="css/magnific-popup.css">
-		
-		<!-- Medipro CSS -->
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">
 
-        <style>
-          /* Small modal for success */
-          .dv-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-          }
-          .dv-modal .card {
-            background: #fff;
-            padding: 22px;
-            max-width: 460px;
-            width: 92%;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 18px 50px rgba(12,12,12,0.18);
-            font-family: 'Poppins',sans-serif;
-          }
-          .dv-modal .card h3 { margin-top:0; color:#0b6e4f; }
-          .dv-modal .card p { color:#444; margin:10px 0 18px; }
-          .dv-modal .card .btn { background:#0b6e4f; color:#fff; padding:10px 18px; border-radius:8px; border:none; }
-        </style>
-		
-    </head>
-    <body>
-	
-<!-- Preloader -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="loader-outter"></div>
-                <div class="loader-inner"></div>
+<style>
+/* HEADER */
+.main-header {
+    background: linear-gradient(90deg,#0a2a66,#0d3a85);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+.header-wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 0;
+}
+.logo-area { display:flex; align-items:center; }
+.logo-link { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.header-logo { width:95px; border-radius:50%; opacity:0.96; }
+.brand-text { color:#fff; font-size:24px; font-weight:700; }
 
-                <div class="indicator"> 
-                    <svg width="25px" height="20px">
-                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <!-- End Preloader -->   
+.menu { display:flex; gap:28px; list-style:none; align-items:center; margin:0; padding:0; }
+.m-link { color:#fff; font-weight:500; padding:12px 5px; }
+.m-link:hover { color:#07b565; }
 
+/* DESKTOP DROPDOWN */
+.dropdown-menu {
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    min-width:220px;
+    border-radius:8px;
+    padding:0;
+    margin:0;
+    display:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    z-index:9999;
+}
+.dropdown:hover .dropdown-menu {
+    display:block;
+}
 
+.dropdown-menu li a {
+    display:block;
+    padding:12px 16px;
+    color:#0a2a66;
+    border-bottom:1px solid #eee;
+}
+.dropdown-menu li:last-child a { border-bottom:none; }
+.dropdown-menu li a:hover { background:#f2f6ff; }
 
-<!-- ▬▬▬▬▬ HEADER START ▬▬▬▬▬ -->
+/* Appointment Button */
+.appointment-btn {
+    background:#07b565;
+    padding:10px 16px;
+    border-radius:8px;
+    color:#fff !important;
+    font-weight:600;
+    box-shadow:0 3px 10px rgba(7,181,101,0.35);
+}
+
+/* MOBILE MENU */
+.mobile-toggle {
+    color:#fff; font-size:28px; display:none; cursor:pointer;
+}
+
+@media(max-width:900px){
+    .menu {
+        display:none;
+        flex-direction:column;
+        background:#0a2a66;
+        width:100%;
+        padding:20px;
+        gap:14px;
+    }
+
+    /* TAP-TO-OPEN MOBILE DROPDOWN */
+    .dropdown-menu {
+        position:relative;
+        background:#0a2a66;
+        display:none !important;
+        width:100%;
+        border-left:3px solid #07b565;
+        box-shadow:none;
+    }
+    .dropdown-menu.open { display:block !important; }
+    .dropdown:hover .dropdown-menu { display:none !important; }
+
+    .dropdown-menu li a { color:#fff !important; }
+
+    .mobile-toggle { display:block; }
+}
+
+/* FLOATING BUTTONS */
+.dv-floating-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.dv-btn-circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dv-btn-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+.dv-call-btn {
+    background:#0a2a66;
+}
+.dv-call-btn i { font-size:28px; }
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
 <header class="main-header">
     <div class="container" style="max-width:1250px;margin:auto;">
-
         <div class="header-wrapper">
 
-            <!-- LOGO -->
             <div class="logo-area">
                 <a href="index.html" class="logo-link">
-                    <img src="img/logo.png" alt="DebaVastu Logo" class="header-logo">
+                    <img src="img/logo.png" class="header-logo">
                     <div class="brand-text">DEBAVASTU</div>
                 </a>
             </div>
 
-            <!-- MENU -->
             <nav class="nav-menu">
                 <ul class="menu">
-                    <li><a href="index.html" class="m-link"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="m-link"><i class="fa fa-user"></i> About</a></li>
+                    <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
 
-                    <!-- SERVICES DROPDOWN -->
                     <li class="dropdown">
-                        <a href="#" class="m-link dropdown-toggle">
-                            <i class="fa fa-handshake-o"></i> Services 
-                            <i class="fa fa-angle-down"></i>
+                        <a href="javascript:void(0)" class="m-link service-trigger">
+                            <i class="fa fa-handshake-o"></i> Services <i class="fa fa-angle-down"></i>
                         </a>
-
                         <ul class="dropdown-menu">
                             <li><a href="vastu.html">Vastu</a></li>
                             <li><a href="astrology.html">Astrology</a></li>
@@ -126,189 +190,73 @@
                         </ul>
                     </li>
 
-                    <li><a href="products.html" class="m-link"><i class="fa fa-shopping-bag"></i> Products</a></li>
-                    <li><a href="contact.html" class="m-link"><i class="fa fa-phone"></i> Contact</a></li>
+                    <li><a class="m-link" href="products.html"><i class="fa fa-shopping-bag"></i> Products</a></li>
+                    <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
 
-                    <!-- BOOK APPOINTMENT BUTTON -->
-                    <li>
-                        <a href="appointment.html" class="appointment-btn">
-                            Book Appointment
-                        </a>
-                    </li>
+                    <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
                 </ul>
             </nav>
 
-            <!-- MOBILE MENU BUTTON -->
             <div class="mobile-toggle" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i>
             </div>
 
         </div>
-
     </div>
 </header>
-<!-- ▬▬▬▬▬ HEADER END ▬▬▬▬▬ -->
 
-
-<!-- ▬▬▬▬▬ HEADER CSS FIXED ▬▬▬▬▬ -->
-<style>
-/* Base Header */
-.main-header {
-    background: linear-gradient(90deg, #0a2a66, #0d3a85);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-}
-.header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-}
-.logo-area { display: flex; align-items: center; }
-.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.header-logo {
-    width: 95px;
-    border-radius: 50%;
-    mix-blend-mode: screen;
-    opacity: 0.96;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
-}
-.brand-text {
-    font-weight: 700;
-    font-size: 24px;
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-/* MENU */
-.menu {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-.menu li { position: relative; z-index: 1000; }
-
-.m-link {
-    color: #fff;
-    font-weight: 500;
-    padding: 12px 5px;
-    transition: 0.3s;
-}
-.m-link:hover { color: #07b565; }
-
-/* DROPDOWN */
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    min-width: 220px;
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all .25s ease-in-out;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    z-index: 9999;
-}
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li a {
-    padding: 12px 16px;
-    display: block;
-    color: #0a2a66;
-    border-bottom: 1px solid #eee;
-}
-.dropdown-menu li:last-child a { border-bottom: none; }
-.dropdown-menu li a:hover { background: #f2f6ff; }
-
-/* Button */
-.appointment-btn {
-    background: #07b565;
-    padding: 10px 18px;
-    border-radius: 8px;
-    color: #fff !important;
-    font-weight: 600;
-    box-shadow: 0 3px 10px rgba(7,181,101,0.35);
-}
-
-/* MOBILE */
-.mobile-toggle {
-    display: none;
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-@media(max-width:900px){
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: #0a2a66;
-        width: 100%;
-        padding: 20px;
-        gap: 12px;
-    }
-    .mobile-toggle { display: block; }
-
-    /* MOBILE DROPDOWN FIX */
-    .dropdown-menu {
-        position: relative;
-        opacity: 1 !important;
-        visibility: visible !important;
-        display: none;
-        background: #0a2a66;
-        border-left: 3px solid #07b565;
-        margin-top: 6px;
-        box-shadow: none;
-        width: 100%;
-    }
-    .dropdown-menu li a {
-        color: #fff !important;
-    }
-    .dropdown-menu.open {
-        display: block !important;
-    }
-    .dropdown:hover .dropdown-menu {
-        display: none !important;
-    }
-}
-</style>
-
-
-<!-- ▬▬▬▬▬ DROPDOWN JS FIX ▬▬▬▬▬ -->
 <script>
 function toggleMenu(){
     const menu = document.querySelector(".menu");
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 
-// Mobile dropdown click
+/* TAP-TO-OPEN DROPDOWN (Mobile) */
 document.addEventListener("DOMContentLoaded", function () {
-    const trigger = document.querySelector(".dropdown > a");
-    const submenu = document.querySelector(".dropdown-menu");
+    const triggers = document.querySelectorAll(".service-trigger");
 
-    trigger.addEventListener("click", function(e){
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            submenu.classList.toggle("open");
-        }
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", function(e){
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+
+                const menu = this.parentElement.querySelector(".dropdown-menu");
+
+                document.querySelectorAll(".dropdown-menu.open").forEach(openMenu => {
+                    if (openMenu !== menu) openMenu.classList.remove("open");
+                });
+
+                menu.classList.toggle("open");
+            }
+        });
     });
 });
 </script>
 
-		
-		<!-- Slider Area -->
+<!-- ⭐ FLOATING BUTTONS ⭐ -->
+<div class="dv-floating-buttons">
+
+    <!-- WhatsApp Chat -->
+    <a href="https://wa.me/916372710439?text=Hello%20DebaVastu%2C%20I%20need%20a%20consultation."
+       target="_blank"
+       class="dv-btn-circle"
+       title="Chat on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Call Button -->
+    <a href="tel:+916372710439"
+       class="dv-btn-circle dv-call-btn"
+       title="Call Now">
+        <i class="fa fa-phone"></i>
+    </a>
+
+</div>
+
+	
+	<!-- Slider Area -->
 		<section class="slider">
-			<div class="hero-slider">
+			<div class="hero-slider owl-carousel">
 				<!-- Start Single Slider -->
 				<div class="single-slider" style="background-image:url('img/slider.jpg')">
 					<div class="container">
@@ -407,19 +355,32 @@ document.addEventListener("DOMContentLoaded", function () {
 		            </div>
 		
 		            <div class="col-lg-4 col-md-6 col-12">
-		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
-		                    <i class="icofont-yoga" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
-		                    <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
-		                    <p style="color:#555;">Yoga, meditation, pranayama and customized therapeutic yoga programs.</p>
-		                    <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>   
-						</div>
-		            </div>
+    <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
+        
+        <i class="icofont-yoga" style="font-size:46px;color:#d4a017;margin-bottom:10px;"></i>
+        
+        <h3 style="margin-bottom:8px;">Yoga & Wellness</h3>
+        
+        <p style="color:#555;">
+            Holistic yoga, pranayama & mindfulness to improve flexibility, calm the mind and restore inner balance.
+        </p>
+        
+        <a href="yoga.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">
+            Learn More
+        </a>
+        
+    </div>
+</div>
 		
 		            <div class="col-lg-4 col-md-6 col-12">
 		                <div class="single-service-box" style="background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 28px rgba(0,0,0,0.06);margin-bottom:18px;text-align:center;">
 		                    <i class="icofont-brainstorming" style="font-size:42px;color:#d4a017;margin-bottom:10px;"></i>
 		                    <h3 style="margin-bottom:8px;">Healing Therapies</h3>
-		                    <p style="color:#555;">Alternative therapy, naturopathy, homeopathy, acupressure and energy healing.</p>
+		                   <ul style="list-style:none; padding:0; margin-top:8px; font-size:15px; color:#555;">
+    <li>✨ Reiki • Chakra Balancing</li>
+    <li>🔮 Crystal & Aura Cleansing</li>
+    <li>🎼 Sound & Vibrational Therapy</li>
+</ul>
 		                    <a href="healing.html" class="learn-more" style="display:inline-block;margin-top:12px;color:#d4a017;font-weight:600;">Learn More</a>
 		                </div>
 		            </div>
