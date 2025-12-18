@@ -806,5 +806,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
+		<script>
+$(document).ready(function(){
+  $('.hero-slider').owlCarousel({
+    items:1,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    smartSpeed:900,
+    dots:true,
+    nav:false
+  });
+});
+</script>
+
     </body>
 </html>
