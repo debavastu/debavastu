@@ -20,7 +20,7 @@ html, body {
 }
 
 /* =========================
-   HEADER
+   HEADER (COMPACT & PROFESSIONAL)
 ========================= */
 .main-header {
     position: fixed;
@@ -32,18 +32,33 @@ html, body {
     box-shadow: 0 3px 12px rgba(0,0,0,0.25);
 }
 
-/* =========================
-   SLIDER – FULL WIDTH FIX
-========================= */
+.header-wrapper {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-/* Push slider below fixed header */
+.header-logo {
+    width: 68px;
+    height: auto;
+}
+
+.brand-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   SLIDER – FULL WIDTH & CLEAN TEXT
+========================= */
 .slider {
-    margin-top: 110px;
+    margin-top: 88px;
     width: 100vw;
     overflow: hidden;
 }
 
-/* Owl structure full width */
 .hero-slider,
 .hero-slider .owl-stage-outer,
 .hero-slider .owl-stage,
@@ -56,92 +71,69 @@ html, body {
 .single-slider {
     width: 100vw;
     height: 80vh;
-    min-height: 580px;
+    min-height: 550px;
     max-height: 850px;
-
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* Premium overlay (no white wash) */
+/* Dark overlay for readability */
 .single-slider::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.28);
     z-index: 1;
 }
 
-/* Optional content wrapper (safe zone) */
-.slider-content {
+/* Remove ALL middle junk content */
+.hero-slider .text p,
+.hero-slider .text span,
+.hero-slider .button {
+    display: none !important;
+}
+
+/* Text wrapper */
+.hero-slider .text {
     position: relative;
     z-index: 2;
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 20px;
+    padding-top: 90px;
+    max-width: 900px;
+}
+
+/* Slider heading (ONLY visible content) */
+.hero-slider h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.6);
 }
 
 /* =========================
-   DESKTOP
+   RESPONSIVE SLIDER
 ========================= */
 @media (min-width: 1200px) {
-    .single-slider {
-        height: 85vh;
-        min-height: 600px;
-    }
+    .single-slider { height: 85vh; }
 }
 
-/* =========================
-   LAPTOP
-========================= */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .single-slider {
-        height: 75vh;
-        min-height: 520px;
-    }
+@media (max-width: 991px) {
+    .hero-slider h2 { font-size: 32px; }
 }
 
-/* =========================
-   TABLET
-========================= */
-@media (min-width: 768px) and (max-width: 991px) {
-    .slider {
-        margin-top: 100px;
-    }
-
-    .single-slider {
-        height: 65vh;
-        min-height: 460px;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 767px) {
-    .slider {
-        margin-top: 90px;
-    }
-
     .single-slider {
         height: 55vh;
         min-height: 420px;
     }
-
-    /* Hide owl arrows on mobile */
-    .hero-slider .owl-nav {
-        display: none !important;
-    }
+    .hero-slider h2 { font-size: 24px; }
+    .hero-slider .owl-nav { display: none !important; }
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
 @media (max-width: 450px) {
     .single-slider {
         height: 50vh;
@@ -188,14 +180,69 @@ html, body {
 }
 
 /* =========================
-   BLOG
+   BLOG (PROFESSIONAL TYPOGRAPHY)
 ========================= */
-.single-news {
+.blog .single-news {
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
-.single-news:hover {
+.blog .single-news:hover {
     transform: translateY(-6px);
+}
+
+.blog .single-news .news-body {
+    padding: 18px 18px 22px;
+}
+
+/* Blog title */
+.blog .single-news h2 {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog .single-news h2 a {
+    color: #0a2a66;
+    transition: color 0.3s ease;
+}
+
+.blog .single-news h2 a:hover {
+    color: #07b565;
+}
+
+/* Blog label */
+.blog .single-news .date {
+    font-size: 13px;
+    font-weight: 500;
+    color: #07b565;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+/* Blog description */
+.blog .single-news .text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Blog images */
+.blog .single-news .news-head img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Responsive blog */
+@media (max-width: 991px) {
+    .blog .single-news h2 { font-size: 17px; }
+}
+
+@media (max-width: 576px) {
+    .blog .single-news h2 { font-size: 16px; }
 }
 
 /* =========================
@@ -206,13 +253,9 @@ html, body {
     color: #fff;
 }
 
-.footer a {
-    color: #fff;
-}
+.footer a { color: #fff; }
 
-.footer a:hover {
-    color: #07b565;
-}
+.footer a:hover { color: #07b565; }
 
 .footer .footer-top {
     padding: 70px 0;
@@ -265,77 +308,10 @@ html, body {
 }
 
 /* =========================
-   REMOVE UNUSED MEDIPLUS
+   CLEANUP MEDIPLUS
 ========================= */
-/* intentionally removed:
-   - mediplus white slider overlays
-   - fixed height slider hacks
-   - container-limited slider rules
+/* Removed:
+   - white slider overlays
+   - fixed container slider limits
+   - unused middle slider text
 */
-/* =========================
-   BLOG TYPOGRAPHY FIX
-========================= */
-
-.blog .single-news {
-    height: 100%;
-}
-
-.blog .single-news .news-body {
-    padding: 18px 18px 22px;
-}
-
-/* Blog title */
-.blog .single-news h2 {
-    font-size: 18px;              /* ⬅ reduced from large default */
-    line-height: 1.4;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Blog title link */
-.blog .single-news h2 a {
-    color: #0a2a66;
-    transition: color 0.3s ease;
-}
-
-.blog .single-news h2 a:hover {
-    color: #07b565;
-}
-
-/* Blog meta (small label like Vastu Plan) */
-.blog .single-news .date {
-    font-size: 13px;
-    font-weight: 500;
-    color: #07b565;
-    margin-bottom: 6px;
-    display: inline-block;
-}
-
-/* Blog description */
-.blog .single-news .text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* Image consistency */
-.blog .single-news .news-head img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 6px 6px 0 0;
-}
-
-/* Tablet */
-@media (max-width: 991px) {
-    .blog .single-news h2 {
-        font-size: 17px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .blog .single-news h2 {
-        font-size: 16px;
-    }
-}
