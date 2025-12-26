@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.debavastu.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/index.html</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/services.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/vastu.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/astrology.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/numerology.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/tarot.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/yoga.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/healing.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/products.html</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/contact.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.debavastu.com/appointment.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>
