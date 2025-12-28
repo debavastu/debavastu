@@ -3,67 +3,69 @@
 
   <url>
     <loc>https://www.debavastu.com/</loc>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://www.debavastu.com/index.html</loc>
-    <priority>1.00</priority>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/about.html</loc>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.debavastu.com/services.html</loc>
-    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/vastu.html</loc>
-    <priority>0.90</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/astrology.html</loc>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/numerology.html</loc>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/tarot.html</loc>
-    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/yoga.html</loc>
-    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/healing.html</loc>
-    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/products.html</loc>
-    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/contact.html</loc>
-    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.debavastu.com/appointment.html</loc>
-    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
