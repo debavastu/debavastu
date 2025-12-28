@@ -1,6 +1,6 @@
 /* =====================================================
    DEBAVASTU – FINAL STYLE.CSS (PRODUCTION)
-   Optimized, Cleaned & SEO-safe
+   Clean • Stable • Owl Carousel Fixed
    ===================================================== */
 
 /* =========================
@@ -20,7 +20,7 @@ html, body {
 }
 
 /* =========================
-   HEADER (STICKY & STABLE)
+   HEADER (STICKY)
 ========================= */
 .main-header {
     position: sticky;
@@ -29,11 +29,6 @@ html, body {
     z-index: 99999;
     background: linear-gradient(90deg, #0a2a66, #0d3a85);
     box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-    transition: background 0.3s ease;
-}
-
-.main-header.sticky {
-    background: #081f4a;
 }
 
 .header-wrapper {
@@ -52,14 +47,12 @@ html, body {
 
 .header-logo {
     width: 72px;
-    height: auto;
 }
 
 .brand-text {
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
-    letter-spacing: 0.4px;
 }
 
 /* =========================
@@ -69,8 +62,6 @@ html, body {
     display: flex;
     gap: 26px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .m-link {
@@ -92,7 +83,7 @@ html, body {
     background: #07b565;
     padding: 10px 18px;
     border-radius: 8px;
-    color: #fff !important;
+    color: #ffffff !important;
     font-weight: 600;
 }
 
@@ -121,7 +112,7 @@ html, body {
     background: #f2f6ff;
 }
 
-/* Mobile Nav */
+/* Mobile Menu */
 .mobile-toggle {
     display: none;
     color: #ffffff;
@@ -154,10 +145,11 @@ html, body {
 }
 
 /* =========================
-   SLIDER
+   SLIDER (OWL FIXED)
 ========================= */
 .slider {
     width: 100vw;
+    margin-top: 95px; /* sticky header offset */
     overflow: hidden;
 }
 
@@ -167,6 +159,10 @@ html, body {
 .hero-slider .owl-item {
     width: 100%;
     height: 100%;
+}
+
+.owl-stage-outer {
+    overflow: hidden;
 }
 
 .single-slider {
@@ -196,7 +192,6 @@ html, body {
     padding-top: 90px;
 }
 
-/* Slider Headings */
 .hero-slider h1 {
     font-size: 42px;
     font-weight: 700;
@@ -205,7 +200,7 @@ html, body {
 }
 
 .hero-slider h2 {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 600;
     color: #ffffff;
     text-shadow: 0 4px 18px rgba(0,0,0,0.6);
@@ -217,15 +212,10 @@ html, body {
     color: #ffffff;
 }
 
-/* Remove unused Mediplus junk */
-.hero-slider .button {
-    display: none !important;
-}
-
 /* Responsive Slider */
 @media (max-width: 991px) {
     .hero-slider h1 { font-size: 32px; }
-    .hero-slider h2 { font-size: 28px; }
+    .hero-slider h2 { font-size: 26px; }
 }
 
 @media (max-width: 767px) {
@@ -268,33 +258,14 @@ html, body {
 }
 
 /* =========================
-   WHY CHOOSE
-========================= */
-.choose-left h3 {
-    color: #0a2a66;
-    font-weight: 700;
-}
-
-/* =========================
    BLOG
 ========================= */
 .blog .single-news {
-    height: 100%;
     transition: transform 0.3s ease;
 }
 
 .blog .single-news:hover {
     transform: translateY(-6px);
-}
-
-.blog .single-news .news-body {
-    padding: 18px 18px 22px;
-}
-
-.blog .single-news h2 {
-    font-size: 17px;
-    font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .blog .single-news h2 a {
@@ -305,24 +276,10 @@ html, body {
     color: #07b565;
 }
 
-.blog .single-news .date {
-    font-size: 15px;
-    font-weight: 500;
-    color: #07b565;
-    margin-bottom: 6px;
-}
-
-.blog .single-news .text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-}
-
 .blog .single-news .news-head img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 6px 6px 0 0;
 }
 
 /* =========================
@@ -345,11 +302,6 @@ html, body {
     padding: 70px 0;
 }
 
-.footer .single-footer h2 {
-    font-size: 20px;
-    margin-bottom: 18px;
-}
-
 .footer .copyright {
     background: #081f4d;
     padding: 18px 0;
@@ -357,36 +309,16 @@ html, body {
 }
 
 /* =========================
-   FLOATING BUTTONS
+   OWL CAROUSEL – CRITICAL FIX
 ========================= */
-.dv-floating-buttons {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 999999;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.owl-carousel {
+    display: block !important;
 }
 
-.dv-btn-circle {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 28px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    transition: transform 0.25s ease;
+.owl-carousel .owl-stage {
+    display: flex !important;
 }
 
-.dv-btn-circle:hover {
-    transform: scale(1.12);
-}
-
-.dv-call-btn {
-    background: #0a2a66;
+.owl-carousel .owl-item {
+    float: left !important;
 }
