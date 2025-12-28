@@ -32,11 +32,12 @@ gtag('config', 'G-FX34Q54466');
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/icofont.css">
-<link rel="stylesheet" href="css/owl-carousel.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/responsive.css">
 
-<!-- Local Business Schema -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -55,16 +56,16 @@ gtag('config', 'G-FX34Q54466');
 
 <style>
 html{scroll-behavior:smooth}
-section{scroll-margin-top:110px}
+section{scroll-margin-top:95px}
 
 /* HEADER */
 .main-header{
-  position:sticky;top:0;z-index:99999;
+  position:sticky;
+  top:0;
+  z-index:99999;
   background:linear-gradient(90deg,#0a2a66,#0d3a85);
   box-shadow:0 3px 12px rgba(0,0,0,.25);
-  transition:.35s
 }
-.main-header.sticky{background:#081f4a}
 .header-wrapper{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
 .logo-link{display:flex;align-items:center;gap:14px;text-decoration:none}
 .header-logo{width:90px;border-radius:50%}
@@ -76,9 +77,12 @@ section{scroll-margin-top:110px}
 .appointment-btn{background:#07b565;padding:10px 18px;border-radius:8px;color:#fff!important}
 
 .dropdown-menu{
-  display:none;position:absolute;background:#fff;
-  border-radius:8px;min-width:220px;
-  box-shadow:0 6px 20px rgba(0,0,0,.25)
+  display:none;
+  position:absolute;
+  background:#fff;
+  border-radius:8px;
+  min-width:220px;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
 }
 .dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu li a{display:block;padding:12px 16px;color:#0a2a66}
@@ -93,24 +97,33 @@ section{scroll-margin-top:110px}
   .dropdown-menu li a{color:#fff}
 }
 
-/* SLIDER */
+/* SLIDER FIX */
+.slider{
+  margin-top:95px;
+  width:100%;
+  overflow:hidden;
+}
+.hero-slider,
+.hero-slider .owl-stage-outer{
+  min-height:85vh;
+}
 .single-slider{
   min-height:85vh;
-  background-size:cover;
-  background-position:center;
+  background-size:cover!important;
+  background-position:center!important;
   display:flex;
   align-items:center;
-  position:relative
+  position:relative;
 }
 .single-slider:before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.45)
+  background:rgba(0,0,0,.45);
 }
 .single-slider .text{
   position:relative;
-  color:#fff
+  color:#fff;
 }
 </style>
 </head>
@@ -130,17 +143,19 @@ section{scroll-margin-top:110px}
 <ul class="menu">
 <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
 <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
+
 <li class="dropdown">
-  <a href="#" class="m-link service-trigger"><i class="fa fa-handshake-o"></i>Services</a>
-  <ul class="dropdown-menu">
-    <li><a href="vastu.html">Vastu</a></li>
-    <li><a href="astrology.html">Astrology</a></li>
-    <li><a href="numerology.html">Numerology</a></li>
-    <li><a href="tarot.html">Tarot</a></li>
-    <li><a href="yoga.html">Yoga</a></li>
-    <li><a href="healing.html">Healing</a></li>
-  </ul>
+<a href="#" class="m-link service-trigger"><i class="fa fa-handshake-o"></i>Services</a>
+<ul class="dropdown-menu">
+<li><a href="vastu.html">Vastu</a></li>
+<li><a href="astrology.html">Astrology</a></li>
+<li><a href="numerology.html">Numerology</a></li>
+<li><a href="tarot.html">Tarot</a></li>
+<li><a href="yoga.html">Yoga</a></li>
+<li><a href="healing.html">Healing</a></li>
+</ul>
 </li>
+
 <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
 <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
 </ul>
@@ -164,11 +179,19 @@ section{scroll-margin-top:110px}
 </div>
 
 <div class="single-slider" style="background-image:url('img/slider2.webp'),url('img/slider2.jpg')">
-<div class="container"><div class="text"><h2>Astrology • Numerology • Tarot</h2></div></div>
+<div class="container">
+<div class="text">
+<h2>Astrology • Numerology • Tarot</h2>
+</div>
+</div>
 </div>
 
 <div class="single-slider" style="background-image:url('img/slider3.webp'),url('img/slider3.jpg')">
-<div class="container"><div class="text"><h2>Yoga • Healing • Energy Balance</h2></div></div>
+<div class="container">
+<div class="text">
+<h2>Yoga • Healing • Energy Balance</h2>
+</div>
+</div>
 </div>
 
 </div>
@@ -513,7 +536,7 @@ section{scroll-margin-top:110px}
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
 							<div class="copyright-content">
-								<p>© Copyright 2025  |  All Rights Reserved by <a href="http://www.debavastu.com"</a> </p>
+								<p>© Copyright 2025  |  All Rights Reserved by DebaVastu <a href="http://www.debavastu.com"</a> </p>
 							</div>
 						</div>
 					</div>
@@ -523,53 +546,41 @@ section{scroll-margin-top:110px}
 			</footer>
 		<!--/ End Footer Area -->
 		
-		<!-- JS (LOAD ONCE ONLY) -->
+		<!-- JS -->
 <script src="js/jquery.min.js"></script>
-<script src="js/owl-carousel.js"></script>
+<script src="js/owl.carousel.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* Mobile Menu */
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.menu');
 
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  if(toggle && menu){
+    toggle.addEventListener('click',()=>{
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     });
   }
 
-  /* Mobile Services Submenu */
-  document.querySelectorAll('.service-trigger').forEach(el => {
-    el.addEventListener('click', e => {
-      if (window.innerWidth <= 900) {
+  document.querySelectorAll('.service-trigger').forEach(el=>{
+    el.addEventListener('click',e=>{
+      if(window.innerWidth <= 900){
         e.preventDefault();
-        const submenu = el.nextElementSibling;
-        if (submenu) submenu.classList.toggle('open');
+        el.nextElementSibling.classList.toggle('open');
       }
     });
   });
 
-  /* Sticky Header */
-  const header = document.querySelector('.main-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('sticky', window.scrollY > 80);
-    });
-  }
-
-  /* Slider */
-  if (window.jQuery && $('.hero-slider').length) {
+  if(window.jQuery && $('.hero-slider').length){
     $('.hero-slider').owlCarousel({
-      items: 1,
-      loop: true,
-      autoplay: true,
-      autoplayTimeout: 4000,
-      smartSpeed: 900,
-      dots: true,
-      nav: false
+      items:1,
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:4000,
+      smartSpeed:900,
+      dots:true,
+      nav:false
     });
   }
 
