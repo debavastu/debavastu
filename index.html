@@ -546,46 +546,45 @@ section{scroll-margin-top:95px}
 			</footer>
 		<!--/ End Footer Area -->
 		
-		<!-- JS -->
+<!-- JS -->
 <script src="js/jquery.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<script src="js/owl-carousel.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
 
+  /* Mobile Menu */
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.menu');
 
-  if(toggle && menu){
-    toggle.addEventListener('click',()=>{
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
     });
   }
 
-  document.querySelectorAll('.service-trigger').forEach(el=>{
-    el.addEventListener('click',e=>{
-      if(window.innerWidth <= 900){
+  /* Mobile Services Submenu */
+  document.querySelectorAll('.service-trigger').forEach(el => {
+    el.addEventListener('click', e => {
+      if (window.innerWidth <= 900) {
         e.preventDefault();
         el.nextElementSibling.classList.toggle('open');
       }
     });
   });
 
-  if(window.jQuery && $('.hero-slider').length){
-    $('.hero-slider').owlCarousel({
-      items:1,
-      loop:true,
-      autoplay:true,
-      autoplayTimeout:4000,
-      smartSpeed:900,
-      dots:true,
-      nav:false
-    });
-  }
+  /* ✅ HERO SLIDER – FIXED */
+  $('.hero-slider').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    smartSpeed: 900,
+    dots: true,
+    nav: false,
+    animateOut: 'fadeOut'
+  });
 
 });
 </script>
-
-</body>
-</html>
