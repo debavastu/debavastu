@@ -36,16 +36,20 @@ gtag('config', 'G-FX34Q54466');
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/responsive.css">
 
-<!-- Schema -->
+<!-- Local Business Schema -->
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"LocalBusiness",
-"name":"DebaVastu",
-"url":"https://www.debavastu.com",
-"logo":"https://www.debavastu.com/img/logo.png",
-"address":{"@type":"PostalAddress","addressRegion":"Odisha","addressCountry":"India"},
-"areaServed":"India"
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"DebaVastu",
+  "url":"https://www.debavastu.com",
+  "logo":"https://www.debavastu.com/img/logo.png",
+  "address":{
+    "@type":"PostalAddress",
+    "addressRegion":"Odisha",
+    "addressCountry":"India"
+  },
+  "areaServed":"India"
 }
 </script>
 
@@ -54,10 +58,12 @@ html{scroll-behavior:smooth}
 section{scroll-margin-top:110px}
 
 /* HEADER */
-.main-header{position:sticky;top:0;z-index:99999;
-background:linear-gradient(90deg,#0a2a66,#0d3a85);
-box-shadow:0 3px 12px rgba(0,0,0,.25);
-transition:.35s}
+.main-header{
+  position:sticky;top:0;z-index:99999;
+  background:linear-gradient(90deg,#0a2a66,#0d3a85);
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+  transition:.35s
+}
 .main-header.sticky{background:#081f4a}
 .header-wrapper{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
 .logo-link{display:flex;align-items:center;gap:14px;text-decoration:none}
@@ -70,9 +76,9 @@ transition:.35s}
 .appointment-btn{background:#07b565;padding:10px 18px;border-radius:8px;color:#fff!important}
 
 .dropdown-menu{
-display:none;position:absolute;background:#fff;
-border-radius:8px;min-width:220px;
-box-shadow:0 6px 20px rgba(0,0,0,.25)
+  display:none;position:absolute;background:#fff;
+  border-radius:8px;min-width:220px;
+  box-shadow:0 6px 20px rgba(0,0,0,.25)
 }
 .dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu li a{display:block;padding:12px 16px;color:#0a2a66}
@@ -80,18 +86,32 @@ box-shadow:0 6px 20px rgba(0,0,0,.25)
 .mobile-toggle{display:none;color:#fff;font-size:28px;cursor:pointer}
 
 @media(max-width:900px){
-.menu{display:none;flex-direction:column;background:#0a2a66;padding:20px}
-.mobile-toggle{display:block}
-.dropdown-menu{position:relative;background:#0d3a85}
-.dropdown-menu.open{display:block}
-.dropdown-menu li a{color:#fff}
+  .menu{display:none;flex-direction:column;background:#0a2a66;padding:20px}
+  .mobile-toggle{display:block}
+  .dropdown-menu{position:relative;background:#0d3a85}
+  .dropdown-menu.open{display:block}
+  .dropdown-menu li a{color:#fff}
 }
 
 /* SLIDER */
-.single-slider{min-height:85vh;background-size:cover;background-position:center;
-display:flex;align-items:center;position:relative}
-.single-slider:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.single-slider .text{position:relative;color:#fff}
+.single-slider{
+  min-height:85vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  position:relative
+}
+.single-slider:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45)
+}
+.single-slider .text{
+  position:relative;
+  color:#fff
+}
 </style>
 </head>
 
@@ -103,7 +123,7 @@ display:flex;align-items:center;position:relative}
 <div class="header-wrapper">
 
 <a href="index.html" class="logo-link">
-<img src="img/logo.png" class="header-logo">
+<img src="img/logo.png" class="header-logo" alt="DebaVastu Logo">
 <div class="brand-text">DEBAVASTU</div>
 </a>
 
@@ -111,15 +131,15 @@ display:flex;align-items:center;position:relative}
 <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
 <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
 <li class="dropdown">
-<a href="#" class="m-link service-trigger"><i class="fa fa-handshake-o"></i>Services</a>
-<ul class="dropdown-menu">
-<li><a href="vastu.html">Vastu</a></li>
-<li><a href="astrology.html">Astrology</a></li>
-<li><a href="numerology.html">Numerology</a></li>
-<li><a href="tarot.html">Tarot</a></li>
-<li><a href="yoga.html">Yoga</a></li>
-<li><a href="healing.html">Healing</a></li>
-</ul>
+  <a href="#" class="m-link service-trigger"><i class="fa fa-handshake-o"></i>Services</a>
+  <ul class="dropdown-menu">
+    <li><a href="vastu.html">Vastu</a></li>
+    <li><a href="astrology.html">Astrology</a></li>
+    <li><a href="numerology.html">Numerology</a></li>
+    <li><a href="tarot.html">Tarot</a></li>
+    <li><a href="yoga.html">Yoga</a></li>
+    <li><a href="healing.html">Healing</a></li>
+  </ul>
 </li>
 <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
 <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
@@ -130,28 +150,29 @@ display:flex;align-items:center;position:relative}
 </div>
 </header>
 
-
 <!-- SLIDER -->
 <section class="slider">
 <div class="hero-slider owl-carousel">
 
-<div class="single-slider" style="background-image:url('img/slider.webp')">
-<div class="container"><div class="text">
+<div class="single-slider" style="background-image:url('img/slider.webp'),url('img/slider.jpg')">
+<div class="container">
+<div class="text">
 <h1>Best Vastu Consultant in Odisha & India</h1>
 <p>Residential • Commercial • Industrial Vastu</p>
-</div></div></div>
+</div>
+</div>
+</div>
 
-<div class="single-slider" style="background-image:url('img/slider2.webp')">
+<div class="single-slider" style="background-image:url('img/slider2.webp'),url('img/slider2.jpg')">
 <div class="container"><div class="text"><h2>Astrology • Numerology • Tarot</h2></div></div>
 </div>
 
-<div class="single-slider" style="background-image:url('img/slider3.webp')">
+<div class="single-slider" style="background-image:url('img/slider3.webp'),url('img/slider3.jpg')">
 <div class="container"><div class="text"><h2>Yoga • Healing • Energy Balance</h2></div></div>
 </div>
 
 </div>
-</section
-
+</section>
 
 		<!-- Our Services (NEW) -->
 		<section class="services-area section" id="services" style="padding:60px 0;background:#fbfbfc;">
@@ -365,7 +386,6 @@ display:flex;align-items:center;position:relative}
 		</section>
 		<!-- End Blog Area -->
 		
-		
 
 
 		<!-- Footer Area -->
@@ -503,187 +523,56 @@ display:flex;align-items:center;position:relative}
 			</footer>
 		<!--/ End Footer Area -->
 		
-		<!-- Core -->
+		<!-- JS (LOAD ONCE ONLY) -->
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.0.js"></script>
-<script src="js/popper.min.js"></script>
+<script src="js/owl-carousel.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Animations & UI -->
-<script src="js/wow.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-
-<!-- Slider -->
-<script src="js/owl-carousel.js"></script>
-
-<!-- Counters -->
-<script src="js/jquery.counterup.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-
-<!-- Email / Payment -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<!-- Main -->
-<script src="js/main.js"></script>
-
-
-        <!-- EmailJS + booking handler -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script>
-        (function(){
-          // Initialize EmailJS with public key
-          try{
-            emailjs.init('dkxgwOwsd0z7BMPyo');
-          }catch(e){
-            console.warn('EmailJS init failed', e);
-          }
-
-          const ownerWhatsApp = '916372710439'; // owner WhatsApp (no plus)
-
-          const form = document.getElementById('bookingForm');
-          const submitBtn = document.getElementById('bookBtn');
-          const modal = document.getElementById('dvModal');
-          const modalText = document.getElementById('dvModalText');
-          const modalClose = document.getElementById('dvClose');
-
-          function showModal(text){
-            modalText.textContent = text;
-            modal.style.display = 'flex';
-            modal.setAttribute('aria-hidden','false');
-          }
-          function hideModal(){
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden','true');
-          }
-          modalClose.addEventListener('click', hideModal);
-          modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
-
-          form.addEventListener('submit', async function(e){
-            e.preventDefault();
-            if(submitBtn.getAttribute('data-busy') === '1') return;
-            submitBtn.setAttribute('data-busy','1');
-            submitBtn.textContent = 'Booking...';
-
-            // Collect fields
-            const name = document.getElementById('b_name').value.trim();
-            const email = document.getElementById('b_email').value.trim();
-            const phone = document.getElementById('b_phone').value.trim();
-            const service = document.getElementById('b_service').value;
-            const date = document.getElementById('b_date').value;
-            const message = document.getElementById('b_message').value.trim();
-
-            // Basic validation
-            if(!name || !email || !phone || !service || !date){
-              alert('Please complete all required fields.');
-              submitBtn.removeAttribute('data-busy');
-              submitBtn.textContent = 'Book Appointment';
-              return;
-            }
-
-            // Prepare template params for EmailJS
-            const templateParams = {
-              from_name: name,
-              from_email: email,
-              phone: phone,
-              service: service,
-              preferred_date: date,
-              message: message,
-              site: window.location.hostname
-            };
-
-            // 1) Send email via EmailJS (notification to your template)
-            let emailOk = false;
-            try{
-              await emailjs.send('service_dea8439','template_xrogxm8', templateParams);
-              emailOk = true;
-            }catch(err){
-              console.warn('EmailJS send error', err);
-              emailOk = false;
-            }
-
-            // 2) Save booking locally as backup
-            try{
-              const backup = JSON.parse(localStorage.getItem('deba_bookings_v2')||'[]');
-              backup.push({ id:'bk_'+Date.now(), name, email, phone, service, date, message, created: new Date().toISOString() });
-              localStorage.setItem('deba_bookings_v2', JSON.stringify(backup));
-            }catch(err){
-              console.warn('localStorage error', err);
-            }
-
-            // 3) Attempt to call server-side create-order (if available) - optional, non-blocking
-            let serverResp = null;
-            try{
-              const resp = await fetch('/.netlify/functions/create-order', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({ name, email, phone, service, date, slot: 'N/A', amount: 0 }) // amount 0 -> no payment
-              });
-              if(resp.ok){
-                serverResp = await resp.json();
-              } else {
-                serverResp = { error: await resp.text() };
-              }
-            }catch(err){
-              // ignore - server may not be deployed yet
-              serverResp = { error: 'server-unavailable' };
-            }
-
-            // 4) Open WhatsApp to owner with booking summary (for instant alert)
-            try{
-              const waText = encodeURIComponent(`New booking → ${name} | ${service} | ${date} | ${phone}`);
-              window.open('https://wa.me/'+ownerWhatsApp+'?text='+waText, '_blank');
-            }catch(err){
-              // ignore
-            }
-
-            // 5) Show success or partial-success modal
-            if(emailOk){
-              showModal('Thank you! Your appointment request has been sent. We will contact you shortly.');
-            } else {
-              showModal('Your request is saved locally. Email could not be sent right now. We will try to notify you soon.');
-            }
-
-            // Reset form & button
-            form.reset();
-            submitBtn.removeAttribute('data-busy');
-            submitBtn.textContent = 'Book Appointment';
-          });
-
-        })();
-        </script>
-
-		<!-- Main JS -->
-<script src="js/jquery.min.js"></script>
-<script src="js/owl-carousel.js"></script>
-
 <script>
-/* Mobile Menu */
-document.querySelector('.mobile-toggle').onclick=()=>{
-const m=document.querySelector('.menu');
-m.style.display=m.style.display==='flex'?'none':'flex';
-};
+document.addEventListener("DOMContentLoaded", function () {
 
-/* Mobile Services submenu */
-document.querySelectorAll('.service-trigger').forEach(el=>{
-el.addEventListener('click',e=>{
-if(window.innerWidth<=900){
-e.preventDefault();
-el.nextElementSibling.classList.toggle('open');
-}
-});
-});
+  /* Mobile Menu */
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('.menu');
 
-/* Sticky Header */
-window.addEventListener('scroll',()=>{
-document.querySelector('.main-header')
-.classList.toggle('sticky',window.scrollY>80);
-});
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    });
+  }
 
-/* Slider */
-$('.hero-slider').owlCarousel({
-items:1,loop:true,autoplay:true,autoplayTimeout:4000,dots:true
+  /* Mobile Services Submenu */
+  document.querySelectorAll('.service-trigger').forEach(el => {
+    el.addEventListener('click', e => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        const submenu = el.nextElementSibling;
+        if (submenu) submenu.classList.toggle('open');
+      }
+    });
+  });
+
+  /* Sticky Header */
+  const header = document.querySelector('.main-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('sticky', window.scrollY > 80);
+    });
+  }
+
+  /* Slider */
+  if (window.jQuery && $('.hero-slider').length) {
+    $('.hero-slider').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      smartSpeed: 900,
+      dots: true,
+      nav: false
+    });
+  }
+
 });
 </script>
 
