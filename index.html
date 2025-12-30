@@ -81,20 +81,24 @@ a{text-decoration:none}
   width:70px;
   height:70px;
   border-radius:50%;
-  background:transparent;                 /* remove white bg */
-  border:2px solid rgba(255,255,255,0.8); /* thin white ring */
+  background:
+    linear-gradient(#081f4a, #081f4a) padding-box,
+    linear-gradient(135deg, #f5c86b, #d4a017) border-box;
+  border:2px solid transparent;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;                        /* CRITICAL */
-  box-shadow:0 0 12px rgba(245,200,107,.45);
+  overflow:hidden;
+  box-shadow:0 0 6px rgba(245,200,107,.45); /* reduced glow */
 }
 
 /* Bigger logo */
 .logo-wrap img{
-  width:58px;
-  height:58px;
+  width:60px;
+  height:60px;
   object-fit:contain;
+  image-rendering: -webkit-optimize-contrast;
+  filter: contrast(1.08) saturate(1.05);
 }
 
 /* Brand text */
@@ -202,20 +206,38 @@ a{text-decoration:none}
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
+
   .logo-wrap{
-    width:54px;
-    height:54px;
-    border:2px solid rgba(255,255,255,0.85);
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:transparent; /* removes white patch */
+    border:2px solid rgba(245,200,107,0.9); /* gold ring instead of white */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 6px rgba(245,200,107,.45);
   }
 
   .logo-wrap img{
-    width:44px;
-    height:44px;
+    width:46px;
+    height:46px;
+    object-fit:contain;
+    image-rendering:-webkit-optimize-contrast;
+    filter:contrast(1.08) saturate(1.05);
   }
 
-  .brand-name{font-size:18px}
-  .brand-tagline{font-size:11px}
+  .brand-name{
+    font-size:18px;
+    font-weight:700;
+  }
+
+  .brand-tagline{
+    font-size:11px;
+    opacity:.9;
+  }
 }
+
 
 </style>
 </head>
