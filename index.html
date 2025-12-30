@@ -69,30 +69,31 @@ a{text-decoration:none}
   padding:12px 0;
 }
 
-/* LOGO */
+/* ===== LOGO FIX ===== */
 .logo-link{
   display:flex;
   align-items:center;
   gap:14px;
 }
 
-/* Thin white ring */
+/* TRUE circular ring – no white patch */
 .logo-wrap{
-  width:72px;
-  height:72px;
+  width:70px;
+  height:70px;
   border-radius:50%;
-  background:transparent;              /* no white block */
-  border:2px solid rgba(255,255,255,.75); /* thin white ring */
+  background:transparent;                 /* remove white bg */
+  border:2px solid rgba(255,255,255,0.8); /* thin white ring */
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 10px rgba(245,200,107,.45);
+  overflow:hidden;                        /* CRITICAL */
+  box-shadow:0 0 12px rgba(245,200,107,.45);
 }
 
 /* Bigger logo */
 .logo-wrap img{
-  width:60px;
-  height:60px;
+  width:58px;
+  height:58px;
   object-fit:contain;
 }
 
@@ -107,7 +108,6 @@ a{text-decoration:none}
   color:#f3e7c3;
   margin-top:-4px;
 }
-
 
 /* MENU */
 .menu{list-style:none;display:flex;gap:26px;margin:0}
@@ -203,17 +203,17 @@ a{text-decoration:none}
 /* ===== MOBILE ===== */
 @media(max-width:900px){
   .logo-wrap{
-    width:56px;
-    height:56px;
-    border:2px solid rgba(255,255,255,.8);
+    width:54px;
+    height:54px;
+    border:2px solid rgba(255,255,255,0.85);
   }
 
   .logo-wrap img{
-    width:46px;
-    height:46px;
+    width:44px;
+    height:44px;
   }
 
-  .brand-name{font-size:19px}
+  .brand-name{font-size:18px}
   .brand-tagline{font-size:11px}
 }
 
@@ -225,12 +225,12 @@ a{text-decoration:none}
 <!-- HEADER -->
 <header class="main-header">
 <div class="container header-wrapper">
-
+  
 <a href="index.html" class="logo-link">
   <div class="logo-wrap">
     <img src="img/logo-header.png" alt="DebaVastu Logo">
   </div>
-  <div>
+  <div class="brand-text">
     <div class="brand-name">DEBAVASTU</div>
     <div class="brand-tagline">The Science of Harmony</div>
   </div>
