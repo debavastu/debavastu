@@ -58,17 +58,16 @@ a{text-decoration:none}
 
 /* ===== HEADER ===== */
 .main-header{
-  position:sticky;top:0;z-index:9999;
+  position:sticky;
+  top:0;
+  z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 6px 14px rgba(0,0,0,0.18);
-  }
-
-  transition:.3s;
+  transition:all .3s ease;
 }
-.main-header.shrink{padding:4px 0}
-.header-wrapper{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 0;
+
+.main-header.shrink{
+  padding:2px 0;
 }
 
 /* ===== LOGO FIX ===== */
@@ -78,8 +77,9 @@ a{text-decoration:none}
   gap:14px;
 }
 
-/* ===== LOGO FIX – BLENDED + LIGHT HALO ===== */
+/* ===== HEADER LOGO – BLENDED HOVER EFFECT ===== */
 
+/* ===== HEADER LOGO ===== */
 .logo-wrap{
   width:64px;
   height:64px;
@@ -87,37 +87,80 @@ a{text-decoration:none}
   display:flex;
   align-items:center;
   justify-content:center;
+  position:relative;
+  overflow:hidden;
+  will-change:transform;
 
-  /* Blend with header */
+  /* Subtle isolation from dark header */
   background:radial-gradient(
     circle,
-    rgba(255,255,255,0.12) 0%,
+    rgba(255,255,255,0.10) 0%,
     rgba(255,255,255,0.04) 45%,
     rgba(255,255,255,0) 70%
   );
 
-  /* Thin premium gold ring */
-  border:1.5px solid rgba(245,200,107,0.9);
+  border:1.5px solid rgba(245,200,107,0.85);
 
-  /* Soft light aura (NOT glow) */
   box-shadow:
     0 0 0 1px rgba(245,200,107,0.35),
     0 0 14px rgba(245,200,107,0.35),
     0 6px 18px rgba(0,0,0,0.35);
+
+  transition:transform .35s ease, box-shadow .35s ease;
 }
 
+/* Soft circular glow */
+.logo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(245,200,107,0.35),
+    rgba(245,200,107,0.15),
+    transparent 70%
+  );
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+
+/* Hover (desktop only) */
+@media (hover:hover){
+  .logo-wrap:hover{
+    transform:translateY(-1px) scale(1.04);
+    box-shadow:
+      0 0 0 1px rgba(245,200,107,0.6),
+      0 0 22px rgba(245,200,107,0.55),
+      0 10px 26px rgba(0,0,0,0.45);
+  }
+
+  .logo-wrap:hover::before{
+    opacity:1;
+  }
+
+  .logo-wrap:hover img{
+    filter:
+      brightness(1.2)
+      contrast(1.2)
+      saturate(1.2);
+  }
+}
+
+/* Logo image */
 .logo-wrap img{
   width:52px;
   height:52px;
   object-fit:contain;
+  z-index:2;
 
-  /* Clarity enhancement */
   filter:
     brightness(1.12)
     contrast(1.15)
     saturate(1.12);
 
-  image-rendering:-webkit-optimize-contrast;
+  transition:filter .35s ease;
 }
 
 /* Brand text */
@@ -130,6 +173,15 @@ a{text-decoration:none}
   font-size:13px;
   color:#f3e7c3;
   margin-top:-4px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion:reduce){
+  .logo-wrap,
+  .logo-wrap::before,
+  .logo-wrap img{
+    transition:none;
+  }
 }
 
 /* MENU */
@@ -223,23 +275,26 @@ a{text-decoration:none}
 .dv-whatsapp{background:#25D366}
 .dv-call{background:#081f4a}
 
-/* ===== MOBILE ===== */
 @media(max-width:900px){
 
   .logo-wrap{
     width:58px;
     height:58px;
     border-radius:50%;
-    background:rgba(255,255,255,0.06); /* very subtle isolation */
-    border:1.5px solid rgba(245,200,107,0.9);
+
+    /* ultra-subtle isolation (almost invisible) */
+    background:rgba(255,255,255,0.035);
+
+    border:1.3px solid rgba(245,200,107,0.85);
+
     display:flex;
     align-items:center;
     justify-content:center;
 
-    /* soft depth, not glow */
+    /* clean depth, no glow */
     box-shadow:
-      0 0 0 1px rgba(245,200,107,0.25),
-      0 4px 10px rgba(0,0,0,0.25);
+      0 0 0 1px rgba(245,200,107,0.18),
+      0 3px 8px rgba(0,0,0,0.22);
   }
 
   .logo-wrap img{
@@ -247,11 +302,11 @@ a{text-decoration:none}
     height:48px;
     object-fit:contain;
 
-    /* clarity tuning */
+    /* clarity tuned for dark header */
     filter:
-      brightness(1.08)
-      contrast(1.12)
-      saturate(1.1);
+      brightness(1.12)
+      contrast(1.18)
+      saturate(1.12);
 
     image-rendering:-webkit-optimize-contrast;
   }
@@ -259,11 +314,12 @@ a{text-decoration:none}
   .brand-name{
     font-size:18px;
     font-weight:700;
+    letter-spacing:0.4px;
   }
 
   .brand-tagline{
     font-size:11px;
-    opacity:.92;
+    opacity:.9;
   }
 }
 
