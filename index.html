@@ -3,18 +3,17 @@
 <head>
 
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Best Vastu Consultant in Odisha & India | DebaVastu</title>
+<title>Best Vastu Consultant in India | DebaVastu</title>
 
-<meta name="description" content="DebaVastu is a trusted Vastu Consultant in Odisha & India offering Residential, Commercial & Industrial Vastu, Astrology, Numerology, Tarot, Yoga & Energy Healing services.">
-<meta name="keywords" content="Vastu Consultant Odisha, Best Vastu Consultant India, Vastu Expert, Astrology, Numerology, Energy Healing">
+<meta name="description" content="DebaVastu is a trusted Vastu Consultant offering Vastu, Astrology, Numerology, Tarot, Yoga & Energy Healing services across India.">
+<meta name="keywords" content="Vastu Consultant, Vastu Expert, Astrology, Numerology, Energy Healing, Vastu Odisha">
 <meta name="robots" content="index, follow">
 
 <!-- FAVICONS -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" sizes="32x32" href="favicon-32.png">
+<link rel="icon" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- GOOGLE FONTS -->
@@ -25,7 +24,6 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/icofont.css">
 <link rel="stylesheet" href="css/owl-carousel.css">
-<link rel="stylesheet" href="style.css">
 
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX34Q54466"></script>
@@ -36,220 +34,173 @@ gtag('js', new Date());
 gtag('config', 'G-FX34Q54466');
 </script>
 
+<!-- LOCAL BUSINESS SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"DebaVastu",
+  "url":"https://www.debavastu.com",
+  "telephone":"+91-9090155516",
+  "address":{
+    "@type":"PostalAddress",
+    "addressRegion":"Odisha",
+    "addressCountry":"India"
+  },
+  "areaServed":"India"
+}
+</script>
+
 <style>
+/* ===== GLOBAL ===== */
+body{font-family:'Poppins',sans-serif;}
+a{text-decoration:none}
+
 /* ===== HEADER ===== */
 .main-header{
-  position:sticky;
-  top:0;
-  z-index:9999;
+  position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 4px 16px rgba(0,0,0,.3);
+  transition:.3s;
 }
-
+.main-header.shrink{padding:4px 0}
 .header-wrapper{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display:flex;justify-content:space-between;align-items:center;
   padding:12px 0;
 }
 
-.logo-link{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-
-/* ===== LOGO FIX ===== */
+/* LOGO */
 .logo-link{
   display:flex;
   align-items:center;
   gap:14px;
-  text-decoration:none;
 }
 
+/* Reduced white patch + bigger logo */
 .logo-wrap{
-  width:58px;
-  height:58px;
+  width:74px;
+  height:74px;
   border-radius:50%;
   background:#ffffff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 12px rgba(245,200,107,.55);
+  padding:4px;                 /* 🔥 less white area */
+  box-shadow:0 0 12px rgba(245,200,107,.6);
 }
 
+/* Bigger logo inside */
 .logo-wrap img{
-  max-width:46px;
-  height:auto;
+  max-width:66px;
+  max-height:66px;
+  object-fit:contain;
 }
 
 /* Brand text */
-.brand-text{
-  display:flex;
-  flex-direction:column;
-}
-
 .brand-name{
-  font-size:22px;
+  font-size:24px;
   font-weight:800;
   color:#f5c86b;
-  letter-spacing:0.5px;
 }
-
 .brand-tagline{
-  font-size:12px;
+  font-size:13px;
   color:#f3e7c3;
-  margin-top:-2px;
+  margin-top:-4px;
 }
 
-/* ===== MOBILE FIX ===== */
-@media(max-width:768px){
-  .logo-wrap{
-    width:48px;
-    height:48px;
-  }
-  .logo-wrap img{
-    max-width:38px;
-  }
-  .brand-name{
-    font-size:18px;
-  }
-  .brand-tagline{
-    font-size:11px;
-  }
-}
 
 /* MENU */
-.menu{
-  list-style:none;
-  display:flex;
-  gap:26px;
-  margin:0;
-  padding:0;
-}
-
-.m-link{
-  color:#fff;
-  font-weight:600;
-}
-
-.m-link i{
-  color:#f5c86b;
-  margin-right:5px;
-}
-
-.dropdown{
-  position:relative;
-}
-
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
+.m-link i{color:#f5c86b;margin-right:5px}
+.dropdown{position:relative}
 .dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  background:#fff;
-  border-radius:8px;
-  min-width:230px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  display:none;position:absolute;top:100%;
+  background:#fff;border-radius:8px;min-width:220px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25)
 }
-
+.dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu li a{
-  display:block;
-  padding:12px 16px;
-  color:#0a2a66;
-  font-weight:500;
+  display:block;padding:12px 16px;color:#081f4a;font-weight:500
 }
-
-.dropdown:hover .dropdown-menu{
-  display:block;
-}
-
 .appointment-btn{
-  background:#07b565;
-  color:#fff!important;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:600;
+  background:#07b565;color:#fff!important;
+  padding:10px 18px;border-radius:8px;font-weight:600
 }
+.mobile-toggle{display:none;color:#fff;font-size:28px}
 
-.mobile-toggle{
-  display:none;
-  font-size:28px;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* SLIDER */
+/* ===== HERO ===== */
 .single-slider{
   min-height:85vh;
   background-size:cover;
   background-position:center;
-  display:flex;
-  align-items:center;
+  display:flex;align-items:center;
   position:relative;
 }
-
 .single-slider:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.45);
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.45)
 }
-
 .single-slider .text{
-  position:relative;
-  color:#fff;
-  max-width:700px;
+  position:relative;color:#fff;max-width:720px
 }
-
-.single-slider h1,
-.single-slider h2{
-  color:#f5c86b;
+.single-slider h1,.single-slider h2{color:#f5c86b}
+.hero-btn{
+  display:inline-block;padding:12px 26px;
+  border-radius:30px;font-weight:600;margin-right:12px
 }
+.hero-btn.primary{background:#f5c86b;color:#081f4a}
+.hero-btn.secondary{border:2px solid #f5c86b;color:#f5c86b}
 
-/* SERVICES */
+/* ===== TRUST ===== */
+.trust-strip{background:#f9f9f9;padding:40px 0}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;text-align:center
+}
+.trust-item{
+  background:#fff;padding:22px;border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08)
+}
+.trust-item i{font-size:34px;color:#f5c86b}
+
+/* ===== SERVICES ===== */
 .service-box{
-  background:#fff;
-  padding:28px;
-  border-radius:14px;
+  background:#fff;padding:28px;border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
-  text-align:center;
-  margin-bottom:24px;
+  text-align:center;margin-bottom:24px
 }
+.service-box i{font-size:42px;color:#d4a017}
 
-.service-box i{
-  font-size:42px;
-  color:#d4a017;
-  margin-bottom:10px;
+/* ===== TESTIMONIALS ===== */
+.testimonials{
+  background:#081f4a;padding:70px 0;color:#fff
 }
+.testimonials h2{color:#f5c86b}
+.testimonial-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px
+}
+.testimonial-box{
+  background:#0d3a85;padding:26px;border-radius:14px
+}
+.testimonial-box h5{color:#f5c86b;margin-top:12px}
 
-/* FLOATING BUTTONS */
+/* ===== FLOATING BUTTONS ===== */
 .dv-floating{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  z-index:99999;
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:99999
 }
-
 .dv-btn{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:26px;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:26px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3)
 }
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
 
-.dv-whatsapp{background:#25D366;}
-.dv-call{background:#081f4a;}
-
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media(max-width:900px){
   .menu{
     display:none;
@@ -258,105 +209,102 @@ gtag('config', 'G-FX34Q54466');
     padding:20px;
   }
 
-  .mobile-toggle{
-    display:block;
-  }
-
-  .dropdown-menu{
-    position:relative;
-    background:#0d3a85;
-  }
-
-  .dropdown-menu li a{
-    color:#fff;
-  }
-
-  .header-logo{
-    width:46px;
-  }
+  .mobile-toggle{display:block}
 
   .logo-wrap{
-    padding:5px;
+    width:58px;
+    height:58px;
+    padding:4px;
   }
 
-  .brand-name{
-    font-size:18px;
+  .logo-wrap img{
+    max-width:48px;
+    max-height:48px;
   }
 
-  .brand-tagline{
-    font-size:11px;
-  }
+  .brand-name{font-size:19px}
+  .brand-tagline{font-size:11px}
 }
-</style>
 
+</style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header class="main-header">
-  <div class="container header-wrapper">
+<div class="container header-wrapper">
 
-   <a href="index.html" class="logo-link">
+<a href="index.html" class="logo-link">
   <div class="logo-wrap">
-    <img src="img/logo-header.png" alt="DebaVastu Logo" loading="eager">
+    <img src="img/logo-header.png" alt="DebaVastu Logo">
   </div>
-  <div class="brand-text">
-    <span class="brand-name">DEBAVASTU</span>
-    <span class="brand-tagline">The Science of Harmony</span>
+  <div>
+    <div class="brand-name">DEBAVASTU</div>
+    <div class="brand-tagline">The Science of Harmony</div>
   </div>
 </a>
 
-    
-    <ul class="menu">
-      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
-      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
-
-      <li class="dropdown">
-        <a href="#" class="m-link"><i class="fa fa-handshake-o"></i>Services</a>
-        <ul class="dropdown-menu">
-          <li><a href="vastu.html">Vastu Consultation</a></li>
-          <li><a href="astrology.html">Astrology</a></li>
-          <li><a href="numerology.html">Numerology</a></li>
-          <li><a href="tarot.html">Tarot Reading</a></li>
-          <li><a href="yoga.html">Yoga & Wellness</a></li>
-          <li><a href="healing.html">Energy Healing</a></li>
-        </ul>
-      </li>
-
-      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
-      <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+<ul class="menu">
+  <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
+  <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
+  <li class="dropdown">
+    <a class="m-link" href="#"><i class="fa fa-handshake-o"></i>Services</a>
+    <ul class="dropdown-menu">
+      <li><a href="vastu.html">Vastu Consultation</a></li>
+      <li><a href="astrology.html">Astrology</a></li>
+      <li><a href="numerology.html">Numerology</a></li>
+      <li><a href="tarot.html">Tarot Reading</a></li>
+      <li><a href="yoga.html">Yoga & Wellness</a></li>
+      <li><a href="healing.html">Energy Healing</a></li>
     </ul>
+  </li>
+  <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+  <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
+</ul>
 
-    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
-
-  </div>
+<div class="mobile-toggle"><i class="fa fa-bars"></i></div>
+</div>
 </header>
 
-<!-- SLIDER -->
+<!-- HERO SLIDER -->
 <section class="slider">
   <div class="hero-slider owl-carousel">
 
+    <!-- Slide 1 -->
     <div class="single-slider" style="background-image:url('img/slider.jpg')">
       <div class="container">
         <div class="text">
           <h1>Trusted Vastu Consultant in India</h1>
-          <p>Residential • Commercial • Industrial Vastu Solutions</p>
+          <p>
+            Scientific Vastu • Astrology • Numerology • Energy Healing
+            <br>
+            Residential • Commercial • Industrial Vastu Solutions
+          </p>
+          <div style="margin-top:22px">
+            <a href="appointment.html" class="hero-btn primary">Book Consultation</a>
+            <a href="tel:+919090155516" class="hero-btn secondary">Call Now</a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Slide 2 -->
     <div class="single-slider" style="background-image:url('img/slider2.jpg')">
       <div class="container">
         <div class="text">
           <h2>Astrology • Numerology • Tarot</h2>
+          <p>Clarity, guidance & confidence for life decisions</p>
         </div>
       </div>
     </div>
 
+    <!-- Slide 3 -->
     <div class="single-slider" style="background-image:url('img/slider3.jpg')">
       <div class="container">
         <div class="text">
           <h2>Yoga • Energy Healing • Wellness</h2>
+          <p>Balance your body, mind & space naturally</p>
         </div>
       </div>
     </div>
@@ -364,88 +312,62 @@ gtag('config', 'G-FX34Q54466');
   </div>
 </section>
 
+<!-- TRUST -->
+<section class="trust-strip">
+<div class="container trust-grid">
+<div class="trust-item"><i class="fa fa-star"></i><h4>10+ Years Experience</h4></div>
+<div class="trust-item"><i class="fa fa-users"></i><h4>3000+ Happy Clients</h4></div>
+<div class="trust-item"><i class="fa fa-home"></i><h4>Residential • Commercial • Industrial</h4></div>
+<div class="trust-item"><i class="fa fa-globe"></i><h4>Across India</h4></div>
+</div>
+</section>
+
 <!-- SERVICES -->
 <section class="container" style="padding:70px 0">
-  <h2 class="text-center mb-5">Our Core Services</h2>
-  <div class="row">
+<h2 class="text-center mb-5">Our Core Services</h2>
+<div class="row">
+<div class="col-md-4"><div class="service-box"><i class="icofont-compass"></i><h4>Vastu Consultation</h4></div></div>
+<div class="col-md-4"><div class="service-box"><i class="icofont-globe"></i><h4>Astrology</h4></div></div>
+<div class="col-md-4"><div class="service-box"><i class="icofont-ui-calendar"></i><h4>Numerology</h4></div></div>
+<div class="col-md-4"><div class="service-box"><i class="icofont-magic"></i><h4>Tarot Reading</h4></div></div>
+<div class="col-md-4"><div class="service-box"><i class="icofont-yoga"></i><h4>Yoga & Wellness</h4></div></div>
+<div class="col-md-4"><div class="service-box"><i class="icofont-brainstorming"></i><h4>Energy Healing</h4></div></div>
+</div>
+</section>
 
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-compass"></i>
-        <h4>Vastu Consultation</h4>
-        <p>Scientific Vastu for homes, offices & industries.</p>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-globe"></i>
-        <h4>Astrology</h4>
-        <p>Kundli, career & relationship guidance.</p>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-ui-calendar"></i>
-        <h4>Numerology</h4>
-        <p>Name & number analysis for success.</p>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-magic"></i>
-        <h4>Tarot Reading</h4>
-        <p>Intuitive answers for life decisions.</p>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-yoga"></i>
-        <h4>Yoga & Wellness</h4>
-        <p>Mind–body balance through yoga.</p>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="service-box">
-        <i class="icofont-brainstorming"></i>
-        <h4>Energy Healing</h4>
-        <p>Reiki, chakra & aura cleansing.</p>
-      </div>
-    </div>
-
-  </div>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<div class="container">
+<h2 class="text-center">What Our Clients Say</h2>
+<div class="testimonial-grid">
+<div class="testimonial-box"><p>Highly practical Vastu guidance with real results.</p><h5>— Business Owner</h5></div>
+<div class="testimonial-box"><p>Peace and positivity returned to our home.</p><h5>— Home Owner</h5></div>
+<div class="testimonial-box"><p>Very genuine and scientific approach.</p><h5>— IT Professional</h5></div>
+</div>
+</div>
 </section>
 
 <!-- FLOATING BUTTONS -->
 <div class="dv-floating">
-  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
-  <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
+<a href="https://wa.me/919090155516?text=Hello%20DebaVastu,%20I%20want%20to%20book%20a%20consultation."
+   class="dv-btn dv-whatsapp" target="_blank"><i class="fa fa-whatsapp"></i></a>
+<a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
 </div>
 
 <!-- JS -->
 <script src="js/jquery.min.js"></script>
 <script src="js/owl-carousel.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
 <script>
-$(document).ready(function(){
-  $('.mobile-toggle').click(function(){
-    $('.menu').toggle();
-  });
+$('.mobile-toggle').click(function(){ $('.menu').toggle(); });
 
-  $('.hero-slider').owlCarousel({
-    items:1,
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:4000,
-    smartSpeed:900,
-    dots:true,
-    nav:false
-  });
+$('.hero-slider').owlCarousel({
+  items:1,loop:true,autoplay:true,autoplayTimeout:4000,dots:true
+});
+
+window.addEventListener("scroll",function(){
+  document.querySelector(".main-header")
+    .classList.toggle("shrink",window.scrollY>80);
 });
 </script>
 
