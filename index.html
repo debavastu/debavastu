@@ -79,23 +79,28 @@ a{text-decoration:none}
 /* ===== HEADER LOGO – FINAL FIX ===== */
 
 .logo-wrap{
-  width:64px;
-  height:64px;
+  width:70px;
+  height:70px;
   border-radius:50%;
-  background:transparent;
-  border:1.5px solid rgba(245,200,107,0.85); /* thin gold ring */
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:none; /* remove glow */
+
+  /* subtle clarity layer */
+  background:rgba(255,255,255,0.06);
+
+  /* thin premium gold ring */
+  border:1px solid rgba(245,200,107,0.65);
 }
 
+
 .logo-wrap img{
-  width:54px;
-  height:54px;
+  width:58px;
+  height:58px;
   object-fit:contain;
-  image-rendering:-webkit-optimize-contrast;
-  filter:contrast(1.05) saturate(1.03);
+
+  /* enhances gold + text clarity */
+  filter: brightness(1.08) contrast(1.12) saturate(1.1);
 }
 
 
