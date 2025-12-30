@@ -60,7 +60,9 @@ a{text-decoration:none}
 .main-header{
   position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
-  box-shadow:0 4px 16px rgba(0,0,0,.3);
+  box-shadow:0 6px 14px rgba(0,0,0,0.18);
+  }
+
   transition:.3s;
 }
 .main-header.shrink{padding:4px 0}
@@ -79,28 +81,30 @@ a{text-decoration:none}
 /* ===== HEADER LOGO – FINAL FIX ===== */
 
 .logo-wrap{
-  width:70px;
-  height:70px;
+  width:72px;
+  height:72px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
 
-  /* subtle clarity layer */
-  background:rgba(255,255,255,0.06);
+  /* very light isolation layer */
+  background:rgba(255,255,255,0.08);
 
-  /* thin premium gold ring */
-  border:1px solid rgba(245,200,107,0.65);
+  /* thin premium gold outline */
+  border:1.5px solid rgba(245,200,107,0.75);
 }
 
-
 .logo-wrap img{
-  width:58px;
-  height:58px;
+  width:60px;
+  height:60px;
   object-fit:contain;
 
-  /* enhances gold + text clarity */
-  filter: brightness(1.08) contrast(1.12) saturate(1.1);
+  /* clarity boost for gold + text */
+  filter:
+    brightness(1.12)
+    contrast(1.18)
+    saturate(1.15);
 }
 
 
@@ -211,23 +215,33 @@ a{text-decoration:none}
 @media(max-width:900px){
 
   .logo-wrap{
-    width:56px;
-    height:56px;
+    width:58px;
+    height:58px;
     border-radius:50%;
-    background:transparent; /* removes white patch */
-    border:2px solid rgba(245,200,107,0.9); /* gold ring instead of white */
+    background:rgba(255,255,255,0.06); /* very subtle isolation */
+    border:1.5px solid rgba(245,200,107,0.9);
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 0 6px rgba(245,200,107,.45);
+
+    /* soft depth, not glow */
+    box-shadow:
+      0 0 0 1px rgba(245,200,107,0.25),
+      0 4px 10px rgba(0,0,0,0.25);
   }
 
   .logo-wrap img{
-    width:46px;
-    height:46px;
+    width:48px;
+    height:48px;
     object-fit:contain;
+
+    /* clarity tuning */
+    filter:
+      brightness(1.08)
+      contrast(1.12)
+      saturate(1.1);
+
     image-rendering:-webkit-optimize-contrast;
-    filter:contrast(1.08) saturate(1.05);
   }
 
   .brand-name{
@@ -237,10 +251,9 @@ a{text-decoration:none}
 
   .brand-tagline{
     font-size:11px;
-    opacity:.9;
+    opacity:.92;
   }
 }
-
 
 </style>
 </head>
