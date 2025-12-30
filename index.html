@@ -39,86 +39,224 @@ gtag('config', 'G-FX34Q54466');
 <style>
 /* ===== HEADER ===== */
 .main-header{
-  position:sticky;top:0;z-index:9999;
+  position:sticky;
+  top:0;
+  z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 4px 16px rgba(0,0,0,.3);
 }
+
 .header-wrapper{
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   padding:12px 0;
 }
-.logo-link{display:flex;align-items:center;gap:12px;text-decoration:none}
-.header-logo{width:58px;height:auto}
-.brand-name{font-size:22px;font-weight:700;color:#f5c86b}
-.brand-tagline{font-size:12px;color:#f3e7c3}
+
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+/* LOGO FIX */
+.logo-wrap{
+  background:#ffffff;
+  padding:6px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:
+    0 0 10px rgba(255,215,120,0.65),
+    0 0 18px rgba(255,215,120,0.35);
+}
+
+.header-logo{
+  width:54px;
+  height:auto;
+  display:block;
+}
+
+.brand-name{
+  font-size:22px;
+  font-weight:700;
+  color:#f5c86b;
+  line-height:1.1;
+}
+
+.brand-tagline{
+  font-size:12px;
+  color:#f3e7c3;
+}
 
 /* MENU */
-.menu{list-style:none;display:flex;gap:26px;margin:0;padding:0}
-.m-link{color:#fff;font-weight:600}
-.m-link i{color:#f5c86b;margin-right:5px}
-.dropdown{position:relative}
+.menu{
+  list-style:none;
+  display:flex;
+  gap:26px;
+  margin:0;
+  padding:0;
+}
+
+.m-link{
+  color:#fff;
+  font-weight:600;
+}
+
+.m-link i{
+  color:#f5c86b;
+  margin-right:5px;
+}
+
+.dropdown{
+  position:relative;
+}
+
 .dropdown-menu{
-  display:none;position:absolute;top:100%;
-  background:#fff;border-radius:8px;
-  min-width:230px;box-shadow:0 10px 30px rgba(0,0,0,.25)
+  display:none;
+  position:absolute;
+  top:100%;
+  background:#fff;
+  border-radius:8px;
+  min-width:230px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
+
 .dropdown-menu li a{
-  display:block;padding:12px 16px;
-  color:#0a2a66;font-weight:500
+  display:block;
+  padding:12px 16px;
+  color:#0a2a66;
+  font-weight:500;
 }
-.dropdown:hover .dropdown-menu{display:block}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
 
 .appointment-btn{
-  background:#07b565;color:#fff!important;
-  padding:10px 18px;border-radius:8px;font-weight:600
+  background:#07b565;
+  color:#fff!important;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:600;
 }
 
-.mobile-toggle{display:none;font-size:28px;color:#fff}
+.mobile-toggle{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
 
 /* SLIDER */
 .single-slider{
   min-height:85vh;
   background-size:cover;
   background-position:center;
-  display:flex;align-items:center;position:relative
+  display:flex;
+  align-items:center;
+  position:relative;
 }
+
 .single-slider:before{
-  content:"";position:absolute;inset:0;
-  background:rgba(0,0,0,.45)
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
 }
+
 .single-slider .text{
-  position:relative;color:#fff;max-width:700px
+  position:relative;
+  color:#fff;
+  max-width:700px;
 }
-.single-slider h1,.single-slider h2{color:#f5c86b}
+
+.single-slider h1,
+.single-slider h2{
+  color:#f5c86b;
+}
 
 /* SERVICES */
 .service-box{
-  background:#fff;padding:28px;border-radius:14px;
+  background:#fff;
+  padding:28px;
+  border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
-  text-align:center;margin-bottom:24px
+  text-align:center;
+  margin-bottom:24px;
 }
-.service-box i{font-size:42px;color:#d4a017;margin-bottom:10px}
+
+.service-box i{
+  font-size:42px;
+  color:#d4a017;
+  margin-bottom:10px;
+}
 
 /* FLOATING BUTTONS */
 .dv-floating{
-  position:fixed;bottom:24px;right:24px;
-  display:flex;flex-direction:column;gap:14px;z-index:99999
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  z-index:99999;
 }
+
 .dv-btn{
-  width:58px;height:58px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:26px;
-  box-shadow:0 10px 25px rgba(0,0,0,.3)
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:26px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-.dv-whatsapp{background:#25D366}
-.dv-call{background:#081f4a}
+
+.dv-whatsapp{background:#25D366;}
+.dv-call{background:#081f4a;}
 
 /* MOBILE */
 @media(max-width:900px){
-  .menu{display:none;flex-direction:column;background:#081f4a;padding:20px}
-  .mobile-toggle{display:block}
-  .dropdown-menu{position:relative;background:#0d3a85}
-  .dropdown-menu li a{color:#fff}
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:#081f4a;
+    padding:20px;
+  }
+
+  .mobile-toggle{
+    display:block;
+  }
+
+  .dropdown-menu{
+    position:relative;
+    background:#0d3a85;
+  }
+
+  .dropdown-menu li a{
+    color:#fff;
+  }
+
+  .header-logo{
+    width:46px;
+  }
+
+  .logo-wrap{
+    padding:5px;
+  }
+
+  .brand-name{
+    font-size:18px;
+  }
+
+  .brand-tagline{
+    font-size:11px;
+  }
 }
 </style>
 
@@ -127,115 +265,135 @@ gtag('config', 'G-FX34Q54466');
 
 <!-- HEADER -->
 <header class="main-header">
-<div class="container header-wrapper">
+  <div class="container header-wrapper">
 
-<a href="index.html" class="logo-link">
-  <img src="logo-header.png" class="header-logo" alt="DebaVastu Logo">
-  <div>
-    <div class="brand-name">DEBAVASTU</div>
-    <div class="brand-tagline">The Science of Harmony</div>
-  </div>
-</a>
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap">
+        <img src="logo-header.png" class="header-logo" alt="DebaVastu Logo">
+      </div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
 
-<ul class="menu">
-  <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
-  <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
+    <ul class="menu">
+      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
+      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
 
-  <li class="dropdown">
-    <a href="#" class="m-link"><i class="fa fa-handshake-o"></i>Services</a>
-    <ul class="dropdown-menu">
-      <li><a href="vastu.html">Vastu Consultation</a></li>
-      <li><a href="astrology.html">Astrology</a></li>
-      <li><a href="numerology.html">Numerology</a></li>
-      <li><a href="tarot.html">Tarot Reading</a></li>
-      <li><a href="yoga.html">Yoga & Wellness</a></li>
-      <li><a href="healing.html">Energy Healing</a></li>
+      <li class="dropdown">
+        <a href="#" class="m-link"><i class="fa fa-handshake-o"></i>Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="vastu.html">Vastu Consultation</a></li>
+          <li><a href="astrology.html">Astrology</a></li>
+          <li><a href="numerology.html">Numerology</a></li>
+          <li><a href="tarot.html">Tarot Reading</a></li>
+          <li><a href="yoga.html">Yoga & Wellness</a></li>
+          <li><a href="healing.html">Energy Healing</a></li>
+        </ul>
+      </li>
+
+      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+      <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
     </ul>
-  </li>
 
-  <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
-  <li><a href="appointment.html" class="appointment-btn">Book Appointment</a></li>
-</ul>
+    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
 
-<div class="mobile-toggle"><i class="fa fa-bars"></i></div>
-
-</div>
+  </div>
 </header>
 
 <!-- SLIDER -->
 <section class="slider">
-<div class="hero-slider owl-carousel">
+  <div class="hero-slider owl-carousel">
 
-<div class="single-slider" style="background-image:url('img/slider.jpg')">
-  <div class="container">
-    <div class="text">
-      <h1>Trusted Vastu Consultant in India</h1>
-      <p>Residential • Commercial • Industrial Vastu Solutions</p>
+    <div class="single-slider" style="background-image:url('img/slider.jpg')">
+      <div class="container">
+        <div class="text">
+          <h1>Trusted Vastu Consultant in India</h1>
+          <p>Residential • Commercial • Industrial Vastu Solutions</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="single-slider" style="background-image:url('img/slider2.jpg')">
-  <div class="container">
-    <div class="text">
-      <h2>Astrology • Numerology • Tarot</h2>
+    <div class="single-slider" style="background-image:url('img/slider2.jpg')">
+      <div class="container">
+        <div class="text">
+          <h2>Astrology • Numerology • Tarot</h2>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="single-slider" style="background-image:url('img/slider3.jpg')">
-  <div class="container">
-    <div class="text">
-      <h2>Yoga • Energy Healing • Wellness</h2>
+    <div class="single-slider" style="background-image:url('img/slider3.jpg')">
+      <div class="container">
+        <div class="text">
+          <h2>Yoga • Energy Healing • Wellness</h2>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-</div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section class="container" style="padding:70px 0">
-<h2 class="text-center mb-5">Our Core Services</h2>
-<div class="row">
+  <h2 class="text-center mb-5">Our Core Services</h2>
+  <div class="row">
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-compass"></i><h4>Vastu Consultation</h4>
-<p>Scientific Vastu for homes, offices & industries.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-compass"></i>
+        <h4>Vastu Consultation</h4>
+        <p>Scientific Vastu for homes, offices & industries.</p>
+      </div>
+    </div>
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-globe"></i><h4>Astrology</h4>
-<p>Kundli, career & relationship guidance.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-globe"></i>
+        <h4>Astrology</h4>
+        <p>Kundli, career & relationship guidance.</p>
+      </div>
+    </div>
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-ui-calendar"></i><h4>Numerology</h4>
-<p>Name & number analysis for success.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-ui-calendar"></i>
+        <h4>Numerology</h4>
+        <p>Name & number analysis for success.</p>
+      </div>
+    </div>
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-magic"></i><h4>Tarot Reading</h4>
-<p>Intuitive answers for life decisions.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-magic"></i>
+        <h4>Tarot Reading</h4>
+        <p>Intuitive answers for life decisions.</p>
+      </div>
+    </div>
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-yoga"></i><h4>Yoga & Wellness</h4>
-<p>Mind–body balance through yoga.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-yoga"></i>
+        <h4>Yoga & Wellness</h4>
+        <p>Mind–body balance through yoga.</p>
+      </div>
+    </div>
 
-<div class="col-lg-4 col-md-6"><div class="service-box">
-<i class="icofont-brainstorming"></i><h4>Energy Healing</h4>
-<p>Reiki, chakra & aura cleansing.</p>
-</div></div>
+    <div class="col-lg-4 col-md-6">
+      <div class="service-box">
+        <i class="icofont-brainstorming"></i>
+        <h4>Energy Healing</h4>
+        <p>Reiki, chakra & aura cleansing.</p>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- FLOATING BUTTONS -->
 <div class="dv-floating">
-<a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
-<a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
+  <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
 </div>
 
 <!-- JS -->
