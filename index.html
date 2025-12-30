@@ -70,29 +70,30 @@ a{text-decoration:none}
 }
 
 /* LOGO */
+/* LOGO */
 .logo-link{
   display:flex;
   align-items:center;
   gap:14px;
 }
 
-/* Reduced white patch + bigger logo */
+/* Smaller white ring + bigger logo */
 .logo-wrap{
-  width:74px;
-  height:74px;
+  width:78px;                 /* ⬆ bigger container */
+  height:78px;
   border-radius:50%;
   background:#ffffff;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:2px;                 /* 🔥 less white area */
-  box-shadow:0 0 8px rgba(245,200,107,.45);
+  padding:3px;                /* ⬇ reduced white background */
+  box-shadow:0 0 10px rgba(245,200,107,.55);
 }
 
 /* Bigger logo inside */
 .logo-wrap img{
-  max-width:66px;
-  max-height:66px;
+  max-width:72px;             /* ⬆ logo size increased */
+  max-height:72px;
   object-fit:contain;
 }
 
@@ -212,19 +213,20 @@ a{text-decoration:none}
   .mobile-toggle{display:block}
 
   .logo-wrap{
-    width:58px;
-    height:58px;
-    padding:4px;
+    width:60px;
+    height:60px;
+    padding:3px;              /* reduced white ring */
   }
 
   .logo-wrap img{
-    max-width:48px;
-    max-height:48px;
+    max-width:52px;
+    max-height:52px;
   }
 
   .brand-name{font-size:19px}
   .brand-tagline{font-size:11px}
 }
+
 
 </style>
 </head>
