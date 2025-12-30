@@ -60,35 +60,64 @@ gtag('config', 'G-FX34Q54466');
   text-decoration:none;
 }
 
-/* LOGO FIX */
+/* ===== LOGO FIX ===== */
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+
 .logo-wrap{
-  background:#ffffff;
-  padding:6px;
+  width:58px;
+  height:58px;
   border-radius:50%;
+  background:#ffffff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:
-    0 0 10px rgba(255,215,120,0.65),
-    0 0 18px rgba(255,215,120,0.35);
+  box-shadow:0 0 12px rgba(245,200,107,.55);
 }
 
-.header-logo{
-  width:54px;
+.logo-wrap img{
+  max-width:46px;
   height:auto;
-  display:block;
+}
+
+/* Brand text */
+.brand-text{
+  display:flex;
+  flex-direction:column;
 }
 
 .brand-name{
   font-size:22px;
-  font-weight:700;
+  font-weight:800;
   color:#f5c86b;
-  line-height:1.1;
+  letter-spacing:0.5px;
 }
 
 .brand-tagline{
   font-size:12px;
   color:#f3e7c3;
+  margin-top:-2px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+  .logo-wrap{
+    width:48px;
+    height:48px;
+  }
+  .logo-wrap img{
+    max-width:38px;
+  }
+  .brand-name{
+    font-size:18px;
+  }
+  .brand-tagline{
+    font-size:11px;
+  }
 }
 
 /* MENU */
@@ -267,16 +296,17 @@ gtag('config', 'G-FX34Q54466');
 <header class="main-header">
   <div class="container header-wrapper">
 
-    <a href="index.html" class="logo-link">
-      <div class="logo-wrap">
-        <img src="logo-header.png" class="header-logo" alt="DebaVastu Logo">
-      </div>
-      <div>
-        <div class="brand-name">DEBAVASTU</div>
-        <div class="brand-tagline">The Science of Harmony</div>
-      </div>
-    </a>
+   <a href="index.html" class="logo-link">
+  <div class="logo-wrap">
+    <img src="img/logo-header.png" alt="DebaVastu Logo" loading="eager">
+  </div>
+  <div class="brand-text">
+    <span class="brand-name">DEBAVASTU</span>
+    <span class="brand-tagline">The Science of Harmony</span>
+  </div>
+</a>
 
+    
     <ul class="menu">
       <li><a class="m-link" href="index.html"><i class="fa fa-home"></i>Home</a></li>
       <li><a class="m-link" href="about.html"><i class="fa fa-user"></i>About</a></li>
