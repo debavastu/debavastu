@@ -62,12 +62,22 @@ a{text-decoration:none}
   top:0;
   z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
-  box-shadow:0 6px 14px rgba(0,0,0,0.18);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
   transition:all .3s ease;
+  overflow:hidden;
 }
 
-.main-header.shrink{
-  padding:2px 0;
+.header-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:84px;
+  padding:0 18px;
+  transition:height .3s ease;
+}
+
+.main-header.shrink .header-wrapper{
+  height:72px;
 }
 
 /* ===== LOGO FIX ===== */
@@ -76,8 +86,6 @@ a{text-decoration:none}
   align-items:center;
   gap:14px;
 }
-
-/* ===== HEADER LOGO – BLENDED HOVER EFFECT ===== */
 
 /* ===== HEADER LOGO ===== */
 .logo-wrap{
@@ -129,7 +137,7 @@ a{text-decoration:none}
 /* Hover (desktop only) */
 @media (hover:hover){
   .logo-wrap:hover{
-    transform:translateY(-1px) scale(1.04);
+    transform:scale(1.03);
     box-shadow:
       0 0 0 1px rgba(245,200,107,0.6),
       0 0 22px rgba(245,200,107,0.55),
@@ -330,7 +338,7 @@ a{text-decoration:none}
 
 <!-- HEADER -->
 <header class="main-header">
-<div class="container header-wrapper">
+<div class="container-fluid header-wrapper">
   
 <a href="index.html" class="logo-link">
   <div class="logo-wrap">
