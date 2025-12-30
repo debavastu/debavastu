@@ -76,30 +76,28 @@ a{text-decoration:none}
   gap:14px;
 }
 
-/* TRUE circular ring – no white patch */
+/* ===== HEADER LOGO – FINAL FIX ===== */
+
 .logo-wrap{
-  width:70px;
-  height:70px;
+  width:64px;
+  height:64px;
   border-radius:50%;
-  background:
-    linear-gradient(#081f4a, #081f4a) padding-box,
-    linear-gradient(135deg, #f5c86b, #d4a017) border-box;
-  border:2px solid transparent;
+  background:transparent;
+  border:1.5px solid rgba(245,200,107,0.85); /* thin gold ring */
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  box-shadow:0 0 6px rgba(245,200,107,.45); /* reduced glow */
+  box-shadow:none; /* remove glow */
 }
 
-/* Bigger logo */
 .logo-wrap img{
-  width:60px;
-  height:60px;
+  width:54px;
+  height:54px;
   object-fit:contain;
-  image-rendering: -webkit-optimize-contrast;
-  filter: contrast(1.08) saturate(1.05);
+  image-rendering:-webkit-optimize-contrast;
+  filter:contrast(1.05) saturate(1.03);
 }
+
 
 /* Brand text */
 .brand-name{
