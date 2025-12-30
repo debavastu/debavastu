@@ -73,26 +73,26 @@ a{text-decoration:none}
 .logo-link{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:14px;
 }
 
-/* Smaller white ring + bigger logo */
+/* Thin white ring */
 .logo-wrap{
-  width:79px;                 /* ⬆ bigger container */
-  height:79px;
+  width:72px;
+  height:72px;
   border-radius:50%;
-  background:#ffffff;
+  background:transparent;              /* no white block */
+  border:2px solid rgba(255,255,255,.75); /* thin white ring */
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:1px;                /* ⬇ reduced white background */
-  box-shadow:0 0 8px rgba(245,200,107,.45);
+  box-shadow:0 0 10px rgba(245,200,107,.45);
 }
 
-/* Bigger logo inside */
+/* Bigger logo */
 .logo-wrap img{
-  max-width:78px;             /* ⬆ logo size increased */
-  max-height:78px;
+  width:60px;
+  height:60px;
   object-fit:contain;
 }
 
@@ -202,30 +202,20 @@ a{text-decoration:none}
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
-  .menu{
-    display:none;
-    flex-direction:column;
-    background:#081f4a;
-    padding:20px;
-  }
-
-  .mobile-toggle{display:block}
-
   .logo-wrap{
-    width:60px;
-    height:60px;
-    padding:3px;              /* reduced white ring */
+    width:56px;
+    height:56px;
+    border:2px solid rgba(255,255,255,.8);
   }
 
   .logo-wrap img{
-    max-width:52px;
-    max-height:52px;
+    width:46px;
+    height:46px;
   }
 
   .brand-name{font-size:19px}
   .brand-tagline{font-size:11px}
 }
-
 
 </style>
 </head>
