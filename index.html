@@ -154,35 +154,40 @@ a{text-decoration:none}
 .m-link{color:#fff;font-weight:600}
 .m-link i{color:#f5c86b;margin-right:5px}
 
-/* Dropdown */
-.dropdown { position:relative; }
-.dropdown-menu {
-    display:none;position:absolute;background:#001b57;
-    padding:14px;border-radius:8px;top:38px;min-width:200px;
-    box-shadow:0 4px 16px rgba(0,0,0,0.35);
-}
-.dropdown-menu li { padding:7px 0; }
-.dropdown-menu li a { color:#fff; font-size:15px; }
-.dropdown-menu li a:hover { color:#00ffd5; }
-  
+
+/* ===== DESKTOP DROPDOWN – STABLE FINAL FIX ===== */
 @media (min-width:901px){
-  .dropdown:hover > .dropdown-menu{
-    display:block;
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
+
+  .dropdown{
+    position:relative;
+  }
+
+  .dropdown > a{
+    padding-bottom:14px; /* hover bridge */
+    display:inline-block;
   }
 
   .dropdown-menu{
-    display:none;
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(6px);
-    transition:all .25s ease;
+    position:absolute;
+    top:100%;           /* NO GAP */
     left:0;
-    top:42px;
+    min-width:220px;
+    background:#001b57;
+    padding:14px 16px;
+    border-radius:10px;
+    z-index:99999;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+
+    display:none;
+  }
+
+  /* KEEP MENU OPEN */
+  .dropdown:hover > .dropdown-menu,
+  .dropdown-menu:hover{
+    display:block;
   }
 }
+
   
 .btn-appointment {
     background:#00c786;padding:10px 18px;
