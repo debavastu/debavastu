@@ -171,7 +171,25 @@ a{text-decoration:none}
     font-weight:600;box-shadow:0 0 12px rgba(0,255,179,0.4);
 }
 .btn-appointment:hover { transform:scale(1.05); }
+/* ===== DESKTOP DROPDOWN FIX ===== */
+@media (min-width:901px){
+  .dropdown:hover > .dropdown-menu{
+    display:block;
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
 
+  .dropdown-menu{
+    display:none;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(6px);
+    transition:all .25s ease;
+    left:0;
+    top:42px;
+  }
+}
 
 /* ===== HERO ===== */
 .single-slider{
@@ -316,28 +334,9 @@ a{text-decoration:none}
     font-size:26px;
     color:#fff;
     cursor:pointer;
-
-  }
-  /* ===== DESKTOP DROPDOWN FIX ===== */
-@media (min-width:901px){
-  .dropdown:hover > .dropdown-menu{
-    display:block;
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-  }
-
-  .dropdown-menu{
-    display:none;
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(6px);
-    transition:all .25s ease;
-    left:0;
-    top:42px;
+ 
   }
 }
-
  
 </style>
 </head>
