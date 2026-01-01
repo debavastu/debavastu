@@ -291,14 +291,15 @@ a{text-decoration:none}
     height:60px;
     border-radius:50%;
     background:rgba(255,255,255,0.04);
-    border:1.3px solid rgba(245,200,107,0.85);
+    border:1.2px solid rgba(245,200,107,0.80);
     display:flex;
     align-items:center;
     justify-content:center;
     box-shadow:
-      0 0 0 1px rgba(245,200,107,0.18),
-      0 3px 8px rgba(0,0,0,0.22);
-  }
+    0 0 0 0.5px rgba(245,200,107,0.28), /* subtle edge */
+    0 0 10px rgba(245,200,107,0.28),   /* soft glow */
+    0 5px 14px rgba(0,0,0,0.35);       /* depth */
+}
 
   .logo-wrap img{
     width:72px;      /* FIXED */
