@@ -7,7 +7,7 @@
 
 <title>Best Vastu Consultant in India | DebaVastu</title>
 
-<meta name="description" content="DebaVastu is a trusted Vastu Consul.logo-wrap img{tant offering Vastu, Astrology, Numerology, Tarot, Yoga & Energy Healing services across India.">
+<meta name="description" content="DebaVastu is a trusted Vastu Consultant offering Vastu, Astrology, Numerology, Tarot, Yoga & Energy Healing services across India.">
 <meta name="keywords" content="Vastu Consultant, Vastu Expert, Astrology, Numerology, Energy Healing, Vastu Odisha">
 <meta name="robots" content="index, follow">
 
@@ -23,7 +23,8 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/icofont.css">
-<link rel="stylesheet" href="css/owl-carousel.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX34Q54466"></script>
@@ -64,8 +65,7 @@ a{text-decoration:none}
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
   transition:all .3s ease;
-  overflow:hidden;
-}
+ }
 
 .header-wrapper{
   display:flex;
@@ -96,7 +96,6 @@ a{text-decoration:none}
   align-items:center;
   justify-content:center;
   position:relative;
-  overflow:hidden;
   will-change:transform;
 
   /* Subtle isolation from dark header */
@@ -198,9 +197,12 @@ a{text-decoration:none}
 .m-link i{color:#f5c86b;margin-right:5px}
 .dropdown{position:relative}
 .dropdown-menu{
-  display:none;position:absolute;top:100%;
+  display:none;position:absolute;top:120%;
   background:#fff;border-radius:8px;min-width:220px;
   box-shadow:0 10px 30px rgba(0,0,0,.25)
+  z-index:99999;
+}
+
 }
 .dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu li a{
@@ -328,6 +330,12 @@ a{text-decoration:none}
   .brand-tagline{
     font-size:11px;
     opacity:.9;
+  }
+  .hero-slider,
+.owl-carousel,
+.owl-stage-outer{
+  display:block !important;
+
   }
 }
 
@@ -461,20 +469,34 @@ a{text-decoration:none}
 
 <!-- JS -->
 <script src="js/jquery.min.js"></script>
-<script src="js/owl-carousel.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+
 
 <script>
-$('.mobile-toggle').click(function(){ $('.menu').toggle(); });
+$(document).ready(function(){
 
-$('.hero-slider').owlCarousel({
-  items:1,loop:true,autoplay:true,autoplayTimeout:4000,dots:true
-});
+  $('.mobile-toggle').click(function(){
+    $('.menu').toggle();
+  });
 
-window.addEventListener("scroll",function(){
-  document.querySelector(".main-header")
-    .classList.toggle("shrink",window.scrollY>80);
+  $('.hero-slider').owlCarousel({
+    items:1,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true,
+    dots:true,
+    nav:false
+  });
+
+  window.addEventListener("scroll",function(){
+    document.querySelector(".main-header")
+      .classList.toggle("shrink",window.scrollY>80);
+  });
+
 });
 </script>
+
 
 </body>
 </html>
