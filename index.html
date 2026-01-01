@@ -173,17 +173,7 @@ a{text-decoration:none}
 }
 .btn-appointment:hover { transform:scale(1.05); }
 
-.hamburger { display:none;color:white;font-size:28px;cursor:pointer; }
 
-@media(max-width:768px){
-    .hamburger{ display:block; }
-    nav ul {
-        flex-direction:column;background:#00114d;
-        position:absolute;top:82px;left:0;width:100%;
-        display:none;padding:22px;gap:18px;
-    }
-    .dropdown-menu{ position:static; box-shadow:none; }
-}
 /* ===== HERO ===== */
 .single-slider{
   min-height:85vh;
@@ -255,41 +245,27 @@ a{text-decoration:none}
 .dv-whatsapp{background:#25D366}
 .dv-call{background:#081f4a}
 
-@media(max-width:900px){
+@media (max-width:900px){
 
   .logo-wrap{
     width:56px;
     height:56px;
     border-radius:50%;
-    
-    /* ultra-subtle isolation (almost invisible) */
-    background:rgba(255,255,255,0.035);
-
+    background:rgba(255,255,255,0.04);
     border:1.3px solid rgba(245,200,107,0.85);
-
     display:flex;
     align-items:center;
     justify-content:center;
-    
-
-    /* clean depth, no glow */
     box-shadow:
       0 0 0 1px rgba(245,200,107,0.18),
       0 3px 8px rgba(0,0,0,0.22);
   }
 
   .logo-wrap img{
-    width:64px;
-    height:64px;
+    width:44px;      /* FIXED */
+    height:44px;     /* FIXED */
     object-fit:contain;
-
-    /* clarity tuned for dark header */
-    filter:
-      brightness(1.12)
-      contrast(1.18)
-      saturate(1.12);
-
-    image-rendering:-webkit-optimize-contrast;
+    filter:brightness(1.12) contrast(1.18) saturate(1.12);
   }
 
   .brand-name{
@@ -301,9 +277,9 @@ a{text-decoration:none}
   .brand-tagline{
     font-size:11px;
     opacity:.9;
-    
-@media (max-width:900px){
+  }
 
+  /* MOBILE MENU */
   .menu{
     display:none;
     position:absolute;
@@ -312,28 +288,32 @@ a{text-decoration:none}
     width:100%;
     background:#081f4a;
     padding:16px 0;
+    flex-direction:column;
   }
 
   .menu li{
-    padding:8px 18px;
+    padding:10px 22px;
   }
 
   .dropdown-menu{
     position:static;
-    box-shadow:none;
     background:#0d3a85;
+    box-shadow:none;
     border-radius:0;
-    padding:0;
     display:none;
-
-    opacity:1;
-    visibility:visible;
-    transform:none;
   }
 
   .dropdown-menu li a{
     color:#fff;
     padding:12px 24px;
+    display:block;
+  }
+
+  .mobile-toggle{
+    display:block;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
   }
 }
 
