@@ -88,21 +88,20 @@ a{text-decoration:none}
   gap:14px;
 }
 
-/* ===== HEADER LOGO (PERFECT ROUND) ===== */
+/* ===== DESKTOP LOGO – MATCH MOBILE PERFECTLY ===== */
 .logo-wrap{
   width:64px;
   height:64px;
   border-radius:50%;
-  overflow:hidden;               /* FIX */
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
-  will-change:transform;
 
   background:radial-gradient(
     circle,
-    rgba(255,255,255,0.12) 0%,
+    rgba(255,255,255,0.10) 0%,
     rgba(255,255,255,0.04) 55%,
     rgba(255,255,255,0) 75%
   );
@@ -111,23 +110,22 @@ a{text-decoration:none}
 
   box-shadow:
     0 0 0 1px rgba(245,200,107,0.35),
-    0 0 16px rgba(245,200,107,0.45),
-    0 6px 18px rgba(0,0,0,0.35);
-
-  transition:transform .35s ease, box-shadow .35s ease;
+    0 0 14px rgba(245,200,107,0.35),
+    0 6px 16px rgba(0,0,0,0.35);
 }
 
 .logo-wrap img{
-  width:80%;
-  height:80%;
+  width:44px;     /* KEY FIX */
+  height:44px;    /* KEY FIX */
   object-fit:contain;
   display:block;
 
   filter:
-    brightness(1.15)
+    brightness(1.12)
     contrast(1.15)
-    saturate(1.15);
+    saturate(1.12);
 }
+
 /* Brand text */
 .brand-name{
   font-size:24px;
