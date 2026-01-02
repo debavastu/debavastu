@@ -199,24 +199,51 @@ a{text-decoration:none}
 .btn-appointment:hover { transform:scale(1.05); }
 
 
-/* ===== HERO ===== */
-.single-slider{
-  min-height:85vh;
-  background-size:cover;
-  background-position:center;
-  display:flex;align-items:center;
-  position:relative;
+/* ===== HERO SLIDER – FINAL SAFE FIX ===== */
+.slider {
+  width: 100%;
+  overflow: hidden;
 }
-.single-slider:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
+
+.single-slider {
+  min-height: 82vh;            /* desktop */
+  max-height: 900px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Dark overlay */
+.single-slider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
     90deg,
-    rgba(0,0,0,0.65) 0%,
-    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.40) 50%,
     rgba(0,0,0,0.25) 100%
   );
+  z-index: 1;
+}
+
+/* Content above overlay */
+.single-slider .container,
+.single-slider .text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .single-slider {
+    min-height: 88vh;
+    background-position: center top; /* IMPORTANT */
+  }
 }
 
 .single-slider .text{
