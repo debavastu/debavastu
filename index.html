@@ -164,39 +164,64 @@ a{text-decoration:none}
     position:relative;
   }
 
+  /* Hover bridge (prevents flicker) */
   .dropdown > a{
-    padding-bottom:14px; /* hover bridge */
+    padding-bottom:14px;
     display:inline-block;
   }
 
   .dropdown-menu{
-  background:#0a2b6d;
-  border-radius:12px;
-  padding:12px 10px;
+    position:absolute;
+    top:100%;               /* NO GAP */
+    left:0;
+    min-width:220px;
+
+    background:linear-gradient(180deg,#0a2b6d,#081f4a);
+    border-radius:12px;
+    padding:12px 10px;
+
+    box-shadow:0 14px 34px rgba(0,0,0,0.45);
+    z-index:99999;
+
+    display:none;           /* IMPORTANT */
+  }
+
+  /* KEEP MENU OPEN */
+  .dropdown:hover > .dropdown-menu,
+  .dropdown-menu:hover{
+    display:block;
+  }
+
+  .dropdown-menu li a{
+    color:#f3e7c3;
+    padding:10px 14px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:500;
+    display:block;
+    transition:all .25s ease;
+  }
+
+  .dropdown-menu li a:hover{
+    background:rgba(245,200,107,0.16);
+    color:#f5c86b;
+    padding-left:18px;
+  }
 }
 
-.dropdown-menu li a{
-  color:#f3e7c3;
-  padding:10px 14px;
-  border-radius:8px;
-  font-size:14px;
-  font-weight:500;
-  display:block;
-  transition:all .25s ease;
+/* Appointment button (unchanged) */
+.btn-appointment{
+  background:#00c786;
+  padding:10px 18px;
+  border-radius:6px;
+  color:white;
+  font-weight:600;
+  box-shadow:0 0 12px rgba(0,255,179,0.4);
+}
+.btn-appointment:hover{
+  transform:scale(1.05);
 }
 
-.dropdown-menu li a:hover{
-  background:rgba(245,200,107,0.12);
-  color:#f5c86b;
-  padding-left:18px;
-}
-  
-.btn-appointment {
-    background:#00c786;padding:10px 18px;
-    border-radius:6px;color:white;text-decoration:none;
-    font-weight:600;box-shadow:0 0 12px rgba(0,255,179,0.4);
-}
-.btn-appointment:hover { transform:scale(1.05); }
 
 
 /* ===== HERO SLIDER – FINAL SAFE FIX ===== */
