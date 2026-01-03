@@ -195,55 +195,52 @@ a{text-decoration:none}
 .m-link i{color:#f5c86b;margin-right:5px}
 
 
-/* ===== DESKTOP DROPDOWN – STABLE FINAL FIX ===== */
 @media (min-width:901px){
 
   .dropdown{
     position:relative;
   }
 
-  /* Hover bridge (prevents flicker) */
-  .dropdown > a{
-    padding-bottom:14px;
-    display:inline-block;
-  }
-
   .dropdown-menu{
     position:absolute;
-    top:100%;               /* NO GAP */
+    top:100%;
     left:0;
-    min-width:220px;
 
-    background:linear-gradient(180deg,#0a2b6d,#081f4a);
-    border-radius:12px;
-    padding:12px 10px;
+    min-width:240px;
+    background:#0a2b6d;
+    border-radius:14px;
+    padding:12px;
 
-    box-shadow:0 14px 34px rgba(0,0,0,0.45);
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    display:none;
     z-index:99999;
-
-    display:none;           /* IMPORTANT */
   }
 
-  /* KEEP MENU OPEN */
-  .dropdown:hover > .dropdown-menu,
-  .dropdown-menu:hover{
+  .dropdown:hover .dropdown-menu{
     display:block;
+  }
+
+  .dropdown-menu li{
+    list-style:none;
   }
 
   .dropdown-menu li a{
     color:#f3e7c3;
-    padding:10px 14px;
-    border-radius:8px;
+    padding:11px 16px;
+    border-radius:10px;
+
     font-size:14px;
     font-weight:500;
-    display:block;
+    display:flex;
+    align-items:center;
+
     transition:all .25s ease;
   }
 
   .dropdown-menu li a:hover{
-    background:rgba(245,200,107,0.16);
+    background:rgba(245,200,107,0.14);
     color:#f5c86b;
-    padding-left:18px;
+    padding-left:20px;
   }
 }
 
