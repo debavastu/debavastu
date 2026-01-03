@@ -30,43 +30,50 @@ body{font-family:'Poppins',sans-serif;background:#f9f9f9}
 .services-hero p{max-width:760px;margin:16px auto 0}
 
 /* SERVICE CARDS */
-.services-section{padding:80px 0}
-.service-card{
+.service-box{
   background:#fff;
   border-radius:18px;
   padding:36px 28px;
   height:100%;
   box-shadow:0 12px 35px rgba(0,0,0,0.08);
-  transition:.35s;
+  transition:all .35s ease;
   text-align:center;
 }
-.service-card:hover{
+
+.service-box:hover{
   transform:translateY(-8px);
   box-shadow:0 18px 45px rgba(0,0,0,0.12);
 }
-.service-icon{
+
+.service-box i{
   font-size:48px;
   color:#d4a017;
   margin-bottom:18px;
 }
-.service-card h3{
+
+.service-box h3{
   font-size:22px;
   font-weight:700;
-  margin-bottom:14px;
+  margin-bottom:12px;
+  color:#081f4a;
 }
-.service-card p{
+
+.service-box p{
   color:#555;
   font-size:15px;
   line-height:1.7;
+  margin:0;
 }
-.service-card a{
-  display:inline-block;
-  margin-top:18px;
-  color:#f5c86b;
-  font-weight:600;
+
+.service-link{
+  text-decoration:none;
+  display:block;
+}
+
+.service-link:hover{
   text-decoration:none;
 }
-.service-card a:hover{text-decoration:underline}
+
 
 /* CTA */
 .services-cta{
