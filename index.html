@@ -62,23 +62,61 @@ a{text-decoration:none}
   position:sticky;
   top:0;
   z-index:9999;
+
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
-  transition:all .3s ease;
-  
- }
 
+  transition:
+    background .35s ease,
+    box-shadow .35s ease;
+}
+
+/* Wrapper */
 .header-wrapper{
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   height:84px;
   padding:0 18px;
-  transition:height .3s ease;
+
+  transition:height .35s ease;
+}
+
+/* ===== SHRINK STATE ===== */
+.main-header.shrink{
+  background:linear-gradient(90deg,#071a3a,#0b2f6e);
+  box-shadow:0 10px 28px rgba(0,0,0,0.35);
 }
 
 .main-header.shrink .header-wrapper{
   height:72px;
+}
+
+/* Logo smooth scale */
+.main-header .logo-wrap{
+  transition:transform .35s ease;
+}
+
+.main-header.shrink .logo-wrap{
+  transform:scale(0.92);
+}
+
+/* Brand text refinement */
+.main-header .brand-name{
+  transition:font-size .35s ease;
+}
+
+.main-header.shrink .brand-name{
+  font-size:22px;
+}
+
+.main-header .brand-tagline{
+  transition:opacity .35s ease;
+}
+
+.main-header.shrink .brand-tagline{
+  opacity:.85;
 }
 
 /* ===== LOGO FIX ===== */
