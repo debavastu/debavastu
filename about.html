@@ -135,7 +135,11 @@ background:#081f4a;flex-direction:column;padding:16px 0}
 <!-- HEADER -->
 <header class="main-header">
   <div class="container-fluid header-wrapper">
-
+    /* ===== HEADER WIDTH CONTROL ===== */
+.header-wrapper{
+  max-width:1280px;   /* 👈 KEY FIX */
+  margin:0 auto;      /* centers content */
+}
     <a href="index.html" class="logo-link">
       <div class="logo-wrap">
         <img src="img/logo-header.png" alt="DebaVastu Logo">
@@ -152,15 +156,26 @@ background:#081f4a;flex-direction:column;padding:16px 0}
 
       <li class="dropdown">
         <a class="m-link" href="#"><i class="fa fa-handshake-o"></i> Services</a>
-        <ul class="dropdown-menu">
-          <li><a href="vastu.html">Vastu Consultation</a></li>
-          <li><a href="medical-vastu.html">Medical Vastu</a></li>
-          <li><a href="astrology.html">Astrology</a></li>
-          <li><a href="numerology.html">Numerology</a></li>
-          <li><a href="tarot.html">Tarot Guidance</a></li>
-          <li><a href="healing.html">Energy Healing</a></li>
-        </ul>
-      </li>
+        <li class="dropdown">
+  <a class="m-link" href="#">
+    <i class="fa fa-handshake-o"></i> Services
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="vastu.html">Vastu Consultation</a></li>
+    <li><a href="medical-vastu.html">Medical Vastu</a></li>
+    <li><a href="astrology.html">Astrology</a></li>
+    <li><a href="numerology.html">Numerology</a></li>
+    <li><a href="tarot.html">Tarot Guidance</a></li>
+    <li><a href="healing.html">Energy Healing</a></li>
+  </ul>
+</li>
+
+<!-- MAIN MEDICAL VASTU MENU -->
+<li>
+  <a class="m-link" href="medical-vastu.html">
+    <i class="fa fa-hospital-o"></i> Medical Vastu
+  </a>
+</li>
 
       <li><a class="m-link" href="blog.html"><i class="fa fa-pencil"></i> Blog</a></li>
       <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
@@ -273,3 +288,4 @@ document.getElementById("year").textContent=new Date().getFullYear();
 
 </body>
 </html>
+
