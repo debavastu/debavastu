@@ -7,11 +7,14 @@
 
 <title>About DebaVastu | Scientific Vastu Consultant in India</title>
 
-<meta name="description" content="Learn about DebaVastu and Dr. Debadatta Behera, a trusted Vastu Consultant offering scientific, logical and non-demolition Vastu solutions across India.">
-<meta name="keywords" content="About DebaVastu, Dr Debadatta Behera, Vastu Consultant India, Scientific Vastu Expert">
+<meta name="description" content="Learn about DebaVastu and Dr. Debadatta Behera – a trusted Vastu Consultant offering scientific, logical and non-demolition Vastu solutions across India.">
+<meta name="keywords" content="About DebaVastu, Vastu Consultant India, Dr Debadatta Behera, Scientific Vastu">
 <meta name="robots" content="index, follow">
 
-<link rel="icon" href="favicon-32.png">
+<!-- FAVICONS -->
+<link rel="icon" sizes="32x32" href="favicon-32.png">
+<link rel="icon" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
@@ -24,74 +27,112 @@
 <style>
 body{font-family:'Poppins',sans-serif}
 
-/* HERO */
+/* ================= HEADER (SAME AS INDEX) ================= */
+.main-header{
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  transition:background .35s ease, box-shadow .35s ease;
+}
+.header-wrapper{
+  display:flex;align-items:center;justify-content:space-between;
+  height:84px;padding:0 18px;transition:height .35s ease;
+}
+.main-header.shrink{
+  background:linear-gradient(90deg,#071a3a,#0b2f6e);
+  box-shadow:0 10px 28px rgba(0,0,0,0.35);
+}
+.main-header.shrink .header-wrapper{height:72px;}
+
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
+  box-shadow:0 0 12px rgba(245,200,107,.35),0 6px 16px rgba(0,0,0,.35);
+}
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;object-fit:contain;
+  background:#081f4a;padding:1px;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
+
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
+.m-link i{color:#f5c86b;margin-right:5px}
+
+@media(min-width:901px){
+.dropdown{position:relative}
+.dropdown-menu{
+  position:absolute;top:100%;left:0;min-width:240px;
+  background:#0a2b6d;border-radius:14px;padding:12px;
+  display:none;box-shadow:0 18px 40px rgba(0,0,0,.45)
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu li a{
+  color:#f3e7c3;padding:11px 16px;border-radius:10px;
+  display:block;transition:.25s
+}
+.dropdown-menu li a:hover{
+  background:rgba(245,200,107,.14);color:#f5c86b;padding-left:20px
+}
+}
+
+.mobile-toggle{display:none}
+@media(max-width:900px){
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;
+background:#081f4a;flex-direction:column;padding:16px 0}
+.menu li{padding:10px 22px}
+.dropdown-menu{position:static;background:#0d3a85;display:none}
+.mobile-toggle{display:block;font-size:26px;color:#fff;cursor:pointer}
+}
+
+/* ================= PAGE HERO ================= */
 .about-hero{
   background:linear-gradient(135deg,#081f4a,#0d3a85);
-  color:#fff;
-  padding:90px 0;
-  text-align:center;
+  padding:90px 0;text-align:center
 }
-.about-hero h1{
-  color:#f5c86b;
-  font-weight:800;
-}
-.about-hero p{
-  max-width:820px;
-  margin:18px auto 0;
-  font-size:16px;
-  line-height:1.7;
-}
+.about-hero h1{color:#f5c86b;font-weight:800}
+.about-hero p{color:#f3e7c3;max-width:820px;margin:14px auto 0}
 
-/* SECTION */
-.section-pad{padding:80px 0}
+/* ================= SECTIONS ================= */
+.section{padding:70px 0}
 .section-light{background:#f9f9f9}
 
-/* EXPERT */
 .expert-img{
-  max-width:100%;
-  border-radius:18px;
-  box-shadow:0 14px 36px rgba(0,0,0,.2);
-}
-.check-list li{
-  margin-bottom:10px;
-  list-style:none;
-}
-.check-list i{
-  color:#f5c86b;
-  margin-right:8px;
+  max-width:100%;border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18)
 }
 
-/* CTA */
-.page-cta{
-  background:#081f4a;
-  color:#fff;
-  padding:70px 0;
-  text-align:center;
+/* ================= FLOATING BUTTONS ================= */
+.dv-floating{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:99999
 }
-.page-cta h2{color:#f5c86b;font-weight:800}
-.page-cta a{
-  display:inline-block;
-  margin:16px 10px 0;
-  padding:14px 34px;
-  border-radius:30px;
-  font-weight:700;
-  text-decoration:none;
+.dv-btn{
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:26px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3)
 }
-.cta-primary{
-  background:linear-gradient(135deg,#f5c86b,#e0b24d);
-  color:#081f4a;
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
+
+/* ================= FOOTER ================= */
+.dv-footer{
+  background:#081f4a;color:#f3e7c3;padding:60px 0
 }
-.cta-secondary{
-  border:2px solid #f5c86b;
-  color:#f5c86b;
-}
+.footer-title{color:#f5c86b;font-weight:700}
+.footer-links li{list-style:none;margin-bottom:8px}
+.footer-links a{color:#f3e7c3;text-decoration:none}
+.footer-bottom{text-align:center;margin-top:30px;font-size:14px}
 </style>
-
 </head>
 
 <body>
 
-<!-- ===== HEADER (SAME AS INDEX) ===== -->
+<!-- HEADER -->
 <header class="main-header">
   <div class="container-fluid header-wrapper">
 
@@ -129,114 +170,82 @@ body{font-family:'Poppins',sans-serif}
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="about-hero">
   <div class="container">
     <h1>About DebaVastu</h1>
     <p>
-      A trusted platform offering scientific, practical and result-oriented
-      Vastu and energy-based solutions for modern living.
+      A trusted platform delivering scientific, logical and practical
+      Vastu & energy-based solutions for modern living.
     </p>
   </div>
 </section>
 
-<!-- ===== EXPERT ===== -->
-<section class="section-pad">
+<!-- ABOUT CONTENT -->
+<section class="section">
   <div class="container">
     <div class="row align-items-center">
 
       <div class="col-md-5 mb-4 text-center">
-        <img src="img/deba-profile.jpg"
-             alt="Dr Debadatta Behera - Vastu Consultant"
-             class="expert-img">
+        <img src="img/deba-profile.jpg" alt="Dr Debadatta Behera" class="expert-img">
       </div>
 
       <div class="col-md-7">
         <h2>Meet the Expert Behind DebaVastu</h2>
-
         <p>
           <strong>Dr. Debadatta Behera</strong> is a professional Vastu Consultant
-          known for his <strong>scientific, logical and non-demolition</strong>
-          approach to Vastu Shastra.
+          with over a decade of experience in scientific and non-demolition
+          Vastu solutions.
         </p>
-
         <p>
-          With over a decade of hands-on experience, he has helped thousands of
-          clients improve harmony, health, stability and growth across
-          residential, commercial, industrial and medical environments.
+          His approach combines classical Vastu principles with modern logic,
+          focusing on energy balance, directional correction and practical remedies
+          that bring long-term harmony and growth.
         </p>
 
-        <ul class="check-list">
-          <li><i class="fa fa-check-circle"></i> Scientific & logic-based Vastu solutions</li>
-          <li><i class="fa fa-check-circle"></i> No superstition or fear-based practices</li>
-          <li><i class="fa fa-check-circle"></i> Minimal correction, maximum impact</li>
-          <li><i class="fa fa-check-circle"></i> Residential, Commercial & Medical expertise</li>
-          <li><i class="fa fa-check-circle"></i> Pan-India onsite & online consultation</li>
+        <ul>
+          <li>✔ Scientific & logic-based Vastu solutions</li>
+          <li>✔ No superstition or fear-based practices</li>
+          <li>✔ Residential, Commercial & Medical expertise</li>
+          <li>✔ Pan-India onsite & online consultation</li>
         </ul>
 
-        <div style="margin-top:24px">
-          <a href="appointment.html" class="cta-primary">Book Consultation</a>
-          <a href="contact.html" class="cta-secondary">Contact Now</a>
-        </div>
-
+        <a href="appointment.html" class="btn btn-warning mt-3">
+          Book Consultation
+        </a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===== PHILOSOPHY ===== -->
-<section class="section-pad section-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Our Philosophy</h2>
-    <p class="text-center" style="max-width:900px;margin:auto">
-      At DebaVastu, we believe Vastu is a science of balance — not fear.
-      Our approach integrates traditional Vastu principles with modern
-      understanding, focusing on energy flow, directional harmony and
-      practical remedies that align with contemporary lifestyles.
-    </p>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="page-cta">
-  <div class="container">
-    <h2>Ready to Bring Harmony Into Your Space?</h2>
-    <p>Consult with DebaVastu for scientific, practical and effective solutions.</p>
-    <a href="appointment.html" class="cta-primary">Book Consultation</a>
-    <a href="tel:+919090155516" class="cta-secondary">Call Now</a>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer class="dv-footer">
   <div class="container">
     <div class="row">
 
       <div class="col-md-4 mb-4">
-        <h3 class="footer-brand">DEBAVASTU</h3>
+        <h4 class="footer-title">DEBAVASTU</h4>
         <p>The Science of Harmony</p>
-        <p>Trusted Vastu & energy-based consultations across India.</p>
       </div>
 
       <div class="col-md-4 mb-4">
-        <h5>Quick Links</h5>
-        <ul>
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-md-4 mb-4">
-        <h5>Contact</h5>
+        <h5 class="footer-title">Contact</h5>
         <p><i class="fa fa-phone"></i> +91 90901 55516</p>
         <p><i class="fa fa-envelope"></i> contact@debavastu.com</p>
-        <p><i class="fa fa-map-marker"></i> Odisha, India</p>
       </div>
 
     </div>
+
     <div class="footer-bottom">
       © <span id="year"></span> DebaVastu. All Rights Reserved.
     </div>
@@ -245,12 +254,8 @@ body{font-family:'Poppins',sans-serif}
 
 <!-- FLOATING BUTTONS -->
 <div class="dv-floating">
-  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp" target="_blank">
-    <i class="fa fa-whatsapp"></i>
-  </a>
-  <a href="tel:+919090155516" class="dv-btn dv-call">
-    <i class="fa fa-phone"></i>
-  </a>
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
+  <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
 </div>
 
 <!-- JS -->
@@ -259,6 +264,11 @@ body{font-family:'Poppins',sans-serif}
 $('.mobile-toggle').click(function(){
   $('.menu').slideToggle(250);
 });
+window.addEventListener("scroll",function(){
+  document.querySelector(".main-header")
+    .classList.toggle("shrink",window.scrollY>80);
+});
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 
 </body>
