@@ -5,174 +5,251 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Vastu Consultation & Medical Vastu | DebaVastu – Trusted Vastu Expert</title>
+<title>Vastu Consultation & Medical Vastu | DebaVastu</title>
 
-<meta name="description" content="Professional Vastu Consultation and Medical Vastu services for homes, offices, industries, clinics and hospitals. Scientific, non-demolition Vastu solutions by DebaVastu.">
-<meta name="keywords" content="Vastu Consultant, Medical Vastu, Residential Vastu, Commercial Vastu, Industrial Vastu, Clinic Vastu">
+<meta name="description" content="Expert Vastu Consultation and Medical Vastu services by DebaVastu. Scientific, non-demolition Vastu solutions for residential, commercial, industrial and healthcare spaces across India.">
+
+<meta name="keywords" content="Vastu Consultant, Medical Vastu, Residential Vastu, Commercial Vastu, Industrial Vastu, Scientific Vastu Consultant">
+
 <meta name="robots" content="index, follow">
 
+<link rel="icon" href="favicon-32.png">
+
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
 <style>
 body{font-family:'Poppins',sans-serif}
+a{text-decoration:none}
+
+/* HEADER */
+.main-header{
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+.header-wrapper{
+  display:flex;justify-content:space-between;align-items:center;
+  height:82px;padding:0 18px;
+}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:6px;box-sizing:border-box;
+  background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
+}
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;
+  background:#081f4a;padding:1px;object-fit:contain;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
+
+/* MENU */
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
 
 /* HERO */
-.page-hero{
-  min-height:78vh;
-  background:url('img/vastu-banner.jpg') center center/cover no-repeat;
-  display:flex;
-  align-items:center;
+.single-slider{
+  min-height:82vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;align-items:center;
   position:relative;
 }
-.page-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.35));
+.single-slider:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.3));
 }
-.page-hero .content{
-  position:relative;
-  color:#fff;
-  max-width:760px;
-}
-.page-hero h1{color:#f5c86b;font-weight:800}
-.page-hero p{font-size:18px;margin-top:14px}
-
-/* SECTIONS */
-.section{padding:80px 0}
-.section h2{font-weight:800;color:#081f4a;margin-bottom:20px}
-.section p{color:#444;line-height:1.8}
-
-/* LIST */
-.vastu-list li{
-  margin-bottom:10px;
-  color:#333;
-}
-
-/* BOX */
-.highlight-box{
-  background:#f9f9f9;
-  border-left:5px solid #f5c86b;
-  padding:28px;
-  border-radius:12px;
-}
-
-/* CTA */
-.cta{
-  background:#081f4a;
-  color:#fff;
-  padding:70px 0;
-  text-align:center;
-}
-.cta h2{color:#f5c86b;font-weight:800}
-.cta a{
-  display:inline-block;
-  margin-top:18px;
-  padding:14px 34px;
+.single-slider .container{position:relative;z-index:2}
+.hero-btn{
+  padding:12px 28px;border-radius:30px;
   background:linear-gradient(135deg,#f5c86b,#e0b24d);
-  color:#081f4a;
-  font-weight:700;
-  border-radius:30px;
-  text-decoration:none;
+  color:#081f4a;font-weight:600;
 }
-</style>
 
+/* COMMON */
+section{padding:70px 0}
+.service-box{
+  background:#fff;padding:26px;border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  margin-bottom:24px
+}
+
+/* FOOTER */
+.dv-footer{
+  background:#081f4a;color:#fff;padding:60px 0
+}
+.footer-title,.footer-brand{color:#f5c86b}
+.footer-links{list-style:none;padding:0}
+.footer-links li{margin-bottom:8px}
+.footer-links a{color:#fff}
+.footer-bottom{text-align:center;margin-top:30px;color:#ccc}
+
+/* FLOATING */
+.dv-floating{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:9999
+}
+.dv-btn{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:24px;
+}
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-wrapper">
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap">
+        <img src="img/logo-header.png" alt="DebaVastu Logo">
+      </div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a class="m-link" href="index.html">Home</a></li>
+      <li><a class="m-link" href="about.html">About</a></li>
+      <li><a class="m-link" href="services.html">Services</a></li>
+      <li><a class="m-link" href="blog.html">Blog</a></li>
+      <li><a class="m-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
 <!-- HERO -->
-<section class="page-hero">
+<section class="single-slider" style="background-image:url('img/vastu-banner.jpg')">
   <div class="container">
-    <div class="content">
-      <h1>Vastu Consultation & Medical Vastu</h1>
-      <p>
-        Scientific, practical and result-oriented Vastu solutions for homes,
-        businesses, industries, clinics and hospitals.
-      </p>
+    <h1 style="color:#f5c86b">
+      Vastu Consultation & Medical Vastu
+      <span style="display:block;font-size:55%;color:#f3e7c3;margin-top:10px">
+        Scientific • Practical • Non-Demolition Solutions
+      </span>
+    </h1>
+    <div style="margin-top:24px">
+      <a href="appointment.html" class="hero-btn">Book Consultation</a>
     </div>
   </div>
 </section>
 
 <!-- INTRO -->
-<section class="section">
-  <div class="container">
-    <h2>What is Vastu Consultation?</h2>
-    <p>
-      Vastu Shastra is the ancient science of space alignment that harmonizes
-      natural energies with living and working environments. At <strong>DebaVastu</strong>,
-      we follow a <strong>scientific and logical Vastu approach</strong> that focuses on
-      direction-based energy balance without unnecessary demolition.
-    </p>
-    <p>
-      Our consultations are designed to enhance health, prosperity, mental peace
-      and professional growth by correcting spatial imbalances using practical remedies.
-    </p>
-  </div>
-</section>
-
-<!-- TYPES -->
-<section class="section" style="background:#f9f9f9">
-  <div class="container">
-    <h2>Types of Vastu Services Offered</h2>
-    <ul class="vastu-list">
-      <li>✔ Residential Vastu (Homes, Flats, Villas)</li>
-      <li>✔ Commercial Vastu (Offices, Shops, Showrooms)</li>
-      <li>✔ Industrial Vastu (Factories, Warehouses, Plants)</li>
-      <li>✔ Plot & Land Vastu Analysis</li>
-      <li>✔ Interior & Layout Correction</li>
-      <li>✔ <strong>Medical Vastu (Clinics, Hospitals, Doctor Chambers)</strong></li>
-    </ul>
-  </div>
-</section>
-
-<!-- MEDICAL VASTU -->
-<section class="section">
-  <div class="container">
-    <h2>Medical Vastu – Specialized Healing Spaces</h2>
-    <div class="highlight-box">
+<section class="container">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2>Expert Vastu Consultation</h2>
       <p>
-        Medical Vastu is a specialized branch of Vastu focused on healthcare environments.
-        Proper spatial alignment in clinics and hospitals plays a vital role in
-        patient recovery, doctor success and smooth operations.
+        DebaVastu provides scientific and result-oriented Vastu consultation
+        based on directional energy balance and practical implementation.
       </p>
       <p>
-        We provide Medical Vastu guidance for:
+        Our remedies focus on correction without demolition, ensuring harmony,
+        health, prosperity and stability in personal and professional spaces.
       </p>
-      <ul class="vastu-list">
-        <li>✔ Clinics & Hospitals</li>
-        <li>✔ Doctor Chambers & Consultation Rooms</li>
-        <li>✔ Diagnostic Centers & Pharmacies</li>
-        <li>✔ Therapy & Healing Centers</li>
-      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/vastu-consultation.jpg" alt="Vastu Consultation"
+           style="max-width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.15)">
     </div>
   </div>
 </section>
 
-<!-- WHY DEBAVASTU -->
-<section class="section" style="background:#f9f9f9">
+<!-- SERVICES -->
+<section style="background:#f9f9f9">
   <div class="container">
-    <h2>Why Choose DebaVastu?</h2>
-    <ul class="vastu-list">
-      <li>✔ Scientific & Practical Approach</li>
-      <li>✔ No Demolition Remedies</li>
-      <li>✔ Confidential & Ethical Consultation</li>
-      <li>✔ Pan-India & Online Services</li>
-      <li>✔ Personalized Analysis & Solutions</li>
-    </ul>
+    <h2 class="text-center mb-5">Vastu Services Offered</h2>
+    <div class="row">
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Residential Vastu</h4>
+        <p>Homes, flats, villas and plots for peace, health and prosperity.</p>
+      </div></div>
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Commercial Vastu</h4>
+        <p>Offices, shops and business spaces for growth and stability.</p>
+      </div></div>
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Industrial Vastu</h4>
+        <p>Factories and warehouses to improve productivity and workflow.</p>
+      </div></div>
+
+      <div class="col-md-6"><div class="service-box">
+        <h4>Medical Vastu</h4>
+        <p>
+          Vastu guidance for hospitals, clinics, nursing homes and healing
+          spaces to support recovery and positive energy flow.
+        </p>
+      </div></div>
+
+      <div class="col-md-6"><div class="service-box">
+        <h4>Plot & Land Vastu</h4>
+        <p>Evaluation of land before construction to avoid future issues.</p>
+      </div></div>
+
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready to Align Your Space?</h2>
-    <p>Book a professional Vastu consultation today</p>
-    <a href="contact.html">Book Vastu Consultation</a>
-  </div>
+<section style="background:#081f4a;color:#fff;text-align:center">
+  <h2 style="color:#f5c86b">Ready to Transform Your Space?</h2>
+  <p>Consult an expert Vastu professional today.</p>
+  <a href="appointment.html" class="hero-btn">Book Consultation</a>
 </section>
+
+<!-- FOOTER -->
+<footer class="dv-footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h3 class="footer-brand">DEBAVASTU</h3>
+        <p>The Science of Harmony</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Contact</h5>
+        <p><i class="fa fa-phone"></i> +91 90901 55516</p>
+        <p><i class="fa fa-envelope"></i> contact@debavastu.com</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      © 2026 DebaVastu. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<div class="dv-floating">
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+  <a href="tel:+919090155516" class="dv-btn dv-call">
+    <i class="fa fa-phone"></i>
+  </a>
+</div>
 
 </body>
 </html>
