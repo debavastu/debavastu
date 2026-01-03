@@ -275,13 +275,51 @@ a{text-decoration:none}
 }
 .trust-item i{font-size:34px;color:#f5c86b}
 
-/* ===== SERVICES ===== */
+
+/* ===== SERVICE CARDS – PREMIUM TYPOGRAPHY ===== */
 .service-box{
-  background:#fff;padding:28px;border-radius:14px;
+  background:#fff;
+  padding:34px 28px;
+  border-radius:16px;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
-  text-align:center;margin-bottom:24px
+  text-align:center;
+  margin-bottom:28px;
+  transition:all .35s ease;
 }
-.service-box i{font-size:42px;color:#d4a017}
+
+.service-box i{
+  font-size:44px;
+  color:#d4a017;
+  margin-bottom:14px;
+}
+
+.service-box h4{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:8px;
+  color:#081f4a;
+}
+
+.service-box p{
+  font-size:14px;
+  line-height:1.6;
+  color:#666;
+  margin:0;
+}
+
+  .service-box:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.12),
+    0 0 0 1px rgba(245,200,107,.25);
+}
+.service-link{
+  text-decoration:none;
+  display:block;
+}
+.service-link:hover{
+  text-decoration:none;
+}
 
 /* ===== TESTIMONIALS ===== */
 .testimonials{
@@ -572,12 +610,57 @@ a{text-decoration:none}
 <section class="container" style="padding:70px 0">
 <h2 class="text-center mb-5">Our Core Services</h2>
 <div class="row">
-<div class="col-md-4"><div class="service-box"><i class="icofont-compass"></i><h4>Vastu Consultation</h4></div></div>
-<div class="col-md-4"><div class="service-box"><i class="icofont-globe"></i><h4>Astrology</h4></div></div>
-<div class="col-md-4"><div class="service-box"><i class="icofont-ui-calendar"></i><h4>Numerology</h4></div></div>
-<div class="col-md-4"><div class="service-box"><i class="icofont-magic"></i><h4>Tarot Reading</h4></div></div>
-<div class="col-md-4"><div class="service-box"><i class="icofont-yoga"></i><h4>Yoga & Wellness</h4></div></div>
-<div class="col-md-4"><div class="service-box"><i class="icofont-brainstorming"></i><h4>Energy Healing</h4></div></div>
+<div class="col-md-4">
+  <a href="vastu.html" class="service-link">
+    <div class="service-box">
+      <i class="icofont-compass"></i>
+      <h4>Vastu Consultation</h4>
+      <p>Scientific Vastu solutions for homes, offices and industries.</p>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4">
+  <a href="medical-vastu.html" class="service-link">
+    <div class="service-box">
+      <i class="icofont-hospital"></i>
+      <h4>Medical Vastu</h4>
+      <p>Energy-based Vastu guidance for hospitals and healing spaces.</p>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4">
+  <a href="astrology.html" class="service-link">
+    <div class="service-box">
+      <i class="icofont-ui-calendar"></i>
+      <h4>Astrology & Numerology</h4>
+      <p>Planetary and numerical insights for career and life planning.</p>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4">
+  <a href="tarot.html" class="service-link">
+    <div class="service-box">
+      <i class="icofont-magic"></i>
+      <h4>Tarot Guidance</h4>
+      <p>Intuitive readings to gain clarity and confident decisions.</p>
+    </div>
+  </a>
+</div>
+
+  <div class="col-md-4">
+  <a href="tarot.html" class="service-link">
+    <div class="service-box">
+      <i class="icofont-magic"></i>
+      <h4>Tarot Guidance</h4>
+      <p>Intuitive readings to gain clarity and confident decisions.</p>
+    </div>
+  </a>
+</div>
+
+
 </div>
 </section>
 
