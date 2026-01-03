@@ -38,6 +38,12 @@ body{font-family:'Poppins',sans-serif}
   display:flex;align-items:center;justify-content:space-between;
   height:84px;padding:0 18px;transition:height .35s ease;
 }
+  /* ===== HEADER WIDTH CONTROL – FINAL FIX ===== */
+.header-wrapper{
+  max-width:1280px;   /* centers menu + logo */
+  margin:0 auto;
+}
+
 .main-header.shrink{
   background:linear-gradient(90deg,#071a3a,#0b2f6e);
   box-shadow:0 10px 28px rgba(0,0,0,0.35);
@@ -135,12 +141,7 @@ background:#081f4a;flex-direction:column;padding:16px 0}
 <!-- HEADER -->
 <header class="main-header">
   <div class="container-fluid header-wrapper">
-    /* ===== HEADER WIDTH CONTROL ===== */
-.header-wrapper{
-  max-width:1280px;   /* 👈 KEY FIX */
-  margin:0 auto;      /* centers content */
-}
-    <a href="index.html" class="logo-link">
+       <a href="index.html" class="logo-link">
       <div class="logo-wrap">
         <img src="img/logo-header.png" alt="DebaVastu Logo">
       </div>
@@ -284,5 +285,6 @@ document.getElementById("year").textContent=new Date().getFullYear();
 
 </body>
 </html>
+
 
 
