@@ -1,220 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services – DebaVastu</title>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body { margin: 0; font-family: "Poppins", sans-serif; background: #f4f7fb; }
+<title>Our Services | Vastu, Medical Vastu, Astrology & Healing – DebaVastu</title>
 
-    /* HEADER */
-    header {
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    .header-container {
-      width: 95%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-    }
-    .logo { font-size: 26px; font-weight: 700; color: #0d47a1; }
-    nav ul { list-style: none; display: flex; gap: 25px; }
-    nav ul li a { text-decoration: none; font-size: 16px; color: #000; }
-    nav ul li a:hover { color: #0d47a1; }
-    .btn-appointment {
-      background: #0d47a1; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600;
-    }
-    .menu-btn { display: none; }
+<meta name="description" content="Explore DebaVastu services including Vastu Consultation, Medical Vastu, Astrology & Numerology, Tarot Guidance, and Wellness & Energy Healing across India.">
+<meta name="keywords" content="Vastu Consultation, Medical Vastu, Astrology Numerology, Tarot Guidance, Energy Healing, DebaVastu">
+<meta name="robots" content="index, follow">
 
-    @media(max-width: 850px) {
-      nav ul {
-        position: fixed;
-        top: 0; right: -100%;
-        width: 70%; height: 100%;
-        background: #fff;
-        flex-direction: column; justify-content: center;
-        gap: 30px;
-        transition: .4s;
-        box-shadow: -3px 0 10px rgba(0,0,0,0.2);
-      }
-      nav ul.show { right: 0; }
-      .menu-btn { display: block; font-size: 24px; cursor: pointer; }
-    }
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/icofont.css">
 
-    /* BANNER */
-    .banner {
-      position: relative;
-      background: url('img/services-banner.jpg') center/cover no-repeat;
-      height: 330px;
-      display: flex; justify-content: center; align-items: center;
-    }
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-    .banner-content {
-      position: relative;
-      text-align: center;
-      color: #fff;
-    }
-    .banner-content h1 { font-size: 44px; margin-bottom: 8px; }
-    .banner-content p { font-size: 18px; }
+<style>
+body{font-family:'Poppins',sans-serif;background:#f9f9f9}
 
-    /* SERVICES GRID */
-    .services-section {
-      max-width: 1250px; margin: 60px auto; padding: 0 20px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .service-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.08);
-      padding: 20px;
-      text-align: center;
-      transition: .35s;
-      overflow: hidden;
-    }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
-    .service-card img {
-      width: 100%; height: 210px; object-fit: cover;
-      border-radius: 12px; margin-bottom: 16px;
-      transition: .4s;
-    }
-    .service-card:hover img { transform: scale(1.05); }
-    .service-card h3 { font-size: 22px; margin: 8px 0; color: #0a2a66; }
-    .service-card p { font-size: 15px; line-height: 1.6; color: #555; }
+/* HERO */
+.services-hero{
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  color:#fff;
+  padding:90px 0;
+  text-align:center;
+}
+.services-hero h1{color:#f5c86b;font-weight:800}
+.services-hero p{max-width:760px;margin:16px auto 0}
 
-    .btn {
-      display: inline-block;
-      background: #0d47a1;
-      padding: 10px 20px; color: #fff;
-      border-radius: 8px; text-decoration: none; margin-top: 14px;
-    }
-    .btn:hover { background: #0a2f73; }
+/* SERVICE CARDS */
+.services-section{padding:80px 0}
+.service-card{
+  background:#fff;
+  border-radius:18px;
+  padding:36px 28px;
+  height:100%;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  transition:.35s;
+  text-align:center;
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 45px rgba(0,0,0,0.12);
+}
+.service-icon{
+  font-size:48px;
+  color:#d4a017;
+  margin-bottom:18px;
+}
+.service-card h3{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.service-card p{
+  color:#555;
+  font-size:15px;
+  line-height:1.7;
+}
+.service-card a{
+  display:inline-block;
+  margin-top:18px;
+  color:#f5c86b;
+  font-weight:600;
+  text-decoration:none;
+}
+.service-card a:hover{text-decoration:underline}
 
-    /* FLOATING BUTTONS */
-    .float-btn {
-      position: fixed; right: 20px;
-      background: #0d47a1; color: #fff;
-      padding: 14px 20px; border-radius: 50px;
-      text-decoration: none; font-weight: 600;
-      display: flex; gap: 8px; align-items: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      z-index: 999;
-    }
-    .float-call { bottom: 150px; }
-    .float-whatsapp { bottom: 90px; background: #25d366; }
-    .float-appointment { bottom: 30px; }
-  </style>
+/* CTA */
+.services-cta{
+  background:#081f4a;
+  color:#fff;
+  padding:70px 0;
+  text-align:center;
+}
+.services-cta h2{color:#f5c86b;font-weight:800}
+.services-cta a{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 34px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#f5c86b,#e0b24d);
+  color:#081f4a;
+  font-weight:700;
+  text-decoration:none;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="header-container">
-    <div class="logo">DebaVastu</div>
-
-    <nav>
-      <ul id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="astrology.html">Astrology</a></li>
-        <li><a href="vastu.html">Vastu</a></li>
-        <li><a href="numerology.html">Numerology</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn-appointment" href="appointment.html">Book Appointment</a></li>
-      </ul>
-    </nav>
-
-    <div class="menu-btn" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
-  </div>
-</header>
-
-<script>
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("show");
-}
-</script>
-
-<!-- BANNER -->
-<section class="banner">
-  <div class="banner-content">
-    <h1>Our Premium Services</h1>
-    <p>Vastu • Astrology • Numerology • Tarot • Yoga • Healing</p>
+<!-- HERO -->
+<section class="services-hero">
+  <div class="container">
+    <h1>Our Professional Services</h1>
+    <p>
+      DebaVastu offers scientifically guided Vastu, Medical Vastu, astrology-based insights,
+      tarot guidance, and wellness solutions designed for harmony, growth, and wellbeing.
+    </p>
   </div>
 </section>
 
-<!-- SERVICES GRID -->
+<!-- SERVICES -->
 <section class="services-section">
+  <div class="container">
+    <div class="row g-4">
 
-  <div class="services-grid">
+      <!-- VASTU -->
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="icofont-compass"></i></div>
+          <h3>Vastu Consultation</h3>
+          <p>
+            Professional Vastu solutions for residential, commercial, industrial,
+            office and plot planning with a scientific, non-demolition approach.
+          </p>
+          <a href="vastu.html">Explore Vastu →</a>
+        </div>
+      </div>
 
-    <div class="service-card">
-      <img src="img/services/vastu.jpg" alt="Vastu Consultation">
-      <h3>Vastu Consultation</h3>
-      <p>Home • Office • Factory • Plot analysis • Remedies without demolition.</p>
-      <a href="vastu.html" class="btn">Explore</a>
+      <!-- MEDICAL VASTU -->
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="icofont-hospital"></i></div>
+          <h3>Medical Vastu</h3>
+          <p>
+            Specialized Vastu for clinics, hospitals, doctor chambers and healing spaces
+            to enhance recovery, positivity and professional success.
+          </p>
+          <a href="medical-vastu.html">Explore Medical Vastu →</a>
+        </div>
+      </div>
+
+      <!-- ASTROLOGY & NUMEROLOGY -->
+      <div class="col-md-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="icofont-ui-calendar"></i></div>
+          <h3>Astrology & Numerology</h3>
+          <p>
+            Integrated astrology and numerology guidance for career, business,
+            life decisions, name analysis and favorable timing.
+          </p>
+          <a href="astrology.html">Explore Astrology & Numerology →</a>
+        </div>
+      </div>
+
+      <!-- TAROT -->
+      <div class="col-md-6">
+        <div class="service-card">
+          <div class="service-icon"><i class="icofont-magic"></i></div>
+          <h3>Tarot Guidance</h3>
+          <p>
+            Tarot-based intuitive guidance for clarity in relationships,
+            career decisions, emotional balance and life direction.
+          </p>
+          <a href="tarot.html">Explore Tarot Guidance →</a>
+        </div>
+      </div>
+
+      <!-- WELLNESS & HEALING -->
+      <div class="col-md-6">
+        <div class="service-card">
+          <div class="service-icon"><i class="icofont-energy-water"></i></div>
+          <h3>Wellness & Energy Healing</h3>
+          <p>
+            Energy balancing, meditation support and wellness alignment sessions
+            designed to restore harmony of mind, body and space.
+          </p>
+          <a href="healing.html">Explore Wellness & Healing →</a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="service-card">
-      <img src="img/services/astrology.jpg" alt="Astrology Consultation">
-      <h3>Astrology</h3>
-      <p>Kundli • Marriage • Career • Future predictions based on Vedic Astrology.</p>
-      <a href="astrology.html" class="btn">Explore</a>
-    </div>
-
-    <div class="service-card">
-      <img src="img/services/numerology.jpg" alt="Numerology">
-      <h3>Numerology</h3>
-      <p>Lucky name • Signature correction • Life path activation guidance.</p>
-      <a href="numerology.html" class="btn">Explore</a>
-    </div>
-
-    <div class="service-card">
-      <img src="img/services/tarot.jpg" alt="Tarot Reading">
-      <h3>Tarot Reading</h3>
-      <p>Love • Career • Life decisions through intuitive Tarot guidance.</p>
-      <a href="tarot.html" class="btn">Explore</a>
-    </div>
-
-    <div class="service-card">
-      <img src="img/services/yoga.jpg" alt="Yoga Wellness">
-      <h3>Yoga & Wellness</h3>
-      <p>Meditation • Pranayama • Mind–body balance • Stress relief sessions.</p>
-      <a href="yoga.html" class="btn">Explore</a>
-    </div>
-
-    <div class="service-card">
-      <img src="img/services/healing.jpg" alt="Healing Therapy">
-      <h3>Healing Therapies</h3>
-      <p>Reiki • Aura cleansing • Chakra balancing • Energy healing.</p>
-      <a href="healing.html" class="btn">Explore</a>
-    </div>
-
   </div>
-
 </section>
 
-<!-- FLOATING BUTTONS -->
-<a href="tel:+916372710439" class="float-btn float-call"><i class="fa fa-phone"></i> Call</a>
-<a href="https://wa.me/916372710439" class="float-btn float-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-<a href="appointment.html" class="float-btn float-appointment"><i class="fa fa-calendar"></i> Appointment</a>
+<!-- CTA -->
+<section class="services-cta">
+  <div class="container">
+    <h2>Need Guidance? Let’s Align Your Space & Life</h2>
+    <p>Consultations available across India & online</p>
+    <a href="contact.html">Book Consultation</a>
+  </div>
+</section>
 
 </body>
 </html>
