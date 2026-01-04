@@ -13,13 +13,10 @@
 
 <meta name="robots" content="index, follow">
 
-<!-- FAVICON -->
 <link rel="icon" href="favicon-32.png">
 
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-<!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/icofont.css">
@@ -34,17 +31,12 @@
   "logo": "https://www.debavastu.com/img/logo-header.png",
   "image": "https://www.debavastu.com/img/medical-vastu-banner.jpg",
   "telephone": "+91-9090155516",
-  "priceRange": "$$",
-  "description": "Scientific Medical Vastu consultancy for hospitals, clinics, nursing homes and healthcare facilities with non-demolition, logical and ethical approach.",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Odisha",
     "addressCountry": "India"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "India"
-  },
+  "areaServed": "India",
   "medicalSpecialty": [
     "Medical Vastu",
     "Hospital Vastu",
@@ -58,7 +50,60 @@
 body{font-family:'Poppins',sans-serif}
 a{text-decoration:none}
 
-/* ===== HERO ===== */
+/* ================= HEADER ================= */
+.main-header{
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+.header-wrapper{
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:84px;
+  padding:0 18px;
+}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;
+  background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
+}
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;
+  background:#081f4a;padding:1px;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
+
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
+.m-link i{color:#f5c86b;margin-right:5px}
+
+.dropdown{position:relative}
+.dropdown-menu{
+  position:absolute;top:100%;left:0;
+  min-width:240px;
+  background:#0a2b6d;
+  border-radius:14px;
+  padding:12px;
+  display:none;
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu li a{
+  color:#f3e7c3;
+  padding:10px 14px;
+  display:block;
+  border-radius:8px;
+}
+.dropdown-menu li a:hover{
+  background:rgba(245,200,107,.14);
+  color:#f5c86b;
+}
+
+/* ================= HERO ================= */
 .medical-hero{
   min-height:82vh;
   background:url('img/medical-vastu-banner.jpg') center/cover no-repeat;
@@ -70,13 +115,11 @@ a{text-decoration:none}
 }
 .medical-hero .container{position:relative;z-index:2;color:#fff}
 .medical-hero h1{color:#f5c86b;font-weight:800}
-.medical-hero span{color:#f3e7c3}
 
-/* ===== SECTIONS ===== */
+/* ================= SECTIONS ================= */
 section{padding:70px 0}
 .section-light{background:#f9f9f9}
 
-/* ===== SERVICE BOX ===== */
 .service-box{
   background:#fff;
   padding:28px;
@@ -85,7 +128,6 @@ section{padding:70px 0}
   margin-bottom:24px
 }
 
-/* ===== FAQ ===== */
 .faq-box{
   background:#fff;
   padding:22px 26px;
@@ -94,7 +136,6 @@ section{padding:70px 0}
   margin-bottom:18px
 }
 
-/* ===== CTA ===== */
 .cta-medical{
   background:#081f4a;
   color:#fff;
@@ -104,7 +145,19 @@ section{padding:70px 0}
 }
 .cta-medical h2{color:#f5c86b}
 
-/* ===== FLOATING ===== */
+/* ================= FOOTER ================= */
+.dv-footer{
+  background:#081f4a;
+  color:#f3e7c3;
+  padding:60px 0
+}
+.footer-title{color:#f5c86b}
+.footer-links{list-style:none;padding:0}
+.footer-links li{margin-bottom:8px}
+.footer-links a{color:#f3e7c3}
+.footer-bottom{text-align:center;margin-top:30px;font-size:14px}
+
+/* ================= FLOATING ================= */
 .dv-floating{
   position:fixed;bottom:24px;right:24px;
   display:flex;flex-direction:column;gap:14px;z-index:9999
@@ -122,18 +175,54 @@ section{padding:70px 0}
 
 <body>
 
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="header-wrapper">
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap">
+        <img src="img/logo-header.png" alt="DebaVastu Logo">
+      </div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
+
+      <li class="dropdown">
+        <a class="m-link" href="#"><i class="fa fa-handshake-o"></i> Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="vastu.html">Vastu Consultation</a></li>
+          <li><a href="medical-vastu.html">Medical Vastu</a></li>
+          <li><a href="astrology.html">Astrology</a></li>
+          <li><a href="numerology.html">Numerology</a></li>
+          <li><a href="tarot.html">Tarot Guidance</a></li>
+          <li><a href="healing.html">Energy Healing</a></li>
+        </ul>
+      </li>
+
+      <li><a class="m-link" href="medical-vastu.html"><i class="fa fa-hospital-o"></i> Medical Vastu</a></li>
+      <li><a class="m-link" href="blog.html"><i class="fa fa-pencil"></i> Blog</a></li>
+      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+    </ul>
+  </div>
+</header>
+
 <!-- ================= HERO ================= -->
 <section class="medical-hero">
   <div class="container">
     <h1>
       Medical Vastu Consultant in India
-      <span style="display:block;font-size:55%;margin-top:10px">
+      <span style="display:block;font-size:55%;margin-top:10px;color:#f3e7c3">
         Scientific • Ethical • Non-Demolition Healthcare Vastu
       </span>
     </h1>
-    <div style="margin-top:24px">
-      <a href="appointment.html" class="btn btn-warning btn-lg">Book Medical Vastu Consultation</a>
-    </div>
+    <a href="appointment.html" class="btn btn-warning btn-lg mt-4">
+      Book Medical Vastu Consultation
+    </a>
   </div>
 </section>
 
@@ -255,6 +344,39 @@ section{padding:70px 0}
     </a>
   </div>
 </section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="dv-footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h4 class="footer-title">DEBAVASTU</h4>
+        <p>The Science of Harmony</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vastu.html">Vastu</a></li>
+          <li><a href="medical-vastu.html">Medical Vastu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Contact</h5>
+        <p><i class="fa fa-phone"></i> +91 90901 55516</p>
+        <p><i class="fa fa-envelope"></i> contact@debavastu.com</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      © 2026 DebaVastu. All Rights Reserved.
+    </div>
+  </div>
+</footer>
 
 <!-- ================= FLOATING ================= -->
 <div class="dv-floating">
