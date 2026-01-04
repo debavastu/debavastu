@@ -5,10 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Blog | Vastu, Astrology & Wellness Insights – DebaVastu</title>
+<title>DebaVastu Blog | Vastu, Medical Vastu, Astrology & Healing Insights</title>
 
-<meta name="description" content="Read expert articles on Vastu Shastra, Medical Vastu, Astrology, Numerology and Energy Healing by DebaVastu. Practical, scientific and awareness-based guidance.">
-<meta name="keywords" content="Vastu Blog, Astrology Blog, Medical Vastu Articles, Numerology Tips, Energy Healing Blog">
+<meta name="description" content="Read expert articles on Vastu Shastra, Medical Vastu, Astrology, Numerology, Tarot and Healing by DebaVastu. Scientific, ethical and practical guidance.">
+
+<meta name="keywords" content="Vastu Blog, Medical Vastu Articles, Astrology Blog, Numerology Guidance, DebaVastu Blog">
 <meta name="robots" content="index, follow">
 
 <link rel="icon" href="favicon-32.png">
@@ -20,10 +21,29 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
+<!-- ================= BLOG SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "DebaVastu Blog",
+  "url": "https://www.debavastu.com/blog.html",
+  "description": "Expert insights on Vastu, Medical Vastu, Astrology, Numerology and Energy Healing.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DebaVastu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.debavastu.com/img/logo-header.png"
+    }
+  }
+}
+</script>
+
 <style>
 body{font-family:'Poppins',sans-serif;background:#f8f9fb}
 
-/* ================= HEADER (SAME AS HOMEPAGE) ================= */
+/* ================= HEADER (SAME AS SITE) ================= */
 .main-header{
   position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
@@ -48,7 +68,6 @@ body{font-family:'Poppins',sans-serif;background:#f8f9fb}
 
 .menu{list-style:none;display:flex;gap:26px;margin:0}
 .m-link{color:#fff;font-weight:600;text-decoration:none}
-.m-link i{color:#f5c86b;margin-right:5px}
 
 @media(min-width:901px){
 .dropdown{position:relative}
@@ -67,102 +86,55 @@ body{font-family:'Poppins',sans-serif;background:#f8f9fb}
 }
 }
 
-.mobile-toggle{display:none}
-@media(max-width:900px){
-.menu{display:none;position:absolute;top:100%;left:0;width:100%;
-background:#081f4a;flex-direction:column;padding:16px 0}
-.menu li{padding:10px 22px}
-.dropdown-menu{position:static;background:#0d3a85;display:none}
-.mobile-toggle{display:block;font-size:26px;color:#fff;cursor:pointer}
-}
-
-/* ================= HERO ================= */
+/* ================= BLOG HERO ================= */
 .blog-hero{
   background:linear-gradient(135deg,#081f4a,#0d3a85);
-  padding:90px 0;text-align:center;color:#fff
+  padding:80px 0 60px;
+  color:#fff;text-align:center;
 }
 .blog-hero h1{color:#f5c86b;font-weight:800}
-.blog-hero p{max-width:760px;margin:12px auto 0;color:#f3e7c3}
+.blog-hero p{color:#f3e7c3;margin-top:10px}
 
 /* ================= BLOG GRID ================= */
-section{padding:70px 0}
+.blog-grid{
+  max-width:1280px;
+  margin:-40px auto 0;
+  padding:0 18px 80px;
+}
 .blog-card{
   background:#fff;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  border-radius:20px;
   overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
   transition:.3s;
   height:100%;
 }
-.blog-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,.12);
-}
-.blog-card img{
-  width:100%;height:220px;object-fit:cover;
-}
-.blog-content{
-  padding:22px;
-}
-.blog-tag{
-  display:inline-block;
-  background:#f5c86b;
-  color:#081f4a;
-  padding:4px 12px;
-  font-size:12px;
-  font-weight:600;
-  border-radius:20px;
-  margin-bottom:10px;
-}
+.blog-card:hover{transform:translateY(-6px)}
+.blog-card img{width:100%;height:220px;object-fit:cover}
+.blog-content{padding:24px}
 .blog-content h3{
-  font-size:18px;font-weight:700;color:#081f4a;
+  font-size:20px;
+  font-weight:700;
+  color:#081f4a;
 }
-.blog-content p{
-  font-size:14px;color:#555;margin-top:8px;
+.blog-meta{
+  font-size:13px;
+  color:#777;
+  margin:8px 0 12px;
 }
-.blog-content a{
-  display:inline-block;margin-top:12px;
-  color:#0d3a85;font-weight:600;
+.read-more{
+  display:inline-block;
+  margin-top:10px;
+  color:#0d3a85;
+  font-weight:600;
   text-decoration:none;
-}
-
-/* ================= EMPTY STATE ================= */
-.empty-state{
-  text-align:center;
-  background:#fff;
-  padding:60px 30px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.empty-state i{
-  font-size:48px;color:#f5c86b;
-}
-.empty-state h3{
-  margin-top:18px;font-weight:700;color:#081f4a;
-}
-.empty-state p{
-  color:#555;margin-top:8px;
 }
 
 /* ================= FOOTER ================= */
 .dv-footer{
   background:#081f4a;color:#f3e7c3;padding:60px 0
 }
-.footer-brand{color:#f5c86b;font-weight:700}
-.footer-bottom{text-align:center;margin-top:20px;font-size:14px}
-
-/* ================= FLOATING ================= */
-.dv-floating{
-  position:fixed;bottom:24px;right:24px;
-  display:flex;flex-direction:column;gap:14px;z-index:9999
-}
-.dv-btn{
-  width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:24px
-}
-.dv-whatsapp{background:#25D366}
-.dv-call{background:#081f4a}
+.footer-bottom{text-align:center;font-size:14px}
 </style>
 </head>
 
@@ -171,9 +143,8 @@ section{padding:70px 0}
 <!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="header-wrapper">
-
     <a href="index.html" class="logo-link">
-      <div class="logo-wrap"><img src="img/logo-header.png" alt="DebaVastu"></div>
+      <div class="logo-wrap"><img src="img/logo-header.png"></div>
       <div>
         <div class="brand-name">DEBAVASTU</div>
         <div class="brand-tagline">The Science of Harmony</div>
@@ -181,73 +152,100 @@ section{padding:70px 0}
     </a>
 
     <ul class="menu">
-      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
-      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
-
+      <li><a class="m-link" href="index.html">Home</a></li>
+      <li><a class="m-link" href="about.html">About</a></li>
       <li class="dropdown">
-        <a class="m-link" href="#"><i class="fa fa-handshake-o"></i> Services</a>
+        <a class="m-link" href="#">Services</a>
         <ul class="dropdown-menu">
-          <li><a href="vastu.html">Vastu Consultation</a></li>
+          <li><a href="vastu.html">Vastu</a></li>
           <li><a href="medical-vastu.html">Medical Vastu</a></li>
           <li><a href="astrology.html">Astrology</a></li>
           <li><a href="numerology.html">Numerology</a></li>
-          <li><a href="tarot.html">Tarot Guidance</a></li>
-          <li><a href="healing.html">Energy Healing</a></li>
+          <li><a href="tarot.html">Tarot</a></li>
+          <li><a href="healing.html">Healing</a></li>
         </ul>
       </li>
-
-      <li><a class="m-link" href="blog.html"><i class="fa fa-pencil"></i> Blog</a></li>
-      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+      <li><a class="m-link" href="blog.html">Blog</a></li>
+      <li><a class="m-link" href="contact.html">Contact</a></li>
     </ul>
-
-    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="blog-hero">
   <h1>DebaVastu Knowledge Hub</h1>
-  <p>
-    Expert insights on Vastu, Medical Vastu, Astrology, Numerology
-    and holistic well-being for modern life.
-  </p>
+  <p>Scientific insights on Vastu, Health, Astrology & Energy Balance</p>
 </section>
 
-<!-- ================= BLOG SECTION ================= -->
-<section class="container">
+<!-- ================= BLOG GRID ================= -->
+<section class="blog-grid">
+  <div class="row g-4">
 
-  <!-- EMPTY STATE (REMOVE WHEN BLOGS ARE ADDED) -->
-  <div class="empty-state">
-    <i class="fa fa-pencil-square-o"></i>
-    <h3>Blogs Coming Soon</h3>
-    <p>
-      We are preparing high-quality articles to help you understand
-      Vastu, Astrology and Energy Sciences in a scientific and practical way.
-    </p>
+    <!-- BLOG CARD -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="img/blog/vastu-health.jpg" alt="Vastu and Health">
+        <div class="blog-content">
+          <h3>How Vastu Impacts Health & Healing</h3>
+          <div class="blog-meta">Jan 1, 2026 · Medical Vastu</div>
+          <p>
+            Learn how space, direction and energy flow influence
+            physical and mental well-being.
+          </p>
+          <a href="blog-single.html" class="read-more">
+            Read Full Article →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG CARD -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="img/blog/astrology-career.jpg" alt="Astrology for Career">
+        <div class="blog-content">
+          <h3>Astrology for Career Growth & Timing</h3>
+          <div class="blog-meta">Dec 18, 2025 · Astrology</div>
+          <p>
+            Understand how planetary periods help you plan
+            job changes and promotions.
+          </p>
+          <a href="astrology-career.html" class="read-more">
+            Read Full Article →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG CARD -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="img/blog/numerology-life.jpg" alt="Numerology Life Path">
+        <div class="blog-content">
+          <h3>Numerology & Your Life Path Number</h3>
+          <div class="blog-meta">Dec 5, 2025 · Numerology</div>
+          <p>
+            Decode how numbers influence personality,
+            destiny and decision making.
+          </p>
+          <a href="numerology-life.html" class="read-more">
+            Read Full Article →
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
-
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="dv-footer">
   <div class="container text-center">
-    <div class="footer-brand">DEBAVASTU</div>
-    <p>The Science of Harmony</p>
-    <div class="footer-bottom">© 2026 DebaVastu. All Rights Reserved.</div>
+    <div class="footer-bottom">
+      © 2026 DebaVastu. All Rights Reserved.
+    </div>
   </div>
 </footer>
-
-<!-- ================= FLOATING ================= -->
-<div class="dv-floating">
-  <a href="https://wa.me/916372710439" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
-  <a href="tel:+916372710439" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
-</div>
-
-<script>
-document.querySelector(".mobile-toggle").onclick = function(){
-  document.querySelector(".menu").classList.toggle("show");
-};
-</script>
 
 </body>
 </html>
