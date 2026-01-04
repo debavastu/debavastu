@@ -5,33 +5,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Contact DebaVastu | Book Consultation</title>
+<title>Contact DebaVastu | Book Vastu, Astrology & Healing Consultation</title>
 
-<meta name="description" content="Contact DebaVastu to book Vastu, Medical Vastu, Astrology, Numerology, Tarot or Energy Healing consultation across India.">
+<meta name="description" content="Contact DebaVastu to book Vastu, Medical Vastu, Astrology, Numerology, Tarot and Energy Healing consultation across India.">
 <meta name="robots" content="index, follow">
 
 <link rel="icon" href="favicon-32.png">
 
-<!-- GOOGLE FONTS -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
-<!-- EMAILJS -->
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-(function(){
-  emailjs.init("dkxgwOwsd0z7BMPyo"); // PUBLIC KEY ONLY
-})();
-</script>
 
 <style>
 body{font-family:'Poppins',sans-serif}
 
 /* HEADER */
 .main-header{
+  position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
   box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
@@ -42,41 +38,53 @@ body{font-family:'Poppins',sans-serif}
 }
 .logo-link{display:flex;align-items:center;gap:14px}
 .logo-wrap{
-  width:60px;height:60px;border-radius:50%;
-  background:linear-gradient(135deg,#f6d27a,#d4a017);
-  display:flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
 }
 .logo-wrap img{
   width:100%;height:100%;border-radius:50%;
-  background:#081f4a;padding:2px;
+  background:#081f4a;padding:1px;object-fit:contain;
 }
-.brand-name{font-size:22px;font-weight:800;color:#f5c86b}
-.brand-tagline{font-size:12px;color:#f3e7c3;margin-top:-4px}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
 
 .menu{list-style:none;display:flex;gap:26px;margin:0}
 .m-link{color:#fff;font-weight:600;text-decoration:none}
 .m-link i{color:#f5c86b;margin-right:5px}
 
+@media(max-width:900px){
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;
+background:#081f4a;flex-direction:column;padding:16px 0}
+.menu li{padding:10px 22px}
+.mobile-toggle{display:block;font-size:26px;color:#fff;cursor:pointer}
+}
+
 /* HERO */
 .contact-hero{
   background:linear-gradient(135deg,#081f4a,#0d3a85);
-  padding:80px 0;color:#fff;text-align:center
+  padding:80px 0;text-align:center;color:#fff
 }
 .contact-hero h1{color:#f5c86b;font-weight:800}
 
 /* FORM */
 .contact-box{
-  background:#fff;padding:40px;border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1)
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 14px 40px rgba(0,0,0,.12);
 }
-.form-control{
-  padding:12px;border-radius:8px
+.contact-box input,
+.contact-box select,
+.contact-box textarea{
+  width:100%;padding:12px 14px;
+  margin-bottom:14px;border-radius:8px;
+  border:1px solid #ccc
 }
-.btn-submit{
+.contact-box button{
   background:linear-gradient(135deg,#f5c86b,#e0b24d);
   color:#081f4a;font-weight:700;
   padding:12px 30px;border-radius:30px;
-  border:none
+  border:none;width:100%
 }
 
 /* FOOTER */
@@ -110,91 +118,110 @@ body{font-family:'Poppins',sans-serif}
 <header class="main-header">
   <div class="header-wrapper">
     <a href="index.html" class="logo-link">
-      <div class="logo-wrap">
-        <img src="img/logo-header.png" alt="DebaVastu">
-      </div>
+      <div class="logo-wrap"><img src="img/logo-header.png"></div>
       <div>
         <div class="brand-name">DEBAVASTU</div>
         <div class="brand-tagline">The Science of Harmony</div>
       </div>
     </a>
-
     <ul class="menu">
       <li><a class="m-link" href="index.html">Home</a></li>
       <li><a class="m-link" href="about.html">About</a></li>
+      <li><a class="m-link" href="services.html">Services</a></li>
       <li><a class="m-link" href="contact.html">Contact</a></li>
     </ul>
+    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="contact-hero">
+  <h1>Book Your Consultation</h1>
+  <p>Vastu • Medical Vastu • Astrology • Numerology • Tarot • Energy Healing</p>
+</section>
+
+  <!-- CONTACT INFO STRIP -->
+<section style="background:#f9f9f9;padding:50px 0">
   <div class="container">
-    <h1>Contact DebaVastu</h1>
-    <p>Book Vastu, Medical Vastu, Astrology & Healing Consultation</p>
+    <div class="row text-center">
+
+      <!-- PHONE -->
+      <div class="col-md-4 mb-4">
+        <i class="fa fa-phone" style="font-size:34px;color:#f5c86b"></i>
+        <h5 style="margin-top:12px;font-weight:700">Call / WhatsApp</h5>
+        <p style="margin:0">
+          <a href="tel:+919090155516" style="color:#081f4a;font-weight:600">
+            +91 90901 55516
+          </a>
+        </p>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="col-md-4 mb-4">
+        <i class="fa fa-envelope" style="font-size:34px;color:#f5c86b"></i>
+        <h5 style="margin-top:12px;font-weight:700">Email Us</h5>
+        <p style="margin:0">
+          <a href="mailto:contact@debavastu.com" style="color:#081f4a;font-weight:600">
+            contact@debavastu.com
+          </a>
+        </p>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="col-md-4 mb-4">
+        <i class="fa fa-map-marker" style="font-size:34px;color:#f5c86b"></i>
+        <h5 style="margin-top:12px;font-weight:700">Location</h5>
+        <p style="margin:0;color:#555">
+          Bhubaneswar, Odisha, India
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
 
+
 <!-- CONTACT FORM -->
-<section style="padding:70px 0">
-  <div class="container">
-    <div class="row justify-content-center">
+<section class="container" style="padding:70px 0">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="contact-box">
 
-      <div class="col-md-8">
-        <div class="contact-box">
+<form id="contactForm">
+  <input type="text" name="user_name" id="user_name" placeholder="Your Name" required>
+  <input type="email" name="user_email" placeholder="Your Email" required>
+  <input type="tel" name="user_phone" id="user_phone" placeholder="WhatsApp Number" required>
 
-          <form id="contactForm">
+  <select name="service" id="service" required>
+    <option value="">Select Service</option>
+    <option>Vastu Consultation</option>
+    <option>Medical Vastu</option>
+    <option>Astrology</option>
+    <option>Numerology</option>
+    <option>Tarot Guidance</option>
+    <option>Energy Healing</option>
+  </select>
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
-              </div>
+  <textarea name="message" rows="4" placeholder="Your Message"></textarea>
 
-              <div class="col-md-6 mb-3">
-                <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number" required>
-              </div>
+  <button type="submit">Submit & WhatsApp Confirm</button>
 
-              <div class="col-md-12 mb-3">
-                <input type="email" name="from_email" class="form-control" placeholder="Email Address" required>
-              </div>
+  <small style="display:block;margin-top:10px;color:#555">
+    ✔ You will receive a WhatsApp confirmation after submitting
+  </small>
+</form>
 
-              <div class="col-md-12 mb-3">
-                <select name="service" class="form-control" required>
-                  <option value="">Select Service</option>
-                  <option>Vastu Consultation</option>
-                  <option>Medical Vastu</option>
-                  <option>Astrology</option>
-                  <option>Numerology</option>
-                  <option>Tarot</option>
-                  <option>Energy Healing</option>
-                </select>
-              </div>
-
-              <div class="col-md-12 mb-3">
-                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <button type="submit" class="btn-submit">Submit Enquiry</button>
-                <p id="form-status" style="margin-top:15px;font-weight:600;"></p>
-              </div>
-            </div>
-
-          </form>
-
-        </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="dv-footer">
-  <div class="container">
-    <div class="footer-bottom">
-      © 2026 DebaVastu. All Rights Reserved.
-    </div>
+  <div class="container text-center">
+    <h3 class="footer-brand">DEBAVASTU</h3>
+    <p>The Science of Harmony</p>
+    <div class="footer-bottom">© 2026 DebaVastu. All Rights Reserved.</div>
   </div>
 </footer>
 
@@ -204,29 +231,41 @@ body{font-family:'Poppins',sans-serif}
   <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
 </div>
 
-<!-- AJAX -->
+<!-- JS -->
 <script>
+emailjs.init("dkxgwOwsd0z7BMPyo");
+
 document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const status = document.getElementById("form-status");
-  status.innerHTML = "Sending message...";
+  const name = user_name.value;
+  const phone = user_phone.value;
+  const service = service.value;
 
   emailjs.sendForm(
-    "service_xxxxx",   // ← replace with your EmailJS Service ID
+    "service_xxxxxx",
     "template_xrogxm8",
     this
-  ).then(
-    function(){
-      status.style.color = "green";
-      status.innerHTML = "✅ Enquiry sent successfully!";
-      document.getElementById("contactForm").reset();
-    },
-    function(){
-      status.style.color = "red";
-      status.innerHTML = "❌ Failed to send. Please try again.";
-    }
-  );
+  ).then(function(){
+
+    const msg =
+`Hello DebaVastu,
+
+Thank you for your consultation request.
+
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+
+Regards,
+${name}`;
+
+    window.location.href =
+      "https://wa.me/919090155516?text=" + encodeURIComponent(msg);
+
+  }, function(){
+    alert("Submission failed. Please try again.");
+  });
 });
 </script>
 
