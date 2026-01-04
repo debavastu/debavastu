@@ -1,106 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact DebaVastu | Instant Consultation Booking</title>
 
-<title>Contact DebaVastu | Book Consultation</title>
-
-<meta name="description" content="Contact DebaVastu to book Vastu, Medical Vastu, Astrology, Numerology, Tarot and Energy Healing consultation across India.">
-<meta name="robots" content="index, follow">
-
+<meta name="description" content="Contact DebaVastu for Vastu, Medical Vastu, Astrology, Numerology, Tarot & Energy Healing consultation. Instant WhatsApp booking available.">
 <link rel="icon" href="favicon-32.png">
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <style>
-body{font-family:'Poppins',sans-serif}
+body{font-family:'Poppins',sans-serif;background:#f8f9fb}
 
-/* HEADER */
+/* HEADER – SAME AS OTHER PAGES */
 .main-header{
   position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 .header-wrapper{
   max-width:1280px;margin:auto;
   display:flex;align-items:center;justify-content:space-between;
   height:84px;padding:0 18px;
 }
-.logo-link{display:flex;gap:14px;align-items:center}
+.logo-link{display:flex;align-items:center;gap:14px;text-decoration:none}
 .logo-wrap{
   width:64px;height:64px;border-radius:50%;
   padding:5px;background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
 }
-.logo-wrap img{width:100%;height:100%;border-radius:50%;background:#081f4a}
+.logo-wrap img{width:100%;height:100%;border-radius:50%;background:#081f4a;padding:1px}
 .brand-name{font-size:24px;font-weight:800;color:#f5c86b}
 .brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
 
 .menu{list-style:none;display:flex;gap:26px;margin:0}
 .m-link{color:#fff;font-weight:600;text-decoration:none}
-
 .dropdown{position:relative}
 .dropdown-menu{
-  position:absolute;top:100%;left:0;
-  background:#0a2b6d;border-radius:12px;
-  padding:12px;display:none;min-width:220px;
+  position:absolute;top:100%;left:0;min-width:240px;
+  background:#0a2b6d;border-radius:12px;padding:12px;
+  display:none;box-shadow:0 18px 40px rgba(0,0,0,.45)
 }
 .dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{
-  display:block;color:#f3e7c3;padding:10px;border-radius:8px
-}
-.dropdown-menu a:hover{background:rgba(245,200,107,.15);color:#f5c86b}
+.dropdown-menu a{color:#f3e7c3;display:block;padding:10px 14px;border-radius:8px}
+.dropdown-menu a:hover{background:rgba(245,200,107,.14);color:#f5c86b}
 
-.mobile-toggle{display:none;color:#fff;font-size:26px}
-
+.mobile-toggle{display:none}
 @media(max-width:900px){
-.menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:#081f4a}
-.menu li{padding:10px 22px}
-.mobile-toggle{display:block}
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;background:#081f4a;flex-direction:column;padding:16px}
+.mobile-toggle{display:block;color:#fff;font-size:26px;cursor:pointer}
 }
 
 /* HERO */
 .contact-hero{
   background:linear-gradient(135deg,#081f4a,#0d3a85);
-  padding:80px 0;text-align:center;color:#fff
+  padding:80px 20px;text-align:center;color:#fff
 }
 .contact-hero h1{color:#f5c86b;font-weight:800}
 
+/* INFO STRIP */
+.info-strip{background:#fff;padding:40px 0}
+.info-strip i{font-size:34px;color:#f5c86b}
+.info-strip h5{font-weight:700;margin-top:10px}
+
 /* FORM */
-.contact-box{
+.form-box{
   background:#fff;padding:40px;border-radius:18px;
   box-shadow:0 14px 40px rgba(0,0,0,.12)
 }
-.contact-box input,
-.contact-box select,
-.contact-box textarea{
-  width:100%;padding:12px;margin-bottom:14px;border-radius:8px;border:1px solid #ccc
+.form-box input,.form-box select,.form-box textarea{
+  width:100%;padding:12px;border-radius:8px;
+  border:1px solid #ccc;margin-bottom:14px
 }
-.contact-box button{
-  width:100%;padding:14px;border-radius:30px;border:none;
+.submit-btn{
   background:linear-gradient(135deg,#f5c86b,#e0b24d);
-  font-weight:700;color:#081f4a
+  color:#081f4a;font-weight:700;
+  padding:14px;border-radius:30px;border:none;width:100%
 }
 
 /* FOOTER */
-.dv-footer{
-  background:#081f4a;color:#f3e7c3;padding:60px 0;text-align:center
-}
+.dv-footer{background:#081f4a;color:#f3e7c3;padding:50px 0;text-align:center}
 
 /* FLOATING */
-.dv-floating{
-  position:fixed;bottom:24px;right:24px;
-  display:flex;flex-direction:column;gap:14px
-}
-.dv-btn{
-  width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:24px
-}
+.dv-floating{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:14px}
+.dv-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px}
 .dv-whatsapp{background:#25D366}
 .dv-call{background:#081f4a}
 </style>
@@ -108,6 +93,7 @@ body{font-family:'Poppins',sans-serif}
 
 <body>
 
+<!-- HEADER -->
 <header class="main-header">
   <div class="header-wrapper">
     <a href="index.html" class="logo-link">
@@ -124,7 +110,7 @@ body{font-family:'Poppins',sans-serif}
       <li class="dropdown">
         <a class="m-link" href="#">Services</a>
         <div class="dropdown-menu">
-          <a href="vastu.html">Vastu</a>
+          <a href="vastu.html">Vastu Consultation</a>
           <a href="medical-vastu.html">Medical Vastu</a>
           <a href="astrology.html">Astrology</a>
           <a href="numerology.html">Numerology</a>
@@ -134,41 +120,57 @@ body{font-family:'Poppins',sans-serif}
       </li>
       <li><a class="m-link" href="contact.html">Contact</a></li>
     </ul>
-
     <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="contact-hero">
-  <h1>Book Your Consultation</h1>
-  <p>Vastu • Astrology • Healing</p>
+  <h1>Instant Consultation Booking</h1>
+  <p>Direct WhatsApp • No waiting • No email delay</p>
 </section>
 
+<!-- INFO -->
+<section class="info-strip">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4"><i class="fa fa-phone"></i><h5>+91 90901 55516</h5></div>
+      <div class="col-md-4"><i class="fa fa-envelope"></i><h5>contact@debavastu.com</h5></div>
+      <div class="col-md-4"><i class="fa fa-map-marker"></i><h5>Bhubaneswar, Odisha</h5></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
 <section class="container" style="padding:70px 0">
   <div class="row justify-content-center">
     <div class="col-md-7">
-      <div class="contact-box">
+      <div class="form-box">
+        <h3 style="text-align:center;margin-bottom:20px">Book via WhatsApp</h3>
 
-<form id="contactForm">
-  <input type="text" id="name" name="from_name" placeholder="Your Name" required>
-  <input type="email" id="email" name="from_email" placeholder="Email" required>
-  <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number" required>
+        <form id="bookingForm">
+          <input type="text" id="name" placeholder="Your Name *" required>
+          <input type="tel" id="phone" placeholder="WhatsApp Number *" required>
 
-  <select id="service" name="service" required>
-    <option value="">Select Service</option>
-    <option>Vastu Consultation</option>
-    <option>Medical Vastu</option>
-    <option>Astrology</option>
-    <option>Numerology</option>
-    <option>Tarot Guidance</option>
-    <option>Energy Healing</option>
-  </select>
+          <select id="service" required>
+            <option value="">Select Service</option>
+            <option>Vastu Consultation</option>
+            <option>Medical Vastu</option>
+            <option>Astrology</option>
+            <option>Numerology</option>
+            <option>Tarot Guidance</option>
+            <option>Energy Healing</option>
+          </select>
 
-  <textarea id="message" name="message" placeholder="Your Message"></textarea>
+          <textarea id="message" placeholder="Message (Optional)"></textarea>
 
-  <button type="submit">Submit & Confirm on WhatsApp</button>
-</form>
+          <button class="submit-btn">💬 Submit & Chat on WhatsApp</button>
 
+          <p style="font-size:13px;color:#777;text-align:center;margin-top:10px">
+            ✔ Instant WhatsApp confirmation<br>
+            ✔ Direct consultant interaction
+          </p>
+        </form>
       </div>
     </div>
   </div>
@@ -184,45 +186,20 @@ body{font-family:'Poppins',sans-serif}
 </div>
 
 <script>
-emailjs.init("dkxgwOwsd0z7BMPyo");
-
-document.getElementById("contactForm").addEventListener("submit", function(e){
+document.getElementById("bookingForm").addEventListener("submit", function(e){
   e.preventDefault();
+  const text =
+`Hello DebaVastu 👋
+I would like to book a consultation.
 
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value.replace(/\D/g,'');
-  let service = document.getElementById("service").value;
+Name: ${name.value}
+WhatsApp: ${phone.value}
+Service: ${service.value}
+Message: ${message.value || "N/A"}`;
 
-  emailjs.sendForm(
-    "service_xrogxm8",
-    "template_xrogxm8",
-    this
-  ).then(function(){
-
-    // Admin WhatsApp
-    window.open(
-      "https://wa.me/919090155516?text=" +
-      encodeURIComponent("New Lead:\nName: "+name+"\nPhone: "+phone+"\nService: "+service),
-      "_blank"
-    );
-
-    // User Confirmation WhatsApp
-    setTimeout(()=>{
-      window.open(
-        "https://wa.me/91"+phone+"?text="+
-        encodeURIComponent("Hello "+name+",\n\nThank you for contacting DebaVastu 🌿\nYour request for "+service+" has been received.\n\n– DebaVastu"),
-        "_blank"
-      );
-    },600);
-
-    setTimeout(()=>{ window.location="thank-you.html"; },1200);
-
-  });
+  window.location.href =
+    "https://wa.me/919090155516?text=" + encodeURIComponent(text);
 });
-
-document.querySelector(".mobile-toggle").onclick=()=>{
-  document.querySelector(".menu").classList.toggle("show");
-};
 </script>
 
 </body>
