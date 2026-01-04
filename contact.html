@@ -1,221 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact – DebaVastu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contact DebaVastu | Book Vastu, Astrology & Healing Consultation</title>
+
+<meta name="description" content="Contact DebaVastu to book Vastu, Medical Vastu, Astrology, Numerology, Tarot and Energy Healing consultation across India. Scientific & ethical guidance.">
+
+<meta name="keywords" content="Contact DebaVastu, Vastu Consultation Contact, Medical Vastu Booking, Astrology Consultation India">
+
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="favicon-32.png">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- ================= CONTACT PAGE SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ContactPage",
+  "name":"Contact DebaVastu",
+  "url":"https://www.debavastu.com/contact.html",
+  "about":{
+    "@type":"LocalBusiness",
+    "name":"DebaVastu",
+    "telephone":"+91-9090155516",
+    "email":"contact@debavastu.com",
+    "address":{
+      "@type":"PostalAddress",
+      "addressRegion":"Odisha",
+      "addressCountry":"India"
+    }
+  }
+}
+</script>
 
 <style>
-    body { margin: 0; font-family: "Poppins", sans-serif; }
+body{font-family:'Poppins',sans-serif}
 
-    /* HEADER SAME AS VASTU */
-    header {
-        background: linear-gradient(90deg, #00114d, #003b94);
-        padding: 14px 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    }
-    .logo-area { display:flex; align-items:center; gap:12px; }
-    .logo-circle {
-        width:74px;height:74px;border-radius:50%;
-        object-fit:cover;filter:drop-shadow(0 0 6px rgba(255,255,255,0.25));
-        transition:.4s;
-    }
-    .logo-circle:hover { transform:scale(1.08); filter:drop-shadow(0 0 18px rgba(255,255,255,0.45)); }
-    .logo-text { font-size:28px; font-weight:700; color:white; }
+/* ================= HEADER ================= */
+.main-header{
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+.header-wrapper{
+  max-width:1280px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:84px;padding:0 18px;
+}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
+  display:flex;align-items:center;justify-content:center;
+}
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;
+  background:#081f4a;padding:1px;object-fit:contain;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
 
-    nav ul { list-style:none; display:flex; gap:32px; padding:0; margin:0; }
-    nav ul li a {
-        text-decoration:none; color:white;
-        font-size:16px; font-weight:500; transition:.3s;
-    }
-    nav ul li a:hover { color:#00ffd5; }
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
+.m-link i{color:#f5c86b;margin-right:5px}
 
-    .dropdown { position:relative; }
-    .dropdown-menu {
-        display:none; position:absolute; background:#001b57;
-        padding:14px; border-radius:8px; top:38px; min-width:200px;
-        box-shadow:0 4px 14px rgba(0,0,0,0.35);
-    }
-    .dropdown-menu li { padding:7px 0; }
-    .dropdown-menu li a { color:white; }
-    .dropdown-menu li a:hover { color:#00ffd5; }
-    .dropdown.open .dropdown-menu { display:block; }
+@media(min-width:901px){
+.dropdown{position:relative}
+.dropdown-menu{
+  position:absolute;top:100%;left:0;
+  min-width:240px;background:#0a2b6d;
+  border-radius:14px;padding:12px;
+  display:none;box-shadow:0 18px 40px rgba(0,0,0,.45)
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu li a{
+  color:#f3e7c3;padding:11px 16px;border-radius:10px;
+  display:block;transition:.25s
+}
+.dropdown-menu li a:hover{
+  background:rgba(245,200,107,.14);
+  color:#f5c86b;padding-left:20px
+}
+}
+.mobile-toggle{display:none}
+@media(max-width:900px){
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;
+background:#081f4a;flex-direction:column;padding:16px 0}
+.menu li{padding:10px 22px}
+.dropdown-menu{position:static;background:#0d3a85;display:none}
+.mobile-toggle{display:block;font-size:26px;color:#fff;cursor:pointer}
+}
 
-    .btn-appointment {
-        background:#00c786; padding:10px 18px;
-        border-radius:6px; color:white; font-weight:600;
-        text-decoration:none;
-    }
-    .hamburger { display:none; color:white; font-size:28px; cursor:pointer; }
+/* ================= HERO ================= */
+.hero{
+  background:linear-gradient(135deg,#081f4a,#0d3a85);
+  padding:90px 0;text-align:center;color:#fff
+}
+.hero h1{color:#f5c86b;font-weight:800}
+.hero p{max-width:780px;margin:12px auto;color:#f3e7c3}
 
-    @media(max-width:768px){
-        .hamburger{display:block;}
-        nav ul{
-            flex-direction:column; background:#00114d;
-            position:absolute;top:82px;left:0;width:100%;
-            display:none;padding:20px;gap:18px;
-        }
-        .dropdown-menu{position:static;box-shadow:none;}
-    }
+/* ================= CONTENT ================= */
+section{padding:70px 0}
+.contact-box{
+  background:#fff;padding:34px;border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08)
+}
+.contact-info i{
+  font-size:26px;color:#f5c86b;margin-bottom:10px
+}
+.form-control{
+  border-radius:10px;padding:12px
+}
+.btn-submit{
+  background:linear-gradient(135deg,#f5c86b,#e0b24d);
+  color:#081f4a;font-weight:700;border:none;
+  padding:12px 30px;border-radius:30px
+}
 
-    /* PAGE SECTION */
-    .section { max-width:1100px; margin:auto; padding:60px 20px; }
-    .section h2 { text-align:center; font-size:32px; margin-bottom:25px; color:#0a1a5a; }
+/* ================= FOOTER ================= */
+.dv-footer{
+  background:#081f4a;color:#f3e7c3;padding:60px 0
+}
+.footer-title,.footer-brand{color:#f5c86b}
+.footer-links{list-style:none;padding:0}
+.footer-links li{margin-bottom:8px}
+.footer-links a{color:#f3e7c3;text-decoration:none}
+.footer-bottom{text-align:center;margin-top:30px;font-size:14px}
 
-    .contact-grid {
-        display:grid; gap:26px;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    }
-    .contact-box {
-        background:#fff; padding:24px;
-        border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.08);
-        text-align:center;
-    }
-    .contact-box h3 { color:#0a1a5a; margin-bottom:10px; }
-    .contact-box p { color:#444; font-size:15px; }
-
-    form {
-        background:#fff; padding:26px;
-        border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.1);
-        max-width:650px; margin: auto; text-align:center;
-    }
-    input, textarea {
-        width:100%; padding:12px; border-radius:6px;
-        border:1px solid #ddd; margin-bottom:16px;
-        font-size:16px; font-family:Poppins;
-    }
-    button {
-        background:#003b94; color:white;
-        padding:12px 20px; border:none;
-        font-weight:600; border-radius:6px;
-        cursor:pointer; transition:.3s; width:100%;
-    }
-    button:hover { background:#00114d; }
-
-    iframe {
-        width:100%; height:300px; border-radius:12px;
-        margin-top:30px; border:0;
-    }
-
-    footer {
-        background:#0a1a5a; color:white;
-        text-align:center; padding:25px;
-        margin-top:40px;
-    }
-
-    /* FLOAT BUTTONS */
-    .float-call, .float-whatsapp{
-        position:fixed; right:22px;
-        width:55px;height:55px;display:flex;
-        justify-content:center;align-items:center;
-        border-radius:50%;color:white;
-        font-size:26px; text-decoration:none;z-index:999;
-    }
-    .float-call{bottom:100px;background:#0b3d91;font-size:24px;}
-    .float-whatsapp{bottom:30px;background:#25D366;transition:.3s;}
-    .float-whatsapp:hover{transform:scale(1.1);}
+/* ================= FLOATING ================= */
+.dv-floating{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:9999
+}
+.dv-btn{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:24px
+}
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
 </style>
 </head>
+
 <body>
 
-<header>
-    <div class="logo-area">
-        <img src="img/logo.png" class="logo-circle">
-        <div class="logo-text">DEBAVASTU</div>
-    </div>
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="header-wrapper">
 
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap"><img src="img/logo-header.png" alt="DebaVastu"></div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">ℹ️ About</a></li>
+    <ul class="menu">
+      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
 
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="vastu.html">📐 Vastu</a></li>
-                    <li><a href="astrology.html">🔮 Astrology</a></li>
-                    <li><a href="numerology.html">🔢 Numerology</a></li>
-                    <li><a href="tarot.html">🃏 Tarot</a></li>
-                    <li><a href="yoga.html">🧘 Yoga</a></li>
-                    <li><a href="healing.html">✨ Healing</a></li>
-                </ul>
-            </li>
-
-            <li><a href="contact.html">📩 Contact</a></li>
+      <li class="dropdown">
+        <a class="m-link" href="#"><i class="fa fa-handshake-o"></i> Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="vastu.html">Vastu Consultation</a></li>
+          <li><a href="medical-vastu.html">Medical Vastu</a></li>
+          <li><a href="astrology.html">Astrology</a></li>
+          <li><a href="numerology.html">Numerology</a></li>
+          <li><a href="tarot.html">Tarot Guidance</a></li>
+          <li><a href="healing.html">Energy Healing</a></li>
         </ul>
-    </nav>
+      </li>
 
-    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
+      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+    </ul>
+
+    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
+  </div>
 </header>
 
-<section class="section">
-    <h2>Get in Touch</h2>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>Contact DebaVastu</h1>
+  <p>
+    Book Vastu, Medical Vastu, Astrology, Numerology, Tarot or Energy Healing
+    consultation with a scientific and ethical approach.
+  </p>
+</section>
 
-    <div class="contact-grid">
+<!-- ================= CONTACT ================= -->
+<section>
+  <div class="container">
+    <div class="row g-4">
 
-        <div class="contact-box">
-            <h3>📍 Address</h3>
-            <p>DebaVastu Consultation Office<br>India</p>
+      <!-- INFO -->
+      <div class="col-md-5">
+        <div class="contact-box contact-info text-center">
+          <i class="fa fa-phone"></i>
+          <h5>Call / WhatsApp</h5>
+          <p>+91 90901 55516</p>
+
+          <i class="fa fa-envelope mt-4"></i>
+          <h5>Email</h5>
+          <p>contact@debavastu.com</p>
+
+          <i class="fa fa-map-marker mt-4"></i>
+          <h5>Location</h5>
+          <p>Odisha, India (Pan-India Consultation)</p>
         </div>
+      </div>
 
+      <!-- FORM -->
+      <div class="col-md-7">
         <div class="contact-box">
-            <h3>📞 Phone</h3>
-            <p><a href="tel:+916372710439">+91 63727 10439</a></p>
-        </div>
+          <h3 class="mb-4">Send Your Query</h3>
 
-        <div class="contact-box">
-            <h3>📧 Email</h3>
-            <p>support@debavastu.com</p>
-        </div>
+          <form action="mailto:contact@debavastu.com" method="post" enctype="text/plain">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="tel" class="form-control" placeholder="Mobile Number" required>
+              </div>
+              <div class="col-md-12 mb-3">
+                <input type="email" class="form-control" placeholder="Email Address">
+              </div>
+              <div class="col-md-12 mb-3">
+                <select class="form-control">
+                  <option>-- Select Service --</option>
+                  <option>Vastu Consultation</option>
+                  <option>Medical Vastu</option>
+                  <option>Astrology</option>
+                  <option>Numerology</option>
+                  <option>Tarot</option>
+                  <option>Energy Healing</option>
+                </select>
+              </div>
+              <div class="col-md-12 mb-3">
+                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn-submit">
+                  Submit Enquiry
+                </button>
+              </div>
+            </div>
+          </form>
 
-        <div class="contact-box">
-            <h3>🕘 Working Hours</h3>
-            <p>Mon–Sun : 9 AM to 7 PM</p>
         </div>
+      </div>
 
     </div>
+  </div>
 </section>
 
-<section class="section">
-    <h2>Send Us a Message</h2>
+<!-- ================= FOOTER ================= -->
+<footer class="dv-footer">
+  <div class="container">
+    <div class="row">
 
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <textarea rows="5" placeholder="Your Message / Query" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+      <div class="col-md-4">
+        <h3 class="footer-brand">DEBAVASTU</h3>
+        <p>The Science of Harmony</p>
+      </div>
 
-    <!-- Google Map Placeholder -->
-    <iframe src="https://maps.google.com/maps?q=India&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</section>
+      <div class="col-md-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
 
-<footer>
-    © 2025 DebaVastu — All Rights Reserved
+      <div class="col-md-4">
+        <h5 class="footer-title">Contact</h5>
+        <p><i class="fa fa-phone"></i> +91 90901 55516</p>
+        <p><i class="fa fa-envelope"></i> contact@debavastu.com</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">© 2026 DebaVastu. All Rights Reserved.</div>
+  </div>
 </footer>
 
-<!-- FLOATING BUTTONS -->
-<a href="tel:+916372710439" class="float-call">📞</a>
-<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+<!-- ================= FLOATING ================= -->
+<div class="dv-floating">
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
+  <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
+</div>
 
+<script src="js/jquery.min.js"></script>
 <script>
-function toggleMenu(){
-    const menu = document.querySelector("nav ul");
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
-document.querySelector('.dropdown-toggle')
-.addEventListener('click', function(e){
-    e.preventDefault();
-    this.parentElement.classList.toggle('open');
+$('.mobile-toggle').click(function(){
+  $('.menu').slideToggle(250);
 });
 </script>
 
