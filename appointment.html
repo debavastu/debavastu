@@ -179,6 +179,9 @@ background:#081f4a;flex-direction:column;padding:16px 0}
   <input type="text" id="name" placeholder="Your Name" required>
   <input type="tel" id="phone" placeholder="WhatsApp Number" required>
 
+  <!-- OPTIONAL EMAIL -->
+  <input type="email" id="email" placeholder="Email ID (Optional)">
+
   <select id="service" required>
     <option value="">Select Service</option>
     <option>Vastu Consultation</option>
@@ -220,6 +223,7 @@ function sendWhatsApp(e){
 
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
   const service = document.getElementById("service").value;
   const message = document.getElementById("message").value;
 
@@ -230,6 +234,7 @@ I would like to book a consultation.
 
 Name: ${name}
 Phone: ${phone}
+Email: ${email || 'Not Provided'}
 Service: ${service}
 Message: ${message}`;
 
