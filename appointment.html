@@ -1,234 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Appointment – DebaVastu</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Book Appointment | DebaVastu</title>
+
+<meta name="description" content="Book appointment for Vastu, Medical Vastu, Astrology, Numerology, Tarot and Energy Healing consultation with DebaVastu.">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="favicon-32.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
 <style>
-body{margin:0;font-family:"Poppins",sans-serif;background:#f8f9fb}
+body{margin:0;font-family:'Poppins',sans-serif;background:#f6f8fb}
 
 /* ================= HEADER ================= */
-header{
+.main-header{
+  position:sticky;top:0;z-index:9999;
   background:linear-gradient(90deg,#081f4a,#0d3a85);
-  padding:14px 24px;
-  display:flex;justify-content:space-between;align-items:center;
-  position:sticky;top:0;z-index:999;
-  box-shadow:0 4px 14px rgba(0,0,0,.25)
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
 }
-.logo-area{display:flex;align-items:center;gap:12px}
-.logo-circle{
-  width:68px;height:68px;border-radius:50%;
-  object-fit:contain;background:#081f4a;padding:4px
+.header-wrapper{
+  max-width:1280px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:84px;padding:0 18px;
 }
-.logo-text{
-  font-size:26px;font-weight:700;color:#f5c86b
+.logo-link{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
 }
-.logo-tagline{
-  font-size:13px;color:#f3e7c3;margin-top:-4px
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;
+  background:#081f4a;padding:1px;object-fit:contain;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
+
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.menu li a{color:#fff;font-weight:600;text-decoration:none}
+.menu li a i{color:#f5c86b;margin-right:5px}
+
+.mobile-toggle{display:none;font-size:26px;color:#fff;cursor:pointer}
+
+@media(max-width:900px){
+.menu{
+  display:none;position:absolute;top:100%;left:0;width:100%;
+  background:#081f4a;flex-direction:column;padding:16px 0
+}
+.menu li{padding:10px 22px}
+.mobile-toggle{display:block}
 }
 
-nav ul{
-  list-style:none;display:flex;gap:28px;margin:0;padding:0
+/* ================= HERO ================= */
+.app-hero{
+  background:linear-gradient(135deg,#081f4a,#0d3a85);
+  padding:70px 20px;text-align:center;color:#fff
 }
-nav ul li a{
-  color:white;text-decoration:none;
-  font-size:16px;font-weight:500
-}
-nav ul li a:hover{color:#f5c86b}
-
-.dropdown{position:relative}
-.dropdown-menu{
-  display:none;position:absolute;top:38px;left:0;
-  background:#0a2b6d;padding:14px;border-radius:10px;
-  min-width:210px;box-shadow:0 4px 18px rgba(0,0,0,.4)
-}
-.dropdown.open .dropdown-menu{display:block}
-.dropdown-menu a{
-  display:block;color:#f3e7c3;padding:8px 0
-}
-.dropdown-menu a:hover{color:#f5c86b}
-
-.btn-appointment{
-  background:#00c786;padding:10px 18px;
-  border-radius:6px;color:white;font-weight:600;
-  text-decoration:none
-}
-
-.hamburger{display:none;color:#fff;font-size:28px;cursor:pointer}
-
-@media(max-width:768px){
-  .hamburger{display:block}
-  nav ul{
-    flex-direction:column;background:#081f4a;
-    position:absolute;top:86px;left:0;width:100%;
-    display:none;padding:20px;gap:18px
-  }
-  .dropdown-menu{position:static;box-shadow:none}
-}
+.app-hero h1{color:#f5c86b;font-weight:800}
+.app-hero p{color:#f3e7c3}
 
 /* ================= FORM ================= */
-.appointment-section{
-  max-width:850px;margin:60px auto;
-  background:white;border-radius:14px;
-  padding:40px 26px;
-  box-shadow:0 6px 28px rgba(0,0,0,.06)
+.appointment-box{
+  max-width:760px;margin:60px auto;
+  background:#fff;padding:40px 30px;
+  border-radius:18px;
+  box-shadow:0 14px 40px rgba(0,0,0,.12);
 }
-.appointment-section h2{
-  text-align:center;font-size:30px;
-  color:#081f4a;margin-bottom:14px
+.appointment-box label{
+  font-weight:600;margin-top:14px;display:block
 }
-.appointment-section p{
-  text-align:center;color:#555;margin-bottom:26px
+.appointment-box input,
+.appointment-box select,
+.appointment-box textarea{
+  width:100%;padding:12px 14px;
+  border-radius:8px;border:1px solid #ccc;
+  margin-top:6px;font-size:15px
 }
-form label{display:block;margin:18px 0 6px;font-weight:500}
-form input,form textarea,form select{
-  width:100%;padding:12px;border-radius:8px;
-  border:1px solid #bbb;font-size:16px
-}
-form textarea{height:130px;resize:none}
+.appointment-box textarea{height:120px;resize:none}
 
 .submit-btn{
-  background:#00c786;width:100%;
-  padding:14px;border-radius:8px;
-  color:white;font-weight:600;
-  margin-top:24px;border:none;
-  font-size:17px;cursor:pointer
+  margin-top:26px;width:100%;
+  padding:14px;border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#f5c86b,#e0b24d);
+  color:#081f4a;font-weight:700;font-size:16px;
+  cursor:pointer
 }
 
 /* ================= FOOTER ================= */
-footer{
+.dv-footer{
   background:#081f4a;color:#f3e7c3;
-  text-align:center;padding:28px;margin-top:40px
+  padding:50px 0;text-align:center
 }
+.footer-brand{color:#f5c86b;font-weight:800}
 
 /* ================= FLOATING ================= */
-.float-call,.float-whatsapp{
-  position:fixed;right:22px;
-  width:55px;height:55px;
-  display:flex;justify-content:center;align-items:center;
-  border-radius:50%;color:white;
-  text-decoration:none;font-size:26px;z-index:999
+.dv-floating{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:9999
 }
-.float-call{bottom:100px;background:#0b3d91}
-.float-whatsapp{bottom:30px;background:#25D366}
+.dv-btn{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#fff;text-decoration:none
+}
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="logo-area">
-    <img src="img/logo-header.png" class="logo-circle" alt="DebaVastu">
-    <div>
-      <div class="logo-text">DEBAVASTU</div>
-      <div class="logo-tagline">The Science of Harmony</div>
-    </div>
-  </div>
+<!-- HEADER -->
+<header class="main-header">
+  <div class="header-wrapper">
 
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap">
+        <img src="img/logo-header.png" alt="DebaVastu">
+      </div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Services ▾</a>
-        <div class="dropdown-menu">
-          <a href="vastu.html">Vastu Consultation</a>
-          <a href="medical-vastu.html">Medical Vastu</a>
-          <a href="astrology.html">Astrology</a>
-          <a href="numerology.html">Numerology</a>
-          <a href="tarot.html">Tarot</a>
-          <a href="healing.html">Energy Healing</a>
-        </div>
-      </li>
-
-      <li><a href="contact.html">Contact</a></li>
+    <ul class="menu">
+      <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
+      <li><a href="services.html"><i class="fa fa-handshake-o"></i> Services</a></li>
+      <li><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
     </ul>
-  </nav>
 
-  <a href="tel:+919090155516" class="btn-appointment">Book Appointment</a>
+    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
+  </div>
 </header>
 
-<!-- ================= FORM ================= -->
-<section class="appointment-section">
-  <h2>Book Your Consultation</h2>
-  <p>Fill the form below and confirm instantly on WhatsApp</p>
-
-  <form id="appointmentForm">
-    <label>Name *</label>
-    <input type="text" id="name" required>
-
-    <label>Mobile Number *</label>
-    <input type="tel" id="phone" required>
-
-    <label>Email (optional)</label>
-    <input type="email" id="email">
-
-    <label>Select Consultation *</label>
-    <select id="service" required>
-      <option value="">Choose Service</option>
-      <option>Vastu Consultation</option>
-      <option>Medical Vastu</option>
-      <option>Astrology Consultation</option>
-      <option>Numerology Guidance</option>
-      <option>Tarot Reading</option>
-      <option>Energy Healing</option>
-    </select>
-
-    <label>Message / Birth Details</label>
-    <textarea id="message"></textarea>
-
-    <button type="submit" class="submit-btn">
-      Submit & Confirm on WhatsApp
-    </button>
-  </form>
+<!-- HERO -->
+<section class="app-hero">
+  <h1>Book Your Consultation</h1>
+  <p>Vastu • Medical Vastu • Astrology • Numerology • Tarot • Energy Healing</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  © 2026 DebaVastu — The Science of Harmony
+<!-- FORM -->
+<section>
+  <div class="appointment-box">
+    <form id="appointmentForm">
+
+      <label>Your Name *</label>
+      <input type="text" id="user_name" required>
+
+      <label>Mobile Number (WhatsApp) *</label>
+      <input type="tel" id="user_phone" required>
+
+      <label>Email (optional)</label>
+      <input type="email" id="user_email">
+
+      <label>Select Service *</label>
+      <select id="user_service" required>
+        <option value="">Choose Service</option>
+        <option>Vastu Consultation</option>
+        <option>Medical Vastu</option>
+        <option>Astrology</option>
+        <option>Numerology</option>
+        <option>Tarot Guidance</option>
+        <option>Energy Healing</option>
+      </select>
+
+      <label>Message / Birth Details</label>
+      <textarea id="user_message"></textarea>
+
+      <button type="submit" class="submit-btn">
+        Submit & Confirm on WhatsApp
+      </button>
+
+      <p style="font-size:13px;color:#666;margin-top:10px">
+        ✔ You will be redirected to confirmation page after submission
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="dv-footer">
+  <h3 class="footer-brand">DEBAVASTU</h3>
+  <p>The Science of Harmony</p>
+  <p style="font-size:14px">© 2026 DebaVastu. All Rights Reserved.</p>
 </footer>
 
-<!-- ================= FLOATING ================= -->
-<a href="tel:+919090155516" class="float-call">📞</a>
-<a href="https://wa.me/919090155516" class="float-whatsapp" target="_blank">💬</a>
+<!-- FLOATING -->
+<div class="dv-floating">
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp">💬</a>
+  <a href="tel:+919090155516" class="dv-btn dv-call">📞</a>
+</div>
 
+<!-- JS -->
 <script>
-function toggleMenu(){
-  const menu=document.querySelector("nav ul");
-  menu.style.display=(menu.style.display==="block")?"none":"block";
-}
-
-document.querySelector('.dropdown-toggle')
-.addEventListener('click',function(e){
-  e.preventDefault();
-  this.parentElement.classList.toggle('open');
+/* Mobile menu */
+document.querySelector('.mobile-toggle')
+.addEventListener('click',()=>{
+  const menu=document.querySelector('.menu');
+  menu.style.display=menu.style.display==='flex'?'none':'flex';
 });
 
+/* WhatsApp submit + redirect */
 document.getElementById("appointmentForm")
 .addEventListener("submit",function(e){
   e.preventDefault();
-  let name=name.value;
-  let phone=phone.value;
-  let service=service.value;
-  let msg=message.value;
 
-  let url="https://wa.me/919090155516?text="
-    +encodeURIComponent(
-      "Appointment Request\n\n"
-      +"Name: "+name+"\n"
-      +"Phone: "+phone+"\n"
-      +"Service: "+service+"\n"
-      +"Details: "+msg
-    );
+  const name = user_name.value.trim();
+  const phone = user_phone.value.trim();
+  const email = user_email.value.trim();
+  const service = user_service.value;
+  const message = user_message.value.trim();
 
-  window.open(url,"_blank");
+  if(!name || !phone || !service){
+    alert("Please fill all required fields");
+    return;
+  }
+
+  const text =
+`🙏 New Appointment – DebaVastu
+
+👤 Name: ${name}
+📞 Mobile: ${phone}
+📧 Email: ${email || 'Not Provided'}
+🛠 Service: ${service}
+📝 Message: ${message || '—'}`;
+
+  window.open(
+    "https://wa.me/919090155516?text="+encodeURIComponent(text),
+    "_blank"
+  );
+
+  setTimeout(()=>{
+    window.location.href="thank-you.html";
+  },1200);
 });
 </script>
 
