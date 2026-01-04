@@ -89,6 +89,56 @@ body{font-family:'Poppins',sans-serif}
   color:#f5c86b;
   padding-left:18px;
 }
+/* ================= CONTACT ADDRESS ================= */
+.contact-address{
+  background:#f9f9f9;
+  padding:60px 0;
+}
+
+.address-box{
+  background:#fff;
+  border-radius:22px;
+  padding:36px 30px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;
+}
+
+.address-item{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+
+.address-item i{
+  font-size:30px;
+  color:#f5c86b;
+  min-width:34px;
+}
+
+.address-item h5{
+  margin:0 0 6px;
+  font-weight:700;
+  color:#081f4a;
+}
+
+.address-item p{
+  margin:0;
+  color:#555;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.address-item a{
+  color:#081f4a;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.address-item a:hover{
+  color:#d4a017;
+}
 
 @media(min-width:901px){
   .dropdown:hover .dropdown-menu{display:block}
@@ -117,6 +167,59 @@ body{font-family:'Poppins',sans-serif}
   color:#f5c86b;font-weight:800;font-size:36px
 }
 .booking-hero p{margin-top:12px;font-size:18px}
+
+  <!-- ================= CONTACT ADDRESS SECTION ================= -->
+<section class="contact-address">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-md-10">
+        <div class="address-box">
+
+          <div class="address-item">
+            <i class="fa fa-map-marker"></i>
+            <div>
+              <h5>Office Location</h5>
+              <p>Bhubaneswar, Odisha – 7510XX<br>India</p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <i class="fa fa-phone"></i>
+            <div>
+              <h5>Call / WhatsApp</h5>
+              <p>
+                <a href="tel:+916372710439">+91 63727 10439</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <i class="fa fa-envelope"></i>
+            <div>
+              <h5>Email Address</h5>
+              <p>
+                <a href="mailto:contact@debavastu.com">
+                  contact@debavastu.com
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="address-item">
+            <i class="fa fa-clock-o"></i>
+            <div>
+              <h5>Consultation Hours</h5>
+              <p>Monday – Sunday<br>9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 /* ================= FORM ================= */
 .contact-box{
