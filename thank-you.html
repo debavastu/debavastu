@@ -1,81 +1,236 @@
 <!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Thank You | DebaVastu Consultation</title>
+<title>Thank You | DebaVastu – Consultation Request Received</title>
 
+<meta name="description" content="Thank you for contacting DebaVastu. Your consultation request has been received. Our team will connect with you shortly on WhatsApp.">
 <meta name="robots" content="noindex, follow">
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-32.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- ================= SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "DebaVastu Thank You Page",
+  "description": "Confirmation page after submitting consultation request on DebaVastu.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DebaVastu",
+    "url": "https://www.debavastu.com"
+  }
+}
+</script>
 
 <style>
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#0a2f6d,#081f4a);
+  background:#f8f9fb;
+}
+
+/* ================= HERO ================= */
+.thankyou-hero{
+  background:linear-gradient(135deg,#081f4a,#0d3a85);
+  padding:80px 16px;
+  text-align:center;
   color:#fff;
+}
+.thankyou-hero h1{
+  color:#f5c86b;
+  font-weight:800;
+  font-size:38px;
+}
+.thankyou-hero p{
+  font-size:18px;
+  max-width:760px;
+  margin:14px auto 0;
+  color:#f3e7c3;
+}
+
+/* ================= CONTENT ================= */
+.thankyou-box{
+  max-width:820px;
+  margin:-40px auto 60px;
+  background:#fff;
+  border-radius:20px;
+  padding:40px 28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
   text-align:center;
 }
 
-.thank-wrapper{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:30px;
+.icon-success{
+  font-size:56px;
+  color:#25D366;
+  margin-bottom:16px;
 }
 
-.thank-wrapper h1{
-  color:#f5c86b;
-  font-size:42px;
-  font-weight:800;
+.thankyou-box h2{
+  font-weight:700;
+  color:#081f4a;
   margin-bottom:12px;
 }
 
-.thank-wrapper p{
+.thankyou-box p{
+  color:#555;
   font-size:16px;
-  max-width:620px;
   line-height:1.7;
-  color:#f3f3f3;
 }
 
-.trust{
-  margin-top:26px;
-  font-size:14px;
-  color:#dcdcdc;
+/* ================= TRUST STRIP ================= */
+.trust-strip{
+  background:#f9f9f9;
+  padding:40px 0;
 }
-
-.back-btn{
-  margin-top:34px;
-  padding:12px 30px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#f5c86b,#e0b24d);
+.trust-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  text-align:center;
+}
+.trust-item{
+  background:#fff;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+.trust-item i{
+  font-size:32px;
+  color:#f5c86b;
+}
+.trust-item h5{
+  margin-top:12px;
+  font-weight:700;
   color:#081f4a;
+}
+.trust-item p{
+  font-size:14px;
+  color:#666;
+}
+
+/* ================= BUTTON ================= */
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:22px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 34px;
+  border-radius:30px;
   font-weight:700;
   text-decoration:none;
+  font-size:17px;
+}
+.whatsapp-btn i{
+  margin-right:8px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:#081f4a;
+  color:#f3e7c3;
+  text-align:center;
+  padding:26px 10px;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="thank-wrapper">
-  <h1>Thank You</h1>
-  <p>
-    Your consultation request has been successfully received.  
-    Our team will connect with you shortly to guide you further.
-  </p>
+<!-- ================= HERO ================= -->
+<section class="thankyou-hero">
+  <h1>Thank You!</h1>
+  <p>Your consultation request has been successfully submitted.</p>
+</section>
 
-  <div class="trust">
-    ✔ Scientific • Ethical • Confidential Consultation  
-    <br>✔ Trusted by professionals across India
+<!-- ================= CONTENT ================= -->
+<section class="thankyou-box">
+  <div class="icon-success">
+    <i class="fa fa-check-circle"></i>
   </div>
 
-  <a href="index.html" class="back-btn">Back to Home</a>
-</div>
+  <h2>We’ve Received Your Request</h2>
+  <p>
+    Thank you for reaching out to <strong>DebaVastu</strong>.
+    Your details have been recorded, and we will connect with you shortly
+    on <strong>WhatsApp</strong> to proceed with your consultation.
+  </p>
+
+  <p style="margin-top:14px">
+    If WhatsApp did not open automatically, please click the button below.
+  </p>
+
+  <a id="waLink" href="#" class="whatsapp-btn">
+    <i class="fa fa-whatsapp"></i> Open WhatsApp Now
+  </a>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="trust-strip">
+  <div class="trust-grid">
+
+    <div class="trust-item">
+      <i class="fa fa-star"></i>
+      <h5>10+ Years Experience</h5>
+      <p>Scientific & practical consultation approach.</p>
+    </div>
+
+    <div class="trust-item">
+      <i class="fa fa-users"></i>
+      <h5>3000+ Clients</h5>
+      <p>Trusted across India for Vastu & guidance.</p>
+    </div>
+
+    <div class="trust-item">
+      <i class="fa fa-home"></i>
+      <h5>No Demolition</h5>
+      <p>Simple, ethical and non-invasive solutions.</p>
+    </div>
+
+    <div class="trust-item">
+      <i class="fa fa-globe"></i>
+      <h5>Pan-India Service</h5>
+      <p>Online & onsite consultation available.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © 2026 DebaVastu · Bhubaneswar, Odisha, India
+</footer>
+
+<!-- ================= AUTO WHATSAPP ================= -->
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const wa = params.get("whatsapp");
+
+  if(wa){
+    document.getElementById("waLink").href = wa;
+    // Auto-open WhatsApp after short delay
+    setTimeout(function(){
+      window.location.href = wa;
+    }, 1200);
+  } else {
+    document.getElementById("waLink").href = "https://wa.me/916372710439";
+  }
+})();
+</script>
 
 </body>
 </html>
