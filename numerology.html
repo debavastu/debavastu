@@ -1,198 +1,348 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numerology – DebaVastu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Numerology Consultant in India | Scientific Numerology Guidance – DebaVastu</title>
+
+<meta name="description" content="DebaVastu offers scientific numerology consultation for name correction, mobile number, career, business and life decisions. Logical, ethical and fear-free numerology guidance across India.">
+
+<meta name="keywords" content="Numerology Consultant India, Scientific Numerology, Name Numerology, Mobile Number Numerology, Career Numerology, DebaVastu">
+
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="favicon-32.png">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/icofont.css">
+
+<!-- ================= NUMEROLOGY SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DebaVastu Numerology Consultation",
+  "url": "https://www.debavastu.com/numerology.html",
+  "logo": "https://www.debavastu.com/img/logo-header.png",
+  "telephone": "+91-9090155516",
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "description": "Scientific numerology consultation for name correction, mobile number analysis, career and business planning using logical and ethical approach."
+}
+</script>
 
 <style>
-    body { margin: 0; font-family: "Poppins", sans-serif; }
+body{font-family:'Poppins',sans-serif}
 
-    /* HEADER EXACT LIKE VASTU */
-    header {
-        background: linear-gradient(90deg, #00114d, #003b94);
-        padding: 14px 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    }
-    .logo-area { display: flex; align-items: center; gap: 12px; }
-    .logo-circle {
-        width: 74px; height: 74px; border-radius: 50%; object-fit: cover;
-        filter: drop-shadow(0 0 6px rgba(255,255,255,0.25));
-        transition: 0.3s ease;
-    }
-    .logo-circle:hover { transform: scale(1.07); filter: drop-shadow(0 0 18px rgba(255,255,255,0.45)); }
-    .logo-text {
-        font-size: 28px; font-weight: 700; letter-spacing: 1px; color: white;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
+/* ================= HEADER ================= */
+.main-header{
+  position:sticky;top:0;z-index:9999;
+  background:linear-gradient(90deg,#081f4a,#0d3a85);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+.header-wrapper{
+  max-width:1280px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:84px;padding:0 18px;
+}
+.logo-link{display:flex;align-items:center;gap:14px}
+.logo-wrap{
+  width:64px;height:64px;border-radius:50%;
+  padding:5px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6d27a,#d4a017,#f6d27a);
+}
+.logo-wrap img{
+  width:100%;height:100%;border-radius:50%;
+  background:#081f4a;padding:1px;object-fit:contain;
+}
+.brand-name{font-size:24px;font-weight:800;color:#f5c86b}
+.brand-tagline{font-size:13px;color:#f3e7c3;margin-top:-4px}
 
-    nav ul { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
-    nav ul li a {
-        text-decoration: none; color: white; font-weight: 500; font-size: 16px;
-        transition: 0.3s ease;
-    }
-    nav ul li a:hover { color: #00ffd5; text-shadow: 0 0 8px rgba(0,255,213,0.75); }
+.menu{list-style:none;display:flex;gap:26px;margin:0}
+.m-link{color:#fff;font-weight:600}
+.m-link i{color:#f5c86b;margin-right:5px}
 
-    .btn-appointment {
-        background: #00c786; padding: 10px 18px; border-radius: 6px;
-        color: white; text-decoration: none; font-weight: 600;
-        box-shadow: 0 0 10px rgba(0,255,179,0.45); transition: 0.3s ease;
-    }
-    .btn-appointment:hover { transform: scale(1.05); }
+@media(min-width:901px){
+.dropdown{position:relative}
+.dropdown-menu{
+  position:absolute;top:100%;left:0;min-width:240px;
+  background:#0a2b6d;border-radius:14px;padding:12px;
+  display:none;box-shadow:0 18px 40px rgba(0,0,0,.45)
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu li a{
+  color:#f3e7c3;padding:11px 16px;border-radius:10px;
+  display:block;transition:.25s
+}
+.dropdown-menu li a:hover{
+  background:rgba(245,200,107,.14);color:#f5c86b;padding-left:20px
+}
+}
 
-    /* DROPDOWN */
-    .dropdown { position: relative; }
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        background: #001b57;
-        padding: 14px;
-        border-radius: 8px;
-        top: 38px;
-        min-width: 200px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-    }
-    .dropdown-menu li { padding: 7px 0; }
-    .dropdown-menu li a { color: white; font-size: 15px; }
-    .dropdown-menu li a:hover { color: #00ffd5; }
+.mobile-toggle{display:none}
+@media(max-width:900px){
+.menu{display:none;position:absolute;top:100%;left:0;width:100%;
+background:#081f4a;flex-direction:column;padding:16px 0}
+.menu li{padding:10px 22px}
+.dropdown-menu{position:static;background:#0d3a85;display:none}
+.mobile-toggle{display:block;font-size:26px;color:#fff;cursor:pointer}
+}
 
-    .dropdown-toggle { cursor: pointer; user-select: none; }
-    .dropdown.open .dropdown-menu { display: block; }
+/* ================= HERO ================= */
+.hero{
+  min-height:80vh;
+  background:url('img/numerology-banner.jpg') center/cover no-repeat;
+  display:flex;align-items:center;position:relative;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.3));
+}
+.hero .container{position:relative;z-index:2;color:#fff}
+.hero h1{color:#f5c86b;font-weight:800}
+.hero span{color:#f3e7c3;font-size:55%}
+.hero-btn{
+  display:inline-block;margin-top:24px;
+  padding:12px 30px;border-radius:30px;
+  background:linear-gradient(135deg,#f5c86b,#e0b24d);
+  color:#081f4a;font-weight:700;
+}
 
-    /* MOBILE MENU */
-    .hamburger { display: none; font-size: 28px; color: white; cursor: pointer; }
-    @media(max-width:768px){
-        .hamburger { display: block; }
-        nav ul {
-            flex-direction: column; background: #00114d;
-            position: absolute; top: 82px; left: 0; width: 100%;
-            padding: 20px; display: none; gap: 18px;
-        }
-        .dropdown-menu { position: static; box-shadow: none; padding: 8px 0 0; }
-    }
+/* ================= SECTIONS ================= */
+section{padding:70px 0}
+.section-light{background:#f9f9f9}
+.service-box{
+  background:#fff;padding:26px;border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  height:100%;
+}
+.faq-box{
+  background:#fff;padding:22px 26px;border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  margin-bottom:18px;
+}
 
-    /* CONTENT */
-    .section {
-        max-width: 1100px; margin: auto; padding: 60px 20px;
-    }
-    .section h2 {
-        text-align: center; font-size: 32px;
-        color: #0a1a5a; margin-bottom: 25px;
-    }
-    .section p { text-align: center; color: #333; font-size: 18px; line-height: 1.7; }
+/* ================= CTA ================= */
+.cta{
+  background:#081f4a;color:#fff;
+  padding:60px 20px;border-radius:18px;text-align:center;
+}
+.cta h2{color:#f5c86b}
 
-    /* FOOTER */
-    footer {
-        background: #0a1a5a; color: white;
-        text-align: center; padding: 25px; margin-top: 40px;
-    }
+/* ================= FOOTER ================= */
+.dv-footer{
+  background:#081f4a;color:#f3e7c3;padding:60px 0
+}
+.footer-title,.footer-brand{color:#f5c86b}
+.footer-links{list-style:none;padding:0}
+.footer-links li{margin-bottom:8px}
+.footer-links a{color:#f3e7c3;text-decoration:none}
+.footer-bottom{text-align:center;margin-top:30px;font-size:14px}
 
-    /* FLOAT BUTTONS */
-    .float-call {
-        position:fixed; bottom:100px; right:22px;
-        background:#0b3d91; color:#fff; width:55px; height:55px;
-        display:flex; justify-content:center; align-items:center;
-        border-radius:50%; font-size:24px; text-decoration:none;
-        z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.25);
-    }
-    .float-whatsapp {
-        position:fixed; bottom:30px; right:22px;
-        background:#25D366; color:#fff; width:55px; height:55px;
-        border-radius:50%; display:flex; justify-content:center;
-        align-items:center; font-size:26px; text-decoration:none;
-        z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.25);
-        transition:.3s;
-    }
-    .float-whatsapp:hover { transform: scale(1.1); }
+/* ================= FLOATING ================= */
+.dv-floating{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:14px;z-index:9999
+}
+.dv-btn{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:24px
+}
+.dv-whatsapp{background:#25D366}
+.dv-call{background:#081f4a}
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo-area">
-        <img src="img/logo.png" class="logo-circle">
-        <div class="logo-text">DEBAVASTU</div>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="header-wrapper">
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">ℹ️ About</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">🛠 Services ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="vastu.html">📐 Vastu</a></li>
-                    <li><a href="astrology.html">🔮 Astrology</a></li>
-                    <li><a href="numerology.html">🔢 Numerology</a></li>
-                    <li><a href="tarot.html">🃏 Tarot</a></li>
-                    <li><a href="yoga.html">🧘 Yoga</a></li>
-                    <li><a href="healing.html">✨ Healing</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">📩 Contact</a></li>
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrap"><img src="img/logo-header.png" alt="DebaVastu"></div>
+      <div>
+        <div class="brand-name">DEBAVASTU</div>
+        <div class="brand-tagline">The Science of Harmony</div>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a class="m-link" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a class="m-link" href="about.html"><i class="fa fa-user"></i> About</a></li>
+
+      <li class="dropdown">
+        <a class="m-link" href="#"><i class="fa fa-handshake-o"></i> Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="vastu.html">Vastu Consultation</a></li>
+          <li><a href="medical-vastu.html">Medical Vastu</a></li>
+          <li><a href="astrology.html">Astrology</a></li>
+          <li><a href="numerology.html">Numerology</a></li>
+          <li><a href="tarot.html">Tarot Guidance</a></li>
+          <li><a href="healing.html">Energy Healing</a></li>
         </ul>
-    </nav>
+      </li>
 
-    <a href="tel:6372710439" class="btn-appointment">Book Appointment</a>
+      <li><a class="m-link" href="blog.html"><i class="fa fa-pencil"></i> Blog</a></li>
+      <li><a class="m-link" href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+    </ul>
+
+    <div class="mobile-toggle"><i class="fa fa-bars"></i></div>
+  </div>
 </header>
 
-<!-- A: SHORT INTRO -->
-<section class="section">
-    <h2>Numerology Insights</h2>
-    <p>
-        Numbers reveal purpose, destiny and alignment of your life path.
-        Numerology decodes name vibrations, date of birth influence and karmic patterns to bring clarity and success.
-    </p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container">
+    <h1>Scientific Numerology Consultation
+      <span class="d-block mt-2">Name • Mobile Number • Career • Business</span>
+    </h1>
+    <a href="appointment.html" class="hero-btn">Book Numerology Consultation</a>
+  </div>
 </section>
 
-<!-- B: FULL NUMEROLOGY CONTENT -->
-<section class="section">
-    <h2>What Numerology Reveals</h2>
-    <p>
-        ✔ Life Path Numbers<br>
-        ✔ Destiny & Soul Urge<br>
-        ✔ Name Correction & Signature Vibration<br>
-        ✔ Business Name Prosperity<br>
-        ✔ Relationship Compatibility<br>
-        ✔ Lucky Dates, Colors & Directions<br>
-        ✔ Career Timing & Financial Fortune
-    </p>
-
-    <h2>Numerology Benefits</h2>
-    <p>
-        • Enhances decision clarity<br>
-        • Improves harmony in personal & professional life<br>
-        • Boosts career direction and financial flow<br>
-        • Aligns personal energy with cosmic timing
-    </p>
+<!-- ================= INTRO ================= -->
+<section class="container">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h2>Numerology with Logic & Awareness</h2>
+      <p>
+        Numerology is the science of numbers that helps understand
+        personality traits, strengths, challenges and life cycles.
+      </p>
+      <p>
+        DebaVastu follows a <strong>logical, ethical and fear-free numerology approach</strong>
+        without superstition or blind remedies.
+      </p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="img/numerology-consultation.jpg" alt="Numerology Consultation"
+           style="max-width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.15)">
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    © 2025 DebaVastu — All Rights Reserved
+<!-- ================= SERVICES ================= -->
+<section class="section-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Numerology Services</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Name Numerology</h4>
+        <p>Analysis and correction for personal, professional and brand names.</p>
+      </div></div>
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Mobile Number Numerology</h4>
+        <p>Selecting supportive numbers for growth and stability.</p>
+      </div></div>
+
+      <div class="col-md-4"><div class="service-box">
+        <h4>Career & Job Numerology</h4>
+        <p>Timing, suitability and career direction analysis.</p>
+      </div></div>
+
+      <div class="col-md-6"><div class="service-box">
+        <h4>Business & Brand Numerology</h4>
+        <p>Company names, registration dates and expansion planning.</p>
+      </div></div>
+
+      <div class="col-md-6"><div class="service-box">
+        <h4>Life Path & Destiny Analysis</h4>
+        <p>Understanding strengths, challenges and life purpose.</p>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="container">
+  <h2 class="text-center mb-5">Numerology – FAQs</h2>
+
+  <div class="faq-box">
+    <h4>Is numerology superstition?</h4>
+    <p>No. Scientific numerology is based on number vibrations and logic.</p>
+  </div>
+
+  <div class="faq-box">
+    <h4>Do you suggest drastic name changes?</h4>
+    <p>No. Only minimal, logical adjustments when truly required.</p>
+  </div>
+
+  <div class="faq-box">
+    <h4>Can numerology improve career growth?</h4>
+    <p>Yes. It improves timing, clarity and decision alignment.</p>
+  </div>
+
+  <div class="faq-box">
+    <h4>Is online numerology consultation available?</h4>
+    <p>Yes. Consultations are available online across India.</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="container">
+  <div class="cta">
+    <h2>Align Your Life with the Power of Numbers</h2>
+    <p>Make confident choices using scientific numerology guidance.</p>
+    <a href="appointment.html" class="btn btn-warning btn-lg mt-3">
+      Book Consultation
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="dv-footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <h3 class="footer-brand">DEBAVASTU</h3>
+        <p>The Science of Harmony</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Contact</h5>
+        <p><i class="fa fa-phone"></i> +91 90901 55516</p>
+        <p><i class="fa fa-envelope"></i> contact@debavastu.com</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">© 2026 DebaVastu. All Rights Reserved.</div>
+  </div>
 </footer>
 
-<!-- FLOAT -->
-<a href="tel:+916372710439" class="float-call">📞</a>
-<a href="https://wa.me/916372710439" class="float-whatsapp" target="_blank">💬</a>
+<!-- ================= FLOATING ================= -->
+<div class="dv-floating">
+  <a href="https://wa.me/919090155516" class="dv-btn dv-whatsapp"><i class="fa fa-whatsapp"></i></a>
+  <a href="tel:+919090155516" class="dv-btn dv-call"><i class="fa fa-phone"></i></a>
+</div>
 
+<script src="js/jquery.min.js"></script>
 <script>
-function toggleMenu(){
-    const menu = document.querySelector("nav ul");
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
-document.querySelector('.dropdown-toggle').addEventListener('click', function(e){
-    e.preventDefault();
-    this.parentElement.classList.toggle('open');
+$('.mobile-toggle').click(function(){
+  $('.menu').slideToggle(250);
 });
 </script>
 
